@@ -46,10 +46,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Chibi Mummy\Misc\Scripts\CharMovement.cs" />
+     <Compile Include="Assets\Chibi Mummy\Misc\Scripts\buttonControl_script.cs" />
      <Compile Include="Assets\Street_set\Scripts\CameraLook.cs" />
      <Compile Include="Assets\Street_set\Scripts\LightFlashing.cs" />
      <Compile Include="Assets\Street_set\Scripts\Tiled_Texture_Animation.cs" />
      <None Include="Assets\Street_set\Standard Assets\Skyboxes\_skybox info.txt" />
+     <None Include="Assets\Chibi Mummy\readme.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
