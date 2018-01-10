@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour {
 	private float m_maxIntervelCreatCarTime = 2f ; 
 	private float m_minIntervelCreateCarTime = 1f;
 
+	public bool isTrafficRed { get; set; }
+
 	public static GameManager getInstance() {
 		return GameManager.mInstance ; 
 	}

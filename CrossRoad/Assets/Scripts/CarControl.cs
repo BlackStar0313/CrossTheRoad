@@ -73,6 +73,10 @@ public class CarControl : MonoBehaviour {
 		return true ;  
 	}
 
+	private bool isWaitForTraffic() {
+		return true ;
+	}
+
 	private bool isNearCars <T>(out T targetCar) where T: Component {
 		Vector3 startPos = this.m_rigidBody.position ; 
 
@@ -107,6 +111,9 @@ public class CarControl : MonoBehaviour {
 			this.m_moveSpeedCurrent = this.m_moveSpeedAvg ; 
 		}
 	}
+
+
+
 
 	private bool isCanCreateCar() {
 		Vector3 startPos = this.m_rigidBody.position ; 
