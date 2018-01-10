@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CarControl : MonoBehaviour {
-	public Transform m_carStartPos1;
-	public Transform m_carEndPos1;
-	public Transform m_carPausePos1;
 	public LayerMask m_blockingLayer; 
+
+	private Transform m_carStartPos {get; set;}
+	private Transform m_carEndPos {get; set;}
+	private Transform m_carPausePos {get; set;}
 
 	private float m_moveSpeedRangeMax = 10f ; 
 	private float m_moveSpeedRangeMin = 6f ; 
@@ -20,22 +21,47 @@ public class CarControl : MonoBehaviour {
 	private CapsuleCollider m_capsuleCollider = null ; 
 	private bool m_isMoving = false ; 
 	private float m_RaycasthitDist = 10f;
-	private float m_puaseDist = 3f;
+	private float m_puaseDist = 4f;
+	private bool m_isInit = false ;
 
+	private Vector3 m_direction ;
 
 	// Use this for initialization
 	void Awake()
 	{
+
+	}
+
+	public void HandleInit(Transform StartPos , Transform pausePos , Transform endPos) {
+
+		this.m_carStartPos = StartPos;
+		this.m_carPausePos = pausePos;
+		this.m_carEndPos = endPos;
+
 		this.m_rigidBody = GetComponent<Rigidbody> ();
 		this.m_capsuleCollider = GetComponent<CapsuleCollider>();
-		// this.transform.position = m_carStartPos1.position;
-		this.m_rigidBody.position = m_carStartPos1.position ; 
+		this.m_rigidBody.position = m_carStartPos.position ; 
 
 		this.m_moveSpeedAvg = Random.Range(m_moveSpeedRangeMin , m_moveSpeedRangeMax);
 		this.m_moveSpeedCurrent = this.m_moveSpeedAvg;
 		this.m_acceleratedSpeedCurrent = Random.Range(m_acceleratedSpeedRangeMin , m_acceleratedSpeedRangeMax);
 
+		if (StartPos.position.z < 0) {
+			this.m_direction = new Vector3(0,0,1);
+		}
+		else {
+			this.m_direction = new Vector3(0,0,-1);
+			Quaternion turnRotation = Quaternion.Euler(0f,180f , 0f);
+			this.m_rigidBody.MoveRotation(this.m_rigidBody.rotation * turnRotation);
+		}
+
+		this.m_isInit = true ; 
 		this.handleCreate();
+	}
+
+	void Start()
+	{
+		Debug.Log("");
 	}
 	
 	// Update is called once per frame
@@ -44,7 +70,7 @@ public class CarControl : MonoBehaviour {
 
 	void FixedUpdate()
 	{
-		if (this.isCanMove()) {
+		if (this.m_isInit && this.isCanMove()) {
 			this.handleSpeed();
 			this.handleMove();
 		}
@@ -56,7 +82,7 @@ public class CarControl : MonoBehaviour {
 
 	private bool isCanMove() {
 		//是否到达终点
-		if (this.m_rigidBody.position.z >= this.m_carEndPos1.position.z) {
+		if (this.m_rigidBody.position.z*this.m_direction.z >= this.m_carEndPos.position.z*this.m_direction.z) {
 			this.gameObject.SetActive(false);
 			DestroyObject(this.gameObject);
 			return false ; 
@@ -84,11 +110,13 @@ public class CarControl : MonoBehaviour {
 	}
 
 	private bool isWaitForTraffic() {
-		if (!GameManager.getInstance().isTrafficRed || GameManager.getInstance().isTrafficRed && this.m_rigidBody.position.z > this.m_carPausePos1.position.z) {
+		if (!GameManager.getInstance().isTrafficRed || 
+			(GameManager.getInstance().isTrafficRed && 
+				this.m_rigidBody.position.z*this.m_direction.z > this.m_carPausePos.position.z*this.m_direction.z) ) {
 			return false ;
 		}
 
-		float dist = (this.m_carPausePos1.position - this.m_rigidBody.position).magnitude;
+		float dist = (this.m_carPausePos.position - this.m_rigidBody.position).magnitude;
 		if (dist <= this.m_puaseDist) {
 			return true; 
 		}
@@ -101,7 +129,7 @@ public class CarControl : MonoBehaviour {
 
 		RaycastHit hit ;
 		this.m_capsuleCollider.enabled = false ;
-		bool isNear = Physics.Raycast(startPos , Vector3.forward , out hit , this.m_RaycasthitDist , this.m_blockingLayer);
+		bool isNear = Physics.Raycast(startPos , Vector3.forward * this.m_direction.z , out hit , this.m_RaycasthitDist , this.m_blockingLayer);
 		this.m_capsuleCollider.enabled = true ; 
 
 		targetCar = hit.transform ? hit.transform.GetComponent<T>() : null ; 
@@ -115,7 +143,7 @@ public class CarControl : MonoBehaviour {
 			return ; 
 		}
 
-		Vector3 endPos = new Vector3(this.m_rigidBody.position.x , this.m_rigidBody.position.y ,this.m_carEndPos1.position.z);
+		Vector3 endPos = new Vector3(this.m_rigidBody.position.x , this.m_rigidBody.position.y ,this.m_carEndPos.position.z);
 
 		float step = this.m_moveSpeedCurrent * Time.deltaTime;
 		this.m_rigidBody.position = Vector3.MoveTowards(this.m_rigidBody.position , endPos , step );
@@ -139,7 +167,7 @@ public class CarControl : MonoBehaviour {
 
 		RaycastHit hit ;
 		this.m_capsuleCollider.enabled = false ;
-		bool isNear = Physics.Raycast(startPos , Vector3.forward , out hit ,this.m_RaycasthitDist , this.m_blockingLayer);
+		bool isNear = Physics.Raycast(startPos , Vector3.forward * this.m_direction.z , out hit ,this.m_RaycasthitDist , this.m_blockingLayer);
 		if (!isNear) {
 			isNear = Physics.Raycast(startPos , Vector3.up , out hit ,this.m_RaycasthitDist , this.m_blockingLayer);
 		}

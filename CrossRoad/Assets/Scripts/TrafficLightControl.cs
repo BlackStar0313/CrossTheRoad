@@ -13,7 +13,7 @@ public class TrafficLightControl : MonoBehaviour {
 
 
 	public GameObject[] m_trafficLight ;
-	public float[] m_lightDelayTime = {2.0f , 3.0f , 5.0f} ;
+	[HideInInspector] private float[] m_lightDelayTime = {4.0f , 1.0f , 5.0f} ;
 
 	private TrafficLightSingle[] m_lightArr = new TrafficLightSingle[3];
 	private EnumTrafficLight m_currentLight = 0 ;
