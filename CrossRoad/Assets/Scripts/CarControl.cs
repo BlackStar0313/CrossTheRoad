@@ -5,6 +5,7 @@ using UnityEngine;
 public class CarControl : MonoBehaviour {
 	public Transform m_carStartPos1;
 	public Transform m_carEndPos1;
+	public Transform m_carPausePos1;
 	public LayerMask m_blockingLayer; 
 
 	private float m_moveSpeedRangeMax = 10f ; 
@@ -19,6 +20,7 @@ public class CarControl : MonoBehaviour {
 	private CapsuleCollider m_capsuleCollider = null ; 
 	private bool m_isMoving = false ; 
 	private float m_RaycasthitDist = 10f;
+	private float m_puaseDist = 3f;
 
 
 	// Use this for initialization
@@ -66,15 +68,32 @@ public class CarControl : MonoBehaviour {
 			if (this.m_moveSpeedAvg > targetCar.GetMaxSpeed()) {
 				this.m_moveSpeedAvg = targetCar.GetMaxSpeed();
 			}
+
+			if (this.m_moveSpeedCurrent > targetCar.GetCurrentSpeed()) {
+				this.m_moveSpeedCurrent = targetCar.GetCurrentSpeed();
+			}
 		}
 
 		//是否到达红绿灯的位置了
+		if (this.isWaitForTraffic()) {
+			this.m_moveSpeedCurrent = 0 ; 
+			return false; 
+		}
 
 		return true ;  
 	}
 
 	private bool isWaitForTraffic() {
-		return true ;
+		if (!GameManager.getInstance().isTrafficRed || GameManager.getInstance().isTrafficRed && this.m_rigidBody.position.z > this.m_carPausePos1.position.z) {
+			return false ;
+		}
+
+		float dist = (this.m_carPausePos1.position - this.m_rigidBody.position).magnitude;
+		if (dist <= this.m_puaseDist) {
+			return true; 
+		}
+
+		return false ;
 	}
 
 	private bool isNearCars <T>(out T targetCar) where T: Component {

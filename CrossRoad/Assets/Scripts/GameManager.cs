@@ -10,11 +10,16 @@ public class GameManager : MonoBehaviour {
 	private bool m_isStartCreateCar = true;
 	private float m_maxIntervelCreatCarTime = 2f ; 
 	private float m_minIntervelCreateCarTime = 1f;
+	private float m_trafficIntervelCreateCarTime = 0.5f;
 
 	public bool isTrafficRed { get; set; }
 
 	public static GameManager getInstance() {
 		return GameManager.mInstance ; 
+	}
+	
+	private void init() {
+		isTrafficRed = false ;
 	}
 
 	// Use this for initialization
@@ -26,6 +31,8 @@ public class GameManager : MonoBehaviour {
 			Destroy(gameObject);
 		}
 		DontDestroyOnLoad(gameObject);
+
+		this.init();
 	}
 	
 	// Update is called once per frame
@@ -38,8 +45,12 @@ public class GameManager : MonoBehaviour {
 	protected IEnumerator AutoCreateCar() {
 		this.m_isStartCreateCar = false ;
 
-		Instantiate(this.m_car);
-		float randTime = Random.Range(m_minIntervelCreateCarTime, m_maxIntervelCreatCarTime);
+		float randTime = m_trafficIntervelCreateCarTime;
+		if (!isTrafficRed) {
+			Instantiate(this.m_car);
+			randTime = Random.Range(m_minIntervelCreateCarTime, m_maxIntervelCreatCarTime);
+		}
+				
 		Debug.Log(" delay time is " + randTime ) ; 
 		yield return new WaitForSeconds(randTime) ; 
 

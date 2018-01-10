@@ -26,6 +26,7 @@ public class TrafficLightControl : MonoBehaviour {
 			m_lightArr[i].SetIsLight(false);
 		}
 
+		GameManager.getInstance().isTrafficRed = true;
 		m_currentLight = EnumTrafficLight.red ;
 		m_lightArr[(int)m_currentLight].SetIsLight(true);
 		Invoke("trafficChange", m_lightDelayTime[(int)m_currentLight]);
@@ -35,6 +36,8 @@ public class TrafficLightControl : MonoBehaviour {
 		m_lightArr[(int)m_currentLight].SetIsLight(false);
 		m_currentLight = (int)m_currentLight >= 2 ? EnumTrafficLight.red : ++m_currentLight;
 		m_lightArr[(int)m_currentLight].SetIsLight(true);
+
+		GameManager.getInstance().isTrafficRed = m_currentLight == EnumTrafficLight.red ? true : false ; 
 		Invoke("trafficChange", m_lightDelayTime[(int)m_currentLight]);
 	}
 
