@@ -51,6 +51,8 @@
      <Compile Include="Assets\Scripts\CarControl.cs" />
      <Compile Include="Assets\Scripts\GameLoader.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
+     <Compile Include="Assets\Scripts\TrafficLightControl.cs" />
+     <Compile Include="Assets\Scripts\TrafficLightSingle.cs" />
      <Compile Include="Assets\Street_set\Scripts\CameraLook.cs" />
      <Compile Include="Assets\Street_set\Scripts\LightFlashing.cs" />
      <Compile Include="Assets\Street_set\Scripts\Tiled_Texture_Animation.cs" />

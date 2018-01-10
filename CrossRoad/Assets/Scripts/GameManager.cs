@@ -8,13 +8,13 @@ public class GameManager : MonoBehaviour {
 	[HideInInspector] public static GameManager mInstance = null ; 
 
 	private bool m_isStartCreateCar = true;
-	private float m_maxIntervelCreatCarTime = 5f ; 
+	private float m_maxIntervelCreatCarTime = 2f ; 
 	private float m_minIntervelCreateCarTime = 1f;
 
 	public static GameManager getInstance() {
 		return GameManager.mInstance ; 
 	}
-	
+
 	// Use this for initialization
 	void Awake () {
 		if (GameManager.mInstance == null) {
