@@ -13,11 +13,14 @@ public class PlayerMoving : MonoBehaviour {
 	private bool m_isMoving = false ; 
 	private float m_moveStep = 1f;
 	private float m_moveSpeed = 0.2f;
+	private float m_direction = 1.0f ; 
+	private float m_deltaDist = 1.0f;	//判断玩家是否到位置的一个范围.
 
 	void Awake()
 	{
 		this.m_rigidbody = GetComponent<Rigidbody>();
 		this.m_animator = GetComponent<Animator>();
+
 	}
 	
 	// Update is called once per frame
@@ -48,14 +51,27 @@ public class PlayerMoving : MonoBehaviour {
 	}
 
 	private void move(bool isLeft) {
-		if (this.m_rigidbody.position.x < this.m_endPos.position.x ) {
-			//TODO: add sth logic here .
+		Vector3 endPos = this.m_direction > 0 ? this.m_endPos.position : this.m_startPos.position ; 
+		float deltaDist = this.m_deltaDist ;
+		if (this.m_rigidbody.position.x*this.m_direction - deltaDist < endPos.x*this.m_direction ) {
+			this.m_direction *= -1;
+			float angle = this.m_direction < 0 ? 90.0f : 270f;
+			// float angle = 180;
+			Quaternion turnRotation = Quaternion.Euler(0f,angle , 0f);
+			// this.m_rigidbody.MoveRotation(this.m_rigidbody.rotation * turnRotation);
+			this.transform.rotation = turnRotation;
 			return ; 
 		}
 
 		if (isLeft) {
 			
-			float endX = Mathf.Max(this.m_endPos.position.x , this.m_rigidbody.position.x - m_moveStep) ;
+			float endX = 0;
+			if (this.m_direction > 0) {
+				endX = Mathf.Max(endPos.x , this.m_rigidbody.position.x - m_moveStep);
+			}
+			else {
+				endX = Mathf.Min(endPos.x , this.m_rigidbody.position.x + m_moveStep);
+			}
 			Vector3 stepPos = new Vector3(endX ,this.m_rigidbody.position.y , this.m_rigidbody.position.z );
 			StartCoroutine(SmoothMovement(stepPos));
 			
