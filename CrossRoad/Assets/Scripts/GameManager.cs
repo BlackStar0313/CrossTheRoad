@@ -5,6 +5,7 @@ using UnityEditor;
 
 public class GameManager : MonoBehaviour {
 	public GameObject m_car;
+	public GameObject m_player ; 
 	public Transform[] m_carStartPos;
 	public Transform[] m_carEndPos;
 	public Transform[] m_carPausePos;
@@ -24,6 +25,7 @@ public class GameManager : MonoBehaviour {
 	
 	private void init() {
 		isTrafficRed = false ;
+		this.createPlayer();
 	}
 
 	// Use this for initialization
@@ -41,21 +43,21 @@ public class GameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		// if (m_isStartCreateCar[0]) {
-		// 	StartCoroutine(AutoCreateCar(0));
-		// }
+		if (m_isStartCreateCar[0]) {
+			StartCoroutine(AutoCreateCar(0));
+		}
 
-		// if (m_isStartCreateCar[1]) {
-		// 	StartCoroutine(AutoCreateCar(1));
-		// }
+		if (m_isStartCreateCar[1]) {
+			StartCoroutine(AutoCreateCar(1));
+		}
 
-		// if (m_isStartCreateCar[2]) {
-		// 	StartCoroutine(AutoCreateCar(2));
-		// }
+		if (m_isStartCreateCar[2]) {
+			StartCoroutine(AutoCreateCar(2));
+		}
 
-		// if (m_isStartCreateCar[3]) {
-		// 	StartCoroutine(AutoCreateCar(3));
-		// }
+		if (m_isStartCreateCar[3]) {
+			StartCoroutine(AutoCreateCar(3));
+		}
 	}
 
 	protected IEnumerator AutoCreateCar(int idx) {
@@ -73,6 +75,10 @@ public class GameManager : MonoBehaviour {
 		yield return new WaitForSeconds(randTime) ; 
 
 		this.m_isStartCreateCar[idx] = true ; 
+	}
+
+	private void createPlayer() {
+		Instantiate(this.m_player);
 	}
 
 }

@@ -21,6 +21,7 @@ public class PlayerMoving : MonoBehaviour {
 		this.m_rigidbody = GetComponent<Rigidbody>();
 		this.m_animator = GetComponent<Animator>();
 
+		this.m_rigidbody.position = new Vector3(this.m_startPos.position.x , this.m_rigidbody.position.y , this.m_rigidbody.position.z ) ;
 	}
 	
 	// Update is called once per frame
