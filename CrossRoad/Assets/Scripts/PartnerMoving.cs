@@ -9,6 +9,7 @@ public class PartnerMoving : MonoBehaviour {
 	public Transform m_endBornPos;
 	public Transform m_endPos;
 
+	private CharacterController m_character ; 
 	private Animator m_animator;
 	private Rigidbody m_rigidBody ;
 	private float m_moveSpeed = 0.1f; 
@@ -23,11 +24,11 @@ public class PartnerMoving : MonoBehaviour {
 
 
 		if (direct > 0 ) {
-			this.m_rigidBody.position = new Vector3(m_startBornPos.position.x , m_rigidBody.position.y, m_startBornPos.position.z) ;
+			this.transform.position = new Vector3(m_startBornPos.position.x , transform.position.y, m_startBornPos.position.z) ;
 			this.m_autoEndPos = m_endBornPos;
 		}
 		else {
-			this.m_rigidBody.position = new Vector3(m_endBornPos.position.x , m_rigidBody.position.y, m_endBornPos.position.z) ;
+			this.transform.position = new Vector3(m_endBornPos.position.x , transform.position.y, m_endBornPos.position.z) ;
 			this.m_autoEndPos = m_startBornPos;
 		}
 		this.transform.rotation = getCurrentRotation(direct);
@@ -38,7 +39,7 @@ public class PartnerMoving : MonoBehaviour {
 		}
 		else {
 			m_animator.SetTrigger("player_idle");
-			this.m_rigidBody.position = direct > 0 ? new Vector3(m_startPos.position.x , m_rigidBody.position.y, m_startPos.position.z) : new Vector3(m_endPos.position.x , m_rigidBody.position.y, m_endPos.position.z);
+			this.transform.position = direct > 0 ? new Vector3(m_startPos.position.x , transform.position.y, m_startPos.position.z) : new Vector3(m_endPos.position.x , transform.position.y, m_endPos.position.z);
 		}
 
 	}
@@ -47,6 +48,7 @@ public class PartnerMoving : MonoBehaviour {
 	void Awake(){
 		this.m_rigidBody = GetComponent<Rigidbody>();
 		this.m_animator = GetComponent<Animator>();
+		this.m_character = GetComponent<CharacterController>();
 	}
 
 	private Quaternion getCurrentRotation(float direct) {
@@ -57,8 +59,8 @@ public class PartnerMoving : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (m_isStart) {
-			if (GameManager.getInstance().playerDirect > 0 && m_autoEndPos.position.x > m_rigidBody.position.x ||
-				GameManager.getInstance().playerDirect < 0 && m_autoEndPos.position.x < m_rigidBody.position.x ) {
+			if (GameManager.getInstance().playerDirect > 0 && m_autoEndPos.position.x > transform.position.x ||
+				GameManager.getInstance().playerDirect < 0 && m_autoEndPos.position.x < transform.position.x ) {
 				this.autoMove();
 			}
 			else {
@@ -69,17 +71,20 @@ public class PartnerMoving : MonoBehaviour {
 	}
 
 	private void autoMove() {
-		Vector3 endPos = new Vector3(m_autoEndPos.position.x , m_rigidBody.position.y , m_rigidBody.position.z);
-		Vector3 newPos = Vector3.MoveTowards(m_rigidBody.position , endPos , m_moveSpeed * Time.deltaTime);
-		m_rigidBody.position = newPos;
+		Vector3 endPos = new Vector3(m_autoEndPos.position.x , transform.position.y , transform.position.z);
+		Vector3 newPos = Vector3.MoveTowards(transform.position , endPos , m_moveSpeed * Time.deltaTime);
+		transform.position = newPos;
 	}
 
 
 
-	public void OnMove(Vector3 directPos) {
-		Vector3 endPos = new Vector3(directPos.x , m_rigidBody.position.y , m_rigidBody.position.z);
-		Vector3 newPos = Vector3.MoveTowards(m_rigidBody.position , endPos , m_moveSpeed * Time.deltaTime);
-		m_rigidBody.position = newPos;
+	public void OnMove(float speed ) {
+		// Vector3 endPos = new Vector3(directPos.x , m_rigidBody.position.y , m_rigidBody.position.z);
+		// Vector3 newPos = Vector3.MoveTowards(m_rigidBody.position , endPos , m_moveSpeed * Time.deltaTime);
+		// m_rigidBody.position = newPos;
+		speed *= GameManager.getInstance().playerDirect > 0 ? -1 : 1 ;
+		Vector3 forward = new Vector3( speed, 0 , 0  );
+		m_character.SimpleMove(forward);
 		m_animator.SetTrigger("player_run");
 	}
 

@@ -28,8 +28,10 @@ public class GameManager : MonoBehaviour {
 	private void init() {
 		isTrafficRed = false ;
 		this.createPlayer();
-		// this.CreateNewPartner(1, true);
-		// this.CreateNewPartner(-1, true);
+		this.CreateNewPartner(1, true);
+		this.CreateNewPartner(-1, true);
+		
+		DispatchManager.getInstance().onPartnerCatched.Invoke();
 	}
 
 	// Use this for initialization
