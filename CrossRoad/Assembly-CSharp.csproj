@@ -47,8 +47,10 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\CarControl.cs" />
+     <Compile Include="Assets\Scripts\DispatchManager.cs" />
      <Compile Include="Assets\Scripts\GameLoader.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
+     <Compile Include="Assets\Scripts\PartnerMoving.cs" />
      <Compile Include="Assets\Scripts\PlayerMoving.cs" />
      <Compile Include="Assets\Scripts\TrafficLightControl.cs" />
      <Compile Include="Assets\Scripts\TrafficLightSingle.cs" />

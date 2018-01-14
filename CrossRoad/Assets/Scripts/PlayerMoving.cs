@@ -15,6 +15,7 @@ public class PlayerMoving : MonoBehaviour {
 	private float m_moveSpeed = 0.2f;
 	private float m_direction = 1.0f ; 
 	private float m_deltaDist = 1.0f;	//判断玩家是否到位置的一个范围.
+	private bool m_isNewRound = false ; 
 
 	void Awake()
 	{
@@ -61,6 +62,11 @@ public class PlayerMoving : MonoBehaviour {
 			Quaternion turnRotation = Quaternion.Euler(0f,angle , 0f);
 			// this.m_rigidbody.MoveRotation(this.m_rigidbody.rotation * turnRotation);
 			this.transform.rotation = turnRotation;
+
+			DispatchManager.getInstance().onPartnerReached.Invoke();
+			DispatchManager.getInstance().onPartnerCatched.Invoke();
+
+			this.m_isNewRound = true ; 
 			return ; 
 		}
 
@@ -76,12 +82,15 @@ public class PlayerMoving : MonoBehaviour {
 			Vector3 stepPos = new Vector3(endX ,this.m_rigidbody.position.y , this.m_rigidbody.position.z );
 			StartCoroutine(SmoothMovement(stepPos));
 			
+			m_isNewRound = false ;
+			GameManager.getInstance().CreateNewPartner(GameManager.getInstance().playerDirect ,false );
 		}
 	}
 
 	protected IEnumerator SmoothMovement(Vector3 endPos) {
 		m_isMoving = true ; 
 		m_animator.SetTrigger("player_run");
+		DispatchManager.getInstance().onPartnerMove.Invoke(endPos);
 
 		float dist = (m_rigidbody.position-endPos).magnitude;
 		while (dist > float.Epsilon) {
@@ -93,5 +102,6 @@ public class PlayerMoving : MonoBehaviour {
 
 		m_isMoving = false ; 
 		m_animator.SetTrigger("player_idle");
+		DispatchManager.getInstance().onPartnerStop.Invoke();
 	}
 }

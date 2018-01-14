@@ -6,6 +6,7 @@ using UnityEditor;
 public class GameManager : MonoBehaviour {
 	public GameObject m_car;
 	public GameObject m_player ; 
+	public GameObject m_partner;
 	public Transform[] m_carStartPos;
 	public Transform[] m_carEndPos;
 	public Transform[] m_carPausePos;
@@ -18,6 +19,7 @@ public class GameManager : MonoBehaviour {
 	private float m_trafficIntervelCreateCarTime = 0.5f;
 
 	public bool isTrafficRed { get; set; }
+	public float playerDirect { get; set; }
 
 	public static GameManager getInstance() {
 		return GameManager.mInstance ; 
@@ -26,6 +28,8 @@ public class GameManager : MonoBehaviour {
 	private void init() {
 		isTrafficRed = false ;
 		this.createPlayer();
+		// this.CreateNewPartner(1, true);
+		// this.CreateNewPartner(-1, true);
 	}
 
 	// Use this for initialization
@@ -43,21 +47,21 @@ public class GameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (m_isStartCreateCar[0]) {
-			StartCoroutine(AutoCreateCar(0));
-		}
+		// if (m_isStartCreateCar[0]) {
+		// 	StartCoroutine(AutoCreateCar(0));
+		// }
 
-		if (m_isStartCreateCar[1]) {
-			StartCoroutine(AutoCreateCar(1));
-		}
+		// if (m_isStartCreateCar[1]) {
+		// 	StartCoroutine(AutoCreateCar(1));
+		// }
 
-		if (m_isStartCreateCar[2]) {
-			StartCoroutine(AutoCreateCar(2));
-		}
+		// if (m_isStartCreateCar[2]) {
+		// 	StartCoroutine(AutoCreateCar(2));
+		// }
 
-		if (m_isStartCreateCar[3]) {
-			StartCoroutine(AutoCreateCar(3));
-		}
+		// if (m_isStartCreateCar[3]) {
+		// 	StartCoroutine(AutoCreateCar(3));
+		// }
 	}
 
 	protected IEnumerator AutoCreateCar(int idx) {
@@ -79,6 +83,12 @@ public class GameManager : MonoBehaviour {
 
 	private void createPlayer() {
 		Instantiate(this.m_player);
+	}
+
+	public void CreateNewPartner(float direction, bool isPlaceHolder) {
+		GameObject obj = Instantiate(this.m_partner);
+		PartnerMoving partner = obj.GetComponent<PartnerMoving>();
+		partner.handleInit(direction , isPlaceHolder);
 	}
 
 }
