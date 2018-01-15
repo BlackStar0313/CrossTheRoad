@@ -17,18 +17,21 @@ public class DispatchManager {
 	public class EventFloatV3: UnityEvent<float,Vector3>  {}
 	public class EventFloat: UnityEvent<float>  {}
 	public class EventFloatFloat: UnityEvent<float ,float> {}
+	public class EventV3Collider: UnityEvent<Vector3, BasicCollider>  {}
 
 
 	public EventFloatFloat onPartnerMove = null; 
 	public UnityEvent  onPartnerStop = null; 
 	public EventFloat  onPartnerReached = null; 
 	public EventFloat  onPartnerCatched = null; 
+	public EventV3Collider onCollidePlayer = null;
 
 	public DispatchManager() {
 		onPartnerMove = new EventFloatFloat();
 		onPartnerStop = new UnityEvent();
 		onPartnerReached = new EventFloat();
 		onPartnerCatched = new EventFloat();
+		onCollidePlayer = new EventV3Collider();
 	}
 
 	// public delegate void EventHandler();

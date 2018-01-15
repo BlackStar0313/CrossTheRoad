@@ -46,11 +46,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\BasicCollider.cs" />
+     <Compile Include="Assets\Scripts\BasicController.cs" />
      <Compile Include="Assets\Scripts\CarControl.cs" />
      <Compile Include="Assets\Scripts\DispatchManager.cs" />
      <Compile Include="Assets\Scripts\GameLoader.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
+     <Compile Include="Assets\Scripts\PartnerCollider.cs" />
+     <Compile Include="Assets\Scripts\PartnerController.cs" />
      <Compile Include="Assets\Scripts\PartnerMoving.cs" />
+     <Compile Include="Assets\Scripts\PlayerCollider.cs" />
+     <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\PlayerMoving.cs" />
      <Compile Include="Assets\Scripts\TrafficLightControl.cs" />
      <Compile Include="Assets\Scripts\TrafficLightSingle.cs" />

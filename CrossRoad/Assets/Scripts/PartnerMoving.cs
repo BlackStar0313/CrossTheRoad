@@ -14,6 +14,7 @@ public class PartnerMoving : MonoBehaviour {
 	public Transform m_endBornPos;
 	public Transform m_endPos;
 
+	private PartnerController m_controller ; 
 	private CharacterController m_character ; 
 	private Animator m_animator;
 	private Rigidbody m_rigidBody ;
@@ -54,6 +55,7 @@ public class PartnerMoving : MonoBehaviour {
 		this.m_rigidBody = GetComponent<Rigidbody>();
 		this.m_animator = GetComponent<Animator>();
 		this.m_character = GetComponent<CharacterController>();
+		this.m_controller = GetComponent<PartnerController>();
 	}
 
 	private Quaternion getCurrentRotation(float direct) {
@@ -119,6 +121,13 @@ public class PartnerMoving : MonoBehaviour {
 		this.removeEvent();
 	}
 
+	public void OnPlayerCollidetion(Vector3 carPos, BasicCollider collider) {
+		if (typeof(PartnerCollider) != collider.GetType()) {
+			GameObject colliderObj = GameObject.FindGameObjectWithTag("partnerCollider");
+			colliderObj.GetComponent<PartnerCollider>().handleCarCollision(carPos, false);
+		}
+	}
+
 	private void OnCatched(float direct ) {
 		if (isPartnerDirect(direct) ) {
 
@@ -126,15 +135,15 @@ public class PartnerMoving : MonoBehaviour {
 
 			DispatchManager.getInstance().onPartnerMove.AddListener(this.OnMove);
 			DispatchManager.getInstance().onPartnerStop.AddListener(this.OnStop);
-			DispatchManager.getInstance().onPartnerReached.AddListener(this.OnReachEnd);		
+			DispatchManager.getInstance().onPartnerReached.AddListener(this.OnReachEnd);	
+			DispatchManager.getInstance().onCollidePlayer.AddListener(this.OnPlayerCollidetion);	
 		}
-
-
 	}
 
 	private void removeEvent() {
 		DispatchManager.getInstance().onPartnerMove.RemoveListener(this.OnMove);
 		DispatchManager.getInstance().onPartnerStop.RemoveListener(this.OnStop);
 		DispatchManager.getInstance().onPartnerReached.RemoveListener(this.OnReachEnd);
+		DispatchManager.getInstance().onCollidePlayer.RemoveListener(this.OnPlayerCollidetion);
 	}
 }

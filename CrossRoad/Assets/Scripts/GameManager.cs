@@ -50,21 +50,21 @@ public class GameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		// if (m_isStartCreateCar[0]) {
-		// 	StartCoroutine(AutoCreateCar(0));
-		// }
+		if (m_isStartCreateCar[0]) {
+			StartCoroutine(AutoCreateCar(0));
+		}
 
-		// if (m_isStartCreateCar[1]) {
-		// 	StartCoroutine(AutoCreateCar(1));
-		// }
+		if (m_isStartCreateCar[1]) {
+			StartCoroutine(AutoCreateCar(1));
+		}
 
-		// if (m_isStartCreateCar[2]) {
-		// 	StartCoroutine(AutoCreateCar(2));
-		// }
+		if (m_isStartCreateCar[2]) {
+			StartCoroutine(AutoCreateCar(2));
+		}
 
-		// if (m_isStartCreateCar[3]) {
-		// 	StartCoroutine(AutoCreateCar(3));
-		// }
+		if (m_isStartCreateCar[3]) {
+			StartCoroutine(AutoCreateCar(3));
+		}
 	}
 
 	protected IEnumerator AutoCreateCar(int idx) {
@@ -78,7 +78,7 @@ public class GameManager : MonoBehaviour {
 			randTime = Random.Range(m_minIntervelCreateCarTime, m_maxIntervelCreatCarTime);
 		}
 				
-		Debug.Log(" delay time is " + randTime ) ; 
+		// Debug.Log(" delay time is " + randTime ) ; 
 		yield return new WaitForSeconds(randTime) ; 
 
 		this.m_isStartCreateCar[idx] = true ; 

@@ -7,6 +7,7 @@ public class PlayerMoving : MonoBehaviour {
 	public Transform m_startPos;
 	public Transform m_endPos;
 
+	private PartnerController m_controller ; 
 	private Rigidbody m_rigidbody ;
 	private CharacterController m_character ; 
 	private Animator m_animator;
@@ -21,10 +22,13 @@ public class PlayerMoving : MonoBehaviour {
 	{
 		this.m_character = GetComponent<CharacterController>();
 		this.m_animator = GetComponent<Animator>();
-		this.m_rigidbody = GetComponent<Rigidbody>();
+		this.m_controller = GetComponent<PartnerController>();
+		// this.m_rigidbody = GetComponent<Rigidbody>();
 
 		// this.m_rigidbody.position = new Vector3(this.m_startPos.position.x , this.m_rigidbody.position.y , this.m_rigidbody.position.z ) ;
-		this.transform.position = new Vector3(this.m_startPos.position.x , this.m_rigidbody.position.y , this.m_rigidbody.position.z ) ;
+		this.transform.position = new Vector3(this.m_startPos.position.x , this.transform.position.y , this.transform.position.z ) ;
+
+		DispatchManager.getInstance().onCollidePlayer.AddListener(this.OnPlayerCollidetion);
 	}
 	
 	// Update is called once per frame
@@ -107,4 +111,13 @@ public class PlayerMoving : MonoBehaviour {
 		m_animator.SetTrigger("player_idle");
 		DispatchManager.getInstance().onPartnerStop.Invoke();
 	}
+
+
+	public void OnPlayerCollidetion(Vector3 carPos , BasicCollider collider) {
+		if (typeof(PlayerCollider) != collider.GetType()) {
+			GameObject colliderObj = GameObject.FindGameObjectWithTag("playerCollider");
+			colliderObj.GetComponent<PlayerCollider>().handleCarCollision(carPos, false);
+		}
+	}
+
 }
