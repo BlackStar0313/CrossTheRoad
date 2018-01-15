@@ -4,6 +4,11 @@ using UnityEngine;
 using UnityEngine.Events;
 
 public class PartnerMoving : MonoBehaviour {
+	enum EnumMovingDirect {
+		normal,
+		offoset
+	}
+
 	public Transform m_startBornPos ; 
 	public Transform m_startPos; 
 	public Transform m_endBornPos;
@@ -12,24 +17,24 @@ public class PartnerMoving : MonoBehaviour {
 	private CharacterController m_character ; 
 	private Animator m_animator;
 	private Rigidbody m_rigidBody ;
-	private float m_moveSpeed = 0.1f; 
 	private bool m_isStart = false ;
 	private Transform m_autoEndPos;
-
+	private EnumMovingDirect m_currentDirect ;
+	private float m_autoMoveStep = 0.05f;
 	/*
 	 * direct 1 ,270度， -1 90度
 	 */
 	public void handleInit(float direct, bool isPlaceHolder) {
 		DispatchManager.getInstance().onPartnerCatched.AddListener(OnCatched) ;
 
-
+		m_currentDirect = direct > 0 ? EnumMovingDirect.normal : EnumMovingDirect.offoset ;
 		if (direct > 0 ) {
 			this.transform.position = new Vector3(m_startBornPos.position.x , transform.position.y, m_startBornPos.position.z) ;
-			this.m_autoEndPos = m_endBornPos;
+			this.m_autoEndPos = m_startPos;
 		}
 		else {
 			this.transform.position = new Vector3(m_endBornPos.position.x , transform.position.y, m_endBornPos.position.z) ;
-			this.m_autoEndPos = m_startBornPos;
+			this.m_autoEndPos = m_endPos;
 		}
 		this.transform.rotation = getCurrentRotation(direct);
 
@@ -59,8 +64,8 @@ public class PartnerMoving : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (m_isStart) {
-			if (GameManager.getInstance().playerDirect > 0 && m_autoEndPos.position.x > transform.position.x ||
-				GameManager.getInstance().playerDirect < 0 && m_autoEndPos.position.x < transform.position.x ) {
+			if (GameManager.getInstance().playerDirect > 0 && m_autoEndPos.position.x < transform.position.x ||
+				GameManager.getInstance().playerDirect < 0 && m_autoEndPos.position.x > transform.position.x ) {
 				this.autoMove();
 			}
 			else {
@@ -71,18 +76,28 @@ public class PartnerMoving : MonoBehaviour {
 	}
 
 	private void autoMove() {
-		Vector3 endPos = new Vector3(m_autoEndPos.position.x , transform.position.y , transform.position.z);
-		Vector3 newPos = Vector3.MoveTowards(transform.position , endPos , m_moveSpeed * Time.deltaTime);
-		transform.position = newPos;
+		float speed = m_autoMoveStep / Time.deltaTime;
+		speed *= GameManager.getInstance().playerDirect > 0 ? -1 : 1 ;
+		Vector3 forward = new Vector3( speed, 0 , 0  );
+		m_character.SimpleMove(forward);
 	}
 
 
+	private bool isPartnerDirect(float direct) {
+		return direct > 0 && m_currentDirect == EnumMovingDirect.normal || 
+				direct < 0 && m_currentDirect == EnumMovingDirect.offoset ;
+	}
 
-	public void OnMove(float speed ) {
+
+	public void OnMove(float speed , float direct ) {
+		if (!isPartnerDirect(direct)) {
+			return ;
+		}
+
 		// Vector3 endPos = new Vector3(directPos.x , m_rigidBody.position.y , m_rigidBody.position.z);
 		// Vector3 newPos = Vector3.MoveTowards(m_rigidBody.position , endPos , m_moveSpeed * Time.deltaTime);
 		// m_rigidBody.position = newPos;
-		speed *= GameManager.getInstance().playerDirect > 0 ? -1 : 1 ;
+		// speed *= GameManager.getInstance().playerDirect > 0 ? -1 : 1 ;
 		Vector3 forward = new Vector3( speed, 0 , 0  );
 		m_character.SimpleMove(forward);
 		m_animator.SetTrigger("player_run");
@@ -92,7 +107,11 @@ public class PartnerMoving : MonoBehaviour {
 		m_animator.SetTrigger("player_idle");
 	}
 
-	public void OnReachEnd() {
+	public void OnReachEnd(float direct) {
+		if (!isPartnerDirect(direct)) {
+			return ;
+		}
+
 		this.gameObject.SetActive(false);
 		DestroyObject(this.gameObject);
 		//TODO: add coin and play coin flying animation .
@@ -100,13 +119,17 @@ public class PartnerMoving : MonoBehaviour {
 		this.removeEvent();
 	}
 
-	private void OnCatched() {
-		//TODO: add delegate function here .
-		DispatchManager.getInstance().onPartnerCatched.RemoveListener(this.OnCatched);
+	private void OnCatched(float direct ) {
+		if (isPartnerDirect(direct) ) {
 
-		DispatchManager.getInstance().onPartnerMove.AddListener(this.OnMove);
-		DispatchManager.getInstance().onPartnerStop.AddListener(this.OnStop);
-		DispatchManager.getInstance().onPartnerReached.AddListener(this.OnReachEnd);
+			DispatchManager.getInstance().onPartnerCatched.RemoveListener(this.OnCatched);
+
+			DispatchManager.getInstance().onPartnerMove.AddListener(this.OnMove);
+			DispatchManager.getInstance().onPartnerStop.AddListener(this.OnStop);
+			DispatchManager.getInstance().onPartnerReached.AddListener(this.OnReachEnd);		
+		}
+
+
 	}
 
 	private void removeEvent() {

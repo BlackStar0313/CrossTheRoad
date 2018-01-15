@@ -14,19 +14,21 @@ public class DispatchManager {
 	}
 
 	public class EventV3: UnityEvent<Vector3>  {}
+	public class EventFloatV3: UnityEvent<float,Vector3>  {}
 	public class EventFloat: UnityEvent<float>  {}
+	public class EventFloatFloat: UnityEvent<float ,float> {}
 
 
-	public EventFloat onPartnerMove = null; 
+	public EventFloatFloat onPartnerMove = null; 
 	public UnityEvent  onPartnerStop = null; 
-	public UnityEvent  onPartnerReached = null; 
-	public UnityEvent  onPartnerCatched = null; 
+	public EventFloat  onPartnerReached = null; 
+	public EventFloat  onPartnerCatched = null; 
 
 	public DispatchManager() {
-		onPartnerMove = new EventFloat();
+		onPartnerMove = new EventFloatFloat();
 		onPartnerStop = new UnityEvent();
-		onPartnerReached = new UnityEvent();
-		onPartnerCatched = new UnityEvent();
+		onPartnerReached = new EventFloat();
+		onPartnerCatched = new EventFloat();
 	}
 
 	// public delegate void EventHandler();

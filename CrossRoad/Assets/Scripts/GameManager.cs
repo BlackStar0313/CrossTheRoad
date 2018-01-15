@@ -30,8 +30,9 @@ public class GameManager : MonoBehaviour {
 		this.createPlayer();
 		this.CreateNewPartner(1, true);
 		this.CreateNewPartner(-1, true);
-		
-		DispatchManager.getInstance().onPartnerCatched.Invoke();
+
+		DispatchManager.getInstance().onPartnerCatched.Invoke(1 );
+		DispatchManager.getInstance().onPartnerCatched.Invoke(-1);
 	}
 
 	// Use this for initialization
@@ -85,6 +86,7 @@ public class GameManager : MonoBehaviour {
 
 	private void createPlayer() {
 		Instantiate(this.m_player);
+		playerDirect = 1;
 	}
 
 	public void CreateNewPartner(float direction, bool isPlaceHolder) {

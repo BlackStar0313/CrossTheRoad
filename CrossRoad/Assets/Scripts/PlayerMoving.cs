@@ -13,10 +13,9 @@ public class PlayerMoving : MonoBehaviour {
 
 	private bool m_isMoving = false ; 
 	private float m_moveStep = 1f;
-	private float m_moveSpeed = 2000f;
 	private float m_direction = 1.0f ; 
-	private float m_deltaDist = 1.0f;	//判断玩家是否到位置的一个范围.
-	private bool m_isNewRound = false ; 
+	private float m_deltaDist = 2.5f;	//判断玩家是否到位置的一个范围.
+	private bool m_isNewRound = true ; 
 
 	void Awake()
 	{
@@ -62,16 +61,21 @@ public class PlayerMoving : MonoBehaviour {
 
 		Vector3 endPos = this.m_direction > 0 ? this.m_endPos.position : this.m_startPos.position ; 
 		float deltaDist = this.m_deltaDist ;
-		if (this.m_rigidbody.position.x*this.m_direction - deltaDist < endPos.x*this.m_direction ) {
+		if (this.transform.position.x*this.m_direction - deltaDist < endPos.x*this.m_direction ) {
+			float oldDir = m_direction;
 			this.m_direction *= -1;
-			float angle = this.m_direction < 0 ? 90.0f : 270f;
-			// float angle = 180;
-			Quaternion turnRotation = Quaternion.Euler(0f,angle , 0f);
-			// this.m_rigidbody.MoveRotation(this.m_rigidbody.rotation * turnRotation);
-			this.transform.rotation = turnRotation;
+			GameManager.getInstance().playerDirect = m_direction;
 
-			DispatchManager.getInstance().onPartnerReached.Invoke();
-			DispatchManager.getInstance().onPartnerCatched.Invoke();
+			float speed = (endPos.x - this.transform.position.x) / Time.deltaTime;
+			Vector3 forward = new Vector3( speed, 0 , 0  );
+			m_character.SimpleMove(forward);
+
+			float angle = this.m_direction < 0 ? 90.0f : 270f;
+			Quaternion turnRotation = Quaternion.Euler(0f,angle , 0f);
+			m_character.transform.rotation = turnRotation;
+
+			DispatchManager.getInstance().onPartnerReached.Invoke(oldDir);
+			DispatchManager.getInstance().onPartnerCatched.Invoke(this.m_direction );
 
 			this.m_isNewRound = true ; 
 			return ; 
@@ -79,9 +83,10 @@ public class PlayerMoving : MonoBehaviour {
 
 		if (isLeft) {
 			StartCoroutine(SmoothMovement());
-			
+			if (m_isNewRound) {
+				GameManager.getInstance().CreateNewPartner(GameManager.getInstance().playerDirect ,false );
+			}
 			m_isNewRound = false ;
-			GameManager.getInstance().CreateNewPartner(GameManager.getInstance().playerDirect ,false );
 		}
 	}
 
@@ -94,7 +99,7 @@ public class PlayerMoving : MonoBehaviour {
 		speed *= this.m_direction > 0 ? -1 : 1 ;
 		Vector3 forward = new Vector3( speed, 0 , 0  );
 		m_character.SimpleMove(forward);
-		DispatchManager.getInstance().onPartnerMove.Invoke(speed);
+		DispatchManager.getInstance().onPartnerMove.Invoke(speed , this.m_direction);
 		yield return null ; 
 		
 
