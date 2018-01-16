@@ -26,7 +26,7 @@ public class PartnerMoving : MonoBehaviour {
 	 * direct 1 ,270度， -1 90度
 	 */
 	public void handleInit(float direct, bool isPlaceHolder) {
-		DispatchManager.getInstance().onPartnerCatched.AddListener(OnCatched) ;
+
 
 		m_currentDirect = direct > 0 ? EnumMovingDirect.normal : EnumMovingDirect.offoset ;
 		if (direct > 0 ) {
@@ -40,11 +40,11 @@ public class PartnerMoving : MonoBehaviour {
 		this.transform.rotation = getCurrentRotation(direct);
 
 		if (!isPlaceHolder) {
-			m_animator.SetTrigger("player_run");
+			m_controller.OnStartMove();
 			this.m_isStart = true ;
 		}
 		else {
-			m_animator.SetTrigger("player_idle");
+			m_controller.OnStopMove();
 			this.transform.position = direct > 0 ? new Vector3(m_startPos.position.x , transform.position.y, m_startPos.position.z) : new Vector3(m_endPos.position.x , transform.position.y, m_endPos.position.z);
 		}
 
@@ -52,10 +52,10 @@ public class PartnerMoving : MonoBehaviour {
 
 	// Use this for initialization
 	void Awake(){
-		this.m_rigidBody = GetComponent<Rigidbody>();
-		this.m_animator = GetComponent<Animator>();
-		this.m_character = GetComponent<CharacterController>();
-		this.m_controller = GetComponent<PartnerController>();
+		m_rigidBody = GetComponent<Rigidbody>();
+		m_animator = GetComponent<Animator>();
+		m_character = GetComponent<CharacterController>();
+		m_controller = GetComponent<PartnerController>();
 	}
 
 	private Quaternion getCurrentRotation(float direct) {
@@ -72,7 +72,7 @@ public class PartnerMoving : MonoBehaviour {
 			}
 			else {
 				this.m_isStart = false ; 
-				m_animator.SetTrigger("player_idle");
+				m_controller.OnStopMove();
 			}
 		}
 	}
@@ -85,7 +85,7 @@ public class PartnerMoving : MonoBehaviour {
 	}
 
 
-	private bool isPartnerDirect(float direct) {
+	public bool isPartnerDirect(float direct) {
 		return direct > 0 && m_currentDirect == EnumMovingDirect.normal || 
 				direct < 0 && m_currentDirect == EnumMovingDirect.offoset ;
 	}
@@ -102,48 +102,6 @@ public class PartnerMoving : MonoBehaviour {
 		// speed *= GameManager.getInstance().playerDirect > 0 ? -1 : 1 ;
 		Vector3 forward = new Vector3( speed, 0 , 0  );
 		m_character.SimpleMove(forward);
-		m_animator.SetTrigger("player_run");
-	}
-
-	public void OnStop() {
-		m_animator.SetTrigger("player_idle");
-	}
-
-	public void OnReachEnd(float direct) {
-		if (!isPartnerDirect(direct)) {
-			return ;
-		}
-
-		this.gameObject.SetActive(false);
-		DestroyObject(this.gameObject);
-		//TODO: add coin and play coin flying animation .
-
-		this.removeEvent();
-	}
-
-	public void OnPlayerCollidetion(Vector3 carPos, BasicCollider collider) {
-		if (typeof(PartnerCollider) != collider.GetType()) {
-			GameObject colliderObj = GameObject.FindGameObjectWithTag("partnerCollider");
-			colliderObj.GetComponent<PartnerCollider>().handleCarCollision(carPos, false);
-		}
-	}
-
-	private void OnCatched(float direct ) {
-		if (isPartnerDirect(direct) ) {
-
-			DispatchManager.getInstance().onPartnerCatched.RemoveListener(this.OnCatched);
-
-			DispatchManager.getInstance().onPartnerMove.AddListener(this.OnMove);
-			DispatchManager.getInstance().onPartnerStop.AddListener(this.OnStop);
-			DispatchManager.getInstance().onPartnerReached.AddListener(this.OnReachEnd);	
-			DispatchManager.getInstance().onCollidePlayer.AddListener(this.OnPlayerCollidetion);	
-		}
-	}
-
-	private void removeEvent() {
-		DispatchManager.getInstance().onPartnerMove.RemoveListener(this.OnMove);
-		DispatchManager.getInstance().onPartnerStop.RemoveListener(this.OnStop);
-		DispatchManager.getInstance().onPartnerReached.RemoveListener(this.OnReachEnd);
-		DispatchManager.getInstance().onCollidePlayer.RemoveListener(this.OnPlayerCollidetion);
+		m_controller.OnStartMove();
 	}
 }

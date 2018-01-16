@@ -7,10 +7,9 @@ public class PlayerMoving : MonoBehaviour {
 	public Transform m_startPos;
 	public Transform m_endPos;
 
-	private PartnerController m_controller ; 
+	private PlayerController m_controller ; 
 	private Rigidbody m_rigidbody ;
 	private CharacterController m_character ; 
-	private Animator m_animator;
 
 	private bool m_isMoving = false ; 
 	private float m_moveStep = 1f;
@@ -21,23 +20,13 @@ public class PlayerMoving : MonoBehaviour {
 	void Awake()
 	{
 		this.m_character = GetComponent<CharacterController>();
-		this.m_animator = GetComponent<Animator>();
-		this.m_controller = GetComponent<PartnerController>();
-		// this.m_rigidbody = GetComponent<Rigidbody>();
+		this.m_controller = GetComponent<PlayerController>();
 
-		// this.m_rigidbody.position = new Vector3(this.m_startPos.position.x , this.m_rigidbody.position.y , this.m_rigidbody.position.z ) ;
 		this.transform.position = new Vector3(this.m_startPos.position.x , this.transform.position.y , this.transform.position.z ) ;
-
-		DispatchManager.getInstance().onCollidePlayer.AddListener(this.OnPlayerCollidetion);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		// foreach (Touch touch in Input.touches) {
-		// 	Debug.Log("~~~dfdasfa ");
-
-		// }
-
 		this.handleTouch();
 	}
 
@@ -78,10 +67,9 @@ public class PlayerMoving : MonoBehaviour {
 			Quaternion turnRotation = Quaternion.Euler(0f,angle , 0f);
 			m_character.transform.rotation = turnRotation;
 
-			DispatchManager.getInstance().onPartnerReached.Invoke(oldDir);
-			DispatchManager.getInstance().onPartnerCatched.Invoke(this.m_direction );
-
 			this.m_isNewRound = true ; 
+
+			m_controller.onOneRoungEnd(m_direction);
 			return ; 
 		}
 
@@ -96,28 +84,18 @@ public class PlayerMoving : MonoBehaviour {
 
 	protected IEnumerator SmoothMovement() {
 		m_isMoving = true ; 
-		m_animator.SetTrigger("player_run");
-
 
 		float speed = m_moveStep / Time.deltaTime;
 		speed *= this.m_direction > 0 ? -1 : 1 ;
 		Vector3 forward = new Vector3( speed, 0 , 0  );
 		m_character.SimpleMove(forward);
-		DispatchManager.getInstance().onPartnerMove.Invoke(speed , this.m_direction);
+
+		m_controller.OnStartMove(speed , m_direction);
 		yield return null ; 
 		
 
 		m_isMoving = false ; 
-		m_animator.SetTrigger("player_idle");
-		DispatchManager.getInstance().onPartnerStop.Invoke();
-	}
-
-
-	public void OnPlayerCollidetion(Vector3 carPos , BasicCollider collider) {
-		if (typeof(PlayerCollider) != collider.GetType()) {
-			GameObject colliderObj = GameObject.FindGameObjectWithTag("playerCollider");
-			colliderObj.GetComponent<PlayerCollider>().handleCarCollision(carPos, false);
-		}
+		m_controller.OnStopMove();
 	}
 
 }
