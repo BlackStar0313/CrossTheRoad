@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PartnerController : BasicController {
     private PartnerMoving m_partnerMoving ; 
+	private bool m_isActToMove = false ; 
 
     protected override void Awake()
 	{
@@ -15,10 +16,17 @@ public class PartnerController : BasicController {
 
     public void OnStartMove() {
 		base.HandleStartMove();
+
+		if (m_isActToMove) {
+			DispatchManager.getInstance().onMoveUIHide.Invoke();
+		}
 	}
 
 	public void OnStopMove() {
 		base.HandleStopMove();
+		if (m_isActToMove) {
+			DispatchManager.getInstance().onMoveUIShow.Invoke();
+		}
 	}
 
 
@@ -32,10 +40,6 @@ public class PartnerController : BasicController {
 		}
 	}
 
-    public void OnStop() {
-		base.HandleStopMove();
-	}
-
 	public void OnReachEnd(float direct) {
 		if (!m_partnerMoving.isPartnerDirect(direct)) {
 			return ;
@@ -45,8 +49,11 @@ public class PartnerController : BasicController {
 		DestroyObject(this.gameObject);
 		//TODO: add coin and play coin flying animation .
 
-		this.removeEvent();
 	}
+
+	void OnDestroy() {
+		this.removeEvent();
+    }
 
     public void OnMove(float speed , float direct) {
         m_partnerMoving.OnMove(speed , direct);
@@ -56,19 +63,22 @@ public class PartnerController : BasicController {
 
 	private void OnCatched(float direct ) {
 		if (m_partnerMoving.isPartnerDirect(direct) ) {
+			m_isActToMove = true ; 
 
 			DispatchManager.getInstance().onPartnerCatched.RemoveListener(this.OnCatched);
 
 			DispatchManager.getInstance().onPartnerMove.AddListener(this.OnMove);
-			DispatchManager.getInstance().onPartnerStop.AddListener(this.OnStop);
+			DispatchManager.getInstance().onPartnerStop.AddListener(this.OnStopMove);
 			DispatchManager.getInstance().onPartnerReached.AddListener(this.OnReachEnd);	
 			DispatchManager.getInstance().onCollidePlayer.AddListener(this.OnPlayerCollidetion);	
+
+			DispatchManager.getInstance().onMoveUIActivity.Invoke(this.gameObject);
 		}
 	}
 
 	public void removeEvent() {
 		DispatchManager.getInstance().onPartnerMove.RemoveListener(this.OnMove);
-		DispatchManager.getInstance().onPartnerStop.RemoveListener(this.OnStop);
+		DispatchManager.getInstance().onPartnerStop.RemoveListener(this.OnStopMove);
 		DispatchManager.getInstance().onPartnerReached.RemoveListener(this.OnReachEnd);
 		DispatchManager.getInstance().onCollidePlayer.RemoveListener(this.OnPlayerCollidetion);
 	}

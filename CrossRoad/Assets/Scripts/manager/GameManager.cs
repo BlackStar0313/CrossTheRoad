@@ -18,8 +18,12 @@ public class GameManager : MonoBehaviour {
 	private float m_minIntervelCreateCarTime = 1f;
 	private float m_trafficIntervelCreateCarTime = 0.5f;
 
-	public bool isTrafficRed { get; set; }
-	public float playerDirect { get; set; }
+	[HideInInspector] public bool isTrafficRed { get; set; }
+	[HideInInspector] public float playerDirect { get; set; }
+	[HideInInspector] public bool isPlayerDead { get; set; }
+
+
+	[HideInInspector] public enumArrowDirection currentArrowDirect { get; set; }
 
 	public static GameManager getInstance() {
 		return GameManager.mInstance ; 
@@ -31,8 +35,9 @@ public class GameManager : MonoBehaviour {
 		this.CreateNewPartner(1, true);
 		this.CreateNewPartner(-1, true);
 
-		DispatchManager.getInstance().onPartnerCatched.Invoke(1 );
-		DispatchManager.getInstance().onPartnerCatched.Invoke(-1);
+		DispatchManager.getInstance().onPartnerCatched.Invoke( playerDirect );
+
+		this.ResetGame();
 	}
 
 	// Use this for initialization
@@ -93,6 +98,16 @@ public class GameManager : MonoBehaviour {
 		GameObject obj = Instantiate(this.m_partner);
 		PartnerMoving partner = obj.GetComponent<PartnerMoving>();
 		partner.handleInit(direction , isPlaceHolder);
+	}
+
+	public void ResetGame() {
+		isPlayerDead = false ; 
+	}
+
+	public void handlePlayerDead() {
+		isPlayerDead = true ; 
+
+		DispatchManager.getInstance().onMoveUIHide.Invoke();
 	}
 
 }

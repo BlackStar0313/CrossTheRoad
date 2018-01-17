@@ -13,6 +13,10 @@ public class PlayerController : BasicController {
         DispatchManager.getInstance().onCollidePlayer.AddListener(this.OnPlayerCollidetion);
 	}
 
+    void OnDestroy() {
+        DispatchManager.getInstance().onCollidePlayer.RemoveListener(this.OnPlayerCollidetion);
+    }
+
     public void OnStartMove(float speed ,float direction) {
 		base.HandleStartMove();
         DispatchManager.getInstance().onPartnerMove.Invoke(speed , direction);

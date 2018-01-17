@@ -27,6 +27,10 @@ public class PlayerMoving : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if (GameManager.getInstance().isPlayerDead) {
+			return ; 
+		}
+
 		this.handleTouch();
 	}
 

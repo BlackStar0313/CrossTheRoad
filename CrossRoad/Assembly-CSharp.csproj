@@ -60,6 +60,7 @@
      <Compile Include="Assets\Scripts\role\PlayerCollider.cs" />
      <Compile Include="Assets\Scripts\role\PlayerController.cs" />
      <Compile Include="Assets\Scripts\role\PlayerMoving.cs" />
+     <Compile Include="Assets\Scripts\ui\MoveArrow.cs" />
      <Compile Include="Assets\Scripts\ui\MoveUICtr.cs" />
      <Compile Include="Assets\Street_set\Scripts\CameraLook.cs" />
      <Compile Include="Assets\Street_set\Scripts\LightFlashing.cs" />

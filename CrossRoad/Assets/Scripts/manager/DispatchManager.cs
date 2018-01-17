@@ -14,24 +14,47 @@ public class DispatchManager {
 	}
 
 	public class EventV3: UnityEvent<Vector3>  {}
+	public class EventInt: UnityEvent<int>  {}
 	public class EventFloatV3: UnityEvent<float,Vector3>  {}
 	public class EventFloat: UnityEvent<float>  {}
 	public class EventFloatFloat: UnityEvent<float ,float> {}
 	public class EventV3Collider: UnityEvent<Vector3, BasicCollider>  {}
+	public class EventEmpty: UnityEvent {} 
+	public class EventGameObject: UnityEvent<GameObject> {} 
 
 
 	public EventFloatFloat onPartnerMove = null; 
-	public UnityEvent  onPartnerStop = null; 
+	public EventEmpty  onPartnerStop = null; 
 	public EventFloat  onPartnerReached = null; 
 	public EventFloat  onPartnerCatched = null; 
 	public EventV3Collider onCollidePlayer = null;
 
+	public EventEmpty onMoveUIShow = null ; 
+	public EventEmpty onMoveUIHide = null ; 
+	public EventGameObject onMoveUIActivity = null ;
+
 	public DispatchManager() {
 		onPartnerMove = new EventFloatFloat();
-		onPartnerStop = new UnityEvent();
+		onPartnerStop = new EventEmpty();
 		onPartnerReached = new EventFloat();
 		onPartnerCatched = new EventFloat();
 		onCollidePlayer = new EventV3Collider();
+
+		onMoveUIShow = new EventEmpty(); 
+		onMoveUIHide = new EventEmpty();
+		onMoveUIActivity = new EventGameObject();
+	}
+
+	public void ClearAll() {
+		onPartnerMove.RemoveAllListeners();
+		onPartnerStop.RemoveAllListeners();
+		onPartnerReached.RemoveAllListeners();
+		onPartnerCatched.RemoveAllListeners();
+		onCollidePlayer.RemoveAllListeners();
+
+		onMoveUIShow.RemoveAllListeners();
+		onMoveUIHide.RemoveAllListeners();
+		onMoveUIActivity.RemoveAllListeners();
 	}
 
 	// public delegate void EventHandler();
