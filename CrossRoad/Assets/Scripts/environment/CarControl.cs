@@ -81,6 +81,10 @@ public class CarControl : MonoBehaviour {
 
 
 	private bool isCanMove() {
+		if (GameManager.getInstance().isPlayerDead) {
+			return false; 
+		}
+
 		//是否到达终点
 		if (this.m_rigidBody.position.z*this.m_direction.z >= this.m_carEndPos.position.z*this.m_direction.z) {
 			this.gameObject.SetActive(false);

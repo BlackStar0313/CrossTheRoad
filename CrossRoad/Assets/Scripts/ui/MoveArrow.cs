@@ -18,13 +18,13 @@ public class MoveArrow : MonoBehaviour {
 	public void Show(enumArrowDirection direction , enumArrowType type ) {
 		if (direction == enumArrowDirection.left) {
 			Vector3 nowRotate = new Vector3(transform.localEulerAngles.x , transform.localEulerAngles.y , transform.localEulerAngles.z  ); 
-			Vector3 distRotate = new Vector3(transform.localEulerAngles.x , 0 , transform.localEulerAngles.z );
+			Vector3 distRotate = new Vector3(transform.localEulerAngles.x , 180 , transform.localEulerAngles.z );
 			Quaternion roll = Quaternion.Euler(distRotate - nowRotate);
 			transform.rotation *= roll ;
 		}
 		else {
 			Vector3 nowRotate = new Vector3(transform.localEulerAngles.x , transform.localEulerAngles.y , transform.localEulerAngles.z  ); 
-			Vector3 distRotate = new Vector3(transform.localEulerAngles.x , 180 , transform.localEulerAngles.z );
+			Vector3 distRotate = new Vector3(transform.localEulerAngles.x , 0 , transform.localEulerAngles.z );
 			Quaternion roll = Quaternion.Euler(distRotate - nowRotate);
 			transform.rotation *= roll ;
 		}

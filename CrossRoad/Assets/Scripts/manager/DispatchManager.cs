@@ -21,6 +21,7 @@ public class DispatchManager {
 	public class EventV3Collider: UnityEvent<Vector3, BasicCollider>  {}
 	public class EventEmpty: UnityEvent {} 
 	public class EventGameObject: UnityEvent<GameObject> {} 
+	public class EventGameObjectInt: UnityEvent<GameObject, int> {} 
 
 
 	public EventFloatFloat onPartnerMove = null; 
@@ -29,9 +30,9 @@ public class DispatchManager {
 	public EventFloat  onPartnerCatched = null; 
 	public EventV3Collider onCollidePlayer = null;
 
-	public EventEmpty onMoveUIShow = null ; 
+	public EventInt onMoveUIShow = null ; 
 	public EventEmpty onMoveUIHide = null ; 
-	public EventGameObject onMoveUIActivity = null ;
+	public EventGameObjectInt onMoveUIActivity = null ;
 
 	public DispatchManager() {
 		onPartnerMove = new EventFloatFloat();
@@ -40,9 +41,9 @@ public class DispatchManager {
 		onPartnerCatched = new EventFloat();
 		onCollidePlayer = new EventV3Collider();
 
-		onMoveUIShow = new EventEmpty(); 
+		onMoveUIShow = new EventInt(); 
 		onMoveUIHide = new EventEmpty();
-		onMoveUIActivity = new EventGameObject();
+		onMoveUIActivity = new EventGameObjectInt();
 	}
 
 	public void ClearAll() {

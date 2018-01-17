@@ -21,9 +21,11 @@ public class GameManager : MonoBehaviour {
 	[HideInInspector] public bool isTrafficRed { get; set; }
 	[HideInInspector] public float playerDirect { get; set; }
 	[HideInInspector] public bool isPlayerDead { get; set; }
+	
 
-
+	[HideInInspector] public enumArrowType currentArrowType { get; set; }
 	[HideInInspector] public enumArrowDirection currentArrowDirect { get; set; }
+	public bool isOffset { get; set; }
 
 	public static GameManager getInstance() {
 		return GameManager.mInstance ; 
@@ -55,6 +57,10 @@ public class GameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if (isPlayerDead) {
+			return ;
+		}
+
 		if (m_isStartCreateCar[0]) {
 			StartCoroutine(AutoCreateCar(0));
 		}

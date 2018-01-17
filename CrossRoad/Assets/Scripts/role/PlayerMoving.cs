@@ -38,16 +38,20 @@ public class PlayerMoving : MonoBehaviour {
 		if (Input.GetMouseButtonDown(0)) {
 			// Debug.Log("~~~ Pressed left click.  " + Input.mousePosition );
 			// Debug.Log(" screen width is " + Screen.width + " screen height is " + Screen.height);
-
-			if (Input.mousePosition.x < Screen.width/2) {
+			bool isLeft = Input.mousePosition.x < Screen.width/2 ? true : false ;
+			if ( (isLeft && (GameManager.getInstance().currentArrowDirect == enumArrowDirection.left && GameManager.getInstance().currentArrowType == enumArrowType.normal || 
+						    GameManager.getInstance().currentArrowDirect == enumArrowDirection.right && GameManager.getInstance().currentArrowType == enumArrowType.opposite  ) ) || 
+								 
+				 (!isLeft && (GameManager.getInstance().currentArrowDirect == enumArrowDirection.left && GameManager.getInstance().currentArrowType == enumArrowType.opposite ||
+				 			  GameManager.getInstance().currentArrowDirect == enumArrowDirection.right && GameManager.getInstance().currentArrowType == enumArrowType.normal))	
+				){
 				// Debug.Log("&&&&  left ");
-				this.move(true);
+				this.move(isLeft);
 			}
 			else {
 				// Debug.Log("******  right ");
-				this.move(false);
+				
 			}
-			
 		}
 	}
 
@@ -77,13 +81,12 @@ public class PlayerMoving : MonoBehaviour {
 			return ; 
 		}
 
-		if (isLeft) {
-			StartCoroutine(SmoothMovement());
-			if (m_isNewRound) {
-				GameManager.getInstance().CreateNewPartner(GameManager.getInstance().playerDirect ,false );
-			}
-			m_isNewRound = false ;
+
+		StartCoroutine(SmoothMovement());
+		if (m_isNewRound) {
+			GameManager.getInstance().CreateNewPartner(GameManager.getInstance().playerDirect ,false );
 		}
+		m_isNewRound = false ;
 	}
 
 	protected IEnumerator SmoothMovement() {

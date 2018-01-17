@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerController : BasicController {
     private PlayerMoving m_playerMoving ; 
-    
 
     protected override void Awake()
 	{

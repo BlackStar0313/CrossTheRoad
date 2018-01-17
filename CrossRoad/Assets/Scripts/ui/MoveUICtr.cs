@@ -34,10 +34,10 @@ public class MoveUICtr : MonoBehaviour {
 		DispatchManager.getInstance().onMoveUIHide.RemoveListener(this.onHide);
     }
 	
-	void init(GameObject obj) {
+	void init(GameObject obj, int arrowType) {
 		if (obj == m_parentObj) {
 			this.gameObject.SetActive(true);
-			this.onShow();
+			this.onShow(arrowType);
 
 			DispatchManager.getInstance().onMoveUIActivity.RemoveListener(this.init);
 
@@ -47,7 +47,7 @@ public class MoveUICtr : MonoBehaviour {
 
 	}
 
-	public void onShow() {
+	public void onShow(int arrowType) {
 		this.gameObject.SetActive(true);
 		enumArrowDirection direct = Random.Range(0.0f , 1.0f) > 0.5 ? enumArrowDirection.left : enumArrowDirection.right ; 
 
@@ -75,8 +75,7 @@ public class MoveUICtr : MonoBehaviour {
 		// transform.rotation = roll;
 
 
-		enumArrowType type = GameManager.getInstance().playerDirect > 0 ? enumArrowType.normal : enumArrowType.opposite;
-		m_arrow.Show( direct , type );
+		m_arrow.Show( direct , (enumArrowType)arrowType );
 	}
 
 	public void onHide() {

@@ -5,12 +5,16 @@ using UnityEngine;
 public class PartnerController : BasicController {
     private PartnerMoving m_partnerMoving ; 
 	private bool m_isActToMove = false ; 
+	private enumArrowType m_arrowType ; 
 
     protected override void Awake()
 	{
 		base.Awake();
         m_partnerMoving = GetComponent<PartnerMoving>();
 		DispatchManager.getInstance().onPartnerCatched.AddListener(OnCatched) ;
+
+
+		m_arrowType = Random.Range(0.0f,1.0f) > 0.5 ? enumArrowType.normal : enumArrowType.opposite;
 	}
 
 
@@ -25,7 +29,7 @@ public class PartnerController : BasicController {
 	public void OnStopMove() {
 		base.HandleStopMove();
 		if (m_isActToMove) {
-			DispatchManager.getInstance().onMoveUIShow.Invoke();
+			DispatchManager.getInstance().onMoveUIShow.Invoke((int)m_arrowType);
 		}
 	}
 
@@ -72,7 +76,8 @@ public class PartnerController : BasicController {
 			DispatchManager.getInstance().onPartnerReached.AddListener(this.OnReachEnd);	
 			DispatchManager.getInstance().onCollidePlayer.AddListener(this.OnPlayerCollidetion);	
 
-			DispatchManager.getInstance().onMoveUIActivity.Invoke(this.gameObject);
+			GameManager.getInstance().currentArrowType = this.m_arrowType;
+			DispatchManager.getInstance().onMoveUIActivity.Invoke(this.gameObject , (int)this.m_arrowType);
 		}
 	}
 
