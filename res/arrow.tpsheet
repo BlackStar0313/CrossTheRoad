@@ -1,0 +1,13 @@
+#
+# Sprite sheet data for Unity.
+#
+# To import these sprites into your Unity project, download "TexturePackerImporter":
+# http://www.codeandweb.com/texturepacker/unity
+#
+# Sprite sheet: arrow.png (256 x 512)
+# $TexturePacker:SmartUpdate:c85b5b56e516295f9380ac7fa6b6f409:9813d330c45cf7bc595e3bd5c0722aed:7ab85dd0d34bc114f91348060c1edfba$
+#
+
+arrow_green;2;42;190;138;0.48947368421052634;0.536231884057971
+arrow_red;2;382;198;128;0.494949494949495;0.546875
+think;2;182;196;198;0.5102040816326531;0.4949494949494949
