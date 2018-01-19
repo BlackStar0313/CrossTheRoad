@@ -2,10 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum EnumMovingDirect {
+	normal,
+	offoset
+}
+
+
 public class PartnerController : BasicController {
     private PartnerMoving m_partnerMoving ; 
 	private bool m_isActToMove = false ; 
 	private enumArrowType m_arrowType ; 
+	public EnumMovingDirect currentDirect { get; set;}
+
 
     protected override void Awake()
 	{

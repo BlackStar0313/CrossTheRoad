@@ -37,6 +37,7 @@ public class MoveUICtr : MonoBehaviour {
 	void init(GameObject obj, int arrowType) {
 		if (obj == m_parentObj) {
 			this.gameObject.SetActive(true);
+			this.initRotation();
 			this.onShow(arrowType);
 
 			DispatchManager.getInstance().onMoveUIActivity.RemoveListener(this.init);
@@ -53,33 +54,28 @@ public class MoveUICtr : MonoBehaviour {
 
 		GameManager.getInstance().currentArrowDirect = direct ; 
 
-		//TODO: 弄清楚旋转是怎么回事
-		if (transform.localEulerAngles.y > 90 && GameManager.getInstance().playerDirect > 0) {
-			Vector3 nowRotate = new Vector3(transform.localEulerAngles.x , transform.localEulerAngles.y , transform.localEulerAngles.z  ); 
-			Vector3 distRotate = new Vector3(transform.localEulerAngles.x , 32 , transform.localEulerAngles.z );
-			Quaternion roll = Quaternion.Euler(distRotate - nowRotate );
-			transform.rotation *= roll ;
-		}
-		else if (transform.localEulerAngles.y < 90 && GameManager.getInstance().playerDirect < 0) {
-			Vector3 nowRotate = new Vector3(transform.localEulerAngles.x , transform.localEulerAngles.y , transform.localEulerAngles.z  ); 
-			Vector3 distRotate = new Vector3(transform.localEulerAngles.x , 210 - 32, transform.localEulerAngles.z );
-			Quaternion roll = Quaternion.Euler(distRotate - nowRotate );
-			// transform.rotation = transform.parent.rotation;
-
-			// Quaternion roll = Quaternion.Euler(0,180,0 );
-			transform.rotation *= roll;
-		}
-
-		// Vector3 relativePos = m_cameraPos.position - transform.position;
-		// Quaternion roll = Quaternion.LookRotation(relativePos);
-		// transform.rotation = roll;
-
-
 		m_arrow.Show( direct , (enumArrowType)arrowType );
 	}
 
 	public void onHide() {
 		this.gameObject.SetActive(false);
+	}
+
+	private void initRotation () {
+		PartnerController controller = m_parentObj.GetComponent<PartnerController>() as PartnerController;
+		Quaternion add = controller.currentDirect == EnumMovingDirect.normal ? Quaternion.Euler(61 , -134 , 4) : Quaternion.Euler(62.5f , -48 , 6.2f);
+
+		//根据camera 找到面向的rotation作为基准，在便宜一个位置
+		Vector3 cameraPos = Camera.main.transform.localPosition;
+		Quaternion relative = Quaternion.LookRotation(transform.position ,  cameraPos);
+		transform.rotation = relative * add ; 
+
+		// 58 -6 9
+		//-3 127 -10
+
+
+		//61 -197 7
+		//-1.5 -149 0.8
 	}
 
 }

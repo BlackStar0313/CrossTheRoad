@@ -4,10 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 public class PartnerMoving : MonoBehaviour {
-	enum EnumMovingDirect {
-		normal,
-		offoset
-	}
+
 
 	public Transform m_startBornPos ; 
 	public Transform m_startPos; 
@@ -20,7 +17,6 @@ public class PartnerMoving : MonoBehaviour {
 	private Rigidbody m_rigidBody ;
 	private bool m_isStart = false ;
 	private Transform m_autoEndPos;
-	private EnumMovingDirect m_currentDirect ;
 	private float m_autoMoveStep = 0.05f;
 	/*
 	 * direct 1 ,270度， -1 90度
@@ -28,7 +24,7 @@ public class PartnerMoving : MonoBehaviour {
 	public void handleInit(float direct, bool isPlaceHolder) {
 
 
-		m_currentDirect = direct > 0 ? EnumMovingDirect.normal : EnumMovingDirect.offoset ;
+		m_controller.currentDirect = direct > 0 ? EnumMovingDirect.normal : EnumMovingDirect.offoset ;
 		if (direct > 0 ) {
 			this.transform.position = new Vector3(m_startBornPos.position.x , transform.position.y, m_startBornPos.position.z) ;
 			this.m_autoEndPos = m_startPos;
@@ -86,8 +82,8 @@ public class PartnerMoving : MonoBehaviour {
 
 
 	public bool isPartnerDirect(float direct) {
-		return direct > 0 && m_currentDirect == EnumMovingDirect.normal || 
-				direct < 0 && m_currentDirect == EnumMovingDirect.offoset ;
+		return direct > 0 && m_controller.currentDirect == EnumMovingDirect.normal || 
+				direct < 0 && m_controller.currentDirect == EnumMovingDirect.offoset ;
 	}
 
 
