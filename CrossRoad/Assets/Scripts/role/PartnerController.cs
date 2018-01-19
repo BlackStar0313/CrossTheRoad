@@ -72,14 +72,14 @@ public class PartnerController : BasicController {
     }
 
 
-
 	private void OnCatched(float direct ) {
 		if (m_partnerMoving.isPartnerDirect(direct) ) {
 			m_isActToMove = true ; 
 
 			DispatchManager.getInstance().onPartnerCatched.RemoveListener(this.OnCatched);
 
-			DispatchManager.getInstance().onPartnerMove.AddListener(this.OnMove);
+			DispatchManager.getInstance().onPartnerStartMove.AddListener(this.OnStartMove);
+			DispatchManager.getInstance().onPartnerMoveIng.AddListener(this.OnMove);
 			DispatchManager.getInstance().onPartnerStop.AddListener(this.OnStopMove);
 			DispatchManager.getInstance().onPartnerReached.AddListener(this.OnReachEnd);	
 			DispatchManager.getInstance().onCollidePlayer.AddListener(this.OnPlayerCollidetion);	
@@ -90,7 +90,8 @@ public class PartnerController : BasicController {
 	}
 
 	public void removeEvent() {
-		DispatchManager.getInstance().onPartnerMove.RemoveListener(this.OnMove);
+		DispatchManager.getInstance().onPartnerStartMove.RemoveListener(this.OnStartMove);
+		DispatchManager.getInstance().onPartnerMoveIng.RemoveListener(this.OnMove);
 		DispatchManager.getInstance().onPartnerStop.RemoveListener(this.OnStopMove);
 		DispatchManager.getInstance().onPartnerReached.RemoveListener(this.OnReachEnd);
 		DispatchManager.getInstance().onCollidePlayer.RemoveListener(this.OnPlayerCollidetion);

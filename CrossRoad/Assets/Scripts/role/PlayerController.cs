@@ -16,10 +16,14 @@ public class PlayerController : BasicController {
         DispatchManager.getInstance().onCollidePlayer.RemoveListener(this.OnPlayerCollidetion);
     }
 
-    public void OnStartMove(float speed ,float direction) {
-		base.HandleStartMove();
-        DispatchManager.getInstance().onPartnerMove.Invoke(speed , direction);
+    public void OnMoving(float speed ,float direction) {
+        DispatchManager.getInstance().onPartnerMoveIng.Invoke(speed , direction);
 	}
+
+    public void OnStartMove() {
+        base.HandleStartMove();
+        DispatchManager.getInstance().onPartnerStartMove.Invoke();
+    }
 
 	public void OnStopMove() {
 		base.HandleStopMove();

@@ -24,7 +24,8 @@ public class DispatchManager {
 	public class EventGameObjectInt: UnityEvent<GameObject, int> {} 
 
 
-	public EventFloatFloat onPartnerMove = null; 
+	public EventFloatFloat onPartnerMoveIng = null; 
+	public EventEmpty onPartnerStartMove = null; 
 	public EventEmpty  onPartnerStop = null; 
 	public EventFloat  onPartnerReached = null; 
 	public EventFloat  onPartnerCatched = null; 
@@ -35,7 +36,8 @@ public class DispatchManager {
 	public EventGameObjectInt onMoveUIActivity = null ;
 
 	public DispatchManager() {
-		onPartnerMove = new EventFloatFloat();
+		onPartnerMoveIng = new EventFloatFloat();
+		onPartnerStartMove = new EventEmpty();
 		onPartnerStop = new EventEmpty();
 		onPartnerReached = new EventFloat();
 		onPartnerCatched = new EventFloat();
@@ -47,7 +49,8 @@ public class DispatchManager {
 	}
 
 	public void ClearAll() {
-		onPartnerMove.RemoveAllListeners();
+		onPartnerMoveIng.RemoveAllListeners();
+		onPartnerStartMove.RemoveAllListeners();
 		onPartnerStop.RemoveAllListeners();
 		onPartnerReached.RemoveAllListeners();
 		onPartnerCatched.RemoveAllListeners();

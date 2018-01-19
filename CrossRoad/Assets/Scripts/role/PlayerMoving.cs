@@ -12,7 +12,8 @@ public class PlayerMoving : MonoBehaviour {
 	private CharacterController m_character ; 
 
 	private bool m_isMoving = false ; 
-	private float m_moveStep = 1f;
+	private float m_moveStep = 0.25f ;
+	private float m_moveSpeed = 2.0f;	
 	private float m_direction = 1.0f ; 
 	private float m_deltaDist = 2.5f;	//判断玩家是否到位置的一个范围.
 	private bool m_isNewRound = true ; 
@@ -91,14 +92,21 @@ public class PlayerMoving : MonoBehaviour {
 
 	protected IEnumerator SmoothMovement() {
 		m_isMoving = true ; 
+		m_controller.OnStartMove();
 
-		float speed = m_moveStep / Time.deltaTime;
-		speed *= this.m_direction > 0 ? -1 : 1 ;
-		Vector3 forward = new Vector3( speed, 0 , 0  );
-		m_character.SimpleMove(forward);
+		float dist = m_moveSpeed*Time.deltaTime*1000;
+		while (dist > 0) {
+			float speed = m_moveStep / Time.deltaTime;
+			float dir = this.m_direction > 0 ? -1 : 1 ;
+			Vector3 forward = new Vector3( speed * dir, 0 , 0  );
+			m_character.SimpleMove(forward);
 
-		m_controller.OnStartMove(speed , m_direction);
-		yield return null ; 
+			m_controller.OnMoving(speed* dir , m_direction);
+
+			dist -= speed;
+			yield return new WaitForSeconds(Time.deltaTime) ; 
+		}
+		
 		
 
 		m_isMoving = false ; 

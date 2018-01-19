@@ -98,6 +98,5 @@ public class PartnerMoving : MonoBehaviour {
 		// speed *= GameManager.getInstance().playerDirect > 0 ? -1 : 1 ;
 		Vector3 forward = new Vector3( speed, 0 , 0  );
 		m_character.SimpleMove(forward);
-		m_controller.OnStartMove();
 	}
 }
