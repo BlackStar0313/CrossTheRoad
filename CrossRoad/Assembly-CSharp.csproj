@@ -65,6 +65,7 @@
      <Compile Include="Assets\Street_set\Scripts\CameraLook.cs" />
      <Compile Include="Assets\Street_set\Scripts\LightFlashing.cs" />
      <Compile Include="Assets\Street_set\Scripts\Tiled_Texture_Animation.cs" />
+     <Compile Include="Assets\test\test.cs" />
      <None Include="Assets\Street_set\Standard Assets\Skyboxes\_skybox info.txt" />
      <None Include="Assets\Cartoon Hot Rod Coupe\manual.txt" />
  <Reference Include="UnityEngine.UI">
