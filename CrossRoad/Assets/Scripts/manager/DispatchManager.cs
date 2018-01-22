@@ -22,6 +22,7 @@ public class DispatchManager {
 	public class EventEmpty: UnityEvent {} 
 	public class EventGameObject: UnityEvent<GameObject> {} 
 	public class EventGameObjectInt: UnityEvent<GameObject, int> {} 
+	public class EventBool: UnityEvent<bool>  {}
 
 
 	public EventFloatFloat onPartnerMoveIng = null; 
@@ -35,6 +36,9 @@ public class DispatchManager {
 	public EventEmpty onMoveUIHide = null ; 
 	public EventGameObjectInt onMoveUIActivity = null ;
 
+	public EventBool onMoveWrong = null ; 
+	public EventEmpty onMoveRight = null ; 
+
 	public DispatchManager() {
 		onPartnerMoveIng = new EventFloatFloat();
 		onPartnerStartMove = new EventEmpty();
@@ -46,6 +50,9 @@ public class DispatchManager {
 		onMoveUIShow = new EventInt(); 
 		onMoveUIHide = new EventEmpty();
 		onMoveUIActivity = new EventGameObjectInt();
+
+		onMoveWrong = new EventBool();
+		onMoveRight = new EventEmpty();
 	}
 
 	public void ClearAll() {
@@ -59,6 +66,9 @@ public class DispatchManager {
 		onMoveUIShow.RemoveAllListeners();
 		onMoveUIHide.RemoveAllListeners();
 		onMoveUIActivity.RemoveAllListeners();
+
+		onMoveWrong.RemoveAllListeners();
+		onMoveRight.RemoveAllListeners();
 	}
 
 	// public delegate void EventHandler();

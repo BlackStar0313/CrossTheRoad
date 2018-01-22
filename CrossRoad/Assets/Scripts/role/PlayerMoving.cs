@@ -51,7 +51,7 @@ public class PlayerMoving : MonoBehaviour {
 			}
 			else {
 				// Debug.Log("******  right ");
-				
+				m_controller.OnMoveWrong(isLeft);
 			}
 		}
 	}

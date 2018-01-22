@@ -44,4 +44,10 @@ public class PlayerController : BasicController {
             }
 		}
 	}
+
+    public void OnMoveWrong(bool isLeft) {
+        GameObject warningUIObj = Instantiate(Resources.Load("WarningLayer") as GameObject);        
+        WarningUICtr ctr = warningUIObj.GetComponent<WarningUICtr>();
+        ctr.init(isLeft);
+    }
 }
