@@ -49,6 +49,10 @@ public class MoveUICtr : MonoBehaviour {
 	}
 
 	public void onShow(int arrowType) {
+		if (!GameManager.getInstance().IsPlaying()) {
+			return ; 
+		}
+
 		this.gameObject.SetActive(true);
 		enumArrowDirection direct = Random.Range(0.0f , 1.0f) > 0.5 ? enumArrowDirection.left : enumArrowDirection.right ; 
 

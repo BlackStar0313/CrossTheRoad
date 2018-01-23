@@ -51,8 +51,7 @@ public class BasicCollider : MonoBehaviour {
 
 		if (isDispatcher) {
 			DispatchManager.getInstance().onCollidePlayer.Invoke(carPos , this);
+			GameManager.getInstance().handlePlayerDead();
 		}
-
-		GameManager.getInstance().handlePlayerDead();
 	}
 }

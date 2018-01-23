@@ -12,8 +12,11 @@ public class GameLoader : MonoBehaviour {
 	{
 		this.initGameConfig();
 
-		if (GameManager.getInstance() == null) {
-			Instantiate(m_gameManager);
+		PlayerManager.getInstance().init();
+
+		if (GameManager.mInstance == null) {
+			GameManager obj = Instantiate(m_gameManager) as GameManager;
+			GameManager.mInstance = obj;
 		}
 
 		if (UIManager.getInstance() == null) {

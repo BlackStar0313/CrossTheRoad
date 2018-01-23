@@ -9,7 +9,8 @@ public class TrafficLightSingle : MonoBehaviour {
 	private EnumTrafficLight m_lightType ;
 
 	// Use this for initialization
-	void Start () {
+	void Awake()
+	{
 		m_myRenderer = this.GetComponent<Renderer>();
 		m_myRenderer.material.SetTextureScale(m_texturName, new Vector2(1.0f/4.0f,1.0f/4.0f));
 	}

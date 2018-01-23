@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEditor;
 using UnityEngine.SceneManagement;
 
-enum enumGameCurrentStatus {
+public enum enumGameCurrentStatus {
 	outside , 
 	starting , 
 	playing , 
@@ -54,13 +54,6 @@ public class GameManager : MonoBehaviour {
 
 	void Awake()
 	{
-		if (GameManager.mInstance == null) {
-			GameManager.mInstance = this;
-		}
-		else if (GameManager.mInstance != this) {
-			Destroy(gameObject);
-		}
-		// DontDestroyOnLoad(gameObject);
 		Debug.Log("");
 	}
 
@@ -68,8 +61,25 @@ public class GameManager : MonoBehaviour {
 		yield return StartCoroutine(RoundStarting());
 		yield return StartCoroutine(RoundPlaying());
 		yield return StartCoroutine(RoundEnding());
+	}
 
-		SceneManager.LoadScene(0);
+	private void handleRoundEnd() {
+		switch (currentStatus)
+		{
+			case enumGameCurrentStatus.starting: 
+			{
+				SceneManager.LoadScene(0);
+				break;
+			}
+			
+			case enumGameCurrentStatus.outside:
+			{
+
+				break;
+			}
+			default:
+				break;
+		}
 	}
 
 	IEnumerator RoundStarting() {
@@ -93,8 +103,14 @@ public class GameManager : MonoBehaviour {
 	}
 
 	IEnumerator RoundEnding() {
+		yield return new WaitForSeconds(1.5f) ; 
+		//create dead layer 
+		GameObject warningUIObj = Instantiate(Resources.Load("Prefebs/GameOverLayer") as GameObject);  
 
-		yield return new WaitForSeconds(3) ; 
+		while (IsPlayerDead())
+		{
+			yield return null ; 
+		}
 	}
 
 
@@ -160,6 +176,13 @@ public class GameManager : MonoBehaviour {
 
 		DispatchManager.getInstance().onMoveUIHide.Invoke();
 	}
+
+	public void HandleDeadNextStatus(enumGameCurrentStatus status) {
+		currentStatus = status ;
+		this.handleRoundEnd();
+	}
+
+
 
 	public bool IsPlayerDead() { return currentStatus == enumGameCurrentStatus.ending ; }
 	public bool IsPlaying() { return currentStatus == enumGameCurrentStatus.playing ; }

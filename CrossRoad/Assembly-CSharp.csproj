@@ -54,6 +54,7 @@
      <Compile Include="Assets\Scripts\environment\TrafficLightSingle.cs" />
      <Compile Include="Assets\Scripts\manager\DispatchManager.cs" />
      <Compile Include="Assets\Scripts\manager\GameManager.cs" />
+     <Compile Include="Assets\Scripts\manager\PlayerManager.cs" />
      <Compile Include="Assets\Scripts\manager\UIManager.cs" />
      <Compile Include="Assets\Scripts\role\BasicCollider.cs" />
      <Compile Include="Assets\Scripts\role\BasicController.cs" />
@@ -63,6 +64,7 @@
      <Compile Include="Assets\Scripts\role\PlayerCollider.cs" />
      <Compile Include="Assets\Scripts\role\PlayerController.cs" />
      <Compile Include="Assets\Scripts\role\PlayerMoving.cs" />
+     <Compile Include="Assets\Scripts\ui\GameOverLayerCtr.cs" />
      <Compile Include="Assets\Scripts\ui\MoveArrow.cs" />
      <Compile Include="Assets\Scripts\ui\MoveUICtr.cs" />
      <Compile Include="Assets\Scripts\ui\WarningUICtr.cs" />
