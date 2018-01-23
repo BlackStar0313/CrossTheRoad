@@ -30,7 +30,6 @@ public class BasicCollider : MonoBehaviour {
 
 		Vector3 move = m_direction * this.m_speed ;
 		m_speed -= m_drag;
-		Debug.Log("fdafgaklgjldjgladjslgjdklgjdalsgjdasgl");
 
 		this.m_parent.GetComponent<CharacterController>().Move(move * Time.deltaTime );
 

@@ -81,7 +81,7 @@ public class CarControl : MonoBehaviour {
 
 
 	private bool isCanMove() {
-		if (GameManager.getInstance().isPlayerDead) {
+		if (!GameManager.getInstance().IsPlaying()) {
 			return false; 
 		}
 

@@ -2,6 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using UnityEngine.SceneManagement;
+
+enum enumGameCurrentStatus {
+	outside , 
+	starting , 
+	playing , 
+	ending 
+}
 
 public class GameManager : MonoBehaviour {
 	public GameObject m_car;
@@ -17,10 +25,10 @@ public class GameManager : MonoBehaviour {
 	private float m_maxIntervelCreatCarTime = 2f ; 
 	private float m_minIntervelCreateCarTime = 1f;
 	private float m_trafficIntervelCreateCarTime = 0.5f;
+	private enumGameCurrentStatus currentStatus { get; set; }
 
 	[HideInInspector] public bool isTrafficRed { get; set; }
 	[HideInInspector] public float playerDirect { get; set; }
-	[HideInInspector] public bool isPlayerDead { get; set; }
 	
 
 	[HideInInspector] public enumArrowType currentArrowType { get; set; }
@@ -30,34 +38,70 @@ public class GameManager : MonoBehaviour {
 	public static GameManager getInstance() {
 		return GameManager.mInstance ; 
 	}
-	
-	private void init() {
-		isTrafficRed = false ;
-		this.createPlayer();
-		this.CreateNewPartner(1, true);
-		this.CreateNewPartner(-1, true);
 
-		DispatchManager.getInstance().onPartnerCatched.Invoke( playerDirect );
-
-		this.ResetGame();
+	GameManager() {
+		isTrafficRed = true ; 
+		playerDirect = 1 ; 
+		currentArrowType = enumArrowType.normal;
+		currentArrowDirect = enumArrowDirection.left ;
+		currentStatus = enumGameCurrentStatus.outside ; 
 	}
 
 	// Use this for initialization
-	void Awake () {
+	void Start() {
+		StartCoroutine(gameMainLoop());
+	}
+
+	void Awake()
+	{
 		if (GameManager.mInstance == null) {
 			GameManager.mInstance = this;
 		}
 		else if (GameManager.mInstance != this) {
 			Destroy(gameObject);
 		}
-		DontDestroyOnLoad(gameObject);
-
-		this.init();
+		// DontDestroyOnLoad(gameObject);
+		Debug.Log("");
 	}
+
+	IEnumerator gameMainLoop() {
+		yield return StartCoroutine(RoundStarting());
+		yield return StartCoroutine(RoundPlaying());
+		yield return StartCoroutine(RoundEnding());
+
+		SceneManager.LoadScene(0);
+	}
+
+	IEnumerator RoundStarting() {
+		this.ResetGame();
+		currentStatus = enumGameCurrentStatus.starting ; 
+
+		this.createPlayer();
+		this.CreateNewPartner(1, true);
+		this.CreateNewPartner(-1, true);
+
+		DispatchManager.getInstance().onPartnerCatched.Invoke( playerDirect );
+		yield return new WaitForSeconds(2);
+	}
+
+	IEnumerator RoundPlaying() {
+		currentStatus = enumGameCurrentStatus.playing;
+
+		while (currentStatus != enumGameCurrentStatus.ending) {
+			yield return null ; 
+		}
+	}
+
+	IEnumerator RoundEnding() {
+
+		yield return new WaitForSeconds(3) ; 
+	}
+
+
 	
 	// Update is called once per frame
 	void Update () {
-		if (isPlayerDead) {
+		if (!IsPlaying()) {
 			return ;
 		}
 
@@ -107,13 +151,17 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void ResetGame() {
-		isPlayerDead = false ; 
+		isTrafficRed = false ;
+		playerDirect = 1 ;
 	}
 
 	public void handlePlayerDead() {
-		isPlayerDead = true ; 
+		currentStatus = enumGameCurrentStatus.ending ;
 
 		DispatchManager.getInstance().onMoveUIHide.Invoke();
 	}
+
+	public bool IsPlayerDead() { return currentStatus == enumGameCurrentStatus.ending ; }
+	public bool IsPlaying() { return currentStatus == enumGameCurrentStatus.playing ; }
 
 }
