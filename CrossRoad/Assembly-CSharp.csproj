@@ -46,6 +46,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Demigiant\DOTween\Examples\Basics.cs" />
+     <Compile Include="Assets\Demigiant\DOTween\Examples\Sequences.cs" />
      <Compile Include="Assets\Scripts\GameLoader.cs" />
      <Compile Include="Assets\Scripts\environment\CarControl.cs" />
      <Compile Include="Assets\Scripts\environment\TrafficLightControl.cs" />
@@ -68,6 +70,10 @@
      <Compile Include="Assets\Street_set\Scripts\LightFlashing.cs" />
      <Compile Include="Assets\Street_set\Scripts\Tiled_Texture_Animation.cs" />
      <Compile Include="Assets\test\test.cs" />
+     <None Include="Assets\Demigiant\DOTween\DOTween46.xml" />
+     <None Include="Assets\Demigiant\DOTween\readme.txt" />
+     <None Include="Assets\Demigiant\DOTween\DOTween43.xml" />
+     <None Include="Assets\Demigiant\DOTween\DOTween50.xml" />
      <None Include="Assets\Street_set\Standard Assets\Skyboxes\_skybox info.txt" />
      <None Include="Assets\Cartoon Hot Rod Coupe\manual.txt" />
  <Reference Include="UnityEngine.UI">
@@ -90,6 +96,18 @@
  </Reference>
  <Reference Include="UnityEngine.VR">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll</HintPath>
+ </Reference>
+ <Reference Include="DOTween">
+ <HintPath>/Users/zhiweiliu/work/unity/crossTheRoad/CrossRoad/Assets/Demigiant/DOTween/DOTween.dll</HintPath>
+ </Reference>
+ <Reference Include="DOTween43">
+ <HintPath>/Users/zhiweiliu/work/unity/crossTheRoad/CrossRoad/Assets/Demigiant/DOTween/DOTween43.dll</HintPath>
+ </Reference>
+ <Reference Include="DOTween46">
+ <HintPath>/Users/zhiweiliu/work/unity/crossTheRoad/CrossRoad/Assets/Demigiant/DOTween/DOTween46.dll</HintPath>
+ </Reference>
+ <Reference Include="DOTween50">
+ <HintPath>/Users/zhiweiliu/work/unity/crossTheRoad/CrossRoad/Assets/Demigiant/DOTween/DOTween50.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
