@@ -67,6 +67,7 @@
      <Compile Include="Assets\Scripts\ui\GameOverLayerCtr.cs" />
      <Compile Include="Assets\Scripts\ui\MoveArrow.cs" />
      <Compile Include="Assets\Scripts\ui\MoveUICtr.cs" />
+     <Compile Include="Assets\Scripts\ui\PlayUICtr.cs" />
      <Compile Include="Assets\Scripts\ui\WarningUICtr.cs" />
      <Compile Include="Assets\Street_set\Scripts\CameraLook.cs" />
      <Compile Include="Assets\Street_set\Scripts\LightFlashing.cs" />

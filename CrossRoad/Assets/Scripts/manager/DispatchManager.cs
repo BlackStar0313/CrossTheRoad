@@ -38,6 +38,8 @@ public class DispatchManager {
 
 	public EventBool onMoveWrong = null ; 
 	public EventEmpty onMoveRight = null ; 
+	public EventEmpty onAddCoin = null ; 
+
 
 	public DispatchManager() {
 		onPartnerMoveIng = new EventFloatFloat();
@@ -53,6 +55,7 @@ public class DispatchManager {
 
 		onMoveWrong = new EventBool();
 		onMoveRight = new EventEmpty();
+		onAddCoin = new EventEmpty();
 	}
 
 	public void ClearAll() {
@@ -69,6 +72,7 @@ public class DispatchManager {
 
 		onMoveWrong.RemoveAllListeners();
 		onMoveRight.RemoveAllListeners();
+		onAddCoin.RemoveAllListeners();
 	}
 
 	// public delegate void EventHandler();

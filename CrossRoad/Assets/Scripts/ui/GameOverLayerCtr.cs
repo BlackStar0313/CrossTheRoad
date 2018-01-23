@@ -7,10 +7,12 @@ public class GameOverLayerCtr : MonoBehaviour {
 	public Text m_textScore ;
 	public Button m_btnContinue;
 	public Button m_btnHome ; 
+	public Text m_textTitle;
 
 	void Awake()
 	{
 		m_textScore.text = "Player Score: " + PlayerManager.getInstance().score.ToString() ; 
+		m_textTitle.text = GameManager.getInstance().deadType == enumDeadType.timeout ? "Time Out" : "Game Over";
 
 		m_btnContinue.onClick.AddListener(delegate() { this.handleTouch(m_btnContinue); });
 		m_btnHome.onClick.AddListener(delegate() { this.handleTouch(m_btnHome); });

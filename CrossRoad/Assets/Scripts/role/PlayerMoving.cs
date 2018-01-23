@@ -61,6 +61,8 @@ public class PlayerMoving : MonoBehaviour {
 			return ;
 		}
 
+		m_controller.OnMoveRight();
+
 		Vector3 endPos = this.m_direction > 0 ? this.m_endPos.position : this.m_startPos.position ; 
 		float deltaDist = this.m_deltaDist ;
 		if (this.transform.position.x*this.m_direction - deltaDist < endPos.x*this.m_direction ) {

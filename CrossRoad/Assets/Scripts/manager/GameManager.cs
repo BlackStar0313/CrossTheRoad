@@ -11,6 +11,11 @@ public enum enumGameCurrentStatus {
 	ending 
 }
 
+public enum enumDeadType {
+	timeout ,
+	hit
+}
+
 public class GameManager : MonoBehaviour {
 	public GameObject m_car;
 	public GameObject m_player ; 
@@ -33,7 +38,8 @@ public class GameManager : MonoBehaviour {
 
 	[HideInInspector] public enumArrowType currentArrowType { get; set; }
 	[HideInInspector] public enumArrowDirection currentArrowDirect { get; set; }
-	public bool isOffset { get; set; }
+	[HideInInspector] public enumDeadType deadType { get; set; }
+	[HideInInspector] public bool isOffset { get; set; }
 
 	public static GameManager getInstance() {
 		return GameManager.mInstance ; 
@@ -103,7 +109,9 @@ public class GameManager : MonoBehaviour {
 	}
 
 	IEnumerator RoundEnding() {
-		yield return new WaitForSeconds(1.5f) ; 
+		if (deadType == enumDeadType.hit)
+			yield return new WaitForSeconds(1.5f) ; 
+			
 		//create dead layer 
 		GameObject warningUIObj = Instantiate(Resources.Load("Prefebs/GameOverLayer") as GameObject);  
 
@@ -171,7 +179,9 @@ public class GameManager : MonoBehaviour {
 		playerDirect = 1 ;
 	}
 
-	public void handlePlayerDead() {
+	public void handlePlayerDead(bool isTimeOut) {
+		deadType = isTimeOut ? enumDeadType.timeout : enumDeadType.hit;
+
 		currentStatus = enumGameCurrentStatus.ending ;
 
 		DispatchManager.getInstance().onMoveUIHide.Invoke();

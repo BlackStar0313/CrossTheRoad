@@ -33,6 +33,7 @@ public class PlayerController : BasicController {
     public void onOneRoungEnd(float currentDirect) {
         DispatchManager.getInstance().onPartnerReached.Invoke(currentDirect*-1);
         DispatchManager.getInstance().onPartnerCatched.Invoke(currentDirect );
+        DispatchManager.getInstance().onAddCoin.Invoke();
     }
 
     public void OnPlayerCollidetion(Vector3 carPos , BasicCollider collider) {
@@ -49,5 +50,9 @@ public class PlayerController : BasicController {
         GameObject warningUIObj = Instantiate(Resources.Load("Prefebs/WarningLayer") as GameObject);        
         WarningUICtr ctr = warningUIObj.GetComponent<WarningUICtr>();
         ctr.init(isLeft);
+    }
+
+    public void OnMoveRight() {
+        DispatchManager.getInstance().onMoveRight.Invoke();
     }
 }

@@ -7,6 +7,12 @@ public class PlayerManager {
 
 	public int score { get; set; }
 
+
+
+	public int addScoreSpeed { get { return m_addScoreSpeed; } set { m_addScoreSpeed = value; } }  
+	private int m_addScoreSpeed = 4 ;
+
+
 	public static PlayerManager getInstance() {
 		if (PlayerManager.m_instance == null) {
 			PlayerManager.m_instance = new PlayerManager();
