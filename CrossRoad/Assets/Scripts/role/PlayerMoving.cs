@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class PlayerMoving : MonoBehaviour {
 
@@ -28,7 +30,7 @@ public class PlayerMoving : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (GameManager.getInstance().IsPlayerDead()) {
+		if (!GameManager.getInstance().IsPlaying()) {
 			return ; 
 		}
 
@@ -37,6 +39,12 @@ public class PlayerMoving : MonoBehaviour {
 
 	private void handleTouch() {
 		if (Input.GetMouseButtonDown(0)) {
+			if (EventSystem.current.IsPointerOverGameObject ()) {
+				GameObject obj = EventSystem.current.currentSelectedGameObject  	;
+				if (obj && obj.tag == "TouchUI") {
+					return ;
+				}
+			}
 			// Debug.Log("~~~ Pressed left click.  " + Input.mousePosition );
 			// Debug.Log(" screen width is " + Screen.width + " screen height is " + Screen.height);
 			bool isLeft = Input.mousePosition.x < Screen.width/2 ? true : false ;
