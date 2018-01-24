@@ -41,9 +41,11 @@ public class PlayerMoving : MonoBehaviour {
 		if (Input.GetMouseButtonDown(0)) {
 			if (EventSystem.current.IsPointerOverGameObject ()) {
 				GameObject obj = EventSystem.current.currentSelectedGameObject  	;
-				if (obj && obj.tag == "TouchUI") {
-					return ;
-				}
+				//TODO: 需要找个方法来区分touch的东西是什么
+				// if (!obj || obj.tag != "TouchThroughUI") {
+				// 	return ;
+				// }
+				return ;
 			}
 			// Debug.Log("~~~ Pressed left click.  " + Input.mousePosition );
 			// Debug.Log(" screen width is " + Screen.width + " screen height is " + Screen.height);

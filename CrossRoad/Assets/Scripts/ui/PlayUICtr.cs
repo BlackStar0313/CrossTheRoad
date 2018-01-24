@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class PlayUICtr : MonoBehaviour {
 	public Text m_textCoin ;
 	public Slider m_Slider ; 
+	public Button m_pause ; 
 
 	private float m_decreaseTime = 6;
 	private float m_addStep = 0.3f;
@@ -17,6 +18,8 @@ public class PlayUICtr : MonoBehaviour {
 
 		DispatchManager.getInstance().onMoveRight.AddListener(OnAddSlider);
 		DispatchManager.getInstance().onAddCoin.AddListener(OnAddCoin);
+
+		m_pause.onClick.AddListener(delegate() { this.handleTouch(m_pause); });
 	}
 
 	void OnDestroy()
@@ -47,5 +50,9 @@ public class PlayUICtr : MonoBehaviour {
 		PlayerManager.getInstance().score += PlayerManager.getInstance().addScoreSpeed;
 		//TODO: add animation and practice
 		this.m_textCoin.text = PlayerManager.getInstance().score.ToString();
+	}
+
+	void handleTouch(Button btn) {
+		Instantiate(Resources.Load("Prefebs/PauseLayer")) ;
 	}
 }
