@@ -11,15 +11,18 @@ public class PauseLayerCtr : MonoBehaviour {
 	{
 		m_btnContinue.onClick.AddListener(delegate() {this.handleTouch(m_btnContinue );} );
 		m_btnHome.onClick.AddListener(delegate() {this.handleTouch(m_btnHome );} );
+
+		Time.timeScale = 0;
 	}
 
 	private void handleTouch(Button btn) {
 		if (btn == m_btnContinue) {
 			gameObject.SetActive(false);
 			Destroy(gameObject);
+			Time.timeScale = 1 ;
 		}
 		else if (btn == m_btnHome) {
-			
+			Time.timeScale = 1 ;
 		}
 	}
 

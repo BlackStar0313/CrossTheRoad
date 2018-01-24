@@ -197,4 +197,8 @@ public class GameManager : MonoBehaviour {
 	public bool IsPlayerDead() { return currentStatus == enumGameCurrentStatus.ending ; }
 	public bool IsPlaying() { return currentStatus == enumGameCurrentStatus.playing ; }
 
+	public void PauseGame(bool isPause) {
+		Time.timeScale = isPause ? 0 : 1;
+	}
+
 }
