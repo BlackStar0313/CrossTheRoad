@@ -106,11 +106,11 @@
  <Reference Include="DOTween43">
  <HintPath>/Users/zhiweiliu/work/unity/crossTheRoad/CrossRoad/Assets/Demigiant/DOTween/DOTween43.dll</HintPath>
  </Reference>
- <Reference Include="DOTween46">
- <HintPath>/Users/zhiweiliu/work/unity/crossTheRoad/CrossRoad/Assets/Demigiant/DOTween/DOTween46.dll</HintPath>
- </Reference>
  <Reference Include="DOTween50">
  <HintPath>/Users/zhiweiliu/work/unity/crossTheRoad/CrossRoad/Assets/Demigiant/DOTween/DOTween50.dll</HintPath>
+ </Reference>
+ <Reference Include="DOTween46">
+ <HintPath>/Users/zhiweiliu/work/unity/crossTheRoad/CrossRoad/Assets/Demigiant/DOTween/DOTween46.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
