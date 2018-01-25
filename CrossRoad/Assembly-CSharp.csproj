@@ -65,6 +65,7 @@
      <Compile Include="Assets\Scripts\role\PlayerController.cs" />
      <Compile Include="Assets\Scripts\role\PlayerMoving.cs" />
      <Compile Include="Assets\Scripts\ui\GameOverLayerCtr.cs" />
+     <Compile Include="Assets\Scripts\ui\MenuUICtr.cs" />
      <Compile Include="Assets\Scripts\ui\MoveArrow.cs" />
      <Compile Include="Assets\Scripts\ui\MoveUICtr.cs" />
      <Compile Include="Assets\Scripts\ui\PauseLayerCtr.cs" />

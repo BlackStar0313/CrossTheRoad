@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameLoader : MonoBehaviour {
 
 	public GameManager m_gameManager = null  ; 
-	public UIManager m_UIManager = null  ; 
+	// public UIManager m_UIManager = null  ; 
 
 	// Use this for initialization
 	void Awake()
@@ -19,9 +19,9 @@ public class GameLoader : MonoBehaviour {
 			GameManager.mInstance = obj;
 		}
 
-		if (UIManager.getInstance() == null) {
-			Instantiate(m_UIManager);
-		}
+		// if (UIManager.getInstance() == null) {
+		// 	Instantiate(m_UIManager);
+		// }
 	} 
 
 	private void initGameConfig() {

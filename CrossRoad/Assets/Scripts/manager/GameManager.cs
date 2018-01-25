@@ -77,7 +77,7 @@ public class GameManager : MonoBehaviour {
 		{
 			case enumGameCurrentStatus.starting: 
 			{
-				SceneManager.LoadScene(0);
+				SceneManager.LoadScene("Main");
 				break;
 			}
 			
@@ -203,6 +203,16 @@ public class GameManager : MonoBehaviour {
 
 	public void PauseGame(bool isPause) {
 		Time.timeScale = isPause ? 0 : 1;
+	}
+
+	public void LoadMenuScene() {
+		this.Clear();
+		SceneManager.LoadScene("Menu");
+	}
+
+	public void Clear() {
+		gameObject.SetActive(false);
+		Destroy(gameObject);
 	}
 
 }

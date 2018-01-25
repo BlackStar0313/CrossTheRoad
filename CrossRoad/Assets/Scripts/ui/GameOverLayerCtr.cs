@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameOverLayerCtr : MonoBehaviour {
@@ -29,8 +30,7 @@ public class GameOverLayerCtr : MonoBehaviour {
 			Destroy(gameObject);
 		}
 		else if (btn == m_btnHome) {
-			// GameManager.getInstance().HandleDeadNextStatus(enumGameCurrentStatus.outside);
-			Debug.Log("~~~~~~~~  next home ");
+			GameManager.getInstance().LoadMenuScene();
 		}
 	}
 

@@ -22,7 +22,7 @@ public class PauseLayerCtr : MonoBehaviour {
 			Time.timeScale = 1 ;
 		}
 		else if (btn == m_btnHome) {
-			Time.timeScale = 1 ;
+			GameManager.getInstance().LoadMenuScene();
 		}
 	}
 
