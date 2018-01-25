@@ -36,7 +36,7 @@ public class MoveUICtr : MonoBehaviour {
 	
 	void init(GameObject obj, int arrowType) {
 		if (obj == m_parentObj) {
-			this.gameObject.SetActive(true);
+			// this.gameObject.SetActive(true);
 			this.initRotation();
 			this.onShow(arrowType);
 

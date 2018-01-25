@@ -60,6 +60,8 @@ public class GameManager : MonoBehaviour {
 	// Use this for initialization
 	void Start() {
 		StartCoroutine(gameMainLoop());
+
+		doCameraAct();
 	}
 
 	void Awake()
@@ -106,6 +108,7 @@ public class GameManager : MonoBehaviour {
 
 	IEnumerator RoundPlaying() {
 		currentStatus = enumGameCurrentStatus.playing;
+		DispatchManager.getInstance().onStartGame.Invoke();
 
 		while (currentStatus != enumGameCurrentStatus.ending) {
 			yield return null ; 
@@ -228,6 +231,13 @@ public class GameManager : MonoBehaviour {
 			this.Clear();
 			SceneManager.LoadScene("Main");
 		});
+	}
+
+	private void doCameraAct() {
+		CameraCtr camera = Camera.main.GetComponent<CameraCtr>();
+		if (camera) {
+			camera.DoBeginAct();
+		}
 	}
 
 	public void Clear() {

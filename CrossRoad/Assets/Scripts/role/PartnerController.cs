@@ -71,6 +71,10 @@ public class PartnerController : BasicController {
         m_partnerMoving.OnMove(speed , direct);
     }
 
+	public void OnStartGame() {
+		DispatchManager.getInstance().onMoveUIShow.Invoke((int)m_arrowType);
+	}
+
 
 	private void OnCatched(float direct ) {
 		if (m_partnerMoving.isPartnerDirect(direct) ) {
@@ -82,7 +86,9 @@ public class PartnerController : BasicController {
 			DispatchManager.getInstance().onPartnerMoveIng.AddListener(this.OnMove);
 			DispatchManager.getInstance().onPartnerStop.AddListener(this.OnStopMove);
 			DispatchManager.getInstance().onPartnerReached.AddListener(this.OnReachEnd);	
-			DispatchManager.getInstance().onCollidePlayer.AddListener(this.OnPlayerCollidetion);	
+			DispatchManager.getInstance().onCollidePlayer.AddListener(this.OnPlayerCollidetion);
+			DispatchManager.getInstance().onStartGame.AddListener(this.OnStartGame);	
+			
 
 			GameManager.getInstance().currentArrowType = this.m_arrowType;
 			DispatchManager.getInstance().onMoveUIActivity.Invoke(this.gameObject , (int)this.m_arrowType);
@@ -95,5 +101,6 @@ public class PartnerController : BasicController {
 		DispatchManager.getInstance().onPartnerStop.RemoveListener(this.OnStopMove);
 		DispatchManager.getInstance().onPartnerReached.RemoveListener(this.OnReachEnd);
 		DispatchManager.getInstance().onCollidePlayer.RemoveListener(this.OnPlayerCollidetion);
+		DispatchManager.getInstance().onStartGame.RemoveListener(this.OnStartGame);	
 	}
 }
