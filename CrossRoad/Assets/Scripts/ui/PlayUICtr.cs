@@ -11,9 +11,9 @@ public class PlayUICtr : MonoBehaviour {
 	private float m_decreaseTime = 6;
 	private float m_addStep = 0.3f;
 
-	void Awake()
+	void Start()
 	{
-		m_textCoin.text = "0" ; 
+		m_textCoin.text = GameManager.getInstance().currentScore.ToString();
 		m_Slider.value = 1 ;
 
 		DispatchManager.getInstance().onMoveRight.AddListener(OnAddSlider);
@@ -47,9 +47,9 @@ public class PlayUICtr : MonoBehaviour {
 	}
 
 	void OnAddCoin() {
-		PlayerManager.getInstance().score += PlayerManager.getInstance().addScoreSpeed;
+		GameManager.getInstance().currentScore += PlayerManager.getInstance().addScoreSpeed;
 		//TODO: add animation and practice
-		this.m_textCoin.text = PlayerManager.getInstance().score.ToString();
+		this.m_textCoin.text = GameManager.getInstance().currentScore.ToString();
 	}
 
 	void handleTouch(Button btn) {

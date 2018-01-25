@@ -41,6 +41,8 @@ public class GameManager : MonoBehaviour {
 	[HideInInspector] public enumDeadType deadType { get; set; }
 	[HideInInspector] public bool isOffset { get; set; }
 
+	[HideInInspector] public int currentScore { get; set; }
+
 	public static GameManager getInstance() {
 		return GameManager.mInstance ; 
 	}
@@ -51,6 +53,7 @@ public class GameManager : MonoBehaviour {
 		currentArrowType = enumArrowType.normal;
 		currentArrowDirect = enumArrowDirection.left ;
 		currentStatus = enumGameCurrentStatus.outside ; 
+		currentScore = 0;
 	}
 
 	// Use this for initialization
@@ -177,6 +180,7 @@ public class GameManager : MonoBehaviour {
 	public void ResetGame() {
 		isTrafficRed = false ;
 		playerDirect = 1 ;
+		currentScore = 0 ; 
 	}
 
 	public void handlePlayerDead(bool isTimeOut) {

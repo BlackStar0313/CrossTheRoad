@@ -184,7 +184,7 @@ public class CarControl : MonoBehaviour {
 		if (this.isCanCreateCar() ) {
 			this.gameObject.SetActive(false);
 			DestroyObject(this.gameObject);
-			Debug.Log("~~~~~~~~~~  cannot create a car ");
+			// Debug.Log("~~~~~~~~~~  cannot create a car ");
 		}
 	}
 }
