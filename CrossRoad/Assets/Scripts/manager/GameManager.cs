@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 using UnityEngine.SceneManagement;
+using DG.Tweening;
 
 public enum enumGameCurrentStatus {
 	outside , 
@@ -77,7 +78,7 @@ public class GameManager : MonoBehaviour {
 		{
 			case enumGameCurrentStatus.starting: 
 			{
-				SceneManager.LoadScene("Main");
+				LoadGameScene();
 				break;
 			}
 			
@@ -206,8 +207,27 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void LoadMenuScene() {
-		this.Clear();
-		SceneManager.LoadScene("Menu");
+		currentStatus = enumGameCurrentStatus.outside ; 
+
+		GameObject obj = Instantiate(Resources.Load("Prefebs/Cloud")) as GameObject;
+		CloudMoving move = obj.GetComponent<CloudMoving>();
+		move.ShowBegin(true);
+
+		DOVirtual.DelayedCall(2.5f, ()=>{
+			this.Clear();
+			SceneManager.LoadScene("Menu");
+		});
+	}
+
+	public void LoadGameScene() {
+		GameObject obj = Instantiate(Resources.Load("Prefebs/Cloud")) as GameObject;
+		CloudMoving move = obj.GetComponent<CloudMoving>();
+		move.ShowBegin(true);
+
+		DOVirtual.DelayedCall(2.5f, ()=>{
+			this.Clear();
+			SceneManager.LoadScene("Main");
+		});
 	}
 
 	public void Clear() {

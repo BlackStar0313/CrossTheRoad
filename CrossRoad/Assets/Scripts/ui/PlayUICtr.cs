@@ -20,6 +20,8 @@ public class PlayUICtr : MonoBehaviour {
 		DispatchManager.getInstance().onAddCoin.AddListener(OnAddCoin);
 
 		m_pause.onClick.AddListener(delegate() { this.handleTouch(m_pause); });
+
+		handleFrog();
 	}
 
 	void OnDestroy()
@@ -54,5 +56,11 @@ public class PlayUICtr : MonoBehaviour {
 
 	void handleTouch(Button btn) {
 		Instantiate(Resources.Load("Prefebs/PauseLayer")) ;
+	}
+
+	private void handleFrog() {
+		GameObject obj = Instantiate(Resources.Load("Prefebs/Cloud")) as GameObject;
+		CloudMoving move = obj.GetComponent<CloudMoving>();
+		move.HideBegin(true);
 	}
 }

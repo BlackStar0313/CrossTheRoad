@@ -64,6 +64,7 @@
      <Compile Include="Assets\Scripts\role\PlayerCollider.cs" />
      <Compile Include="Assets\Scripts\role\PlayerController.cs" />
      <Compile Include="Assets\Scripts\role\PlayerMoving.cs" />
+     <Compile Include="Assets\Scripts\ui\CloudMoving.cs" />
      <Compile Include="Assets\Scripts\ui\GameOverLayerCtr.cs" />
      <Compile Include="Assets\Scripts\ui\MenuUICtr.cs" />
      <Compile Include="Assets\Scripts\ui\MoveArrow.cs" />
