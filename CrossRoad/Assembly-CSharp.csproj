@@ -49,10 +49,14 @@
      <Compile Include="Assets\Demigiant\DOTween\Examples\Basics.cs" />
      <Compile Include="Assets\Demigiant\DOTween\Examples\Sequences.cs" />
      <Compile Include="Assets\Scripts\CameraCtr.cs" />
+     <Compile Include="Assets\Scripts\Data\Datarole.cs" />
+     <Compile Include="Assets\Scripts\Data\Datashop.cs" />
+     <Compile Include="Assets\Scripts\Data\LocalDataCollection.cs" />
      <Compile Include="Assets\Scripts\GameLoader.cs" />
      <Compile Include="Assets\Scripts\environment\CarControl.cs" />
      <Compile Include="Assets\Scripts\environment\TrafficLightControl.cs" />
      <Compile Include="Assets\Scripts\environment\TrafficLightSingle.cs" />
+     <Compile Include="Assets\Scripts\manager\DataManager.cs" />
      <Compile Include="Assets\Scripts\manager\DispatchManager.cs" />
      <Compile Include="Assets\Scripts\manager\GameManager.cs" />
      <Compile Include="Assets\Scripts\manager\PlayerManager.cs" />
@@ -65,6 +69,7 @@
      <Compile Include="Assets\Scripts\role\PlayerCollider.cs" />
      <Compile Include="Assets\Scripts\role\PlayerController.cs" />
      <Compile Include="Assets\Scripts\role\PlayerMoving.cs" />
+     <Compile Include="Assets\Scripts\role\RoleSwtichModle.cs" />
      <Compile Include="Assets\Scripts\ui\CloudMoving.cs" />
      <Compile Include="Assets\Scripts\ui\GameOverLayerCtr.cs" />
      <Compile Include="Assets\Scripts\ui\MenuUICtr.cs" />

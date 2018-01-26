@@ -1,0 +1,28 @@
+{
+	"role": {"data":[
+		{
+			"idx": 1,
+			"name": "punk1",
+			"body_name": "body1",
+			"head_name": "head1"
+		},
+		{
+			"idx": 2,
+			"name": "punk2",
+			"body_name": "body2",
+			"head_name": "head2"
+		}
+	]},
+	"shop": {"data":[
+		{
+			"idx": 1,
+			"name": "shop1",
+			"price": 100
+		},
+		{
+			"idx": 2,
+			"name": "shop2",
+			"price": 200
+		}
+	]} 
+}
