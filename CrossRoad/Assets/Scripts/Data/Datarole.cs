@@ -10,6 +10,7 @@ public struct StrDatarole {
 	public string name;
 	public string body_name;
 	public string head_name;
+	public string glass_name;
 }
 
 [Serializable]

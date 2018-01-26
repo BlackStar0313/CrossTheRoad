@@ -7,7 +7,6 @@ using System.Collections.Generic;
 [Serializable]
 public struct StrDatashop {
 	public int idx;
-	public string name;
 	public int price;
 }
 

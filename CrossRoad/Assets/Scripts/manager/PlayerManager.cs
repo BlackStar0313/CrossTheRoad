@@ -7,6 +7,8 @@ using System;
 public class PlayerInfo {
 	public int score ;
 	public int roundHighScore;
+	public List<int> roles ; 
+	public int currentRole;
 
 	public void UpdateScore(int roundScore ) {
 		score += roundScore ;
@@ -18,6 +20,9 @@ public class PlayerInfo {
 	public PlayerInfo() {
 		score = 0 ; 
 		roundHighScore = 0 ;
+		roles = new List<int>();		//默认有一个角色
+		roles.Add(1);
+		currentRole = 1 ; 
 	}
 
 	public PlayerInfo PaseJson(string jsonString) {
@@ -61,7 +66,7 @@ public class PlayerManager {
 	}
 
 	public void init() {
-		// PlayerPrefs.DeleteAll();
+		PlayerPrefs.DeleteAll();
 
 		m_playerInfo = new PlayerInfo();
 		string jsonData = m_playerInfo.GetJsonStringFromLocal();
@@ -70,4 +75,16 @@ public class PlayerManager {
 	}
 
 	public PlayerInfo GetPlayerInfo() { return m_playerInfo; }
+
+	public bool isScoreEnough(int price) {
+		return m_playerInfo.score >= price ;
+	}
+
+	public void BuyRole(int price , int roleIdx) {
+		if (m_playerInfo.score >= price) {
+			m_playerInfo.score -= price ; 
+			m_playerInfo.roles.Add(roleIdx);
+			m_playerInfo.saveToLocal();
+		}
+	}
 }

@@ -7,8 +7,6 @@ public class RoleSwtichModle : MonoBehaviour {
 	private string m_currentHeadName = "head_64_punk_C";
 	private string m_prefix = "Bip001/Bip001 Pelvis/Bip001 Spine/Bip001 Neck/Bip001 Head/HEAD_CONTAINER/";
 
-	private string testBody1 = "Body_31_punk_B";
-	private string testHead1 = "head_62_punk_A";
 
 	void Start()
 	{
@@ -17,8 +15,15 @@ public class RoleSwtichModle : MonoBehaviour {
 		bodyObj.SetActive(false);
 		headObj.SetActive(false);
 
-		GameObject bodyObj1 = gameObject.transform.Find(testBody1).gameObject;
-		GameObject headObj1 = gameObject.transform.Find(m_prefix + testHead1).gameObject;
+		StrDatarole? roleData = DataManager.getInstance().GetRoleDataByIdx(PlayerManager.getInstance().GetPlayerInfo().currentRole);
+		if (!roleData.HasValue) {
+			Debug.LogError("wrong data");
+			return ; 
+		}
+		StrDatarole data = roleData.GetValueOrDefault();
+
+		GameObject bodyObj1 = gameObject.transform.Find(data.body_name).gameObject;
+		GameObject headObj1 = gameObject.transform.Find(m_prefix + data.head_name).gameObject;
 		bodyObj1.SetActive(true);
 		headObj1.SetActive(true);
 		Debug.Log("");
