@@ -43,23 +43,23 @@ public class DataManager {
 		return m_localAllData.role.data;
 	}
 
-	public StrDatarole? GetRoleDataByIdx(int idx) {
+	public StrDatarole GetRoleDataByIdx(int idx) {
 		for (int i = 0 ; i < m_localAllData.role.data.Length ; ++i) {
 			if (m_localAllData.role.data[i].idx == idx) 
 				return m_localAllData.role.data[i];
 		}
-		return null ; 
+		return default(StrDatarole) ; 
 	}
 
 	public StrDatashop[] GetShopData() {
 		return m_localAllData.shop.data;
 	}
 
-	public StrDatashop? GetShopDataByIdx(int idx) {
+	public StrDatashop GetShopDataByIdx(int idx) {
 		for (int i = 0 ; i < m_localAllData.shop.data.Length ; ++i) {
 			if (m_localAllData.shop.data[i].idx == idx) 
 				return m_localAllData.shop.data[i];
 		}
-		return null ; 
+		return default(StrDatashop) ; 
 	}
 }

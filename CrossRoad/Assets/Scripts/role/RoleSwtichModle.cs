@@ -15,17 +15,22 @@ public class RoleSwtichModle : MonoBehaviour {
 		bodyObj.SetActive(false);
 		headObj.SetActive(false);
 
-		StrDatarole? roleData = DataManager.getInstance().GetRoleDataByIdx(PlayerManager.getInstance().GetPlayerInfo().currentRole);
-		if (!roleData.HasValue) {
-			Debug.LogError("wrong data");
-			return ; 
+		StrDatarole roleData = DataManager.getInstance().GetRoleDataByIdx(PlayerManager.getInstance().GetPlayerInfo().currentRole);
+		try
+		{
+			GameObject bodyObj1 = gameObject.transform.Find(roleData.body_name).gameObject;
+			GameObject headObj1 = gameObject.transform.Find(m_prefix + roleData.head_name).gameObject;
+			bodyObj1.SetActive(true);
+			headObj1.SetActive(true);
+			Debug.Log("");
 		}
-		StrDatarole data = roleData.GetValueOrDefault();
+		catch (System.Exception)
+		{
+			bodyObj.SetActive(true);
+			headObj.SetActive(true);
+			Debug.LogError("wrong data ");
+			throw;
+		}
 
-		GameObject bodyObj1 = gameObject.transform.Find(data.body_name).gameObject;
-		GameObject headObj1 = gameObject.transform.Find(m_prefix + data.head_name).gameObject;
-		bodyObj1.SetActive(true);
-		headObj1.SetActive(true);
-		Debug.Log("");
 	}
 }
