@@ -14,5 +14,8 @@ public class ShopItemCell : MonoBehaviour {
 		StrDatashop shopData = DataManager.getInstance().GetShopDataByIdx(shopIdx);
 
 		m_textPrice.text = shopData.price.ToString();
+
+		ShopItemRole roleCtr = m_itemPlayer.GetComponent<ShopItemRole>();
+		roleCtr.HandleInit(shopData.role_idx);
 	}
 }

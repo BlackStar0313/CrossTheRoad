@@ -80,6 +80,7 @@
      <Compile Include="Assets\Scripts\ui\PlayUICtr.cs" />
      <Compile Include="Assets\Scripts\ui\ShopItemCell.cs" />
      <Compile Include="Assets\Scripts\ui\ShopItemList.cs" />
+     <Compile Include="Assets\Scripts\ui\ShopItemRole.cs" />
      <Compile Include="Assets\Scripts\ui\WarningUICtr.cs" />
      <Compile Include="Assets\Street_set\Scripts\CameraLook.cs" />
      <Compile Include="Assets\Street_set\Scripts\LightFlashing.cs" />
