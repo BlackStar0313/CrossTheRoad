@@ -34,7 +34,9 @@ public class MenuUICtr : MonoBehaviour {
 			DOVirtual.DelayedCall(m_fadeTime, ()=> SceneManager.LoadScene("Main"));
 		}
 		else if (btn == m_btnShop) {
-
+			// fadeButton(0);
+			// DOVirtual.DelayedCall(m_fadeTime, ()=> SceneManager.LoadScene("Shop"));
+			SceneManager.LoadScene("Shop");
 		}
 	}
 

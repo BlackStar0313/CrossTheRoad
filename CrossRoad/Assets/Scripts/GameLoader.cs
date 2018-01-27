@@ -10,11 +10,6 @@ public class GameLoader : MonoBehaviour {
 	// Use this for initialization
 	void Awake()
 	{
-		this.initGameConfig();
-
-		PlayerManager.getInstance().init();
-		DataManager.getInstance().init();
-
 		if (GameManager.mInstance == null) {
 			GameManager obj = Instantiate(m_gameManager) as GameManager;
 			GameManager.mInstance = obj;
@@ -24,13 +19,4 @@ public class GameLoader : MonoBehaviour {
 		// 	Instantiate(m_UIManager);
 		// }
 	} 
-
-	private void initGameConfig() {
-		Application.targetFrameRate = 60 ;
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }

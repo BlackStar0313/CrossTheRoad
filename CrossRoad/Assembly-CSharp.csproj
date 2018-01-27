@@ -52,6 +52,7 @@
      <Compile Include="Assets\Scripts\Data\Datarole.cs" />
      <Compile Include="Assets\Scripts\Data\Datashop.cs" />
      <Compile Include="Assets\Scripts\Data\LocalDataCollection.cs" />
+     <Compile Include="Assets\Scripts\GameInstantManager.cs" />
      <Compile Include="Assets\Scripts\GameLoader.cs" />
      <Compile Include="Assets\Scripts\environment\CarControl.cs" />
      <Compile Include="Assets\Scripts\environment\TrafficLightControl.cs" />
@@ -77,6 +78,8 @@
      <Compile Include="Assets\Scripts\ui\MoveUICtr.cs" />
      <Compile Include="Assets\Scripts\ui\PauseLayerCtr.cs" />
      <Compile Include="Assets\Scripts\ui\PlayUICtr.cs" />
+     <Compile Include="Assets\Scripts\ui\ShopItemCell.cs" />
+     <Compile Include="Assets\Scripts\ui\ShopItemList.cs" />
      <Compile Include="Assets\Scripts\ui\WarningUICtr.cs" />
      <Compile Include="Assets\Street_set\Scripts\CameraLook.cs" />
      <Compile Include="Assets\Street_set\Scripts\LightFlashing.cs" />
