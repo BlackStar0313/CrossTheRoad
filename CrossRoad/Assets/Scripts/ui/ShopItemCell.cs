@@ -70,6 +70,14 @@ public class ShopItemCell : MonoBehaviour {
 		HandleBtnStatus();
 
 		//TODO: handle animator 
+
+		ShopItemRole itemRole = m_itemPlayer.GetComponent<ShopItemRole>();
+		if (m_isSelected) {
+			itemRole.handleAnimation(false);
+		}
+		else {
+			itemRole.handleAnimation(true);
+		}
 	}
 
 	public void onSelected(int selectedShopIdx) {
@@ -81,8 +89,7 @@ public class ShopItemCell : MonoBehaviour {
 		m_isSelected = !m_isSelected ; 
 		m_imgRect.gameObject.SetActive(m_isSelected); 
 		
-		HandleBtnStatus();
-
+		refreshShow();
 	}
 
 	private void HandleBtnStatus () {
