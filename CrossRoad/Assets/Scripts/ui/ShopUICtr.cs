@@ -11,17 +11,24 @@ public class ShopUICtr : MonoBehaviour {
 	void Start()
 	{
 		m_btnHome.onClick.AddListener(()=> handleTouch(m_btnHome));
-		m_textScore.text = PlayerManager.getInstance().GetPlayerInfo().score.ToString();
+		DispatchManager.getInstance().onRefreshShopShow.AddListener(refreshUIShow);
+
+		refreshUIShow();
 	}
 
 	void OnDestroy()
 	{
 		m_btnHome.onClick.RemoveAllListeners();
+		DispatchManager.getInstance().onRefreshShopShow.RemoveListener(refreshUIShow);
 	}
 
 	private void handleTouch(Button btn) {
 		if (btn == m_btnHome) { 
 			SceneManager.LoadScene("Menu");
 		}
+	}
+
+	public void refreshUIShow() {
+		m_textScore.text = PlayerManager.getInstance().GetPlayerInfo().score.ToString();
 	}
 }

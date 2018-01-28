@@ -66,12 +66,17 @@ public class PlayerManager {
 	}
 
 	public void init() {
-		PlayerPrefs.DeleteAll();
+		// PlayerPrefs.DeleteAll();
 
 		m_playerInfo = new PlayerInfo();
 		string jsonData = m_playerInfo.GetJsonStringFromLocal();
 		Debug.Log("~~~~~~~~~~  jsonData " + jsonData);
 		m_playerInfo = m_playerInfo.PaseJson(jsonData);
+
+
+		//test code 
+		// PlayerManager.getInstance().GetPlayerInfo().UpdateScore(500);
+		// PlayerManager.getInstance().GetPlayerInfo().saveToLocal();
 	}
 
 	public PlayerInfo GetPlayerInfo() { return m_playerInfo; }

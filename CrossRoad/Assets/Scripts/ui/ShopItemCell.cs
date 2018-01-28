@@ -37,6 +37,7 @@ public class ShopItemCell : MonoBehaviour {
 		m_btnConfirm.onClick.AddListener(()=> handleTouch(m_btnConfirm));
 
 		DispatchManager.getInstance().onSelectShopItem.AddListener(this.onSelected);
+
 	}
 
 	void OnDestroy()
@@ -58,11 +59,17 @@ public class ShopItemCell : MonoBehaviour {
 
 		//handle ui show .
 		m_textPrice.text = shopData.price.ToString();
-		HandleBtnStatus();
+		refreshShow();
 
 		//set role showing .
 		ShopItemRole roleCtr = m_itemPlayer.GetComponent<ShopItemRole>();
 		roleCtr.HandleInit(shopData.role_idx);
+	}
+
+	private void refreshShow() {
+		HandleBtnStatus();
+
+		//TODO: handle animator 
 	}
 
 	public void onSelected(int selectedShopIdx) {
@@ -106,9 +113,18 @@ public class ShopItemCell : MonoBehaviour {
 
 	private void handleTouch(Button btn) {
 		if (btn == m_btnBuy) { 
-	
+			StrDatashop shopData = DataManager.getInstance().GetShopDataByIdx(m_shopIdx);
+			if (PlayerManager.getInstance().GetPlayerInfo().score >= shopData.price ) {
+				PlayerManager.getInstance().BuyRole(shopData.price , shopData.role_idx);
+				DispatchManager.getInstance().onRefreshShopShow.Invoke();
+
+				this.refreshShow();
+			}
 		}
 		else if (btn == m_btnConfirm) {
+			StrDatashop shopData = DataManager.getInstance().GetShopDataByIdx(m_shopIdx);
+			PlayerManager.getInstance().GetPlayerInfo().currentRole = shopData.role_idx;
+			PlayerManager.getInstance().GetPlayerInfo().saveToLocal();
 			SceneManager.LoadScene("Menu");
 		}
 	}
