@@ -9,6 +9,8 @@ public class ShopSelectItem : MonoBehaviour, IPointerClickHandler  {
 
 	public void OnPointerClick(PointerEventData eventData) {
         ShopItemCell cell = m_shopItem.GetComponent<ShopItemCell>();
-		cell.onSelected();
+		DispatchManager.getInstance().onSelectShopItem.Invoke(cell.GetShopIdx());
+
+		ShopManager.getInstance().currentSelectedRoleIdx = cell.GetShopIdx();
 	}
 }

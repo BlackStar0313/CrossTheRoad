@@ -52,15 +52,16 @@
      <Compile Include="Assets\Scripts\Data\Datarole.cs" />
      <Compile Include="Assets\Scripts\Data\Datashop.cs" />
      <Compile Include="Assets\Scripts\Data\LocalDataCollection.cs" />
-     <Compile Include="Assets\Scripts\GameInstantManager.cs" />
      <Compile Include="Assets\Scripts\GameLoader.cs" />
      <Compile Include="Assets\Scripts\environment\CarControl.cs" />
      <Compile Include="Assets\Scripts\environment\TrafficLightControl.cs" />
      <Compile Include="Assets\Scripts\environment\TrafficLightSingle.cs" />
      <Compile Include="Assets\Scripts\manager\DataManager.cs" />
      <Compile Include="Assets\Scripts\manager\DispatchManager.cs" />
+     <Compile Include="Assets\Scripts\manager\GameInstantManager.cs" />
      <Compile Include="Assets\Scripts\manager\GameManager.cs" />
      <Compile Include="Assets\Scripts\manager\PlayerManager.cs" />
+     <Compile Include="Assets\Scripts\manager\ShopManager.cs" />
      <Compile Include="Assets\Scripts\manager\UIManager.cs" />
      <Compile Include="Assets\Scripts\role\BasicCollider.cs" />
      <Compile Include="Assets\Scripts\role\BasicController.cs" />

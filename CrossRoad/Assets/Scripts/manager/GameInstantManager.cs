@@ -10,6 +10,7 @@ public class GameInstantManager : MonoBehaviour {
 
 		PlayerManager.getInstance().init();
 		DataManager.getInstance().init();
+		ShopManager.getInstance().init();
 
 		DontDestroyOnLoad(this);
 	}

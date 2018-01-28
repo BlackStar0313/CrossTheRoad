@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ShopItemCell : MonoBehaviour {
 	enum enumShopItemCellBtnType {
@@ -17,27 +18,43 @@ public class ShopItemCell : MonoBehaviour {
 	public Button m_btnConfirm;
 
 	private int m_shopIdx; 
-	private bool m_isSelected;
+	private bool m_isSelected ;
+	// private bool m_isSelected { get { return m_isSelected; } 
+	// 	set { 
+	// 		m_isSelected = value ; 
+	// 		m_imgRect.enabled = m_isSelected ; 
+	// 	} 
+	// }
 
-	void Start()
+	public int GetShopIdx() { return m_shopIdx; }
+
+	void Awake()
 	{
-		m_imgRect.enabled = false ; 
+		m_imgRect.gameObject.SetActive(false); 
 		m_isSelected = false ; 
 
 		m_btnBuy.onClick.AddListener(()=> handleTouch(m_btnBuy));
 		m_btnConfirm.onClick.AddListener(()=> handleTouch(m_btnConfirm));
+
+		DispatchManager.getInstance().onSelectShopItem.AddListener(this.onSelected);
 	}
 
 	void OnDestroy()
 	{
 		m_btnBuy.onClick.RemoveListener(()=> handleTouch(m_btnBuy));
 		m_btnConfirm.onClick.RemoveListener(()=> handleTouch(m_btnConfirm));
+
+		DispatchManager.getInstance().onSelectShopItem.RemoveListener(this.onSelected);
 	}
 	
 
 	public void Init(int shopIdx) {
-		StrDatashop shopData = DataManager.getInstance().GetShopDataByIdx(shopIdx);
 		m_shopIdx = shopIdx;
+		StrDatashop shopData = DataManager.getInstance().GetShopDataByIdx(shopIdx);
+		if (ShopManager.getInstance().currentSelectedRoleIdx == shopData.role_idx) {
+			m_isSelected = true ; 
+			m_imgRect.gameObject.SetActive(m_isSelected); 
+		}
 
 		//handle ui show .
 		m_textPrice.text = shopData.price.ToString();
@@ -48,11 +65,17 @@ public class ShopItemCell : MonoBehaviour {
 		roleCtr.HandleInit(shopData.role_idx);
 	}
 
-	public void onSelected() {
-		m_isSelected = !m_isSelected ; 
-		m_imgRect.enabled = m_isSelected ; 
+	public void onSelected(int selectedShopIdx) {
+		if (selectedShopIdx == m_shopIdx && m_isSelected ||
+			selectedShopIdx != m_shopIdx && !m_isSelected ) {
+			return ;
+		}
 
+		m_isSelected = !m_isSelected ; 
+		m_imgRect.gameObject.SetActive(m_isSelected); 
+		
 		HandleBtnStatus();
+
 	}
 
 	private void HandleBtnStatus () {
@@ -86,7 +109,7 @@ public class ShopItemCell : MonoBehaviour {
 	
 		}
 		else if (btn == m_btnConfirm) {
-	
+			SceneManager.LoadScene("Menu");
 		}
 	}
 }

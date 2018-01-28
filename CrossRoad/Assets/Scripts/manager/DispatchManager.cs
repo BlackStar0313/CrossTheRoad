@@ -41,6 +41,7 @@ public class DispatchManager {
 	public EventEmpty onAddCoin = null ; 
 
 	public EventEmpty onStartGame = null ; 
+	public EventInt onSelectShopItem = null ;
 
 
 	public DispatchManager() {
@@ -60,6 +61,7 @@ public class DispatchManager {
 		onAddCoin = new EventEmpty();
 
 		onStartGame = new EventEmpty();
+		onSelectShopItem = new EventInt();
 	}
 
 	public void ClearAll() {
@@ -79,6 +81,7 @@ public class DispatchManager {
 		onAddCoin.RemoveAllListeners();
 
 		onStartGame.RemoveAllListeners();
+		onSelectShopItem.RemoveAllListeners();
 	}
 
 	// public delegate void EventHandler();
