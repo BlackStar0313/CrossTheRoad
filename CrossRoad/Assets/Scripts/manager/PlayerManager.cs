@@ -87,4 +87,13 @@ public class PlayerManager {
 			m_playerInfo.saveToLocal();
 		}
 	}
+
+	public bool isOwnedRole(int roleIdx) {
+		for (int i = 0 ; i < m_playerInfo.roles.Count ; ++i) {
+			if (roleIdx == m_playerInfo.roles[i]) {
+				return true ;
+			}
+		}
+		return false ; 
+	}
 }
