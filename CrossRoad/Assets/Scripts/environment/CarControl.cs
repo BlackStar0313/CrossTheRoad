@@ -129,12 +129,18 @@ public class CarControl : MonoBehaviour {
 	}
 
 	private bool isNearCars <T>(out T targetCar) where T: Component {
-		Vector3 startPos = this.m_rigidBody.position ; 
+		Vector3 startPos = this.m_rigidBody.position + new Vector3(0,1f,0);
 
 		RaycastHit hit ;
 		this.m_capsuleCollider.enabled = false ;
 		bool isNear = Physics.Raycast(startPos , Vector3.forward * this.m_direction.z , out hit , this.m_RaycasthitDist , this.m_blockingLayer);
 		this.m_capsuleCollider.enabled = true ; 
+
+		Debug.DrawLine(startPos,startPos+ Vector3.forward * this.m_direction.z * this.m_RaycasthitDist,Color.red);  //这个就是绘制出的射线了，包含发射位置，发射距离和射线的颜色；  
+
+		if (isNear) {
+			Debug.Log("!~~~isNearCars");
+		}
 
 		targetCar = hit.transform ? hit.transform.GetComponent<T>() : null ; 
 

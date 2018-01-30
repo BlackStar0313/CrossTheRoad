@@ -18,7 +18,7 @@ public enum enumDeadType {
 }
 
 public class GameManager : MonoBehaviour {
-	public GameObject m_car;
+	public GameObject[] m_cars;
 	public GameObject m_player ; 
 	public GameObject m_partner;
 	public Transform[] m_carStartPos;
@@ -136,21 +136,21 @@ public class GameManager : MonoBehaviour {
 			return ;
 		}
 
-		// if (m_isStartCreateCar[0]) {
-		// 	StartCoroutine(AutoCreateCar(0));
-		// }
+		if (m_isStartCreateCar[0]) {
+			StartCoroutine(AutoCreateCar(0));
+		}
 
-		// if (m_isStartCreateCar[1]) {
-		// 	StartCoroutine(AutoCreateCar(1));
-		// }
+		if (m_isStartCreateCar[1]) {
+			StartCoroutine(AutoCreateCar(1));
+		}
 
-		// if (m_isStartCreateCar[2]) {
-		// 	StartCoroutine(AutoCreateCar(2));
-		// }
+		if (m_isStartCreateCar[2]) {
+			StartCoroutine(AutoCreateCar(2));
+		}
 
-		// if (m_isStartCreateCar[3]) {
-		// 	StartCoroutine(AutoCreateCar(3));
-		// }
+		if (m_isStartCreateCar[3]) {
+			StartCoroutine(AutoCreateCar(3));
+		}
 	}
 
 	protected IEnumerator AutoCreateCar(int idx) {
@@ -158,7 +158,7 @@ public class GameManager : MonoBehaviour {
 
 		float randTime = m_trafficIntervelCreateCarTime;
 		if (!isTrafficRed) {
-			GameObject obj = Instantiate(this.m_car);
+			GameObject obj = Instantiate(RandomCar());
 			CarControl car = obj.GetComponent<CarControl>();
 			car.HandleInit(this.m_carStartPos[idx], this.m_carPausePos[idx] , this.m_carEndPos[idx]);
 			randTime = Random.Range(m_minIntervelCreateCarTime, m_maxIntervelCreatCarTime);
@@ -168,6 +168,13 @@ public class GameManager : MonoBehaviour {
 		yield return new WaitForSeconds(randTime) ; 
 
 		this.m_isStartCreateCar[idx] = true ; 
+	}
+
+	private GameObject RandomCar() {
+		int randomIdx = Random.Range(0, m_cars.Length);
+		//test code 
+		// randomIdx = 1 ;
+		return m_cars[randomIdx];
 	}
 
 	private void createPlayer() {

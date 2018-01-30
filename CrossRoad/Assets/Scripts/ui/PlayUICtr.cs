@@ -47,6 +47,9 @@ public class PlayUICtr : MonoBehaviour {
 
 	void Update()
 	{
+		//test code 
+		return ;
+
 		if (m_Slider.value <=0 || !GameManager.getInstance().IsPlaying()) {
 			return ;
 		}
