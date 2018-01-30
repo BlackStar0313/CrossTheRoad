@@ -12,12 +12,14 @@ public class PlayUICtr : MonoBehaviour {
 	public GameObject m_heart;
 	public Camera m_currentCamera;
 	public Camera m_heartCamera;
+	public Image m_imgWarning ;
 
 	private float m_decreaseTime = 6;
 	private float m_addStep = 0.3f;
 	private float m_randDist = 1.2f;
 
 	private int m_showScore = 0;
+	private float m_warningPercent = 0.4f;
 
 	void Start()
 	{
@@ -27,6 +29,7 @@ public class PlayUICtr : MonoBehaviour {
 		DispatchManager.getInstance().onMoveRight.AddListener(OnAddSlider);
 		DispatchManager.getInstance().onAddCoin.AddListener(OnAddCoin);
 		DispatchManager.getInstance().onAddHeart.AddListener(CreateHeart);
+		DispatchManager.getInstance().onGameOver.AddListener(onGameOver);
 
 		m_pause.onClick.AddListener(delegate() { this.handleTouch(m_pause); });
 
@@ -39,13 +42,11 @@ public class PlayUICtr : MonoBehaviour {
 		DispatchManager.getInstance().onMoveRight.RemoveListener(OnAddSlider);
 		DispatchManager.getInstance().onAddCoin.RemoveListener(OnAddCoin);
 		DispatchManager.getInstance().onAddHeart.RemoveListener(CreateHeart);
+		DispatchManager.getInstance().onGameOver.RemoveListener(onGameOver);
 	}
 
 	void Update()
 	{
-		//test code 
-		return ;
-
 		if (m_Slider.value <=0 || !GameManager.getInstance().IsPlaying()) {
 			return ;
 		}
@@ -54,8 +55,12 @@ public class PlayUICtr : MonoBehaviour {
 		m_Slider.value = Mathf.Max(m_Slider.value - curFrameStep, 0) ;
 
 		if (m_Slider.value <= 0) {
+			m_imgWarning.gameObject.SetActive(false);
+
 			GameManager.getInstance().handlePlayerDead(true);
 		}
+
+		shineWarning(m_Slider.value);
 	}
 
 	void OnAddSlider() {
@@ -120,5 +125,31 @@ public class PlayUICtr : MonoBehaviour {
 
 		float timeEnd = timeCreate + timeMove ;
 		DOVirtual.DelayedCall(timeEnd, () => { this.m_textCoin.text = GameManager.getInstance().currentScore.ToString(); });
+	}
+
+	private void shineWarning(float curPercent) {
+		bool isShine = m_Slider.value <= m_warningPercent ? true : false;
+		if (isShine) {
+			if (m_imgWarning.gameObject.activeSelf == false) {
+				m_imgWarning.gameObject.SetActive(true);
+				
+				m_imgWarning.color = new Color(m_imgWarning.color.r,m_imgWarning.color.g, m_imgWarning.color.b , 0.3f);
+				Sequence seq = DOTween.Sequence();
+				seq.Append(DOTween.ToAlpha(()=> m_imgWarning.color , x=> m_imgWarning.color = x , 1f , 0.3f ));
+				seq.Append(DOTween.ToAlpha(()=> m_imgWarning.color , x=> m_imgWarning.color = x , 0.3f , 0.3f ));
+
+				seq.SetLoops(-1);
+			}
+		}
+		else {
+			if (m_imgWarning.gameObject.activeSelf == true) {
+				m_imgWarning.gameObject.SetActive(false);
+			}
+		}
+	}
+
+	private void onGameOver() {
+		m_imgWarning.gameObject.SetActive(false);
+		Destroy(m_imgWarning.gameObject);
 	}
 }

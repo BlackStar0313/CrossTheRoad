@@ -38,15 +38,7 @@ public class PlayerMoving : MonoBehaviour {
 	}
 
 	private void handleTouch() {
-		if (Input.GetMouseButtonDown(0)) {
-			if (EventSystem.current.IsPointerOverGameObject ()) {
-				GameObject obj = EventSystem.current.currentSelectedGameObject  	;
-				//TODO: 需要找个方法来区分touch的东西是什么
-				// if (!obj || obj.tag != "TouchThroughUI") {
-				// 	return ;
-				// }
-				return ;
-			}
+		if (isCanClickMove() ) {
 			// Debug.Log("~~~ Pressed left click.  " + Input.mousePosition );
 			// Debug.Log(" screen width is " + Screen.width + " screen height is " + Screen.height);
 			bool isLeft = Input.mousePosition.x < Screen.width/2 ? true : false ;
@@ -123,6 +115,40 @@ public class PlayerMoving : MonoBehaviour {
 
 		m_isMoving = false ; 
 		m_controller.OnStopMove();
+	}
+
+	private bool isCanClickMove() {
+		// if (Input.GetMouseButtonDown(0)) {
+		// 	if (EventSystem.current.IsPointerOverGameObject ()) {
+		// 		GameObject obj = EventSystem.current.currentSelectedGameObject  	;
+		// 		//TODO: 需要找个方法来区分touch的东西是什么
+		// 		// if (!obj || obj.tag != "TouchThroughUI") {
+		// 		// 	return ;
+		// 		// }
+		// 		return ;
+		// 	}
+
+		if (Input.GetMouseButtonDown(0)) {
+			if (EventSystem.current.IsPointerOverGameObject ()) {
+				PointerEventData eventDataCurrentPosition = new PointerEventData(EventSystem.current);
+				eventDataCurrentPosition.position = new Vector2(Input.mousePosition.x , Input.mousePosition.y);
+
+				List<RaycastResult> result = new List<RaycastResult>();
+				EventSystem.current.RaycastAll(eventDataCurrentPosition, result);
+
+				if (result.Count > 0 ) {
+					for (int i = 0 ; i < result.Count ; ++i) {
+						if (result[i].gameObject.tag == "TouchUI") {
+							return false ; 
+						}
+					}
+				}
+
+			}
+			return true ; 
+		}
+
+		return false ;
 	}
 
 }

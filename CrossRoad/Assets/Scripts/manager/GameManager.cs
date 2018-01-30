@@ -193,6 +193,7 @@ public class GameManager : MonoBehaviour {
 		currentStatus = enumGameCurrentStatus.ending ;
 
 		DispatchManager.getInstance().onMoveUIHide.Invoke();
+		DispatchManager.getInstance().onGameOver.Invoke();
 	}
 
 	public void HandleDeadNextStatus(enumGameCurrentStatus status) {
