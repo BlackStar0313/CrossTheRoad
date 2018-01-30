@@ -1,0 +1,480 @@
+fileFormatVersion: 2
+guid: 54bc3b327475d4b7ab01de069d14becf
+timeCreated: 1473955664
+licenseType: Store
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: animation_sheet_coin2_bronze_0
+    21300002: animation_sheet_coin2_bronze_1
+    21300004: animation_sheet_coin2_bronze_2
+    21300006: animation_sheet_coin2_bronze_3
+    21300008: animation_sheet_coin2_bronze_4
+    21300010: animation_sheet_coin2_bronze_5
+    21300012: animation_sheet_coin2_bronze_6
+    21300014: animation_sheet_coin2_bronze_7
+    21300016: animation_sheet_coin2_bronze_8
+    21300018: animation_sheet_coin2_bronze_9
+    21300020: animation_sheet_coin2_bronze_10
+    21300022: animation_sheet_coin2_bronze_11
+    21300024: animation_sheet_coin2_bronze_12
+    21300026: animation_sheet_coin2_bronze_13
+    21300028: animation_sheet_coin2_bronze_14
+    21300030: animation_sheet_coin2_bronze_15
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 512
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: animation_sheet_coin2_bronze_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1536
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 118, y: 29}
+        - {x: 101, y: 70}
+        - {x: 67, y: 104}
+        - {x: 26, y: 118}
+        - {x: -26, y: 118}
+        - {x: -62, y: 107}
+        - {x: -98, y: 73}
+        - {x: -118, y: 32}
+        - {x: -118, y: -26}
+        - {x: -107, y: -62}
+        - {x: -67, y: -104}
+        - {x: -28, y: -118}
+        - {x: 22, y: -118}
+        - {x: 38, y: -116}
+        - {x: 78, y: -93}
+        - {x: 97, y: -73}
+        - {x: 118, y: -36}
+    - name: animation_sheet_coin2_bronze_1
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1536
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 93, y: -76}
+        - {x: 116, y: -46}
+        - {x: 119, y: -25}
+        - {x: 119, y: 32}
+        - {x: 103, y: 66}
+        - {x: 71, y: 104}
+        - {x: 34, y: 118}
+        - {x: -31, y: 118}
+        - {x: -37, y: 117}
+        - {x: -69, y: 102}
+        - {x: -107, y: 66}
+        - {x: -119, y: 35}
+        - {x: -119, y: -29}
+        - {x: -109, y: -70}
+        - {x: -74, y: -99}
+        - {x: -33, y: -118}
+        - {x: 21, y: -118}
+        - {x: 36, y: -114}
+        - {x: 48, y: -111}
+        - {x: 72, y: -97}
+    - name: animation_sheet_coin2_bronze_2
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1536
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 115, y: 28}
+        - {x: 111, y: 48}
+        - {x: 95, y: 76}
+        - {x: 59, y: 108}
+        - {x: 30, y: 118}
+        - {x: -44, y: 118}
+        - {x: -98, y: 78}
+        - {x: -108, y: 47}
+        - {x: -115, y: 22}
+        - {x: -115, y: -28}
+        - {x: -114, y: -35}
+        - {x: -94, y: -75}
+        - {x: -75, y: -100}
+        - {x: -34, y: -118}
+        - {x: 31, y: -118}
+        - {x: 38, y: -117}
+        - {x: 59, y: -108}
+        - {x: 96, y: -76}
+        - {x: 115, y: -31}
+    - name: animation_sheet_coin2_bronze_3
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 1536
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 93, y: 69}
+        - {x: 63, y: 105}
+        - {x: 34, y: 118}
+        - {x: -25, y: 118}
+        - {x: -43, y: 116}
+        - {x: -64, y: 105}
+        - {x: -100, y: 57}
+        - {x: -105, y: 36}
+        - {x: -107, y: 12}
+        - {x: -107, y: -32}
+        - {x: -89, y: -79}
+        - {x: -65, y: -108}
+        - {x: -33, y: -118}
+        - {x: 47, y: -118}
+        - {x: 85, y: -90}
+        - {x: 107, y: -48}
+        - {x: 107, y: 43}
+    - name: animation_sheet_coin2_bronze_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1024
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 95, y: 30}
+        - {x: 90, y: 64}
+        - {x: 58, y: 113}
+        - {x: 30, y: 118}
+        - {x: -37, y: 118}
+        - {x: -54, y: 107}
+        - {x: -82, y: 79}
+        - {x: -95, y: 31}
+        - {x: -95, y: -38}
+        - {x: -82, y: -79}
+        - {x: -52, y: -105}
+        - {x: -35, y: -117}
+        - {x: -25, y: -118}
+        - {x: 31, y: -118}
+        - {x: 54, y: -107}
+        - {x: 80, y: -78}
+        - {x: 95, y: -41}
+    - name: animation_sheet_coin2_bronze_5
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1024
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 74, y: 69}
+        - {x: 38, y: 118}
+        - {x: -33, y: 118}
+        - {x: -40, y: 116}
+        - {x: -73, y: 68}
+        - {x: -79, y: 50}
+        - {x: -79, y: -47}
+        - {x: -77, y: -70}
+        - {x: -34, y: -118}
+        - {x: 38, y: -118}
+        - {x: 78, y: -77}
+        - {x: 79, y: -50}
+        - {x: 79, y: 46}
+    - name: animation_sheet_coin2_bronze_6
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1024
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 32, y: 118}
+        - {x: -31, y: 118}
+        - {x: -43, y: 116}
+        - {x: -60, y: 70}
+        - {x: -60, y: -82}
+        - {x: -57, y: -105}
+        - {x: -45, y: -118}
+        - {x: 58, y: -118}
+        - {x: 60, y: -97}
+        - {x: 60, y: 66}
+        - {x: 39, y: 112}
+    - name: animation_sheet_coin2_bronze_7
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 1024
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -37, y: 118}
+        - {x: -39, y: 86}
+        - {x: -39, y: -103}
+        - {x: -25, y: -118}
+        - {x: 39, y: -118}
+        - {x: 39, y: 112}
+        - {x: 29, y: 118}
+    - name: animation_sheet_coin2_bronze_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 512
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15, y: 118}
+        - {x: -17, y: 116}
+        - {x: -17, y: -116}
+        - {x: -15, y: -118}
+        - {x: 17, y: -118}
+        - {x: 17, y: 118}
+    - name: animation_sheet_coin2_bronze_9
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 512
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -37, y: 118}
+        - {x: -39, y: 86}
+        - {x: -39, y: -103}
+        - {x: -25, y: -118}
+        - {x: 39, y: -118}
+        - {x: 39, y: 112}
+        - {x: 29, y: 118}
+    - name: animation_sheet_coin2_bronze_10
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 512
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 32, y: 118}
+        - {x: -31, y: 118}
+        - {x: -43, y: 116}
+        - {x: -60, y: 70}
+        - {x: -60, y: -82}
+        - {x: -57, y: -105}
+        - {x: -45, y: -118}
+        - {x: 58, y: -118}
+        - {x: 60, y: -97}
+        - {x: 60, y: 66}
+        - {x: 39, y: 112}
+    - name: animation_sheet_coin2_bronze_11
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 512
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 74, y: 69}
+        - {x: 38, y: 118}
+        - {x: -33, y: 118}
+        - {x: -40, y: 116}
+        - {x: -73, y: 68}
+        - {x: -79, y: 50}
+        - {x: -79, y: -47}
+        - {x: -77, y: -70}
+        - {x: -34, y: -118}
+        - {x: 38, y: -118}
+        - {x: 78, y: -77}
+        - {x: 79, y: -50}
+        - {x: 79, y: 46}
+    - name: animation_sheet_coin2_bronze_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 95, y: 30}
+        - {x: 90, y: 64}
+        - {x: 58, y: 113}
+        - {x: 30, y: 118}
+        - {x: -37, y: 118}
+        - {x: -54, y: 107}
+        - {x: -82, y: 79}
+        - {x: -95, y: 31}
+        - {x: -95, y: -38}
+        - {x: -82, y: -79}
+        - {x: -52, y: -105}
+        - {x: -35, y: -117}
+        - {x: -25, y: -118}
+        - {x: 31, y: -118}
+        - {x: 54, y: -107}
+        - {x: 80, y: -78}
+        - {x: 95, y: -41}
+    - name: animation_sheet_coin2_bronze_13
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 93, y: 69}
+        - {x: 63, y: 105}
+        - {x: 34, y: 118}
+        - {x: -25, y: 118}
+        - {x: -43, y: 116}
+        - {x: -64, y: 105}
+        - {x: -100, y: 57}
+        - {x: -105, y: 36}
+        - {x: -107, y: 12}
+        - {x: -107, y: -32}
+        - {x: -89, y: -79}
+        - {x: -65, y: -108}
+        - {x: -33, y: -118}
+        - {x: 47, y: -118}
+        - {x: 85, y: -90}
+        - {x: 107, y: -48}
+        - {x: 107, y: 43}
+    - name: animation_sheet_coin2_bronze_14
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 115, y: 28}
+        - {x: 111, y: 48}
+        - {x: 95, y: 76}
+        - {x: 59, y: 108}
+        - {x: 30, y: 118}
+        - {x: -44, y: 118}
+        - {x: -98, y: 78}
+        - {x: -108, y: 47}
+        - {x: -115, y: 22}
+        - {x: -115, y: -28}
+        - {x: -114, y: -35}
+        - {x: -94, y: -75}
+        - {x: -75, y: -100}
+        - {x: -34, y: -118}
+        - {x: 31, y: -118}
+        - {x: 38, y: -117}
+        - {x: 59, y: -108}
+        - {x: 96, y: -76}
+        - {x: 115, y: -31}
+    - name: animation_sheet_coin2_bronze_15
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 0
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 93, y: -76}
+        - {x: 116, y: -46}
+        - {x: 119, y: -25}
+        - {x: 119, y: 32}
+        - {x: 103, y: 66}
+        - {x: 71, y: 104}
+        - {x: 34, y: 118}
+        - {x: -31, y: 118}
+        - {x: -37, y: 117}
+        - {x: -69, y: 102}
+        - {x: -107, y: 66}
+        - {x: -119, y: 35}
+        - {x: -119, y: -29}
+        - {x: -109, y: -70}
+        - {x: -74, y: -99}
+        - {x: -33, y: -118}
+        - {x: 21, y: -118}
+        - {x: 36, y: -114}
+        - {x: 48, y: -111}
+        - {x: 72, y: -97}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

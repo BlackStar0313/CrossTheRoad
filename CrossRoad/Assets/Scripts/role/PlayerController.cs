@@ -31,9 +31,9 @@ public class PlayerController : BasicController {
 	}
 
     public void onOneRoungEnd(float currentDirect) {
+        DispatchManager.getInstance().onAddCoin.Invoke();
         DispatchManager.getInstance().onPartnerReached.Invoke(currentDirect*-1);
         DispatchManager.getInstance().onPartnerCatched.Invoke(currentDirect );
-        DispatchManager.getInstance().onAddCoin.Invoke();
     }
 
     public void OnPlayerCollidetion(Vector3 carPos , BasicCollider collider) {

@@ -1,0 +1,394 @@
+fileFormatVersion: 2
+guid: d456ec529d6364155b025abacd4dc3a1
+timeCreated: 1473938114
+licenseType: Store
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: animation_sheet_key_0
+    21300002: animation_sheet_key_1
+    21300004: animation_sheet_key_2
+    21300006: animation_sheet_key_3
+    21300008: animation_sheet_key_4
+    21300010: animation_sheet_key_5
+    21300012: animation_sheet_key_6
+    21300014: animation_sheet_key_7
+    21300016: animation_sheet_key_8
+    21300018: animation_sheet_key_9
+    21300020: animation_sheet_key_10
+    21300022: animation_sheet_key_11
+    21300024: animation_sheet_key_12
+    21300026: animation_sheet_key_13
+    21300028: animation_sheet_key_14
+    21300030: animation_sheet_key_15
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 512
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: animation_sheet_key_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1536
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -51, y: 25}
+        - {x: -51, y: -90}
+        - {x: -37, y: -117}
+        - {x: -17, y: -117}
+        - {x: 82, y: 38}
+        - {x: 82, y: 84}
+        - {x: 75, y: 106}
+        - {x: 55, y: 121}
+        - {x: 6, y: 121}
+        - {x: -45, y: 72}
+    - name: animation_sheet_key_1
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1536
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 1, y: 121}
+        - {x: -47, y: 101}
+        - {x: -47, y: -97}
+        - {x: -42, y: -114}
+        - {x: -37, y: -117}
+        - {x: -9, y: -117}
+        - {x: 79, y: 26}
+        - {x: 79, y: 83}
+        - {x: 53, y: 121}
+    - name: animation_sheet_key_2
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1536
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 1, y: 121}
+        - {x: -18, y: 100}
+        - {x: -38, y: 61}
+        - {x: -38, y: -117}
+        - {x: -9, y: -117}
+        - {x: 65, y: 23}
+        - {x: 65, y: 118}
+        - {x: 51, y: 121}
+    - name: animation_sheet_key_3
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 1536
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -25, y: 90}
+        - {x: -25, y: -117}
+        - {x: -1, y: -117}
+        - {x: 41, y: -60}
+        - {x: 41, y: 121}
+        - {x: -10, y: 121}
+        - {x: -24, y: 110}
+    - name: animation_sheet_key_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1024
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10, y: 121}
+        - {x: -14, y: 57}
+        - {x: -14, y: -117}
+        - {x: 14, y: -117}
+        - {x: 14, y: 82}
+        - {x: 11, y: 121}
+    - name: animation_sheet_key_5
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1024
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -26, y: 121}
+        - {x: -32, y: 120}
+        - {x: -40, y: 78}
+        - {x: -40, y: 52}
+        - {x: -37, y: 44}
+        - {x: -1, y: -114}
+        - {x: 0, y: -117}
+        - {x: 25, y: -117}
+        - {x: 25, y: 105}
+        - {x: 2, y: 121}
+    - name: animation_sheet_key_6
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1024
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 15, y: 118}
+        - {x: 7, y: 121}
+        - {x: -51, y: 121}
+        - {x: -65, y: 85}
+        - {x: -65, y: 22}
+        - {x: 0, y: -115}
+        - {x: 6, y: -117}
+        - {x: 36, y: -117}
+        - {x: 38, y: -107}
+        - {x: 38, y: 4}
+    - name: animation_sheet_key_7
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 1024
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5, y: 121}
+        - {x: -79, y: 121}
+        - {x: -79, y: -78}
+        - {x: -77, y: -96}
+        - {x: -26, y: -117}
+        - {x: 47, y: -117}
+        - {x: 47, y: 5}
+        - {x: 18, y: 111}
+    - name: animation_sheet_key_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 512
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 46, y: -69}
+        - {x: 42, y: -69}
+        - {x: 33, y: -72}
+        - {x: 49, y: -60}
+        - {x: 50, y: -56}
+        - {x: 44, y: -41}
+        - {x: 40, y: -41}
+        - {x: 26, y: 104}
+        - {x: -21, y: 121}
+        - {x: -57, y: 121}
+        - {x: -63, y: 112}
+        - {x: -82, y: 73}
+        - {x: -82, y: 51}
+        - {x: -62, y: 32}
+        - {x: 14, y: -113}
+        - {x: 21, y: -117}
+        - {x: 34, y: -117}
+        - {x: 41, y: -112}
+        - {x: 51, y: -91}
+        - {x: 51, y: -79}
+    - name: animation_sheet_key_9
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 512
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -67, y: 121}
+        - {x: -79, y: 80}
+        - {x: -79, y: 36}
+        - {x: -78, y: 33}
+        - {x: 18, y: -117}
+        - {x: 47, y: -117}
+        - {x: 47, y: 121}
+    - name: animation_sheet_key_10
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 512
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 17, y: 111}
+        - {x: -14, y: 121}
+        - {x: -47, y: 121}
+        - {x: -58, y: 107}
+        - {x: -65, y: 83}
+        - {x: -65, y: 48}
+        - {x: -49, y: 33}
+        - {x: 0, y: -115}
+        - {x: 2, y: -117}
+        - {x: 38, y: -117}
+        - {x: 38, y: 26}
+        - {x: 27, y: 75}
+    - name: animation_sheet_key_11
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 512
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 7, y: 121}
+        - {x: -28, y: 121}
+        - {x: -41, y: 117}
+        - {x: -41, y: 29}
+        - {x: 0, y: -117}
+        - {x: 25, y: -117}
+        - {x: 25, y: 105}
+    - name: animation_sheet_key_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14, y: 121}
+        - {x: -14, y: -117}
+        - {x: 14, y: -117}
+        - {x: 14, y: 121}
+    - name: animation_sheet_key_13
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 37, y: 121}
+        - {x: -24, y: 121}
+        - {x: -25, y: 115}
+        - {x: -25, y: -117}
+        - {x: 0, y: -117}
+        - {x: 29, y: -52}
+        - {x: 40, y: 13}
+        - {x: 40, y: 120}
+    - name: animation_sheet_key_14
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 42, y: 121}
+        - {x: -4, y: 121}
+        - {x: -36, y: 108}
+        - {x: -38, y: 96}
+        - {x: -38, y: -113}
+        - {x: -35, y: -117}
+        - {x: -9, y: -117}
+        - {x: 65, y: 40}
+        - {x: 65, y: 102}
+        - {x: 56, y: 117}
+    - name: animation_sheet_key_15
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 0
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5, y: 121}
+        - {x: -47, y: 81}
+        - {x: -47, y: -98}
+        - {x: -42, y: -115}
+        - {x: -35, y: -117}
+        - {x: -10, y: -117}
+        - {x: 64, y: -63}
+        - {x: 79, y: 8}
+        - {x: 79, y: 121}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

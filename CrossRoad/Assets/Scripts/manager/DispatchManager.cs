@@ -44,6 +44,7 @@ public class DispatchManager {
 	public EventInt onSelectShopItem = null ;
 	public EventEmpty onRefreshShopShow = null ; 
 
+	public EventV3 onAddHeart = null ;
 
 	public DispatchManager() {
 		onPartnerMoveIng = new EventFloatFloat();
@@ -64,6 +65,8 @@ public class DispatchManager {
 		onStartGame = new EventEmpty();
 		onSelectShopItem = new EventInt();
 		onRefreshShopShow = new EventEmpty();
+
+		onAddHeart = new EventV3();
 	}
 
 	public void ClearAll() {
@@ -85,6 +88,8 @@ public class DispatchManager {
 		onStartGame.RemoveAllListeners();
 		onSelectShopItem.RemoveAllListeners();
 		onRefreshShopShow.RemoveAllListeners();
+
+		onAddHeart.RemoveAllListeners();
 	}
 
 	// public delegate void EventHandler();

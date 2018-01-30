@@ -136,21 +136,21 @@ public class GameManager : MonoBehaviour {
 			return ;
 		}
 
-		if (m_isStartCreateCar[0]) {
-			StartCoroutine(AutoCreateCar(0));
-		}
+		// if (m_isStartCreateCar[0]) {
+		// 	StartCoroutine(AutoCreateCar(0));
+		// }
 
-		if (m_isStartCreateCar[1]) {
-			StartCoroutine(AutoCreateCar(1));
-		}
+		// if (m_isStartCreateCar[1]) {
+		// 	StartCoroutine(AutoCreateCar(1));
+		// }
 
-		if (m_isStartCreateCar[2]) {
-			StartCoroutine(AutoCreateCar(2));
-		}
+		// if (m_isStartCreateCar[2]) {
+		// 	StartCoroutine(AutoCreateCar(2));
+		// }
 
-		if (m_isStartCreateCar[3]) {
-			StartCoroutine(AutoCreateCar(3));
-		}
+		// if (m_isStartCreateCar[3]) {
+		// 	StartCoroutine(AutoCreateCar(3));
+		// }
 	}
 
 	protected IEnumerator AutoCreateCar(int idx) {

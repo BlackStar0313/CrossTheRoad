@@ -57,10 +57,11 @@ public class PartnerController : BasicController {
 			return ;
 		}
 
+		//show animation 
+		DispatchManager.getInstance().onAddHeart.Invoke(transform.position);
+
 		this.gameObject.SetActive(false);
 		DestroyObject(this.gameObject);
-		//TODO: add coin and play coin flying animation .
-
 	}
 
 	void OnDestroy() {

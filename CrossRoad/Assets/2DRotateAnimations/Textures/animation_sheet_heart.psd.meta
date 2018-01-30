@@ -1,0 +1,439 @@
+fileFormatVersion: 2
+guid: 7e99ca19a6f7249e68ff15a3c7f0eab2
+timeCreated: 1473925116
+licenseType: Store
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: rotate_sheet_heart_0
+    21300002: rotate_sheet_heart_1
+    21300004: rotate_sheet_heart_2
+    21300006: rotate_sheet_heart_3
+    21300008: rotate_sheet_heart_4
+    21300010: rotate_sheet_heart_5
+    21300012: rotate_sheet_heart_6
+    21300014: rotate_sheet_heart_7
+    21300016: rotate_sheet_heart_8
+    21300018: rotate_sheet_heart_9
+    21300020: rotate_sheet_heart_10
+    21300022: rotate_sheet_heart_11
+    21300024: rotate_sheet_heart_12
+    21300026: rotate_sheet_heart_13
+    21300028: rotate_sheet_heart_14
+    21300030: rotate_sheet_heart_15
+    21300032: animation_sheet_heart_0
+    21300034: animation_sheet_heart_1
+    21300036: animation_sheet_heart_2
+    21300038: animation_sheet_heart_3
+    21300040: animation_sheet_heart_4
+    21300042: animation_sheet_heart_5
+    21300044: animation_sheet_heart_6
+    21300046: animation_sheet_heart_7
+    21300048: animation_sheet_heart_8
+    21300050: animation_sheet_heart_9
+    21300052: animation_sheet_heart_10
+    21300054: animation_sheet_heart_11
+    21300056: animation_sheet_heart_12
+    21300058: animation_sheet_heart_13
+    21300060: animation_sheet_heart_14
+    21300062: animation_sheet_heart_15
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 512
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: animation_sheet_heart_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1536
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 71, y: 96}
+        - {x: 12, y: 96}
+        - {x: -8, y: 90}
+        - {x: -29, y: 96}
+        - {x: -72, y: 96}
+        - {x: -114, y: 70}
+        - {x: -121, y: 51}
+        - {x: -121, y: 10}
+        - {x: -116, y: -8}
+        - {x: -8, y: -117}
+        - {x: 2, y: -117}
+        - {x: 109, y: -25}
+        - {x: 121, y: 7}
+        - {x: 121, y: 49}
+        - {x: 104, y: 82}
+    - name: animation_sheet_heart_1
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1536
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 95, y: 87}
+        - {x: 73, y: 96}
+        - {x: 20, y: 96}
+        - {x: 9, y: 94}
+        - {x: 0, y: 96}
+        - {x: -85, y: 96}
+        - {x: -119, y: 62}
+        - {x: -119, y: 11}
+        - {x: -107, y: -17}
+        - {x: -2, y: -117}
+        - {x: 4, y: -117}
+        - {x: 99, y: -27}
+        - {x: 119, y: 8}
+        - {x: 119, y: 53}
+    - name: animation_sheet_heart_2
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1536
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 90, y: 87}
+        - {x: 67, y: 96}
+        - {x: -72, y: 96}
+        - {x: -112, y: 77}
+        - {x: -112, y: -7}
+        - {x: -6, y: -117}
+        - {x: 3, y: -117}
+        - {x: 91, y: -32}
+        - {x: 112, y: 6}
+        - {x: 112, y: 54}
+    - name: animation_sheet_heart_3
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 1536
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 13, y: 96}
+        - {x: -9, y: 91}
+        - {x: -24, y: 96}
+        - {x: -69, y: 96}
+        - {x: -81, y: 87}
+        - {x: -103, y: 58}
+        - {x: -103, y: 6}
+        - {x: -89, y: -34}
+        - {x: -5, y: -117}
+        - {x: 10, y: -117}
+        - {x: 103, y: -12}
+        - {x: 103, y: 67}
+        - {x: 67, y: 96}
+    - name: animation_sheet_heart_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1024
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -64, y: 96}
+        - {x: -86, y: 82}
+        - {x: -89, y: 56}
+        - {x: -89, y: 0}
+        - {x: -62, y: -47}
+        - {x: -2, y: -117}
+        - {x: 8, y: -117}
+        - {x: 89, y: -6}
+        - {x: 89, y: 65}
+        - {x: 81, y: 96}
+    - name: animation_sheet_heart_5
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1024
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 46, y: 96}
+        - {x: -42, y: 96}
+        - {x: -64, y: 76}
+        - {x: -74, y: 53}
+        - {x: -74, y: -29}
+        - {x: -13, y: -117}
+        - {x: 21, y: -117}
+        - {x: 74, y: -6}
+        - {x: 74, y: 65}
+        - {x: 63, y: 83}
+    - name: animation_sheet_heart_6
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1024
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -57, y: -26}
+        - {x: -19, y: -117}
+        - {x: 9, y: -117}
+        - {x: 57, y: -66}
+        - {x: 57, y: 89}
+        - {x: 55, y: 96}
+        - {x: -42, y: 96}
+        - {x: -57, y: 77}
+    - name: animation_sheet_heart_7
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 1024
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -34, y: 96}
+        - {x: -38, y: 95}
+        - {x: -42, y: 91}
+        - {x: -42, y: -46}
+        - {x: -16, y: -117}
+        - {x: 21, y: -117}
+        - {x: 42, y: -13}
+        - {x: 42, y: 88}
+        - {x: 37, y: 96}
+    - name: animation_sheet_heart_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 512
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 12, y: 96}
+        - {x: -18, y: 96}
+        - {x: -31, y: 82}
+        - {x: -31, y: -46}
+        - {x: -20, y: -117}
+        - {x: 15, y: -117}
+        - {x: 31, y: -36}
+        - {x: 31, y: 76}
+        - {x: 20, y: 93}
+    - name: animation_sheet_heart_9
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 512
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -34, y: 96}
+        - {x: -38, y: 95}
+        - {x: -42, y: 91}
+        - {x: -42, y: -46}
+        - {x: -16, y: -117}
+        - {x: 21, y: -117}
+        - {x: 42, y: -13}
+        - {x: 42, y: 88}
+        - {x: 37, y: 96}
+    - name: animation_sheet_heart_10
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 512
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -57, y: -26}
+        - {x: -19, y: -117}
+        - {x: 9, y: -117}
+        - {x: 57, y: -66}
+        - {x: 57, y: 89}
+        - {x: 55, y: 96}
+        - {x: -42, y: 96}
+        - {x: -57, y: 77}
+    - name: animation_sheet_heart_11
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 512
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 46, y: 96}
+        - {x: -42, y: 96}
+        - {x: -64, y: 76}
+        - {x: -74, y: 53}
+        - {x: -74, y: -29}
+        - {x: -13, y: -117}
+        - {x: 21, y: -117}
+        - {x: 74, y: -6}
+        - {x: 74, y: 65}
+        - {x: 63, y: 83}
+    - name: animation_sheet_heart_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -64, y: 96}
+        - {x: -86, y: 82}
+        - {x: -89, y: 56}
+        - {x: -89, y: 0}
+        - {x: -62, y: -47}
+        - {x: -2, y: -117}
+        - {x: 8, y: -117}
+        - {x: 89, y: -6}
+        - {x: 89, y: 65}
+        - {x: 81, y: 96}
+    - name: animation_sheet_heart_13
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 13, y: 96}
+        - {x: -9, y: 91}
+        - {x: -24, y: 96}
+        - {x: -69, y: 96}
+        - {x: -81, y: 87}
+        - {x: -103, y: 58}
+        - {x: -103, y: 6}
+        - {x: -89, y: -34}
+        - {x: -5, y: -117}
+        - {x: 10, y: -117}
+        - {x: 103, y: -12}
+        - {x: 103, y: 67}
+        - {x: 67, y: 96}
+    - name: animation_sheet_heart_14
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 90, y: 87}
+        - {x: 71, y: 96}
+        - {x: -76, y: 96}
+        - {x: -110, y: 66}
+        - {x: -112, y: 51}
+        - {x: -112, y: 6}
+        - {x: -101, y: -18}
+        - {x: -5, y: -117}
+        - {x: 3, y: -117}
+        - {x: 91, y: -32}
+        - {x: 112, y: 6}
+        - {x: 112, y: 54}
+    - name: animation_sheet_heart_15
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 0
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 95, y: 87}
+        - {x: 73, y: 96}
+        - {x: 20, y: 96}
+        - {x: 9, y: 94}
+        - {x: 0, y: 96}
+        - {x: -85, y: 96}
+        - {x: -119, y: 62}
+        - {x: -119, y: 11}
+        - {x: -107, y: -17}
+        - {x: -2, y: -117}
+        - {x: 4, y: -117}
+        - {x: 99, y: -27}
+        - {x: 119, y: 8}
+        - {x: 119, y: 53}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
