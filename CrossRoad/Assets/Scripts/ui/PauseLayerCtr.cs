@@ -20,10 +20,12 @@ public class PauseLayerCtr : MonoBehaviour {
 			gameObject.SetActive(false);
 			Destroy(gameObject);
 			Time.timeScale = 1 ;
+			SoundsManager.getInstance().playSounds(SoundsManager.clipNameClick);
 		}
 		else if (btn == m_btnHome) {
 			Time.timeScale = 1 ;
 			GameManager.getInstance().LoadMenuScene();
+			SoundsManager.getInstance().playSounds(SoundsManager.clipNameClick);
 		}
 	}
 

@@ -126,6 +126,11 @@ public class ShopItemCell : MonoBehaviour {
 				DispatchManager.getInstance().onRefreshShopShow.Invoke();
 
 				this.refreshShow();
+
+				SoundsManager.getInstance().playSounds(SoundsManager.clipNameBuy);
+			}
+			else {
+				SoundsManager.getInstance().playSounds(SoundsManager.clipNameClickNegtive);
 			}
 		}
 		else if (btn == m_btnConfirm) {
@@ -133,6 +138,8 @@ public class ShopItemCell : MonoBehaviour {
 			PlayerManager.getInstance().GetPlayerInfo().currentRole = shopData.role_idx;
 			PlayerManager.getInstance().GetPlayerInfo().saveToLocal();
 			SceneManager.LoadScene("Menu");
+			
+			SoundsManager.getInstance().playSounds(SoundsManager.clipNameClick);
 		}
 	}
 }

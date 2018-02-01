@@ -63,6 +63,7 @@
      <Compile Include="Assets\Scripts\manager\GameManager.cs" />
      <Compile Include="Assets\Scripts\manager\PlayerManager.cs" />
      <Compile Include="Assets\Scripts\manager\ShopManager.cs" />
+     <Compile Include="Assets\Scripts\manager\SoundsManager.cs" />
      <Compile Include="Assets\Scripts\manager\UIManager.cs" />
      <Compile Include="Assets\Scripts\role\BasicCollider.cs" />
      <Compile Include="Assets\Scripts\role\BasicController.cs" />

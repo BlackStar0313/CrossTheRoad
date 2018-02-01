@@ -13,6 +13,7 @@ public class PlayUICtr : MonoBehaviour {
 	public Camera m_currentCamera;
 	public Camera m_heartCamera;
 	public Image m_imgWarning ;
+	public AudioSource m_audioTimeout;
 
 	private float m_decreaseTime = 6;
 	private float m_addStep = 0.3f;
@@ -20,6 +21,8 @@ public class PlayUICtr : MonoBehaviour {
 
 	private int m_showScore = 0;
 	private float m_warningPercent = 0.4f;
+
+	private bool m_isTimeout = false ;
 
 	void Start()
 	{
@@ -47,23 +50,24 @@ public class PlayUICtr : MonoBehaviour {
 
 	void Update()
 	{
-		//test code 
-		return ;
-
-		if (m_Slider.value <=0 || !GameManager.getInstance().IsPlaying()) {
+		if (m_isTimeout || !GameManager.getInstance().IsPlaying()) {
 			return ;
 		}
 
 		float curFrameStep = Time.deltaTime / m_decreaseTime;
-		m_Slider.value = Mathf.Max(m_Slider.value - curFrameStep, 0) ;
+		float value = m_Slider.value - curFrameStep;
+		m_Slider.value = Mathf.Max(value, 0) ;
+		m_isTimeout = value <= 0 ? true : false;
+		
 
-		if (m_Slider.value <= 0) {
+		if (m_isTimeout) {
 			m_imgWarning.gameObject.SetActive(false);
 
 			GameManager.getInstance().handlePlayerDead(true);
 		}
-
-		shineWarning(m_Slider.value);
+		else {
+			shineWarning(m_Slider.value);
+		}
 	}
 
 	void OnAddSlider() {
@@ -77,6 +81,7 @@ public class PlayUICtr : MonoBehaviour {
 	}
 
 	void handleTouch(Button btn) {
+		SoundsManager.getInstance().playSounds(SoundsManager.clipNameClick);
 		Instantiate(Resources.Load("Prefebs/PauseLayer")) ;
 	}
 
@@ -142,17 +147,20 @@ public class PlayUICtr : MonoBehaviour {
 				seq.Append(DOTween.ToAlpha(()=> m_imgWarning.color , x=> m_imgWarning.color = x , 0.3f , 0.3f ));
 
 				seq.SetLoops(-1);
+
+				m_audioTimeout.Play();
 			}
 		}
 		else {
 			if (m_imgWarning.gameObject.activeSelf == true) {
 				m_imgWarning.gameObject.SetActive(false);
+				m_audioTimeout.Stop();
 			}
 		}
 	}
 
 	private void onGameOver() {
-		// m_imgWarning.gameObject.SetActive(false);
-		Destroy(m_imgWarning.gameObject);
+		m_audioTimeout.Stop();
+		m_imgWarning.gameObject.SetActive(false);
 	}
 }

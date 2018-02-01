@@ -28,9 +28,13 @@ public class GameOverLayerCtr : MonoBehaviour {
 
 			gameObject.SetActive(false);
 			Destroy(gameObject);
+
+			SoundsManager.getInstance().playSounds(SoundsManager.clipNameClick);
 		}
 		else if (btn == m_btnHome) {
 			GameManager.getInstance().LoadMenuScene();
+
+			SoundsManager.getInstance().playSounds(SoundsManager.clipNameClick);
 		}
 	}
 

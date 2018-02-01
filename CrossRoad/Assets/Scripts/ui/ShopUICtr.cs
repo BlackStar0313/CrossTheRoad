@@ -25,6 +25,7 @@ public class ShopUICtr : MonoBehaviour {
 	private void handleTouch(Button btn) {
 		if (btn == m_btnHome) { 
 			SceneManager.LoadScene("Menu");
+			SoundsManager.getInstance().playSounds(SoundsManager.clipNameClick);
 		}
 	}
 

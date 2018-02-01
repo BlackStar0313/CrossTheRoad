@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GameInstantManager : MonoBehaviour {
+	public SoundsManager m_soundsManager ; 
 
 	// Use this for initialization
 	void Awake(){
@@ -11,6 +12,10 @@ public class GameInstantManager : MonoBehaviour {
 		PlayerManager.getInstance().init();
 		DataManager.getInstance().init();
 		ShopManager.getInstance().init();
+
+		if (SoundsManager.mInstance == null) {
+			SoundsManager.mInstance = Instantiate(m_soundsManager);
+		}
 
 		DontDestroyOnLoad(this);
 	}
