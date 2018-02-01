@@ -52,6 +52,8 @@ public class PlayerController : BasicController {
         GameObject warningUIObj = Instantiate(Resources.Load("Prefebs/WarningLayer") as GameObject);        
         WarningUICtr ctr = warningUIObj.GetComponent<WarningUICtr>();
         ctr.init(isLeft);
+
+        SoundsManager.getInstance().playSounds(SoundsManager.clipNameMoveWrong);
     }
 
     public void OnMoveRight() {

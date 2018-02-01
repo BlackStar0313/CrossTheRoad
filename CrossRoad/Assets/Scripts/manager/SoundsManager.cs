@@ -9,6 +9,8 @@ public class SoundsManager : MonoBehaviour {
 	[HideInInspector] public static string clipNameBuy = "buy";
 	[HideInInspector] public static string clipNameGetHeart = "get_heart";
 	[HideInInspector] public static string clipNameAddHeart = "add_heart";
+	[HideInInspector] public static string clipNameMoveWrong = "move_wrong";
+	[HideInInspector] public static string clipNameShopItemIdle = "shop_item_idle";
 	
 	[HideInInspector] public static SoundsManager mInstance = null; 
 	public AudioSource m_audio ;
@@ -19,6 +21,8 @@ public class SoundsManager : MonoBehaviour {
 	public AudioClip m_clipBuy;
 	public AudioClip m_clipGetHeart;
 	public AudioClip m_clipAddHeart;
+	public AudioClip m_moveWrong;
+	public AudioClip[] m_shopItemIdles;
 
 	public static SoundsManager getInstance() {
 		return SoundsManager.mInstance;
@@ -34,6 +38,7 @@ public class SoundsManager : MonoBehaviour {
 	}
 
 	public void playSounds(string clipName) {
+		m_audio.volume = 1 ;
 		if (clipName == clipNameClick) {
 			m_audio.clip = m_clipClick ;
 			m_audio.Play();
@@ -56,6 +61,16 @@ public class SoundsManager : MonoBehaviour {
 		}
 		else if (clipName == clipNameAddHeart) {
 			m_audio.clip = m_clipAddHeart ;
+			m_audio.Play();
+		}
+		else if (clipName == clipNameMoveWrong) {
+			m_audio.clip = m_moveWrong ;
+			m_audio.Play();
+		}
+		else if (clipName == clipNameShopItemIdle) {
+			int randIdx = Random.Range(0, m_shopItemIdles.Length);
+			m_audio.clip = m_shopItemIdles[randIdx] ;
+			m_audio.volume = 0.6f;
 			m_audio.Play();
 		}
 	}

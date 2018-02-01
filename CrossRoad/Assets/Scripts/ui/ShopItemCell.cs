@@ -90,6 +90,8 @@ public class ShopItemCell : MonoBehaviour {
 		m_imgRect.gameObject.SetActive(m_isSelected); 
 		
 		refreshShow();
+
+		SoundsManager.getInstance().playSounds(SoundsManager.clipNameShopItemIdle);
 	}
 
 	private void HandleBtnStatus () {
@@ -138,7 +140,7 @@ public class ShopItemCell : MonoBehaviour {
 			PlayerManager.getInstance().GetPlayerInfo().currentRole = shopData.role_idx;
 			PlayerManager.getInstance().GetPlayerInfo().saveToLocal();
 			SceneManager.LoadScene("Menu");
-			
+
 			SoundsManager.getInstance().playSounds(SoundsManager.clipNameClick);
 		}
 	}
