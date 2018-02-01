@@ -89,7 +89,7 @@ public class PartnerController : BasicController {
 			DispatchManager.getInstance().onPartnerReached.AddListener(this.OnReachEnd);	
 			DispatchManager.getInstance().onCollidePlayer.AddListener(this.OnPlayerCollidetion);
 			DispatchManager.getInstance().onStartGame.AddListener(this.OnStartGame);	
-			
+			DispatchManager.getInstance().onHitCarDead.AddListener(this.playDeadSounds);
 
 			GameManager.getInstance().currentArrowType = this.m_arrowType;
 			DispatchManager.getInstance().onMoveUIActivity.Invoke(this.gameObject , (int)this.m_arrowType);
@@ -103,5 +103,6 @@ public class PartnerController : BasicController {
 		DispatchManager.getInstance().onPartnerReached.RemoveListener(this.OnReachEnd);
 		DispatchManager.getInstance().onCollidePlayer.RemoveListener(this.OnPlayerCollidetion);
 		DispatchManager.getInstance().onStartGame.RemoveListener(this.OnStartGame);	
+		DispatchManager.getInstance().onHitCarDead.RemoveListener(this.playDeadSounds);
 	}
 }

@@ -9,6 +9,7 @@ public class PlayerMoving : MonoBehaviour {
 	public Transform m_startPos;
 	public Transform m_endPos;
 
+
 	private PlayerController m_controller ; 
 	private Rigidbody m_rigidbody ;
 	private CharacterController m_character ; 

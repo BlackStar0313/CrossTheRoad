@@ -11,6 +11,7 @@ public class PartnerMoving : MonoBehaviour {
 	public Transform m_endBornPos;
 	public Transform m_endPos;
 
+
 	private PartnerController m_controller ; 
 	private CharacterController m_character ; 
 	private Animator m_animator;

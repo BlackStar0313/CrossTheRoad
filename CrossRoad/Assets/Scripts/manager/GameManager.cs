@@ -199,6 +199,9 @@ public class GameManager : MonoBehaviour {
 
 		currentStatus = enumGameCurrentStatus.ending ;
 
+		if (!isTimeOut) {
+			DispatchManager.getInstance().onHitCarDead.Invoke();
+		}
 		DispatchManager.getInstance().onMoveUIHide.Invoke();
 		DispatchManager.getInstance().onGameOver.Invoke();
 	}

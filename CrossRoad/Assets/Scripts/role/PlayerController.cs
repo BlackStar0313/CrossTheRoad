@@ -10,10 +10,12 @@ public class PlayerController : BasicController {
 		base.Awake();
         m_playerMoving = GetComponent<PlayerMoving>();
         DispatchManager.getInstance().onCollidePlayer.AddListener(this.OnPlayerCollidetion);
+        DispatchManager.getInstance().onHitCarDead.AddListener(this.playDeadSounds);
 	}
 
     void OnDestroy() {
         DispatchManager.getInstance().onCollidePlayer.RemoveListener(this.OnPlayerCollidetion);
+        DispatchManager.getInstance().onHitCarDead.RemoveListener(this.playDeadSounds);
     }
 
     public void OnMoving(float speed ,float direction) {

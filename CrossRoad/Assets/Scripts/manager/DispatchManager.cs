@@ -46,6 +46,7 @@ public class DispatchManager {
 
 	public EventV3 onAddHeart = null ;
 	public EventEmpty onGameOver = null ; 
+	public EventEmpty onHitCarDead = null ; 
 
 	public DispatchManager() {
 		onPartnerMoveIng = new EventFloatFloat();
@@ -69,6 +70,7 @@ public class DispatchManager {
 
 		onAddHeart = new EventV3();
 		onGameOver = new EventEmpty();
+		onHitCarDead = new EventEmpty();
 	}
 
 	public void ClearAll() {
@@ -93,6 +95,7 @@ public class DispatchManager {
 
 		onAddHeart.RemoveAllListeners();
 		onGameOver.RemoveAllListeners();
+		onHitCarDead.RemoveAllListeners();
 	}
 
 	// public delegate void EventHandler();
