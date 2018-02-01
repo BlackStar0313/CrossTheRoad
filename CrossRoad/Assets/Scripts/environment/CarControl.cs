@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CarControl : MonoBehaviour {
 	public LayerMask m_blockingLayer; 
+	public AudioSource m_audioSource; 
 
 	private Transform m_carStartPos {get; set;}
 	private Transform m_carEndPos {get; set;}
@@ -192,5 +193,9 @@ public class CarControl : MonoBehaviour {
 			DestroyObject(this.gameObject);
 			// Debug.Log("~~~~~~~~~~  cannot create a car ");
 		}
+	}
+
+	public void playHitSounds() {
+		m_audioSource.Play();
 	}
 }

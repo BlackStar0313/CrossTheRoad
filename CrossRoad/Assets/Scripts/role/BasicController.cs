@@ -39,7 +39,8 @@ public class BasicController : MonoBehaviour {
 	public void playMoveSounds() {
 		int randIdx = Random.Range(0 , m_audioWalk.Length);
 		m_audioSource.clip = m_audioWalk[randIdx];
-		m_audioSource.pitch = 0.3f;
+		m_audioSource.pitch = 1f;
+		m_audioSource.volume = 0.8f;
 		m_audioSource.Play();
 	}
 
@@ -51,6 +52,7 @@ public class BasicController : MonoBehaviour {
 		int randIdx = Random.Range(0 , m_audioDead.Length);
 		m_audioSource.clip = m_audioDead[randIdx];
 		m_audioSource.pitch = 1f;
+		m_audioSource.volume = 0.3f;
 		m_audioSource.loop = false ;
 		m_audioSource.Play();
 	}

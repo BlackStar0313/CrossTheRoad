@@ -152,7 +152,7 @@ public class PlayUICtr : MonoBehaviour {
 	}
 
 	private void onGameOver() {
-		m_imgWarning.gameObject.SetActive(false);
+		// m_imgWarning.gameObject.SetActive(false);
 		Destroy(m_imgWarning.gameObject);
 	}
 }

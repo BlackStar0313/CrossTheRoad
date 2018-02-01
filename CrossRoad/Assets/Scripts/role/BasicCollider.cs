@@ -14,6 +14,10 @@ public class BasicCollider : MonoBehaviour {
 	void OnCollisionEnter(Collision collisionInfo)
 	{
 		if (collisionInfo.gameObject.tag == "Cars" && !this.m_isCollide) {
+			CarControl car = collisionInfo.gameObject.GetComponent<CarControl>();
+			if (car) {
+				car.playHitSounds();
+			}
 			this.handleCarCollision(collisionInfo.gameObject.transform.position, true);
 		}
 	}
