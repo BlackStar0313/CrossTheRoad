@@ -87,20 +87,16 @@
      <Compile Include="Assets\Scripts\ui\ShopSelectItem.cs" />
      <Compile Include="Assets\Scripts\ui\ShopUICtr.cs" />
      <Compile Include="Assets\Scripts\ui\WarningUICtr.cs" />
-     <Compile Include="Assets\Street_set\Scripts\CameraLook.cs" />
-     <Compile Include="Assets\Street_set\Scripts\LightFlashing.cs" />
-     <Compile Include="Assets\Street_set\Scripts\Tiled_Texture_Animation.cs" />
      <Compile Include="Assets\test\test.cs" />
      <None Include="Assets\Demigiant\DOTween\DOTween46.xml" />
      <None Include="Assets\Demigiant\DOTween\readme.txt" />
      <None Include="Assets\Demigiant\DOTween\DOTween43.xml" />
-     <None Include="Assets\ToonShading\Shaders\ToonBasic.shader" />
+     <None Include="Assets\Shaders\Toon\ToonBasic.shader" />
      <None Include="Assets\Demigiant\DOTween\DOTween50.xml" />
-     <None Include="Assets\Toon Vehicles\Documentation\ReadMe.txt" />
-     <None Include="Assets\Street_set\Standard Assets\Skyboxes\_skybox info.txt" />
-     <None Include="Assets\ToonShading\Shaders\ToonBasicOutline.shader" />
-     <None Include="Assets\ToonShading\Shaders\ToonLitOutline.shader" />
-     <None Include="Assets\ToonShading\Shaders\ToonLit.shader" />
+     <None Include="Assets\Standard Assets\Skyboxes\_skybox info.txt" />
+     <None Include="Assets\Shaders\Toon\ToonBasicOutline.shader" />
+     <None Include="Assets\Shaders\Toon\ToonLitOutline.shader" />
+     <None Include="Assets\Shaders\Toon\ToonLit.shader" />
      <None Include="Assets\2DRotateAnimations\readme.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
