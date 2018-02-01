@@ -7,6 +7,8 @@ public class SoundsManager : MonoBehaviour {
 	[HideInInspector] public static string clipNameClickNegtive = "click_negtive";
 	[HideInInspector] public static string clipNameScroll = "scroll";
 	[HideInInspector] public static string clipNameBuy = "buy";
+	[HideInInspector] public static string clipNameGetHeart = "get_heart";
+	[HideInInspector] public static string clipNameAddHeart = "add_heart";
 	
 	[HideInInspector] public static SoundsManager mInstance = null; 
 	public AudioSource m_audio ;
@@ -15,6 +17,8 @@ public class SoundsManager : MonoBehaviour {
 	public AudioClip m_clipNegtive ; 
 	public AudioClip m_clipScroll;
 	public AudioClip m_clipBuy;
+	public AudioClip m_clipGetHeart;
+	public AudioClip m_clipAddHeart;
 
 	public static SoundsManager getInstance() {
 		return SoundsManager.mInstance;
@@ -44,6 +48,14 @@ public class SoundsManager : MonoBehaviour {
 		}
 		else if (clipName == clipNameBuy) {
 			m_audio.clip = m_clipBuy ;
+			m_audio.Play();
+		}
+		else if (clipName == clipNameGetHeart) {
+			m_audio.clip = m_clipGetHeart ;
+			m_audio.Play();
+		}
+		else if (clipName == clipNameAddHeart) {
+			m_audio.clip = m_clipAddHeart ;
 			m_audio.Play();
 		}
 	}

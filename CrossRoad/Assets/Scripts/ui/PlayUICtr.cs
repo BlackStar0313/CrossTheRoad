@@ -50,6 +50,9 @@ public class PlayUICtr : MonoBehaviour {
 
 	void Update()
 	{
+		//test code 
+		return ;
+		
 		if (m_isTimeout || !GameManager.getInstance().IsPlaying()) {
 			return ;
 		}
@@ -99,6 +102,7 @@ public class PlayUICtr : MonoBehaviour {
 		Vector3 targetPos = m_heartCamera.ScreenToWorldPoint(targetCameraCamera);
 
 
+		SoundsManager.getInstance().playSounds(SoundsManager.clipNameGetHeart);
 		//TODO： 先做一起到处理，之后增加挨个到的逻辑
 		float timeCreate = 0.3f;
 		float timeMove = 0.8f;
@@ -127,6 +131,8 @@ public class PlayUICtr : MonoBehaviour {
 
 				heart.SetActive(false);
 				DestroyObject(heart);
+
+				SoundsManager.getInstance().playSounds(SoundsManager.clipNameAddHeart);
 				// this.m_textCoin.text += 1;
 			 });
 		}
