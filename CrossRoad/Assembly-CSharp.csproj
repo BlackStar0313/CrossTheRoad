@@ -46,7 +46,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\2DRotateAnimations\Demo\Script\AnimationTextureDemo.cs" />
      <Compile Include="Assets\Demigiant\DOTween\Examples\Basics.cs" />
      <Compile Include="Assets\Demigiant\DOTween\Examples\Sequences.cs" />
      <Compile Include="Assets\Scripts\CameraCtr.cs" />
@@ -96,7 +95,6 @@
      <None Include="Assets\Shaders\Toon\ToonBasicOutline.shader" />
      <None Include="Assets\Shaders\Toon\ToonLitOutline.shader" />
      <None Include="Assets\Shaders\Toon\ToonLit.shader" />
-     <None Include="Assets\2DRotateAnimations\readme.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
