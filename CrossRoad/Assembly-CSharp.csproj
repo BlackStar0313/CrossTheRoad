@@ -93,7 +93,6 @@
      <None Include="Assets\Demigiant\DOTween\DOTween43.xml" />
      <None Include="Assets\Shaders\Toon\ToonBasic.shader" />
      <None Include="Assets\Demigiant\DOTween\DOTween50.xml" />
-     <None Include="Assets\Standard Assets\Skyboxes\_skybox info.txt" />
      <None Include="Assets\Shaders\Toon\ToonBasicOutline.shader" />
      <None Include="Assets\Shaders\Toon\ToonLitOutline.shader" />
      <None Include="Assets\Shaders\Toon\ToonLit.shader" />
