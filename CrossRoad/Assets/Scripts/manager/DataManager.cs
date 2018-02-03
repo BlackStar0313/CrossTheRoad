@@ -21,21 +21,23 @@ public class DataManager {
 	}
 
 	public void parseJsonFromLocal() {
-		string jsonPath = Application.dataPath + "/Resources/data.json";
+		string jsonPath = Application.streamingAssetsPath + "/data.json";
 		if (!File.Exists(jsonPath)) {
+			Debug.Log("~~~~~~~~  json dosent exist " + jsonPath) ; 
 			return ;
 		}
 
 		StreamReader str = new StreamReader(jsonPath);
 		if (str == null) {
+			Debug.Log("~~~~~~~~  stream reader error" );
 			return ; 
 		}
 
 		string json = str.ReadToEnd();
-		Debug.Log("~~~~~~~~  data json is " + json) ; 
+		// Debug.Log("~~~~~~~~  data json is " + json) ; 
 		if (json.Length > 0) {
 			m_localAllData = JsonUtility.FromJson<LocalDataCollection>(json);
-			Debug.Log("~~~~~~~~  data json is " + json) ; 
+			// Debug.Log("~~~~~~~~  data json is " + json) ; 
 		}
 	}
 

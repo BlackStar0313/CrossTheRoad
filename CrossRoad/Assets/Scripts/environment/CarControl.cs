@@ -10,8 +10,8 @@ public class CarControl : MonoBehaviour {
 	private Transform m_carEndPos {get; set;}
 	private Transform m_carPausePos {get; set;}
 
-	private float m_moveSpeedRangeMax = 10f ; 
-	private float m_moveSpeedRangeMin = 6f ; 
+	private float m_moveSpeedRangeMax = 6f ; 
+	private float m_moveSpeedRangeMin = 3f ; 
 	private float m_moveSpeedAvg = 0f;
 	private float m_moveSpeedCurrent = -1f ;
 	private float m_acceleratedSpeedRangeMax = 6.0f ;
@@ -139,9 +139,9 @@ public class CarControl : MonoBehaviour {
 
 		Debug.DrawLine(startPos,startPos+ Vector3.forward * this.m_direction.z * this.m_RaycasthitDist,Color.red);  //这个就是绘制出的射线了，包含发射位置，发射距离和射线的颜色；  
 
-		if (isNear) {
-			Debug.Log("!~~~isNearCars");
-		}
+		// if (isNear) {
+		// 	Debug.Log("!~~~isNearCars");
+		// }
 
 		targetCar = hit.transform ? hit.transform.GetComponent<T>() : null ; 
 

@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
 using UnityEngine.SceneManagement;
 using DG.Tweening;
 
@@ -28,7 +27,7 @@ public class GameManager : MonoBehaviour {
 	[HideInInspector] public static GameManager mInstance = null ; 
 
 	private bool[] m_isStartCreateCar = {true , true , true , true };
-	private float m_maxIntervelCreatCarTime = 2f ; 
+	private float m_maxIntervelCreatCarTime = 3f ; 
 	private float m_minIntervelCreateCarTime = 1f;
 	private float m_trafficIntervelCreateCarTime = 0.5f;
 	private enumGameCurrentStatus currentStatus { get; set; }
@@ -178,7 +177,8 @@ public class GameManager : MonoBehaviour {
 	}
 
 	private void createPlayer() {
-		Instantiate(this.m_player);
+		GameObject obj = Instantiate(this.m_player);
+		Debug.Log("~~~~~~~  createPlayer  ");
 		playerDirect = 1;
 	}
 

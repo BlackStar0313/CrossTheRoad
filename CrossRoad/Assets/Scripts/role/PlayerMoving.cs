@@ -16,7 +16,7 @@ public class PlayerMoving : MonoBehaviour {
 
 	private bool m_isMoving = false ; 
 	private float m_moveStep = 0.25f ;
-	private float m_moveSpeed = 2.0f;	
+	private float m_moveSpeed = 3.0f;	
 	private float m_direction = 1.0f ; 
 	private float m_deltaDist = 2.5f;	//判断玩家是否到位置的一个范围.
 	private bool m_isNewRound = true ; 
@@ -130,7 +130,7 @@ public class PlayerMoving : MonoBehaviour {
 		// 	}
 
 		if (Input.GetMouseButtonDown(0)) {
-			if (EventSystem.current.IsPointerOverGameObject ()) {
+			// if (EventSystem.current.IsPointerOverGameObject ()) {
 				PointerEventData eventDataCurrentPosition = new PointerEventData(EventSystem.current);
 				eventDataCurrentPosition.position = new Vector2(Input.mousePosition.x , Input.mousePosition.y);
 
@@ -145,7 +145,7 @@ public class PlayerMoving : MonoBehaviour {
 					}
 				}
 
-			}
+			// }
 			return true ; 
 		}
 

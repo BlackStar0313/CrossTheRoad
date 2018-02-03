@@ -15,6 +15,7 @@ public class RoleSwtichModle : MonoBehaviour {
 		bodyObj.SetActive(false);
 		headObj.SetActive(false);
 
+
 		StrDatarole roleData = DataManager.getInstance().GetRoleDataByIdx(PlayerManager.getInstance().GetPlayerInfo().currentRole);
 		try
 		{
@@ -33,6 +34,7 @@ public class RoleSwtichModle : MonoBehaviour {
 		}
 		catch (System.Exception)
 		{
+			Debug.Log("~~~~~~~~  RoleSwtichModle  error ");
 			bodyObj.SetActive(true);
 			headObj.SetActive(true);
 			Debug.LogError("wrong data ");
