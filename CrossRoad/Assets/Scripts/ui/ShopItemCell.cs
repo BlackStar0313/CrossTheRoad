@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Advertisements;
 
 public class ShopItemCell : MonoBehaviour {
 	enum enumShopItemCellBtnType {
 		none ,
 		showBuy ,
-		showConfirm
+		showConfirm,
+		showAds
 	}
 
 	public GameObject m_itemPlayer ; 
@@ -16,6 +18,7 @@ public class ShopItemCell : MonoBehaviour {
 	public Image m_imgRect;
 	public Button m_btnBuy;
 	public Button m_btnConfirm;
+	public Button m_btnAds;
 
 	private int m_shopIdx; 
 	private bool m_isSelected ;
@@ -35,15 +38,20 @@ public class ShopItemCell : MonoBehaviour {
 
 		m_btnBuy.onClick.AddListener(()=> handleTouch(m_btnBuy));
 		m_btnConfirm.onClick.AddListener(()=> handleTouch(m_btnConfirm));
+		m_btnAds.onClick.AddListener(()=> handleTouch(m_btnAds));
 
 		DispatchManager.getInstance().onSelectShopItem.AddListener(this.onSelected);
 
+		if (Advertisement.isSupported) {
+			Advertisement.Initialize(GameConstant.gameId  );
+		}
 	}
 
 	void OnDestroy()
 	{
 		m_btnBuy.onClick.RemoveListener(()=> handleTouch(m_btnBuy));
 		m_btnConfirm.onClick.RemoveListener(()=> handleTouch(m_btnConfirm));
+		m_btnAds.onClick.RemoveListener(()=> handleTouch(m_btnAds));
 
 		DispatchManager.getInstance().onSelectShopItem.RemoveListener(this.onSelected);
 	}
@@ -101,6 +109,9 @@ public class ShopItemCell : MonoBehaviour {
 			if (isOwnedRole) {
 				handleBtnEnable(enumShopItemCellBtnType.showConfirm);
 			}
+			else if (shopData.is_ads == 1){
+				handleBtnEnable(enumShopItemCellBtnType.showAds);
+			}
 			else {
 				handleBtnEnable(enumShopItemCellBtnType.showBuy);
 			}
@@ -108,6 +119,9 @@ public class ShopItemCell : MonoBehaviour {
 		else {
 			if (isOwnedRole) {
 				handleBtnEnable(enumShopItemCellBtnType.none);
+			}
+			else if (shopData.is_ads == 1){
+				handleBtnEnable(enumShopItemCellBtnType.showAds);
 			}
 			else {
 				handleBtnEnable(enumShopItemCellBtnType.showBuy);
@@ -118,11 +132,13 @@ public class ShopItemCell : MonoBehaviour {
 	private void handleBtnEnable(enumShopItemCellBtnType type) {
 		m_btnBuy.gameObject.SetActive (type == enumShopItemCellBtnType.showBuy);
 		m_btnConfirm.gameObject.SetActive (type == enumShopItemCellBtnType.showConfirm);
+		m_btnAds.gameObject.SetActive (type == enumShopItemCellBtnType.showAds);
 	}
 
 	private void handleTouch(Button btn) {
 		if (btn == m_btnBuy) { 
 			StrDatashop shopData = DataManager.getInstance().GetShopDataByIdx(m_shopIdx);
+
 			if (PlayerManager.getInstance().GetPlayerInfo().score >= shopData.price ) {
 				PlayerManager.getInstance().BuyRole(shopData.price , shopData.role_idx);
 				DispatchManager.getInstance().onRefreshShopShow.Invoke();
@@ -142,6 +158,37 @@ public class ShopItemCell : MonoBehaviour {
 			SceneManager.LoadScene("Menu");
 
 			SoundsManager.getInstance().playSounds(SoundsManager.clipNameClick);
+		}
+		else if (btn == m_btnAds) {
+			showAds();
+		}
+	}
+
+	private void showAds() {
+		if (!Advertisement.IsReady(GameConstant.adsReward)) {
+			return ;
+		}
+
+		ShowOptions options = new ShowOptions();
+		options.resultCallback = handleShowCallBack;
+		Advertisement.Show(GameConstant.adsReward, options);
+	}
+
+	private void handleShowCallBack(ShowResult result) {
+		if (result == ShowResult.Failed) {
+			Debug.Log("~~~~  filed to show ");
+		}
+		else if (result == ShowResult.Skipped) {
+			Debug.Log("~~~~  skipped  to show ");
+		}
+		else if (result == ShowResult.Finished) {
+			StrDatashop shopData = DataManager.getInstance().GetShopDataByIdx(m_shopIdx);
+			PlayerManager.getInstance().BuyRoleAds(shopData.role_idx);
+			DispatchManager.getInstance().onRefreshShopShow.Invoke();
+			this.refreshShow();
+			SoundsManager.getInstance().playSounds(SoundsManager.clipNameBuy);
+
+			Debug.Log("~~~~ success to show ads ");
 		}
 	}
 }

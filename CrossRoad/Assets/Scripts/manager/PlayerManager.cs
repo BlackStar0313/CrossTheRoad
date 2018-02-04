@@ -93,6 +93,11 @@ public class PlayerManager {
 		}
 	}
 
+	public void BuyRoleAds(int roleIdx) {
+		m_playerInfo.roles.Add(roleIdx);
+		m_playerInfo.saveToLocal();
+	}
+
 	public bool isOwnedRole(int roleIdx) {
 		for (int i = 0 ; i < m_playerInfo.roles.Count ; ++i) {
 			if (roleIdx == m_playerInfo.roles[i]) {

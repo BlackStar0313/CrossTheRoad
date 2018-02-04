@@ -9,6 +9,7 @@ public struct StrDatashop {
 	public int idx;
 	public int price;
 	public int role_idx;
+	public int is_ads;
 }
 
 [Serializable]

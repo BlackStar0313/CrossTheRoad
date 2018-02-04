@@ -10,7 +10,7 @@ _excelName1 = "role"
 _excelName2 = "shop"
 _excelNameSuffix = ".xlsx"
 _exportFileFolderCS = "../CrossRoad/Assets/Scripts/Data/"
-_exportFileFolderJson = "../CrossRoad/Assets/Resources/"
+_exportFileFolderJson = "../CrossRoad/Assets/StreamingAssets/"
 
 _exportAllDataClass = "LocalDataCollection"
 
