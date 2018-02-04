@@ -16,7 +16,7 @@ public class PlayUICtr : MonoBehaviour {
 	public AudioSource m_audioTimeout;
 
 	private float m_decreaseTime = 6;
-	private float m_addStep = 0.3f;
+	private float m_addStep = 0.25f;
 	private float m_randDist = 1.2f;
 
 	private int m_showScore = 0;
@@ -52,7 +52,7 @@ public class PlayUICtr : MonoBehaviour {
 	void Update()
 	{
 		//test code 
-		return ;
+		// return ;
 		
 		if (m_isTimeout || !GameManager.getInstance().IsPlaying()) {
 			return ;
