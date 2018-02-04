@@ -22,10 +22,7 @@ public class MenuUICtr : MonoBehaviour {
 		CloudMoving move = obj.GetComponent<CloudMoving>();
 		move.HideBegin(false);
 
-		// GameObject obj = Instantiate(Resources.Load("Prefebs/Cloud")) as GameObject;
-		// CloudMoving move = obj.GetComponent<CloudMoving>();
-		// move.ShowBegin();
-		// move.DoMoveOut();
+		SoundsManager.getInstance().playMusic(SoundsManager.clipNameMenu);
 	}
 
 	private void handleTouch(Button btn) {

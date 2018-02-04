@@ -14,6 +14,7 @@ public class ShopUICtr : MonoBehaviour {
 		DispatchManager.getInstance().onRefreshShopShow.AddListener(refreshUIShow);
 
 		refreshUIShow();
+		SoundsManager.getInstance().playMusic(SoundsManager.clipNameShop);
 	}
 
 	void OnDestroy()

@@ -14,7 +14,6 @@ public class GameLoader : MonoBehaviour {
 			GameManager obj = Instantiate(m_gameManager) as GameManager;
 			GameManager.mInstance = obj;
 		}
-
 		// if (UIManager.getInstance() == null) {
 		// 	Instantiate(m_UIManager);
 		// }

@@ -5,7 +5,8 @@ using UnityEngine;
 public class BasicController : MonoBehaviour {
 	[HideInInspector] public Animator m_animator;
 
-	public AudioSource m_audioSource ; 
+	public AudioSource m_audioMove ; 
+	public AudioSource m_audioDie ; 
 
 	public AudioClip[] m_audioWalk ; 
 	public AudioClip[] m_audioDead ; 
@@ -13,7 +14,6 @@ public class BasicController : MonoBehaviour {
 	protected virtual void Awake()
 	{
 		m_animator = GetComponent<Animator>();
-		m_audioSource = GetComponent<AudioSource>();		
 	} 
 
 	void OnDestroy()
@@ -38,22 +38,22 @@ public class BasicController : MonoBehaviour {
 
 	public void playMoveSounds() {
 		int randIdx = Random.Range(0 , m_audioWalk.Length);
-		m_audioSource.clip = m_audioWalk[randIdx];
-		m_audioSource.pitch = 1f;
-		m_audioSource.volume = 0.8f;
-		m_audioSource.Play();
+		m_audioMove.clip = m_audioWalk[randIdx];
+		m_audioMove.pitch = 1f;
+		m_audioMove.volume = 0.8f;
+		m_audioMove.Play();
 	}
 
 	public void stopMoveSounds() {
-		m_audioSource.Stop();
+		m_audioMove.Stop();
 	}
 
 	public void playDeadSounds() {
 		int randIdx = Random.Range(0 , m_audioDead.Length);
-		m_audioSource.clip = m_audioDead[randIdx];
-		m_audioSource.pitch = 1f;
-		m_audioSource.volume = 0.3f;
-		m_audioSource.loop = false ;
-		m_audioSource.Play();
+		m_audioDie.clip = m_audioDead[randIdx];
+		m_audioDie.pitch = 1f;
+		m_audioDie.volume = 0.3f;
+		m_audioDie.loop = false ;
+		m_audioDie.Play();
 	}
 }

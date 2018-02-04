@@ -38,6 +38,7 @@ public class PlayUICtr : MonoBehaviour {
 
 		handleFrog();
 
+		SoundsManager.getInstance().playMusic(SoundsManager.clipNameGameBg);
 	}
 
 	void OnDestroy()

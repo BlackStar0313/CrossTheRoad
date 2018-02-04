@@ -11,9 +11,13 @@ public class SoundsManager : MonoBehaviour {
 	[HideInInspector] public static string clipNameAddHeart = "add_heart";
 	[HideInInspector] public static string clipNameMoveWrong = "move_wrong";
 	[HideInInspector] public static string clipNameShopItemIdle = "shop_item_idle";
+	[HideInInspector] public static string clipNameMenu = "bg_music";
+	[HideInInspector] public static string clipNameGameBg = "game_bg";
+	[HideInInspector] public static string clipNameShop = "game_shop";
 	
 	[HideInInspector] public static SoundsManager mInstance = null; 
 	public AudioSource m_audio ;
+	public AudioSource m_music;
 
 	public AudioClip m_clipClick ; 
 	public AudioClip m_clipNegtive ; 
@@ -23,6 +27,9 @@ public class SoundsManager : MonoBehaviour {
 	public AudioClip m_clipAddHeart;
 	public AudioClip m_moveWrong;
 	public AudioClip[] m_shopItemIdles;
+	public AudioClip m_clipMenu;
+	public AudioClip[] m_clipGameBgs;
+	public AudioClip m_clipShop;
 
 	public static SoundsManager getInstance() {
 		return SoundsManager.mInstance;
@@ -72,6 +79,24 @@ public class SoundsManager : MonoBehaviour {
 			m_audio.clip = m_shopItemIdles[randIdx] ;
 			m_audio.volume = 0.6f;
 			m_audio.Play();
+		}
+	}
+
+	public void playMusic(string clipName) {
+		m_music.volume = 1 ;
+		if (clipName == clipNameMenu) {
+			m_music.clip = m_clipMenu ;
+			m_music.Play();
+		}
+		else if (clipName == clipNameGameBg) {
+			int randIdx = Random.Range(0,m_clipGameBgs.Length);
+			m_music.clip = m_clipGameBgs[randIdx] ;
+			m_music.volume = 0.4f;
+			m_music.Play();
+		}
+		else if (clipName == clipNameShop) {
+			m_music.clip = m_clipShop ;
+			m_music.Play();
 		}
 	}
 }
