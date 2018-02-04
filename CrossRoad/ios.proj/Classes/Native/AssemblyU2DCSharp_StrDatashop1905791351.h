@@ -32,6 +32,8 @@ public:
 	int32_t ___price_1;
 	// System.Int32 StrDatashop::role_idx
 	int32_t ___role_idx_2;
+	// System.Int32 StrDatashop::is_ads
+	int32_t ___is_ads_3;
 
 public:
 	inline static int32_t get_offset_of_idx_0() { return static_cast<int32_t>(offsetof(StrDatashop_t1905791351, ___idx_0)); }
@@ -56,6 +58,14 @@ public:
 	inline void set_role_idx_2(int32_t value)
 	{
 		___role_idx_2 = value;
+	}
+
+	inline static int32_t get_offset_of_is_ads_3() { return static_cast<int32_t>(offsetof(StrDatashop_t1905791351, ___is_ads_3)); }
+	inline int32_t get_is_ads_3() const { return ___is_ads_3; }
+	inline int32_t* get_address_of_is_ads_3() { return &___is_ads_3; }
+	inline void set_is_ads_3(int32_t value)
+	{
+		___is_ads_3 = value;
 	}
 };
 

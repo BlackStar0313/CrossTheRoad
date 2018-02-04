@@ -16,6 +16,10 @@
 struct Text_t356221433;
 // UnityEngine.UI.Button
 struct Button_t2872111280;
+// UnityEngine.Transform
+struct Transform_t3275118058;
+// UnityEngine.UI.Image
+struct Image_t2042527209;
 
 
 
@@ -36,8 +40,16 @@ public:
 	Button_t2872111280 * ___m_btnContinue_3;
 	// UnityEngine.UI.Button GameOverLayerCtr::m_btnHome
 	Button_t2872111280 * ___m_btnHome_4;
+	// UnityEngine.UI.Button GameOverLayerCtr::m_btnAds
+	Button_t2872111280 * ___m_btnAds_5;
 	// UnityEngine.UI.Text GameOverLayerCtr::m_textTitle
-	Text_t356221433 * ___m_textTitle_5;
+	Text_t356221433 * ___m_textTitle_6;
+	// UnityEngine.Transform GameOverLayerCtr::m_groupAds
+	Transform_t3275118058 * ___m_groupAds_7;
+	// UnityEngine.UI.Image GameOverLayerCtr::m_imgHeart
+	Image_t2042527209 * ___m_imgHeart_8;
+	// UnityEngine.UI.Image GameOverLayerCtr::m_imgBest
+	Image_t2042527209 * ___m_imgBest_9;
 
 public:
 	inline static int32_t get_offset_of_m_textScore_2() { return static_cast<int32_t>(offsetof(GameOverLayerCtr_t751035920, ___m_textScore_2)); }
@@ -67,13 +79,49 @@ public:
 		Il2CppCodeGenWriteBarrier(&___m_btnHome_4, value);
 	}
 
-	inline static int32_t get_offset_of_m_textTitle_5() { return static_cast<int32_t>(offsetof(GameOverLayerCtr_t751035920, ___m_textTitle_5)); }
-	inline Text_t356221433 * get_m_textTitle_5() const { return ___m_textTitle_5; }
-	inline Text_t356221433 ** get_address_of_m_textTitle_5() { return &___m_textTitle_5; }
-	inline void set_m_textTitle_5(Text_t356221433 * value)
+	inline static int32_t get_offset_of_m_btnAds_5() { return static_cast<int32_t>(offsetof(GameOverLayerCtr_t751035920, ___m_btnAds_5)); }
+	inline Button_t2872111280 * get_m_btnAds_5() const { return ___m_btnAds_5; }
+	inline Button_t2872111280 ** get_address_of_m_btnAds_5() { return &___m_btnAds_5; }
+	inline void set_m_btnAds_5(Button_t2872111280 * value)
 	{
-		___m_textTitle_5 = value;
-		Il2CppCodeGenWriteBarrier(&___m_textTitle_5, value);
+		___m_btnAds_5 = value;
+		Il2CppCodeGenWriteBarrier(&___m_btnAds_5, value);
+	}
+
+	inline static int32_t get_offset_of_m_textTitle_6() { return static_cast<int32_t>(offsetof(GameOverLayerCtr_t751035920, ___m_textTitle_6)); }
+	inline Text_t356221433 * get_m_textTitle_6() const { return ___m_textTitle_6; }
+	inline Text_t356221433 ** get_address_of_m_textTitle_6() { return &___m_textTitle_6; }
+	inline void set_m_textTitle_6(Text_t356221433 * value)
+	{
+		___m_textTitle_6 = value;
+		Il2CppCodeGenWriteBarrier(&___m_textTitle_6, value);
+	}
+
+	inline static int32_t get_offset_of_m_groupAds_7() { return static_cast<int32_t>(offsetof(GameOverLayerCtr_t751035920, ___m_groupAds_7)); }
+	inline Transform_t3275118058 * get_m_groupAds_7() const { return ___m_groupAds_7; }
+	inline Transform_t3275118058 ** get_address_of_m_groupAds_7() { return &___m_groupAds_7; }
+	inline void set_m_groupAds_7(Transform_t3275118058 * value)
+	{
+		___m_groupAds_7 = value;
+		Il2CppCodeGenWriteBarrier(&___m_groupAds_7, value);
+	}
+
+	inline static int32_t get_offset_of_m_imgHeart_8() { return static_cast<int32_t>(offsetof(GameOverLayerCtr_t751035920, ___m_imgHeart_8)); }
+	inline Image_t2042527209 * get_m_imgHeart_8() const { return ___m_imgHeart_8; }
+	inline Image_t2042527209 ** get_address_of_m_imgHeart_8() { return &___m_imgHeart_8; }
+	inline void set_m_imgHeart_8(Image_t2042527209 * value)
+	{
+		___m_imgHeart_8 = value;
+		Il2CppCodeGenWriteBarrier(&___m_imgHeart_8, value);
+	}
+
+	inline static int32_t get_offset_of_m_imgBest_9() { return static_cast<int32_t>(offsetof(GameOverLayerCtr_t751035920, ___m_imgBest_9)); }
+	inline Image_t2042527209 * get_m_imgBest_9() const { return ___m_imgBest_9; }
+	inline Image_t2042527209 ** get_address_of_m_imgBest_9() { return &___m_imgBest_9; }
+	inline void set_m_imgBest_9(Image_t2042527209 * value)
+	{
+		___m_imgBest_9 = value;
+		Il2CppCodeGenWriteBarrier(&___m_imgBest_9, value);
 	}
 };
 

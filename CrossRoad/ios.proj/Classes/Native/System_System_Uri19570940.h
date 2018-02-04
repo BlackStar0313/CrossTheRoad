@@ -64,10 +64,12 @@ public:
 	String_t* ___cachedAbsoluteUri_13;
 	// System.String System.Uri::cachedToString
 	String_t* ___cachedToString_14;
+	// System.String System.Uri::cachedLocalPath
+	String_t* ___cachedLocalPath_15;
 	// System.Int32 System.Uri::cachedHashCode
-	int32_t ___cachedHashCode_15;
+	int32_t ___cachedHashCode_16;
 	// System.UriParser System.Uri::parser
-	UriParser_t1012511323 * ___parser_29;
+	UriParser_t1012511323 * ___parser_30;
 
 public:
 	inline static int32_t get_offset_of_isUnixFilePath_0() { return static_cast<int32_t>(offsetof(Uri_t19570940, ___isUnixFilePath_0)); }
@@ -199,21 +201,30 @@ public:
 		Il2CppCodeGenWriteBarrier(&___cachedToString_14, value);
 	}
 
-	inline static int32_t get_offset_of_cachedHashCode_15() { return static_cast<int32_t>(offsetof(Uri_t19570940, ___cachedHashCode_15)); }
-	inline int32_t get_cachedHashCode_15() const { return ___cachedHashCode_15; }
-	inline int32_t* get_address_of_cachedHashCode_15() { return &___cachedHashCode_15; }
-	inline void set_cachedHashCode_15(int32_t value)
+	inline static int32_t get_offset_of_cachedLocalPath_15() { return static_cast<int32_t>(offsetof(Uri_t19570940, ___cachedLocalPath_15)); }
+	inline String_t* get_cachedLocalPath_15() const { return ___cachedLocalPath_15; }
+	inline String_t** get_address_of_cachedLocalPath_15() { return &___cachedLocalPath_15; }
+	inline void set_cachedLocalPath_15(String_t* value)
 	{
-		___cachedHashCode_15 = value;
+		___cachedLocalPath_15 = value;
+		Il2CppCodeGenWriteBarrier(&___cachedLocalPath_15, value);
 	}
 
-	inline static int32_t get_offset_of_parser_29() { return static_cast<int32_t>(offsetof(Uri_t19570940, ___parser_29)); }
-	inline UriParser_t1012511323 * get_parser_29() const { return ___parser_29; }
-	inline UriParser_t1012511323 ** get_address_of_parser_29() { return &___parser_29; }
-	inline void set_parser_29(UriParser_t1012511323 * value)
+	inline static int32_t get_offset_of_cachedHashCode_16() { return static_cast<int32_t>(offsetof(Uri_t19570940, ___cachedHashCode_16)); }
+	inline int32_t get_cachedHashCode_16() const { return ___cachedHashCode_16; }
+	inline int32_t* get_address_of_cachedHashCode_16() { return &___cachedHashCode_16; }
+	inline void set_cachedHashCode_16(int32_t value)
 	{
-		___parser_29 = value;
-		Il2CppCodeGenWriteBarrier(&___parser_29, value);
+		___cachedHashCode_16 = value;
+	}
+
+	inline static int32_t get_offset_of_parser_30() { return static_cast<int32_t>(offsetof(Uri_t19570940, ___parser_30)); }
+	inline UriParser_t1012511323 * get_parser_30() const { return ___parser_30; }
+	inline UriParser_t1012511323 ** get_address_of_parser_30() { return &___parser_30; }
+	inline void set_parser_30(UriParser_t1012511323 * value)
+	{
+		___parser_30 = value;
+		Il2CppCodeGenWriteBarrier(&___parser_30, value);
 	}
 };
 
@@ -221,181 +232,203 @@ struct Uri_t19570940_StaticFields
 {
 public:
 	// System.String System.Uri::hexUpperChars
-	String_t* ___hexUpperChars_16;
+	String_t* ___hexUpperChars_17;
 	// System.String System.Uri::SchemeDelimiter
-	String_t* ___SchemeDelimiter_17;
+	String_t* ___SchemeDelimiter_18;
 	// System.String System.Uri::UriSchemeFile
-	String_t* ___UriSchemeFile_18;
+	String_t* ___UriSchemeFile_19;
 	// System.String System.Uri::UriSchemeFtp
-	String_t* ___UriSchemeFtp_19;
+	String_t* ___UriSchemeFtp_20;
 	// System.String System.Uri::UriSchemeGopher
-	String_t* ___UriSchemeGopher_20;
+	String_t* ___UriSchemeGopher_21;
 	// System.String System.Uri::UriSchemeHttp
-	String_t* ___UriSchemeHttp_21;
+	String_t* ___UriSchemeHttp_22;
 	// System.String System.Uri::UriSchemeHttps
-	String_t* ___UriSchemeHttps_22;
+	String_t* ___UriSchemeHttps_23;
 	// System.String System.Uri::UriSchemeMailto
-	String_t* ___UriSchemeMailto_23;
+	String_t* ___UriSchemeMailto_24;
 	// System.String System.Uri::UriSchemeNews
-	String_t* ___UriSchemeNews_24;
+	String_t* ___UriSchemeNews_25;
 	// System.String System.Uri::UriSchemeNntp
-	String_t* ___UriSchemeNntp_25;
+	String_t* ___UriSchemeNntp_26;
 	// System.String System.Uri::UriSchemeNetPipe
-	String_t* ___UriSchemeNetPipe_26;
+	String_t* ___UriSchemeNetPipe_27;
 	// System.String System.Uri::UriSchemeNetTcp
-	String_t* ___UriSchemeNetTcp_27;
+	String_t* ___UriSchemeNetTcp_28;
 	// System.Uri/UriScheme[] System.Uri::schemes
-	UriSchemeU5BU5D_t2962278982* ___schemes_28;
+	UriSchemeU5BU5D_t2962278982* ___schemes_29;
+	// System.Collections.Generic.Dictionary`2<System.String,System.Int32> System.Uri::<>f__switch$map12
+	Dictionary_2_t3986656710 * ___U3CU3Ef__switchU24map12_31;
+	// System.Collections.Generic.Dictionary`2<System.String,System.Int32> System.Uri::<>f__switch$map13
+	Dictionary_2_t3986656710 * ___U3CU3Ef__switchU24map13_32;
 	// System.Collections.Generic.Dictionary`2<System.String,System.Int32> System.Uri::<>f__switch$map14
-	Dictionary_2_t3986656710 * ___U3CU3Ef__switchU24map14_30;
+	Dictionary_2_t3986656710 * ___U3CU3Ef__switchU24map14_33;
 	// System.Collections.Generic.Dictionary`2<System.String,System.Int32> System.Uri::<>f__switch$map15
-	Dictionary_2_t3986656710 * ___U3CU3Ef__switchU24map15_31;
+	Dictionary_2_t3986656710 * ___U3CU3Ef__switchU24map15_34;
 	// System.Collections.Generic.Dictionary`2<System.String,System.Int32> System.Uri::<>f__switch$map16
-	Dictionary_2_t3986656710 * ___U3CU3Ef__switchU24map16_32;
+	Dictionary_2_t3986656710 * ___U3CU3Ef__switchU24map16_35;
 
 public:
-	inline static int32_t get_offset_of_hexUpperChars_16() { return static_cast<int32_t>(offsetof(Uri_t19570940_StaticFields, ___hexUpperChars_16)); }
-	inline String_t* get_hexUpperChars_16() const { return ___hexUpperChars_16; }
-	inline String_t** get_address_of_hexUpperChars_16() { return &___hexUpperChars_16; }
-	inline void set_hexUpperChars_16(String_t* value)
+	inline static int32_t get_offset_of_hexUpperChars_17() { return static_cast<int32_t>(offsetof(Uri_t19570940_StaticFields, ___hexUpperChars_17)); }
+	inline String_t* get_hexUpperChars_17() const { return ___hexUpperChars_17; }
+	inline String_t** get_address_of_hexUpperChars_17() { return &___hexUpperChars_17; }
+	inline void set_hexUpperChars_17(String_t* value)
 	{
-		___hexUpperChars_16 = value;
-		Il2CppCodeGenWriteBarrier(&___hexUpperChars_16, value);
+		___hexUpperChars_17 = value;
+		Il2CppCodeGenWriteBarrier(&___hexUpperChars_17, value);
 	}
 
-	inline static int32_t get_offset_of_SchemeDelimiter_17() { return static_cast<int32_t>(offsetof(Uri_t19570940_StaticFields, ___SchemeDelimiter_17)); }
-	inline String_t* get_SchemeDelimiter_17() const { return ___SchemeDelimiter_17; }
-	inline String_t** get_address_of_SchemeDelimiter_17() { return &___SchemeDelimiter_17; }
-	inline void set_SchemeDelimiter_17(String_t* value)
+	inline static int32_t get_offset_of_SchemeDelimiter_18() { return static_cast<int32_t>(offsetof(Uri_t19570940_StaticFields, ___SchemeDelimiter_18)); }
+	inline String_t* get_SchemeDelimiter_18() const { return ___SchemeDelimiter_18; }
+	inline String_t** get_address_of_SchemeDelimiter_18() { return &___SchemeDelimiter_18; }
+	inline void set_SchemeDelimiter_18(String_t* value)
 	{
-		___SchemeDelimiter_17 = value;
-		Il2CppCodeGenWriteBarrier(&___SchemeDelimiter_17, value);
+		___SchemeDelimiter_18 = value;
+		Il2CppCodeGenWriteBarrier(&___SchemeDelimiter_18, value);
 	}
 
-	inline static int32_t get_offset_of_UriSchemeFile_18() { return static_cast<int32_t>(offsetof(Uri_t19570940_StaticFields, ___UriSchemeFile_18)); }
-	inline String_t* get_UriSchemeFile_18() const { return ___UriSchemeFile_18; }
-	inline String_t** get_address_of_UriSchemeFile_18() { return &___UriSchemeFile_18; }
-	inline void set_UriSchemeFile_18(String_t* value)
+	inline static int32_t get_offset_of_UriSchemeFile_19() { return static_cast<int32_t>(offsetof(Uri_t19570940_StaticFields, ___UriSchemeFile_19)); }
+	inline String_t* get_UriSchemeFile_19() const { return ___UriSchemeFile_19; }
+	inline String_t** get_address_of_UriSchemeFile_19() { return &___UriSchemeFile_19; }
+	inline void set_UriSchemeFile_19(String_t* value)
 	{
-		___UriSchemeFile_18 = value;
-		Il2CppCodeGenWriteBarrier(&___UriSchemeFile_18, value);
+		___UriSchemeFile_19 = value;
+		Il2CppCodeGenWriteBarrier(&___UriSchemeFile_19, value);
 	}
 
-	inline static int32_t get_offset_of_UriSchemeFtp_19() { return static_cast<int32_t>(offsetof(Uri_t19570940_StaticFields, ___UriSchemeFtp_19)); }
-	inline String_t* get_UriSchemeFtp_19() const { return ___UriSchemeFtp_19; }
-	inline String_t** get_address_of_UriSchemeFtp_19() { return &___UriSchemeFtp_19; }
-	inline void set_UriSchemeFtp_19(String_t* value)
+	inline static int32_t get_offset_of_UriSchemeFtp_20() { return static_cast<int32_t>(offsetof(Uri_t19570940_StaticFields, ___UriSchemeFtp_20)); }
+	inline String_t* get_UriSchemeFtp_20() const { return ___UriSchemeFtp_20; }
+	inline String_t** get_address_of_UriSchemeFtp_20() { return &___UriSchemeFtp_20; }
+	inline void set_UriSchemeFtp_20(String_t* value)
 	{
-		___UriSchemeFtp_19 = value;
-		Il2CppCodeGenWriteBarrier(&___UriSchemeFtp_19, value);
+		___UriSchemeFtp_20 = value;
+		Il2CppCodeGenWriteBarrier(&___UriSchemeFtp_20, value);
 	}
 
-	inline static int32_t get_offset_of_UriSchemeGopher_20() { return static_cast<int32_t>(offsetof(Uri_t19570940_StaticFields, ___UriSchemeGopher_20)); }
-	inline String_t* get_UriSchemeGopher_20() const { return ___UriSchemeGopher_20; }
-	inline String_t** get_address_of_UriSchemeGopher_20() { return &___UriSchemeGopher_20; }
-	inline void set_UriSchemeGopher_20(String_t* value)
+	inline static int32_t get_offset_of_UriSchemeGopher_21() { return static_cast<int32_t>(offsetof(Uri_t19570940_StaticFields, ___UriSchemeGopher_21)); }
+	inline String_t* get_UriSchemeGopher_21() const { return ___UriSchemeGopher_21; }
+	inline String_t** get_address_of_UriSchemeGopher_21() { return &___UriSchemeGopher_21; }
+	inline void set_UriSchemeGopher_21(String_t* value)
 	{
-		___UriSchemeGopher_20 = value;
-		Il2CppCodeGenWriteBarrier(&___UriSchemeGopher_20, value);
+		___UriSchemeGopher_21 = value;
+		Il2CppCodeGenWriteBarrier(&___UriSchemeGopher_21, value);
 	}
 
-	inline static int32_t get_offset_of_UriSchemeHttp_21() { return static_cast<int32_t>(offsetof(Uri_t19570940_StaticFields, ___UriSchemeHttp_21)); }
-	inline String_t* get_UriSchemeHttp_21() const { return ___UriSchemeHttp_21; }
-	inline String_t** get_address_of_UriSchemeHttp_21() { return &___UriSchemeHttp_21; }
-	inline void set_UriSchemeHttp_21(String_t* value)
+	inline static int32_t get_offset_of_UriSchemeHttp_22() { return static_cast<int32_t>(offsetof(Uri_t19570940_StaticFields, ___UriSchemeHttp_22)); }
+	inline String_t* get_UriSchemeHttp_22() const { return ___UriSchemeHttp_22; }
+	inline String_t** get_address_of_UriSchemeHttp_22() { return &___UriSchemeHttp_22; }
+	inline void set_UriSchemeHttp_22(String_t* value)
 	{
-		___UriSchemeHttp_21 = value;
-		Il2CppCodeGenWriteBarrier(&___UriSchemeHttp_21, value);
+		___UriSchemeHttp_22 = value;
+		Il2CppCodeGenWriteBarrier(&___UriSchemeHttp_22, value);
 	}
 
-	inline static int32_t get_offset_of_UriSchemeHttps_22() { return static_cast<int32_t>(offsetof(Uri_t19570940_StaticFields, ___UriSchemeHttps_22)); }
-	inline String_t* get_UriSchemeHttps_22() const { return ___UriSchemeHttps_22; }
-	inline String_t** get_address_of_UriSchemeHttps_22() { return &___UriSchemeHttps_22; }
-	inline void set_UriSchemeHttps_22(String_t* value)
+	inline static int32_t get_offset_of_UriSchemeHttps_23() { return static_cast<int32_t>(offsetof(Uri_t19570940_StaticFields, ___UriSchemeHttps_23)); }
+	inline String_t* get_UriSchemeHttps_23() const { return ___UriSchemeHttps_23; }
+	inline String_t** get_address_of_UriSchemeHttps_23() { return &___UriSchemeHttps_23; }
+	inline void set_UriSchemeHttps_23(String_t* value)
 	{
-		___UriSchemeHttps_22 = value;
-		Il2CppCodeGenWriteBarrier(&___UriSchemeHttps_22, value);
+		___UriSchemeHttps_23 = value;
+		Il2CppCodeGenWriteBarrier(&___UriSchemeHttps_23, value);
 	}
 
-	inline static int32_t get_offset_of_UriSchemeMailto_23() { return static_cast<int32_t>(offsetof(Uri_t19570940_StaticFields, ___UriSchemeMailto_23)); }
-	inline String_t* get_UriSchemeMailto_23() const { return ___UriSchemeMailto_23; }
-	inline String_t** get_address_of_UriSchemeMailto_23() { return &___UriSchemeMailto_23; }
-	inline void set_UriSchemeMailto_23(String_t* value)
+	inline static int32_t get_offset_of_UriSchemeMailto_24() { return static_cast<int32_t>(offsetof(Uri_t19570940_StaticFields, ___UriSchemeMailto_24)); }
+	inline String_t* get_UriSchemeMailto_24() const { return ___UriSchemeMailto_24; }
+	inline String_t** get_address_of_UriSchemeMailto_24() { return &___UriSchemeMailto_24; }
+	inline void set_UriSchemeMailto_24(String_t* value)
 	{
-		___UriSchemeMailto_23 = value;
-		Il2CppCodeGenWriteBarrier(&___UriSchemeMailto_23, value);
+		___UriSchemeMailto_24 = value;
+		Il2CppCodeGenWriteBarrier(&___UriSchemeMailto_24, value);
 	}
 
-	inline static int32_t get_offset_of_UriSchemeNews_24() { return static_cast<int32_t>(offsetof(Uri_t19570940_StaticFields, ___UriSchemeNews_24)); }
-	inline String_t* get_UriSchemeNews_24() const { return ___UriSchemeNews_24; }
-	inline String_t** get_address_of_UriSchemeNews_24() { return &___UriSchemeNews_24; }
-	inline void set_UriSchemeNews_24(String_t* value)
+	inline static int32_t get_offset_of_UriSchemeNews_25() { return static_cast<int32_t>(offsetof(Uri_t19570940_StaticFields, ___UriSchemeNews_25)); }
+	inline String_t* get_UriSchemeNews_25() const { return ___UriSchemeNews_25; }
+	inline String_t** get_address_of_UriSchemeNews_25() { return &___UriSchemeNews_25; }
+	inline void set_UriSchemeNews_25(String_t* value)
 	{
-		___UriSchemeNews_24 = value;
-		Il2CppCodeGenWriteBarrier(&___UriSchemeNews_24, value);
+		___UriSchemeNews_25 = value;
+		Il2CppCodeGenWriteBarrier(&___UriSchemeNews_25, value);
 	}
 
-	inline static int32_t get_offset_of_UriSchemeNntp_25() { return static_cast<int32_t>(offsetof(Uri_t19570940_StaticFields, ___UriSchemeNntp_25)); }
-	inline String_t* get_UriSchemeNntp_25() const { return ___UriSchemeNntp_25; }
-	inline String_t** get_address_of_UriSchemeNntp_25() { return &___UriSchemeNntp_25; }
-	inline void set_UriSchemeNntp_25(String_t* value)
+	inline static int32_t get_offset_of_UriSchemeNntp_26() { return static_cast<int32_t>(offsetof(Uri_t19570940_StaticFields, ___UriSchemeNntp_26)); }
+	inline String_t* get_UriSchemeNntp_26() const { return ___UriSchemeNntp_26; }
+	inline String_t** get_address_of_UriSchemeNntp_26() { return &___UriSchemeNntp_26; }
+	inline void set_UriSchemeNntp_26(String_t* value)
 	{
-		___UriSchemeNntp_25 = value;
-		Il2CppCodeGenWriteBarrier(&___UriSchemeNntp_25, value);
+		___UriSchemeNntp_26 = value;
+		Il2CppCodeGenWriteBarrier(&___UriSchemeNntp_26, value);
 	}
 
-	inline static int32_t get_offset_of_UriSchemeNetPipe_26() { return static_cast<int32_t>(offsetof(Uri_t19570940_StaticFields, ___UriSchemeNetPipe_26)); }
-	inline String_t* get_UriSchemeNetPipe_26() const { return ___UriSchemeNetPipe_26; }
-	inline String_t** get_address_of_UriSchemeNetPipe_26() { return &___UriSchemeNetPipe_26; }
-	inline void set_UriSchemeNetPipe_26(String_t* value)
+	inline static int32_t get_offset_of_UriSchemeNetPipe_27() { return static_cast<int32_t>(offsetof(Uri_t19570940_StaticFields, ___UriSchemeNetPipe_27)); }
+	inline String_t* get_UriSchemeNetPipe_27() const { return ___UriSchemeNetPipe_27; }
+	inline String_t** get_address_of_UriSchemeNetPipe_27() { return &___UriSchemeNetPipe_27; }
+	inline void set_UriSchemeNetPipe_27(String_t* value)
 	{
-		___UriSchemeNetPipe_26 = value;
-		Il2CppCodeGenWriteBarrier(&___UriSchemeNetPipe_26, value);
+		___UriSchemeNetPipe_27 = value;
+		Il2CppCodeGenWriteBarrier(&___UriSchemeNetPipe_27, value);
 	}
 
-	inline static int32_t get_offset_of_UriSchemeNetTcp_27() { return static_cast<int32_t>(offsetof(Uri_t19570940_StaticFields, ___UriSchemeNetTcp_27)); }
-	inline String_t* get_UriSchemeNetTcp_27() const { return ___UriSchemeNetTcp_27; }
-	inline String_t** get_address_of_UriSchemeNetTcp_27() { return &___UriSchemeNetTcp_27; }
-	inline void set_UriSchemeNetTcp_27(String_t* value)
+	inline static int32_t get_offset_of_UriSchemeNetTcp_28() { return static_cast<int32_t>(offsetof(Uri_t19570940_StaticFields, ___UriSchemeNetTcp_28)); }
+	inline String_t* get_UriSchemeNetTcp_28() const { return ___UriSchemeNetTcp_28; }
+	inline String_t** get_address_of_UriSchemeNetTcp_28() { return &___UriSchemeNetTcp_28; }
+	inline void set_UriSchemeNetTcp_28(String_t* value)
 	{
-		___UriSchemeNetTcp_27 = value;
-		Il2CppCodeGenWriteBarrier(&___UriSchemeNetTcp_27, value);
+		___UriSchemeNetTcp_28 = value;
+		Il2CppCodeGenWriteBarrier(&___UriSchemeNetTcp_28, value);
 	}
 
-	inline static int32_t get_offset_of_schemes_28() { return static_cast<int32_t>(offsetof(Uri_t19570940_StaticFields, ___schemes_28)); }
-	inline UriSchemeU5BU5D_t2962278982* get_schemes_28() const { return ___schemes_28; }
-	inline UriSchemeU5BU5D_t2962278982** get_address_of_schemes_28() { return &___schemes_28; }
-	inline void set_schemes_28(UriSchemeU5BU5D_t2962278982* value)
+	inline static int32_t get_offset_of_schemes_29() { return static_cast<int32_t>(offsetof(Uri_t19570940_StaticFields, ___schemes_29)); }
+	inline UriSchemeU5BU5D_t2962278982* get_schemes_29() const { return ___schemes_29; }
+	inline UriSchemeU5BU5D_t2962278982** get_address_of_schemes_29() { return &___schemes_29; }
+	inline void set_schemes_29(UriSchemeU5BU5D_t2962278982* value)
 	{
-		___schemes_28 = value;
-		Il2CppCodeGenWriteBarrier(&___schemes_28, value);
+		___schemes_29 = value;
+		Il2CppCodeGenWriteBarrier(&___schemes_29, value);
 	}
 
-	inline static int32_t get_offset_of_U3CU3Ef__switchU24map14_30() { return static_cast<int32_t>(offsetof(Uri_t19570940_StaticFields, ___U3CU3Ef__switchU24map14_30)); }
-	inline Dictionary_2_t3986656710 * get_U3CU3Ef__switchU24map14_30() const { return ___U3CU3Ef__switchU24map14_30; }
-	inline Dictionary_2_t3986656710 ** get_address_of_U3CU3Ef__switchU24map14_30() { return &___U3CU3Ef__switchU24map14_30; }
-	inline void set_U3CU3Ef__switchU24map14_30(Dictionary_2_t3986656710 * value)
+	inline static int32_t get_offset_of_U3CU3Ef__switchU24map12_31() { return static_cast<int32_t>(offsetof(Uri_t19570940_StaticFields, ___U3CU3Ef__switchU24map12_31)); }
+	inline Dictionary_2_t3986656710 * get_U3CU3Ef__switchU24map12_31() const { return ___U3CU3Ef__switchU24map12_31; }
+	inline Dictionary_2_t3986656710 ** get_address_of_U3CU3Ef__switchU24map12_31() { return &___U3CU3Ef__switchU24map12_31; }
+	inline void set_U3CU3Ef__switchU24map12_31(Dictionary_2_t3986656710 * value)
 	{
-		___U3CU3Ef__switchU24map14_30 = value;
-		Il2CppCodeGenWriteBarrier(&___U3CU3Ef__switchU24map14_30, value);
+		___U3CU3Ef__switchU24map12_31 = value;
+		Il2CppCodeGenWriteBarrier(&___U3CU3Ef__switchU24map12_31, value);
 	}
 
-	inline static int32_t get_offset_of_U3CU3Ef__switchU24map15_31() { return static_cast<int32_t>(offsetof(Uri_t19570940_StaticFields, ___U3CU3Ef__switchU24map15_31)); }
-	inline Dictionary_2_t3986656710 * get_U3CU3Ef__switchU24map15_31() const { return ___U3CU3Ef__switchU24map15_31; }
-	inline Dictionary_2_t3986656710 ** get_address_of_U3CU3Ef__switchU24map15_31() { return &___U3CU3Ef__switchU24map15_31; }
-	inline void set_U3CU3Ef__switchU24map15_31(Dictionary_2_t3986656710 * value)
+	inline static int32_t get_offset_of_U3CU3Ef__switchU24map13_32() { return static_cast<int32_t>(offsetof(Uri_t19570940_StaticFields, ___U3CU3Ef__switchU24map13_32)); }
+	inline Dictionary_2_t3986656710 * get_U3CU3Ef__switchU24map13_32() const { return ___U3CU3Ef__switchU24map13_32; }
+	inline Dictionary_2_t3986656710 ** get_address_of_U3CU3Ef__switchU24map13_32() { return &___U3CU3Ef__switchU24map13_32; }
+	inline void set_U3CU3Ef__switchU24map13_32(Dictionary_2_t3986656710 * value)
 	{
-		___U3CU3Ef__switchU24map15_31 = value;
-		Il2CppCodeGenWriteBarrier(&___U3CU3Ef__switchU24map15_31, value);
+		___U3CU3Ef__switchU24map13_32 = value;
+		Il2CppCodeGenWriteBarrier(&___U3CU3Ef__switchU24map13_32, value);
 	}
 
-	inline static int32_t get_offset_of_U3CU3Ef__switchU24map16_32() { return static_cast<int32_t>(offsetof(Uri_t19570940_StaticFields, ___U3CU3Ef__switchU24map16_32)); }
-	inline Dictionary_2_t3986656710 * get_U3CU3Ef__switchU24map16_32() const { return ___U3CU3Ef__switchU24map16_32; }
-	inline Dictionary_2_t3986656710 ** get_address_of_U3CU3Ef__switchU24map16_32() { return &___U3CU3Ef__switchU24map16_32; }
-	inline void set_U3CU3Ef__switchU24map16_32(Dictionary_2_t3986656710 * value)
+	inline static int32_t get_offset_of_U3CU3Ef__switchU24map14_33() { return static_cast<int32_t>(offsetof(Uri_t19570940_StaticFields, ___U3CU3Ef__switchU24map14_33)); }
+	inline Dictionary_2_t3986656710 * get_U3CU3Ef__switchU24map14_33() const { return ___U3CU3Ef__switchU24map14_33; }
+	inline Dictionary_2_t3986656710 ** get_address_of_U3CU3Ef__switchU24map14_33() { return &___U3CU3Ef__switchU24map14_33; }
+	inline void set_U3CU3Ef__switchU24map14_33(Dictionary_2_t3986656710 * value)
 	{
-		___U3CU3Ef__switchU24map16_32 = value;
-		Il2CppCodeGenWriteBarrier(&___U3CU3Ef__switchU24map16_32, value);
+		___U3CU3Ef__switchU24map14_33 = value;
+		Il2CppCodeGenWriteBarrier(&___U3CU3Ef__switchU24map14_33, value);
+	}
+
+	inline static int32_t get_offset_of_U3CU3Ef__switchU24map15_34() { return static_cast<int32_t>(offsetof(Uri_t19570940_StaticFields, ___U3CU3Ef__switchU24map15_34)); }
+	inline Dictionary_2_t3986656710 * get_U3CU3Ef__switchU24map15_34() const { return ___U3CU3Ef__switchU24map15_34; }
+	inline Dictionary_2_t3986656710 ** get_address_of_U3CU3Ef__switchU24map15_34() { return &___U3CU3Ef__switchU24map15_34; }
+	inline void set_U3CU3Ef__switchU24map15_34(Dictionary_2_t3986656710 * value)
+	{
+		___U3CU3Ef__switchU24map15_34 = value;
+		Il2CppCodeGenWriteBarrier(&___U3CU3Ef__switchU24map15_34, value);
+	}
+
+	inline static int32_t get_offset_of_U3CU3Ef__switchU24map16_35() { return static_cast<int32_t>(offsetof(Uri_t19570940_StaticFields, ___U3CU3Ef__switchU24map16_35)); }
+	inline Dictionary_2_t3986656710 * get_U3CU3Ef__switchU24map16_35() const { return ___U3CU3Ef__switchU24map16_35; }
+	inline Dictionary_2_t3986656710 ** get_address_of_U3CU3Ef__switchU24map16_35() { return &___U3CU3Ef__switchU24map16_35; }
+	inline void set_U3CU3Ef__switchU24map16_35(Dictionary_2_t3986656710 * value)
+	{
+		___U3CU3Ef__switchU24map16_35 = value;
+		Il2CppCodeGenWriteBarrier(&___U3CU3Ef__switchU24map16_35, value);
 	}
 };
 

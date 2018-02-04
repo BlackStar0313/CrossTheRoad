@@ -44,10 +44,12 @@ public:
 	Button_t2872111280 * ___m_btnBuy_5;
 	// UnityEngine.UI.Button ShopItemCell::m_btnConfirm
 	Button_t2872111280 * ___m_btnConfirm_6;
+	// UnityEngine.UI.Button ShopItemCell::m_btnAds
+	Button_t2872111280 * ___m_btnAds_7;
 	// System.Int32 ShopItemCell::m_shopIdx
-	int32_t ___m_shopIdx_7;
+	int32_t ___m_shopIdx_8;
 	// System.Boolean ShopItemCell::m_isSelected
-	bool ___m_isSelected_8;
+	bool ___m_isSelected_9;
 
 public:
 	inline static int32_t get_offset_of_m_itemPlayer_2() { return static_cast<int32_t>(offsetof(ShopItemCell_t3248652901, ___m_itemPlayer_2)); }
@@ -95,20 +97,29 @@ public:
 		Il2CppCodeGenWriteBarrier(&___m_btnConfirm_6, value);
 	}
 
-	inline static int32_t get_offset_of_m_shopIdx_7() { return static_cast<int32_t>(offsetof(ShopItemCell_t3248652901, ___m_shopIdx_7)); }
-	inline int32_t get_m_shopIdx_7() const { return ___m_shopIdx_7; }
-	inline int32_t* get_address_of_m_shopIdx_7() { return &___m_shopIdx_7; }
-	inline void set_m_shopIdx_7(int32_t value)
+	inline static int32_t get_offset_of_m_btnAds_7() { return static_cast<int32_t>(offsetof(ShopItemCell_t3248652901, ___m_btnAds_7)); }
+	inline Button_t2872111280 * get_m_btnAds_7() const { return ___m_btnAds_7; }
+	inline Button_t2872111280 ** get_address_of_m_btnAds_7() { return &___m_btnAds_7; }
+	inline void set_m_btnAds_7(Button_t2872111280 * value)
 	{
-		___m_shopIdx_7 = value;
+		___m_btnAds_7 = value;
+		Il2CppCodeGenWriteBarrier(&___m_btnAds_7, value);
 	}
 
-	inline static int32_t get_offset_of_m_isSelected_8() { return static_cast<int32_t>(offsetof(ShopItemCell_t3248652901, ___m_isSelected_8)); }
-	inline bool get_m_isSelected_8() const { return ___m_isSelected_8; }
-	inline bool* get_address_of_m_isSelected_8() { return &___m_isSelected_8; }
-	inline void set_m_isSelected_8(bool value)
+	inline static int32_t get_offset_of_m_shopIdx_8() { return static_cast<int32_t>(offsetof(ShopItemCell_t3248652901, ___m_shopIdx_8)); }
+	inline int32_t get_m_shopIdx_8() const { return ___m_shopIdx_8; }
+	inline int32_t* get_address_of_m_shopIdx_8() { return &___m_shopIdx_8; }
+	inline void set_m_shopIdx_8(int32_t value)
 	{
-		___m_isSelected_8 = value;
+		___m_shopIdx_8 = value;
+	}
+
+	inline static int32_t get_offset_of_m_isSelected_9() { return static_cast<int32_t>(offsetof(ShopItemCell_t3248652901, ___m_isSelected_9)); }
+	inline bool get_m_isSelected_9() const { return ___m_isSelected_9; }
+	inline bool* get_address_of_m_isSelected_9() { return &___m_isSelected_9; }
+	inline void set_m_isSelected_9(bool value)
+	{
+		___m_isSelected_9 = value;
 	}
 };
 
