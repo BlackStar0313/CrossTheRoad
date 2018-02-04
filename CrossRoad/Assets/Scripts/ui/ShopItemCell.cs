@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+#if UNITY_IOS || UNITY_ANDROID
 using UnityEngine.Advertisements;
+#endif
 
 public class ShopItemCell : MonoBehaviour {
 	enum enumShopItemCellBtnType {
@@ -161,6 +163,7 @@ public class ShopItemCell : MonoBehaviour {
 	}
 
 	private void showAds() {
+#if UNITY_IOS || UNITY_ANDROID
 		if (!Advertisement.IsReady(GameConstant.adsReward)) {
 			return ;
 		}
@@ -168,8 +171,10 @@ public class ShopItemCell : MonoBehaviour {
 		ShowOptions options = new ShowOptions();
 		options.resultCallback = handleShowCallBack;
 		Advertisement.Show(GameConstant.adsReward, options);
+#endif
 	}
 
+#if UNITY_IOS || UNITY_ANDROID
 	private void handleShowCallBack(ShowResult result) {
 		if (result == ShowResult.Failed) {
 			Debug.Log("~~~~  filed to show ");
@@ -187,4 +192,5 @@ public class ShopItemCell : MonoBehaviour {
 			Debug.Log("~~~~ success to show ads ");
 		}
 	}
+#endif
 }

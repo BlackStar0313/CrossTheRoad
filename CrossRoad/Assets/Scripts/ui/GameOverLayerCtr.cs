@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+#if UNITY_IOS || UNITY_ANDROID
 using UnityEngine.Advertisements;
+#endif
 using DG.Tweening;
 
 public class GameOverLayerCtr : MonoBehaviour {
@@ -79,6 +81,7 @@ public class GameOverLayerCtr : MonoBehaviour {
 	}
 
 	private void showAds() {
+#if UNITY_IOS || UNITY_ANDROID
 		if (!Advertisement.IsReady(GameConstant.adsReward)) {
 			return ;
 		}
@@ -86,8 +89,10 @@ public class GameOverLayerCtr : MonoBehaviour {
 		ShowOptions options = new ShowOptions();
 		options.resultCallback = handleShowCallBack;
 		Advertisement.Show(GameConstant.adsReward, options);
+#endif
 	}
 
+#if UNITY_IOS || UNITY_ANDROID
 	private void handleShowCallBack(ShowResult result) {
 		if (result == ShowResult.Failed) {
 			Debug.Log("~~~~  filed to show ");
@@ -103,6 +108,7 @@ public class GameOverLayerCtr : MonoBehaviour {
 			Debug.Log("~~~~ success to show ads ");
 		}
 	}
+#endif
 
 	private void doAddScoreAction() {
 		float timeScale = 0.2f;
