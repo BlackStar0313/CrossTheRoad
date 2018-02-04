@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Advertisements;
 
 public class GameInstantManager : MonoBehaviour {
 	public SoundsManager m_soundsManager ; 
@@ -22,5 +23,9 @@ public class GameInstantManager : MonoBehaviour {
 	
 	private void initGameConfig() {
 		Application.targetFrameRate = 60 ;
+
+		if (Advertisement.isSupported) {
+			Advertisement.Initialize(GameConstant.gameId  );
+		}
 	}
 }

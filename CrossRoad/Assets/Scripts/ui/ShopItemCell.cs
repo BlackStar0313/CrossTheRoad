@@ -41,10 +41,6 @@ public class ShopItemCell : MonoBehaviour {
 		m_btnAds.onClick.AddListener(()=> handleTouch(m_btnAds));
 
 		DispatchManager.getInstance().onSelectShopItem.AddListener(this.onSelected);
-
-		if (Advertisement.isSupported) {
-			Advertisement.Initialize(GameConstant.gameId  );
-		}
 	}
 
 	void OnDestroy()
