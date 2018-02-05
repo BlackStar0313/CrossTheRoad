@@ -96,9 +96,6 @@
      <None Include="Assets\Shaders\Toon\ToonBasicOutline.shader" />
      <None Include="Assets\Shaders\Toon\ToonLitOutline.shader" />
      <None Include="Assets\Shaders\Toon\ToonLit.shader" />
- <Reference Include="UnityEngine.Advertisements">
- <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Advertisements/UnityEngine.Advertisements.dll</HintPath>
- </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
