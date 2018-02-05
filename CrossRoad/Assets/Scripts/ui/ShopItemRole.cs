@@ -53,9 +53,12 @@ public class ShopItemRole : MonoBehaviour {
 		Animator ani = this.gameObject.GetComponent<Animator>();
 		if (isIdle) {
 			ani.SetTrigger("idle");
+			Debug.Log("~~~~~  ani.SetTrigger  idle ");
 		}
 		else {
-			ani.SetTrigger("activity");
+			int randIdx = Random.Range(1 , 4 );
+			string name = "activity" + randIdx.ToString();
+			ani.SetTrigger(name);
 		}
 	}
 }
