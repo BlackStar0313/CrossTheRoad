@@ -50,6 +50,20 @@ public:
 	Image_t2042527209 * ___m_imgHeart_8;
 	// UnityEngine.UI.Image GameOverLayerCtr::m_imgBest
 	Image_t2042527209 * ___m_imgBest_9;
+	// System.Single GameOverLayerCtr::m_titleTime
+	float ___m_titleTime_10;
+	// System.Single GameOverLayerCtr::m_heartTime
+	float ___m_heartTime_11;
+	// System.Single GameOverLayerCtr::m_bestTime
+	float ___m_bestTime_12;
+	// System.Single GameOverLayerCtr::m_adsTime
+	float ___m_adsTime_13;
+	// System.Single GameOverLayerCtr::m_btnDelayTime
+	float ___m_btnDelayTime_14;
+	// System.Single GameOverLayerCtr::m_btnTime
+	float ___m_btnTime_15;
+	// System.Single GameOverLayerCtr::m_distTime
+	float ___m_distTime_16;
 
 public:
 	inline static int32_t get_offset_of_m_textScore_2() { return static_cast<int32_t>(offsetof(GameOverLayerCtr_t751035920, ___m_textScore_2)); }
@@ -122,6 +136,62 @@ public:
 	{
 		___m_imgBest_9 = value;
 		Il2CppCodeGenWriteBarrier(&___m_imgBest_9, value);
+	}
+
+	inline static int32_t get_offset_of_m_titleTime_10() { return static_cast<int32_t>(offsetof(GameOverLayerCtr_t751035920, ___m_titleTime_10)); }
+	inline float get_m_titleTime_10() const { return ___m_titleTime_10; }
+	inline float* get_address_of_m_titleTime_10() { return &___m_titleTime_10; }
+	inline void set_m_titleTime_10(float value)
+	{
+		___m_titleTime_10 = value;
+	}
+
+	inline static int32_t get_offset_of_m_heartTime_11() { return static_cast<int32_t>(offsetof(GameOverLayerCtr_t751035920, ___m_heartTime_11)); }
+	inline float get_m_heartTime_11() const { return ___m_heartTime_11; }
+	inline float* get_address_of_m_heartTime_11() { return &___m_heartTime_11; }
+	inline void set_m_heartTime_11(float value)
+	{
+		___m_heartTime_11 = value;
+	}
+
+	inline static int32_t get_offset_of_m_bestTime_12() { return static_cast<int32_t>(offsetof(GameOverLayerCtr_t751035920, ___m_bestTime_12)); }
+	inline float get_m_bestTime_12() const { return ___m_bestTime_12; }
+	inline float* get_address_of_m_bestTime_12() { return &___m_bestTime_12; }
+	inline void set_m_bestTime_12(float value)
+	{
+		___m_bestTime_12 = value;
+	}
+
+	inline static int32_t get_offset_of_m_adsTime_13() { return static_cast<int32_t>(offsetof(GameOverLayerCtr_t751035920, ___m_adsTime_13)); }
+	inline float get_m_adsTime_13() const { return ___m_adsTime_13; }
+	inline float* get_address_of_m_adsTime_13() { return &___m_adsTime_13; }
+	inline void set_m_adsTime_13(float value)
+	{
+		___m_adsTime_13 = value;
+	}
+
+	inline static int32_t get_offset_of_m_btnDelayTime_14() { return static_cast<int32_t>(offsetof(GameOverLayerCtr_t751035920, ___m_btnDelayTime_14)); }
+	inline float get_m_btnDelayTime_14() const { return ___m_btnDelayTime_14; }
+	inline float* get_address_of_m_btnDelayTime_14() { return &___m_btnDelayTime_14; }
+	inline void set_m_btnDelayTime_14(float value)
+	{
+		___m_btnDelayTime_14 = value;
+	}
+
+	inline static int32_t get_offset_of_m_btnTime_15() { return static_cast<int32_t>(offsetof(GameOverLayerCtr_t751035920, ___m_btnTime_15)); }
+	inline float get_m_btnTime_15() const { return ___m_btnTime_15; }
+	inline float* get_address_of_m_btnTime_15() { return &___m_btnTime_15; }
+	inline void set_m_btnTime_15(float value)
+	{
+		___m_btnTime_15 = value;
+	}
+
+	inline static int32_t get_offset_of_m_distTime_16() { return static_cast<int32_t>(offsetof(GameOverLayerCtr_t751035920, ___m_distTime_16)); }
+	inline float get_m_distTime_16() const { return ___m_distTime_16; }
+	inline float* get_address_of_m_distTime_16() { return &___m_distTime_16; }
+	inline void set_m_distTime_16(float value)
+	{
+		___m_distTime_16 = value;
 	}
 };
 

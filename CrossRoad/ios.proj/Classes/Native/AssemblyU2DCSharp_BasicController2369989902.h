@@ -34,12 +34,14 @@ struct  BasicController_t2369989902  : public MonoBehaviour_t1158329972
 public:
 	// UnityEngine.Animator BasicController::m_animator
 	Animator_t69676727 * ___m_animator_2;
-	// UnityEngine.AudioSource BasicController::m_audioSource
-	AudioSource_t1135106623 * ___m_audioSource_3;
+	// UnityEngine.AudioSource BasicController::m_audioMove
+	AudioSource_t1135106623 * ___m_audioMove_3;
+	// UnityEngine.AudioSource BasicController::m_audioDie
+	AudioSource_t1135106623 * ___m_audioDie_4;
 	// UnityEngine.AudioClip[] BasicController::m_audioWalk
-	AudioClipU5BU5D_t2203355011* ___m_audioWalk_4;
+	AudioClipU5BU5D_t2203355011* ___m_audioWalk_5;
 	// UnityEngine.AudioClip[] BasicController::m_audioDead
-	AudioClipU5BU5D_t2203355011* ___m_audioDead_5;
+	AudioClipU5BU5D_t2203355011* ___m_audioDead_6;
 
 public:
 	inline static int32_t get_offset_of_m_animator_2() { return static_cast<int32_t>(offsetof(BasicController_t2369989902, ___m_animator_2)); }
@@ -51,31 +53,40 @@ public:
 		Il2CppCodeGenWriteBarrier(&___m_animator_2, value);
 	}
 
-	inline static int32_t get_offset_of_m_audioSource_3() { return static_cast<int32_t>(offsetof(BasicController_t2369989902, ___m_audioSource_3)); }
-	inline AudioSource_t1135106623 * get_m_audioSource_3() const { return ___m_audioSource_3; }
-	inline AudioSource_t1135106623 ** get_address_of_m_audioSource_3() { return &___m_audioSource_3; }
-	inline void set_m_audioSource_3(AudioSource_t1135106623 * value)
+	inline static int32_t get_offset_of_m_audioMove_3() { return static_cast<int32_t>(offsetof(BasicController_t2369989902, ___m_audioMove_3)); }
+	inline AudioSource_t1135106623 * get_m_audioMove_3() const { return ___m_audioMove_3; }
+	inline AudioSource_t1135106623 ** get_address_of_m_audioMove_3() { return &___m_audioMove_3; }
+	inline void set_m_audioMove_3(AudioSource_t1135106623 * value)
 	{
-		___m_audioSource_3 = value;
-		Il2CppCodeGenWriteBarrier(&___m_audioSource_3, value);
+		___m_audioMove_3 = value;
+		Il2CppCodeGenWriteBarrier(&___m_audioMove_3, value);
 	}
 
-	inline static int32_t get_offset_of_m_audioWalk_4() { return static_cast<int32_t>(offsetof(BasicController_t2369989902, ___m_audioWalk_4)); }
-	inline AudioClipU5BU5D_t2203355011* get_m_audioWalk_4() const { return ___m_audioWalk_4; }
-	inline AudioClipU5BU5D_t2203355011** get_address_of_m_audioWalk_4() { return &___m_audioWalk_4; }
-	inline void set_m_audioWalk_4(AudioClipU5BU5D_t2203355011* value)
+	inline static int32_t get_offset_of_m_audioDie_4() { return static_cast<int32_t>(offsetof(BasicController_t2369989902, ___m_audioDie_4)); }
+	inline AudioSource_t1135106623 * get_m_audioDie_4() const { return ___m_audioDie_4; }
+	inline AudioSource_t1135106623 ** get_address_of_m_audioDie_4() { return &___m_audioDie_4; }
+	inline void set_m_audioDie_4(AudioSource_t1135106623 * value)
 	{
-		___m_audioWalk_4 = value;
-		Il2CppCodeGenWriteBarrier(&___m_audioWalk_4, value);
+		___m_audioDie_4 = value;
+		Il2CppCodeGenWriteBarrier(&___m_audioDie_4, value);
 	}
 
-	inline static int32_t get_offset_of_m_audioDead_5() { return static_cast<int32_t>(offsetof(BasicController_t2369989902, ___m_audioDead_5)); }
-	inline AudioClipU5BU5D_t2203355011* get_m_audioDead_5() const { return ___m_audioDead_5; }
-	inline AudioClipU5BU5D_t2203355011** get_address_of_m_audioDead_5() { return &___m_audioDead_5; }
-	inline void set_m_audioDead_5(AudioClipU5BU5D_t2203355011* value)
+	inline static int32_t get_offset_of_m_audioWalk_5() { return static_cast<int32_t>(offsetof(BasicController_t2369989902, ___m_audioWalk_5)); }
+	inline AudioClipU5BU5D_t2203355011* get_m_audioWalk_5() const { return ___m_audioWalk_5; }
+	inline AudioClipU5BU5D_t2203355011** get_address_of_m_audioWalk_5() { return &___m_audioWalk_5; }
+	inline void set_m_audioWalk_5(AudioClipU5BU5D_t2203355011* value)
 	{
-		___m_audioDead_5 = value;
-		Il2CppCodeGenWriteBarrier(&___m_audioDead_5, value);
+		___m_audioWalk_5 = value;
+		Il2CppCodeGenWriteBarrier(&___m_audioWalk_5, value);
+	}
+
+	inline static int32_t get_offset_of_m_audioDead_6() { return static_cast<int32_t>(offsetof(BasicController_t2369989902, ___m_audioDead_6)); }
+	inline AudioClipU5BU5D_t2203355011* get_m_audioDead_6() const { return ___m_audioDead_6; }
+	inline AudioClipU5BU5D_t2203355011** get_address_of_m_audioDead_6() { return &___m_audioDead_6; }
+	inline void set_m_audioDead_6(AudioClipU5BU5D_t2203355011* value)
+	{
+		___m_audioDead_6 = value;
+		Il2CppCodeGenWriteBarrier(&___m_audioDead_6, value);
 	}
 };
 
