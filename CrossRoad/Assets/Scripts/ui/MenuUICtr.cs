@@ -11,6 +11,7 @@ public class MenuUICtr : MonoBehaviour {
 	public Button m_btnSetting;
 	public Text m_textBest;
 	public Text m_textCurrent;
+	public GameObject m_groupScore;
 
 	private float m_fadeTime = 1;
 
@@ -70,5 +71,9 @@ public class MenuUICtr : MonoBehaviour {
 		CanvasGroup group2 = m_btnSetting.GetComponent<CanvasGroup>();
 		group2.alpha = 1 - alpha ;
 		group2.DOFade(alpha , m_fadeTime);
+
+		CanvasGroup group3 = m_groupScore.GetComponent<CanvasGroup>();
+		group3.alpha = 1 - alpha ;
+		group3.DOFade(alpha , m_fadeTime);
 	}
 }

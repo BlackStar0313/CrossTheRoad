@@ -60,8 +60,8 @@ public class GameOverLayerCtr : MonoBehaviour {
 
 
 		//test code 
-		isHighScore = true ; 
-		m_imgBest.gameObject.SetActive(true);
+		// isHighScore = true ; 
+		// m_imgBest.gameObject.SetActive(true);
 
 		doAppearActTitle();
 		doAppearHeart();
