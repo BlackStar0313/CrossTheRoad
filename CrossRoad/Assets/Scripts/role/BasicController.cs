@@ -42,6 +42,9 @@ public class BasicController : MonoBehaviour {
 		m_audioMove.pitch = 1f;
 		m_audioMove.volume = 0.8f;
 		m_audioMove.Play();
+		if (SoundsManager.getInstance().isSoundsOff) {
+			m_audioMove.volume = 0;
+		}
 	}
 
 	public void stopMoveSounds() {
@@ -55,5 +58,9 @@ public class BasicController : MonoBehaviour {
 		m_audioDie.volume = 0.3f;
 		m_audioDie.loop = false ;
 		m_audioDie.Play();
+
+		if (SoundsManager.getInstance().isSoundsOff) {
+			m_audioDie.volume = 0;
+		}
 	}
 }

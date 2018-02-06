@@ -8,13 +8,15 @@ using DG.Tweening;
 public class MenuUICtr : MonoBehaviour {
 	public Button m_btnStart;
 	public Button m_btnShop;
+	public Button m_btnSetting;
 
-	private float m_fadeTime = 2;
+	private float m_fadeTime = 1;
 
 	void Start()
 	{
 		m_btnStart.onClick.AddListener(() => handleTouch(m_btnStart));
 		m_btnShop.onClick.AddListener(() => handleTouch(m_btnShop));
+		m_btnSetting.onClick.AddListener(() => handleTouch(m_btnSetting));
 
 		fadeButton(1);
 
@@ -23,6 +25,13 @@ public class MenuUICtr : MonoBehaviour {
 		move.HideBegin(false);
 
 		SoundsManager.getInstance().playMusic(SoundsManager.clipNameMenu);
+	}
+
+	void OnDestroy()
+	{
+		m_btnStart.onClick.RemoveListener(() => handleTouch(m_btnStart));
+		m_btnShop.onClick.RemoveListener(() => handleTouch(m_btnShop));
+		m_btnSetting.onClick.RemoveListener(() => handleTouch(m_btnSetting));
 	}
 
 	private void handleTouch(Button btn) {
@@ -38,6 +47,10 @@ public class MenuUICtr : MonoBehaviour {
 			SceneManager.LoadScene("Shop");
 			SoundsManager.getInstance().playSounds(SoundsManager.clipNameClick);
 		}
+		else if (btn == m_btnSetting) {
+			Instantiate(Resources.Load("Prefebs/SettingLayer")) ;
+			SoundsManager.getInstance().playSounds(SoundsManager.clipNameClick);
+		}
 	}
 
 	private void fadeButton(float alpha) {
@@ -48,5 +61,9 @@ public class MenuUICtr : MonoBehaviour {
 		CanvasGroup group1 = m_btnStart.GetComponent<CanvasGroup>();
 		group1.alpha = 1 - alpha ;
 		group1.DOFade(alpha , m_fadeTime);
+
+		CanvasGroup group2 = m_btnSetting.GetComponent<CanvasGroup>();
+		group2.alpha = 1 - alpha ;
+		group2.DOFade(alpha , m_fadeTime);
 	}
 }

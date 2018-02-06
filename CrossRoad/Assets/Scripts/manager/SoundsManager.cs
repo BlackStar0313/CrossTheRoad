@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SoundsManager : MonoBehaviour {
+	private string c_localMusicName = "music";
+	private string c_localSoundsName = "sounds";
+
 	[HideInInspector] public static string clipNameClick = "click";
 	[HideInInspector] public static string clipNameClickNegtive = "click_negtive";
 	[HideInInspector] public static string clipNameScroll = "scroll";
@@ -31,8 +34,24 @@ public class SoundsManager : MonoBehaviour {
 	public AudioClip[] m_clipGameBgs;
 	public AudioClip m_clipShop;
 
+	public bool isSoundsOff {get; set;}
+	public bool isMusicOff { get; set; }
+
 	public static SoundsManager getInstance() {
 		return SoundsManager.mInstance;
+	}
+
+	public void Init() {
+		if (!PlayerPrefs.HasKey(c_localMusicName)) {
+			PlayerPrefs.SetInt(c_localMusicName,1);
+		}
+
+		if (!PlayerPrefs.HasKey(c_localSoundsName)) {
+			PlayerPrefs.SetInt(c_localSoundsName,1);
+		}
+
+		isSoundsOff = PlayerPrefs.GetInt(c_localSoundsName) == 1 ? false : true ; 
+		isMusicOff = PlayerPrefs.GetInt(c_localMusicName) == 1 ? false : true ; 
 	}
 
 	void Awake(){
@@ -80,6 +99,10 @@ public class SoundsManager : MonoBehaviour {
 			m_audio.volume = 0.6f;
 			m_audio.Play();
 		}
+
+		if (isSoundsOff) {
+			m_audio.volume = 0;
+		}
 	}
 
 	public void playMusic(string clipName) {
@@ -98,5 +121,21 @@ public class SoundsManager : MonoBehaviour {
 			m_music.clip = m_clipShop ;
 			m_music.Play();
 		}
+
+		if (isMusicOff) {
+			m_music.volume = 0;
+		}
+	}
+
+	public void musicOff(bool isOff) {
+		PlayerPrefs.SetInt(c_localMusicName,isOff ? 0 : 1);
+		isMusicOff = isOff;
+		m_music.volume = isMusicOff ? 0 : 1;
+	}
+
+	public void soundsOff(bool isOff) {
+		PlayerPrefs.SetInt(c_localSoundsName,isOff ? 0 : 1);
+		isSoundsOff = isOff;
+		m_audio.volume = isSoundsOff ? 0 : 1;
 	}
 }

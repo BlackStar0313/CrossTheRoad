@@ -162,6 +162,8 @@ public class PlayUICtr : MonoBehaviour {
 				seq.SetLoops(-1);
 
 				m_audioTimeout.Play();
+
+				m_audioTimeout.volume = SoundsManager.getInstance().isSoundsOff ? 0 : 1;
 			}
 
 			doSwitchStatusAct(true);

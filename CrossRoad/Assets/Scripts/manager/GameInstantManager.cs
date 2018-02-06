@@ -19,6 +19,7 @@ public class GameInstantManager : MonoBehaviour {
 
 		if (SoundsManager.mInstance == null) {
 			SoundsManager.mInstance = Instantiate(m_soundsManager);
+			SoundsManager.mInstance.Init();
 		}
 
 		DontDestroyOnLoad(this);
