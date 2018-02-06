@@ -17,6 +17,8 @@ public class SoundsManager : MonoBehaviour {
 	[HideInInspector] public static string clipNameMenu = "bg_music";
 	[HideInInspector] public static string clipNameGameBg = "game_bg";
 	[HideInInspector] public static string clipNameShop = "game_shop";
+	[HideInInspector] public static string clipNameReadyGo = "ready_go";
+	[HideInInspector] public static string clipNameGameOver = "game_over";
 	
 	[HideInInspector] public static SoundsManager mInstance = null; 
 	public AudioSource m_audio ;
@@ -33,6 +35,8 @@ public class SoundsManager : MonoBehaviour {
 	public AudioClip m_clipMenu;
 	public AudioClip[] m_clipGameBgs;
 	public AudioClip m_clipShop;
+	public AudioClip m_clipReadyGo;
+	public AudioClip[] m_clipGameOver;
 
 	public bool isSoundsOff {get; set;}
 	public bool isMusicOff { get; set; }
@@ -97,6 +101,15 @@ public class SoundsManager : MonoBehaviour {
 			int randIdx = Random.Range(0, m_shopItemIdles.Length);
 			m_audio.clip = m_shopItemIdles[randIdx] ;
 			m_audio.volume = 0.6f;
+			m_audio.Play();
+		}
+		else if (clipName == clipNameReadyGo) {
+			m_audio.clip = m_clipReadyGo ;
+			m_audio.Play();
+		}
+		else if (clipName == clipNameGameOver) {
+			int randIdx = Random.Range(0, m_clipGameOver.Length);
+			m_audio.clip = m_clipGameOver[randIdx] ;
 			m_audio.Play();
 		}
 

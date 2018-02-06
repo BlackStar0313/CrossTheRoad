@@ -17,6 +17,8 @@ public class PlayUICtr : MonoBehaviour {
 	public Image m_imgStatus;
 	public Sprite m_spIdle;
 	public Sprite[] m_spAngry;
+	public Sprite m_spReady;
+	public Sprite m_spGo;
 
 	private float m_decreaseTime = 6;
 	private float m_addStep = 0.25f;
@@ -30,20 +32,25 @@ public class PlayUICtr : MonoBehaviour {
 	private float m_switchStatusTime = 0.4f;
 	private float m_countDownTime = 0 ;
 
-	void Start()
+	void Awake()
 	{
-		m_textCoin.text = GameManager.getInstance().currentScore.ToString();
-		m_Slider.value = 1 ;
+		Debug.Log("");
 
 		DispatchManager.getInstance().onMoveRight.AddListener(OnAddSlider);
 		DispatchManager.getInstance().onAddCoin.AddListener(OnAddCoin);
 		DispatchManager.getInstance().onAddHeart.AddListener(CreateHeart);
 		DispatchManager.getInstance().onGameOver.AddListener(onGameOver);
+		DispatchManager.getInstance().onPlayReadyGo.AddListener(onReadyGo);
 
 		m_pause.onClick.AddListener(delegate() { this.handleTouch(m_pause); });
+	}
+
+	void Start()
+	{
+		m_textCoin.text = GameManager.getInstance().currentScore.ToString();
+		m_Slider.value = 1 ;
 
 		handleFrog();
-
 		SoundsManager.getInstance().playMusic(SoundsManager.clipNameGameBg);
 	}
 
@@ -53,6 +60,7 @@ public class PlayUICtr : MonoBehaviour {
 		DispatchManager.getInstance().onAddCoin.RemoveListener(OnAddCoin);
 		DispatchManager.getInstance().onAddHeart.RemoveListener(CreateHeart);
 		DispatchManager.getInstance().onGameOver.RemoveListener(onGameOver);
+		DispatchManager.getInstance().onPlayReadyGo.RemoveListener(onReadyGo);
 	}
 
 	void Update()
@@ -201,5 +209,44 @@ public class PlayUICtr : MonoBehaviour {
 			}
 			m_countDownTime = 0 ;
 		}
+	}
+
+	private void onReadyGo() {
+		float actTime = 1;
+		GameObject obj = new GameObject();
+		Image img = obj.AddComponent(typeof(Image)) as Image;
+		img.sprite = m_spReady;
+
+		obj.transform.parent = transform ;
+		obj.transform.localRotation = Quaternion.identity;
+		obj.transform.localPosition = new Vector3(0 , 0 , 0);
+
+		img.transform.localScale = new Vector3(1.5f,1.5f,1.5f);
+		img.transform.DOScale(new Vector3(1,1,1) , actTime).OnComplete(()=> {
+			obj.SetActive(false);
+			Destroy(obj);
+		}) ;
+
+
+		DOVirtual.DelayedCall(actTime , ()=> {
+			GameObject obj2 = new GameObject();
+			Image img2 = obj2.AddComponent(typeof(Image)) as Image;
+			img2.sprite = m_spGo;
+
+			obj2.transform.parent = transform ;
+			obj2.transform.localRotation = Quaternion.identity;
+			obj2.transform.localPosition = new Vector3(0 , 0 , 0);
+
+			img2.transform.localScale = new Vector3(1.5f,1.5f,1.5f);
+			img2.transform.DOScale(new Vector3(1,1,1) , actTime).OnComplete(()=> {
+				obj2.SetActive(false);
+				Destroy(obj2);
+			}) ;
+		});
+
+
+
+		SoundsManager.getInstance().playSounds(SoundsManager.clipNameReadyGo);
+
 	}
 }

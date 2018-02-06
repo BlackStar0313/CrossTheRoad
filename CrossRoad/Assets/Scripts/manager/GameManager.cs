@@ -102,6 +102,7 @@ public class GameManager : MonoBehaviour {
 		this.CreateNewPartner(-1, true);
 
 		DispatchManager.getInstance().onPartnerCatched.Invoke( playerDirect );
+		DispatchManager.getInstance().onPlayReadyGo.Invoke();
 		yield return new WaitForSeconds(2);
 	}
 

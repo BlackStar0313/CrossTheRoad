@@ -9,6 +9,8 @@ public class MenuUICtr : MonoBehaviour {
 	public Button m_btnStart;
 	public Button m_btnShop;
 	public Button m_btnSetting;
+	public Text m_textBest;
+	public Text m_textCurrent;
 
 	private float m_fadeTime = 1;
 
@@ -19,6 +21,9 @@ public class MenuUICtr : MonoBehaviour {
 		m_btnSetting.onClick.AddListener(() => handleTouch(m_btnSetting));
 
 		fadeButton(1);
+
+		m_textBest.text = PlayerManager.getInstance().GetPlayerInfo().roundHighScore.ToString();
+		m_textCurrent.text = PlayerManager.getInstance().GetPlayerInfo().score.ToString();
 
 		GameObject obj = Instantiate(Resources.Load("Prefebs/Cloud")) as GameObject;
 		CloudMoving move = obj.GetComponent<CloudMoving>();
