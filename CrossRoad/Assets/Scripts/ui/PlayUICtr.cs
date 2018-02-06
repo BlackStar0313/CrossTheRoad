@@ -14,6 +14,9 @@ public class PlayUICtr : MonoBehaviour {
 	public Camera m_heartCamera;
 	public Image m_imgWarning ;
 	public AudioSource m_audioTimeout;
+	public Image m_imgStatus;
+	public Sprite m_spIdle;
+	public Sprite[] m_spAngry;
 
 	private float m_decreaseTime = 6;
 	private float m_addStep = 0.25f;
@@ -23,6 +26,9 @@ public class PlayUICtr : MonoBehaviour {
 	private float m_warningPercent = 0.4f;
 
 	private bool m_isTimeout = false ;
+
+	private float m_switchStatusTime = 0.4f;
+	private float m_countDownTime = 0 ;
 
 	void Start()
 	{
@@ -157,17 +163,41 @@ public class PlayUICtr : MonoBehaviour {
 
 				m_audioTimeout.Play();
 			}
+
+			doSwitchStatusAct(true);
 		}
 		else {
 			if (m_imgWarning.gameObject.activeSelf == true) {
 				m_imgWarning.gameObject.SetActive(false);
 				m_audioTimeout.Stop();
 			}
+			doSwitchStatusAct(false);
 		}
 	}
 
 	private void onGameOver() {
 		m_audioTimeout.Stop();
 		m_imgWarning.gameObject.SetActive(false);
+	}
+
+	private void doSwitchStatusAct(bool isLow) {
+		if (isLow) {
+			if (m_countDownTime <= 0) {
+				if (m_imgStatus.sprite != m_spAngry[0]) {
+					m_imgStatus.sprite = m_spAngry[0];
+				}
+				else if (m_imgStatus.sprite != m_spAngry[1]) {
+					m_imgStatus.sprite = m_spAngry[1];
+				}
+				m_countDownTime = m_switchStatusTime;
+			}
+			m_countDownTime -= Time.deltaTime;
+		}
+		else {
+			if (m_imgStatus.sprite != m_spIdle) {
+				m_imgStatus.sprite = m_spIdle;
+			}
+			m_countDownTime = 0 ;
+		}
 	}
 }
