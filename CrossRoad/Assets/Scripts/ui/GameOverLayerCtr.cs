@@ -69,6 +69,8 @@ public class GameOverLayerCtr : MonoBehaviour {
 		doAppearHighScore(isHighScore);
 		doAppeartAds(isShowAds);
 		doAppearBtn();
+
+		SoundsManager.getInstance().playSounds(SoundsManager.clipNameGameOver);
 	}
 
 	void OnDestroy()
