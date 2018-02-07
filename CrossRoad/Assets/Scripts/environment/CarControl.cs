@@ -14,8 +14,8 @@ public class CarControl : MonoBehaviour {
 	private float m_moveSpeedRangeMin = 3f ; 
 	private float m_moveSpeedAvg = 0f;
 	private float m_moveSpeedCurrent = -1f ;
-	private float m_acceleratedSpeedRangeMax = 6.0f ;
-	private float m_acceleratedSpeedRangeMin = 3.0f ;
+	private float m_acceleratedSpeedRangeMax = 8.0f ;
+	private float m_acceleratedSpeedRangeMin = 4.0f ;
 	private float m_acceleratedSpeedCurrent = 2.0f ;
 
 	private Rigidbody m_rigidBody = null ; 
