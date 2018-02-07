@@ -180,7 +180,7 @@ public class CarControl : MonoBehaviour {
 		this.m_capsuleCollider.enabled = false ;
 		bool isNear = Physics.Raycast(startPos , Vector3.forward * this.m_direction.z , out hit ,this.m_RaycasthitDist , this.m_blockingLayer);
 		if (!isNear) {
-			isNear = Physics.Raycast(startPos , Vector3.up , out hit ,this.m_RaycasthitDist , this.m_blockingLayer);
+			isNear = Physics.Raycast(startPos , -Vector3.up , out hit ,this.m_RaycasthitDist , this.m_blockingLayer);
 		}
 		this.m_capsuleCollider.enabled = true ; 
 
