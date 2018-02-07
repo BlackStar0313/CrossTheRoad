@@ -10,10 +10,8 @@
 
 #include <stdint.h>
 
-#include "UnityEngine_UnityEngine_MonoBehaviour1158329972.h"
+#include "AssemblyU2DCSharp_BasicShowRole2140144023.h"
 
-// System.String
-struct String_t;
 
 
 
@@ -25,43 +23,11 @@ struct String_t;
 #endif
 
 // ShopItemRole
-struct  ShopItemRole_t560175195  : public MonoBehaviour_t1158329972
+struct  ShopItemRole_t560175195  : public BasicShowRole_t2140144023
 {
 public:
-	// System.String ShopItemRole::m_currentBodyName
-	String_t* ___m_currentBodyName_2;
-	// System.String ShopItemRole::m_currentHeadName
-	String_t* ___m_currentHeadName_3;
-	// System.String ShopItemRole::m_prefix
-	String_t* ___m_prefix_4;
 
 public:
-	inline static int32_t get_offset_of_m_currentBodyName_2() { return static_cast<int32_t>(offsetof(ShopItemRole_t560175195, ___m_currentBodyName_2)); }
-	inline String_t* get_m_currentBodyName_2() const { return ___m_currentBodyName_2; }
-	inline String_t** get_address_of_m_currentBodyName_2() { return &___m_currentBodyName_2; }
-	inline void set_m_currentBodyName_2(String_t* value)
-	{
-		___m_currentBodyName_2 = value;
-		Il2CppCodeGenWriteBarrier(&___m_currentBodyName_2, value);
-	}
-
-	inline static int32_t get_offset_of_m_currentHeadName_3() { return static_cast<int32_t>(offsetof(ShopItemRole_t560175195, ___m_currentHeadName_3)); }
-	inline String_t* get_m_currentHeadName_3() const { return ___m_currentHeadName_3; }
-	inline String_t** get_address_of_m_currentHeadName_3() { return &___m_currentHeadName_3; }
-	inline void set_m_currentHeadName_3(String_t* value)
-	{
-		___m_currentHeadName_3 = value;
-		Il2CppCodeGenWriteBarrier(&___m_currentHeadName_3, value);
-	}
-
-	inline static int32_t get_offset_of_m_prefix_4() { return static_cast<int32_t>(offsetof(ShopItemRole_t560175195, ___m_prefix_4)); }
-	inline String_t* get_m_prefix_4() const { return ___m_prefix_4; }
-	inline String_t** get_address_of_m_prefix_4() { return &___m_prefix_4; }
-	inline void set_m_prefix_4(String_t* value)
-	{
-		___m_prefix_4 = value;
-		Il2CppCodeGenWriteBarrier(&___m_prefix_4, value);
-	}
 };
 
 #ifdef __clang__

@@ -18,10 +18,14 @@ struct AndroidJavaObject_t4251328308;
 struct AndroidJavaClass_t2973420583;
 // UnityEngine.Advertisements.CallbackExecutor
 struct CallbackExecutor_t2947320436;
+// System.EventHandler`1<UnityEngine.Advertisements.ReadyEventArgs>
+struct EventHandler_1_t2737845578;
 // System.EventHandler`1<UnityEngine.Advertisements.StartEventArgs>
 struct EventHandler_1_t3917218901;
 // System.EventHandler`1<UnityEngine.Advertisements.FinishEventArgs>
 struct EventHandler_1_t3580441194;
+// System.EventHandler`1<UnityEngine.Advertisements.ErrorEventArgs>
+struct EventHandler_1_t4277752891;
 
 
 
@@ -42,10 +46,14 @@ public:
 	AndroidJavaClass_t2973420583 * ___m_UnityAds_2;
 	// UnityEngine.Advertisements.CallbackExecutor UnityEngine.Advertisements.Android.Platform::m_CallbackExecutor
 	CallbackExecutor_t2947320436 * ___m_CallbackExecutor_3;
+	// System.EventHandler`1<UnityEngine.Advertisements.ReadyEventArgs> UnityEngine.Advertisements.Android.Platform::OnReady
+	EventHandler_1_t2737845578 * ___OnReady_4;
 	// System.EventHandler`1<UnityEngine.Advertisements.StartEventArgs> UnityEngine.Advertisements.Android.Platform::OnStart
-	EventHandler_1_t3917218901 * ___OnStart_4;
+	EventHandler_1_t3917218901 * ___OnStart_5;
 	// System.EventHandler`1<UnityEngine.Advertisements.FinishEventArgs> UnityEngine.Advertisements.Android.Platform::OnFinish
-	EventHandler_1_t3580441194 * ___OnFinish_5;
+	EventHandler_1_t3580441194 * ___OnFinish_6;
+	// System.EventHandler`1<UnityEngine.Advertisements.ErrorEventArgs> UnityEngine.Advertisements.Android.Platform::OnError
+	EventHandler_1_t4277752891 * ___OnError_7;
 
 public:
 	inline static int32_t get_offset_of_m_CurrentActivity_1() { return static_cast<int32_t>(offsetof(Platform_t3070849459, ___m_CurrentActivity_1)); }
@@ -75,22 +83,40 @@ public:
 		Il2CppCodeGenWriteBarrier(&___m_CallbackExecutor_3, value);
 	}
 
-	inline static int32_t get_offset_of_OnStart_4() { return static_cast<int32_t>(offsetof(Platform_t3070849459, ___OnStart_4)); }
-	inline EventHandler_1_t3917218901 * get_OnStart_4() const { return ___OnStart_4; }
-	inline EventHandler_1_t3917218901 ** get_address_of_OnStart_4() { return &___OnStart_4; }
-	inline void set_OnStart_4(EventHandler_1_t3917218901 * value)
+	inline static int32_t get_offset_of_OnReady_4() { return static_cast<int32_t>(offsetof(Platform_t3070849459, ___OnReady_4)); }
+	inline EventHandler_1_t2737845578 * get_OnReady_4() const { return ___OnReady_4; }
+	inline EventHandler_1_t2737845578 ** get_address_of_OnReady_4() { return &___OnReady_4; }
+	inline void set_OnReady_4(EventHandler_1_t2737845578 * value)
 	{
-		___OnStart_4 = value;
-		Il2CppCodeGenWriteBarrier(&___OnStart_4, value);
+		___OnReady_4 = value;
+		Il2CppCodeGenWriteBarrier(&___OnReady_4, value);
 	}
 
-	inline static int32_t get_offset_of_OnFinish_5() { return static_cast<int32_t>(offsetof(Platform_t3070849459, ___OnFinish_5)); }
-	inline EventHandler_1_t3580441194 * get_OnFinish_5() const { return ___OnFinish_5; }
-	inline EventHandler_1_t3580441194 ** get_address_of_OnFinish_5() { return &___OnFinish_5; }
-	inline void set_OnFinish_5(EventHandler_1_t3580441194 * value)
+	inline static int32_t get_offset_of_OnStart_5() { return static_cast<int32_t>(offsetof(Platform_t3070849459, ___OnStart_5)); }
+	inline EventHandler_1_t3917218901 * get_OnStart_5() const { return ___OnStart_5; }
+	inline EventHandler_1_t3917218901 ** get_address_of_OnStart_5() { return &___OnStart_5; }
+	inline void set_OnStart_5(EventHandler_1_t3917218901 * value)
 	{
-		___OnFinish_5 = value;
-		Il2CppCodeGenWriteBarrier(&___OnFinish_5, value);
+		___OnStart_5 = value;
+		Il2CppCodeGenWriteBarrier(&___OnStart_5, value);
+	}
+
+	inline static int32_t get_offset_of_OnFinish_6() { return static_cast<int32_t>(offsetof(Platform_t3070849459, ___OnFinish_6)); }
+	inline EventHandler_1_t3580441194 * get_OnFinish_6() const { return ___OnFinish_6; }
+	inline EventHandler_1_t3580441194 ** get_address_of_OnFinish_6() { return &___OnFinish_6; }
+	inline void set_OnFinish_6(EventHandler_1_t3580441194 * value)
+	{
+		___OnFinish_6 = value;
+		Il2CppCodeGenWriteBarrier(&___OnFinish_6, value);
+	}
+
+	inline static int32_t get_offset_of_OnError_7() { return static_cast<int32_t>(offsetof(Platform_t3070849459, ___OnError_7)); }
+	inline EventHandler_1_t4277752891 * get_OnError_7() const { return ___OnError_7; }
+	inline EventHandler_1_t4277752891 ** get_address_of_OnError_7() { return &___OnError_7; }
+	inline void set_OnError_7(EventHandler_1_t4277752891 * value)
+	{
+		___OnError_7 = value;
+		Il2CppCodeGenWriteBarrier(&___OnError_7, value);
 	}
 };
 

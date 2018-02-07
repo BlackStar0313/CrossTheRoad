@@ -80,6 +80,8 @@ public:
 	EventEmpty_t2609316523 * ___onGameOver_17;
 	// DispatchManager/EventEmpty DispatchManager::onHitCarDead
 	EventEmpty_t2609316523 * ___onHitCarDead_18;
+	// DispatchManager/EventEmpty DispatchManager::onPlayReadyGo
+	EventEmpty_t2609316523 * ___onPlayReadyGo_19;
 
 public:
 	inline static int32_t get_offset_of_onPartnerMoveIng_1() { return static_cast<int32_t>(offsetof(DispatchManager_t870178121, ___onPartnerMoveIng_1)); }
@@ -242,6 +244,15 @@ public:
 	{
 		___onHitCarDead_18 = value;
 		Il2CppCodeGenWriteBarrier(&___onHitCarDead_18, value);
+	}
+
+	inline static int32_t get_offset_of_onPlayReadyGo_19() { return static_cast<int32_t>(offsetof(DispatchManager_t870178121, ___onPlayReadyGo_19)); }
+	inline EventEmpty_t2609316523 * get_onPlayReadyGo_19() const { return ___onPlayReadyGo_19; }
+	inline EventEmpty_t2609316523 ** get_address_of_onPlayReadyGo_19() { return &___onPlayReadyGo_19; }
+	inline void set_onPlayReadyGo_19(EventEmpty_t2609316523 * value)
+	{
+		___onPlayReadyGo_19 = value;
+		Il2CppCodeGenWriteBarrier(&___onPlayReadyGo_19, value);
 	}
 };
 

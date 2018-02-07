@@ -41,6 +41,16 @@ public:
 	float ___m_drag_6;
 	// System.Single BasicCollider::m_deadHeight
 	float ___m_deadHeight_7;
+	// System.Single BasicCollider::c_rangHitXDistHigh
+	float ___c_rangHitXDistHigh_8;
+	// System.Single BasicCollider::c_rangHitXDistLow
+	float ___c_rangHitXDistLow_9;
+	// System.Single BasicCollider::c_rangHitZDistHigh
+	float ___c_rangHitZDistHigh_10;
+	// System.Single BasicCollider::c_rangHitZDistLow
+	float ___c_rangHitZDistLow_11;
+	// System.Single BasicCollider::c_rangDeadHeight
+	float ___c_rangDeadHeight_12;
 
 public:
 	inline static int32_t get_offset_of_m_parent_2() { return static_cast<int32_t>(offsetof(BasicCollider_t1423767666, ___m_parent_2)); }
@@ -90,6 +100,46 @@ public:
 	inline void set_m_deadHeight_7(float value)
 	{
 		___m_deadHeight_7 = value;
+	}
+
+	inline static int32_t get_offset_of_c_rangHitXDistHigh_8() { return static_cast<int32_t>(offsetof(BasicCollider_t1423767666, ___c_rangHitXDistHigh_8)); }
+	inline float get_c_rangHitXDistHigh_8() const { return ___c_rangHitXDistHigh_8; }
+	inline float* get_address_of_c_rangHitXDistHigh_8() { return &___c_rangHitXDistHigh_8; }
+	inline void set_c_rangHitXDistHigh_8(float value)
+	{
+		___c_rangHitXDistHigh_8 = value;
+	}
+
+	inline static int32_t get_offset_of_c_rangHitXDistLow_9() { return static_cast<int32_t>(offsetof(BasicCollider_t1423767666, ___c_rangHitXDistLow_9)); }
+	inline float get_c_rangHitXDistLow_9() const { return ___c_rangHitXDistLow_9; }
+	inline float* get_address_of_c_rangHitXDistLow_9() { return &___c_rangHitXDistLow_9; }
+	inline void set_c_rangHitXDistLow_9(float value)
+	{
+		___c_rangHitXDistLow_9 = value;
+	}
+
+	inline static int32_t get_offset_of_c_rangHitZDistHigh_10() { return static_cast<int32_t>(offsetof(BasicCollider_t1423767666, ___c_rangHitZDistHigh_10)); }
+	inline float get_c_rangHitZDistHigh_10() const { return ___c_rangHitZDistHigh_10; }
+	inline float* get_address_of_c_rangHitZDistHigh_10() { return &___c_rangHitZDistHigh_10; }
+	inline void set_c_rangHitZDistHigh_10(float value)
+	{
+		___c_rangHitZDistHigh_10 = value;
+	}
+
+	inline static int32_t get_offset_of_c_rangHitZDistLow_11() { return static_cast<int32_t>(offsetof(BasicCollider_t1423767666, ___c_rangHitZDistLow_11)); }
+	inline float get_c_rangHitZDistLow_11() const { return ___c_rangHitZDistLow_11; }
+	inline float* get_address_of_c_rangHitZDistLow_11() { return &___c_rangHitZDistLow_11; }
+	inline void set_c_rangHitZDistLow_11(float value)
+	{
+		___c_rangHitZDistLow_11 = value;
+	}
+
+	inline static int32_t get_offset_of_c_rangDeadHeight_12() { return static_cast<int32_t>(offsetof(BasicCollider_t1423767666, ___c_rangDeadHeight_12)); }
+	inline float get_c_rangDeadHeight_12() const { return ___c_rangDeadHeight_12; }
+	inline float* get_address_of_c_rangDeadHeight_12() { return &___c_rangDeadHeight_12; }
+	inline void set_c_rangDeadHeight_12(float value)
+	{
+		___c_rangDeadHeight_12 = value;
 	}
 };
 

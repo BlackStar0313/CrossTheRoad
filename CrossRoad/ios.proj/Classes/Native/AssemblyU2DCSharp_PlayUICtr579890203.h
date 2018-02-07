@@ -26,6 +26,10 @@ struct GameObject_t1756533147;
 struct Camera_t189460977;
 // UnityEngine.AudioSource
 struct AudioSource_t1135106623;
+// UnityEngine.Sprite
+struct Sprite_t309593783;
+// UnityEngine.Sprite[]
+struct SpriteU5BU5D_t3359083662;
 
 
 
@@ -58,18 +62,32 @@ public:
 	Image_t2042527209 * ___m_imgWarning_9;
 	// UnityEngine.AudioSource PlayUICtr::m_audioTimeout
 	AudioSource_t1135106623 * ___m_audioTimeout_10;
+	// UnityEngine.UI.Image PlayUICtr::m_imgStatus
+	Image_t2042527209 * ___m_imgStatus_11;
+	// UnityEngine.Sprite PlayUICtr::m_spIdle
+	Sprite_t309593783 * ___m_spIdle_12;
+	// UnityEngine.Sprite[] PlayUICtr::m_spAngry
+	SpriteU5BU5D_t3359083662* ___m_spAngry_13;
+	// UnityEngine.Sprite PlayUICtr::m_spReady
+	Sprite_t309593783 * ___m_spReady_14;
+	// UnityEngine.Sprite PlayUICtr::m_spGo
+	Sprite_t309593783 * ___m_spGo_15;
 	// System.Single PlayUICtr::m_decreaseTime
-	float ___m_decreaseTime_11;
+	float ___m_decreaseTime_16;
 	// System.Single PlayUICtr::m_addStep
-	float ___m_addStep_12;
+	float ___m_addStep_17;
 	// System.Single PlayUICtr::m_randDist
-	float ___m_randDist_13;
+	float ___m_randDist_18;
 	// System.Int32 PlayUICtr::m_showScore
-	int32_t ___m_showScore_14;
+	int32_t ___m_showScore_19;
 	// System.Single PlayUICtr::m_warningPercent
-	float ___m_warningPercent_15;
+	float ___m_warningPercent_20;
 	// System.Boolean PlayUICtr::m_isTimeout
-	bool ___m_isTimeout_16;
+	bool ___m_isTimeout_21;
+	// System.Single PlayUICtr::m_switchStatusTime
+	float ___m_switchStatusTime_22;
+	// System.Single PlayUICtr::m_countDownTime
+	float ___m_countDownTime_23;
 
 public:
 	inline static int32_t get_offset_of_m_textCoin_2() { return static_cast<int32_t>(offsetof(PlayUICtr_t579890203, ___m_textCoin_2)); }
@@ -153,52 +171,113 @@ public:
 		Il2CppCodeGenWriteBarrier(&___m_audioTimeout_10, value);
 	}
 
-	inline static int32_t get_offset_of_m_decreaseTime_11() { return static_cast<int32_t>(offsetof(PlayUICtr_t579890203, ___m_decreaseTime_11)); }
-	inline float get_m_decreaseTime_11() const { return ___m_decreaseTime_11; }
-	inline float* get_address_of_m_decreaseTime_11() { return &___m_decreaseTime_11; }
-	inline void set_m_decreaseTime_11(float value)
+	inline static int32_t get_offset_of_m_imgStatus_11() { return static_cast<int32_t>(offsetof(PlayUICtr_t579890203, ___m_imgStatus_11)); }
+	inline Image_t2042527209 * get_m_imgStatus_11() const { return ___m_imgStatus_11; }
+	inline Image_t2042527209 ** get_address_of_m_imgStatus_11() { return &___m_imgStatus_11; }
+	inline void set_m_imgStatus_11(Image_t2042527209 * value)
 	{
-		___m_decreaseTime_11 = value;
+		___m_imgStatus_11 = value;
+		Il2CppCodeGenWriteBarrier(&___m_imgStatus_11, value);
 	}
 
-	inline static int32_t get_offset_of_m_addStep_12() { return static_cast<int32_t>(offsetof(PlayUICtr_t579890203, ___m_addStep_12)); }
-	inline float get_m_addStep_12() const { return ___m_addStep_12; }
-	inline float* get_address_of_m_addStep_12() { return &___m_addStep_12; }
-	inline void set_m_addStep_12(float value)
+	inline static int32_t get_offset_of_m_spIdle_12() { return static_cast<int32_t>(offsetof(PlayUICtr_t579890203, ___m_spIdle_12)); }
+	inline Sprite_t309593783 * get_m_spIdle_12() const { return ___m_spIdle_12; }
+	inline Sprite_t309593783 ** get_address_of_m_spIdle_12() { return &___m_spIdle_12; }
+	inline void set_m_spIdle_12(Sprite_t309593783 * value)
 	{
-		___m_addStep_12 = value;
+		___m_spIdle_12 = value;
+		Il2CppCodeGenWriteBarrier(&___m_spIdle_12, value);
 	}
 
-	inline static int32_t get_offset_of_m_randDist_13() { return static_cast<int32_t>(offsetof(PlayUICtr_t579890203, ___m_randDist_13)); }
-	inline float get_m_randDist_13() const { return ___m_randDist_13; }
-	inline float* get_address_of_m_randDist_13() { return &___m_randDist_13; }
-	inline void set_m_randDist_13(float value)
+	inline static int32_t get_offset_of_m_spAngry_13() { return static_cast<int32_t>(offsetof(PlayUICtr_t579890203, ___m_spAngry_13)); }
+	inline SpriteU5BU5D_t3359083662* get_m_spAngry_13() const { return ___m_spAngry_13; }
+	inline SpriteU5BU5D_t3359083662** get_address_of_m_spAngry_13() { return &___m_spAngry_13; }
+	inline void set_m_spAngry_13(SpriteU5BU5D_t3359083662* value)
 	{
-		___m_randDist_13 = value;
+		___m_spAngry_13 = value;
+		Il2CppCodeGenWriteBarrier(&___m_spAngry_13, value);
 	}
 
-	inline static int32_t get_offset_of_m_showScore_14() { return static_cast<int32_t>(offsetof(PlayUICtr_t579890203, ___m_showScore_14)); }
-	inline int32_t get_m_showScore_14() const { return ___m_showScore_14; }
-	inline int32_t* get_address_of_m_showScore_14() { return &___m_showScore_14; }
-	inline void set_m_showScore_14(int32_t value)
+	inline static int32_t get_offset_of_m_spReady_14() { return static_cast<int32_t>(offsetof(PlayUICtr_t579890203, ___m_spReady_14)); }
+	inline Sprite_t309593783 * get_m_spReady_14() const { return ___m_spReady_14; }
+	inline Sprite_t309593783 ** get_address_of_m_spReady_14() { return &___m_spReady_14; }
+	inline void set_m_spReady_14(Sprite_t309593783 * value)
 	{
-		___m_showScore_14 = value;
+		___m_spReady_14 = value;
+		Il2CppCodeGenWriteBarrier(&___m_spReady_14, value);
 	}
 
-	inline static int32_t get_offset_of_m_warningPercent_15() { return static_cast<int32_t>(offsetof(PlayUICtr_t579890203, ___m_warningPercent_15)); }
-	inline float get_m_warningPercent_15() const { return ___m_warningPercent_15; }
-	inline float* get_address_of_m_warningPercent_15() { return &___m_warningPercent_15; }
-	inline void set_m_warningPercent_15(float value)
+	inline static int32_t get_offset_of_m_spGo_15() { return static_cast<int32_t>(offsetof(PlayUICtr_t579890203, ___m_spGo_15)); }
+	inline Sprite_t309593783 * get_m_spGo_15() const { return ___m_spGo_15; }
+	inline Sprite_t309593783 ** get_address_of_m_spGo_15() { return &___m_spGo_15; }
+	inline void set_m_spGo_15(Sprite_t309593783 * value)
 	{
-		___m_warningPercent_15 = value;
+		___m_spGo_15 = value;
+		Il2CppCodeGenWriteBarrier(&___m_spGo_15, value);
 	}
 
-	inline static int32_t get_offset_of_m_isTimeout_16() { return static_cast<int32_t>(offsetof(PlayUICtr_t579890203, ___m_isTimeout_16)); }
-	inline bool get_m_isTimeout_16() const { return ___m_isTimeout_16; }
-	inline bool* get_address_of_m_isTimeout_16() { return &___m_isTimeout_16; }
-	inline void set_m_isTimeout_16(bool value)
+	inline static int32_t get_offset_of_m_decreaseTime_16() { return static_cast<int32_t>(offsetof(PlayUICtr_t579890203, ___m_decreaseTime_16)); }
+	inline float get_m_decreaseTime_16() const { return ___m_decreaseTime_16; }
+	inline float* get_address_of_m_decreaseTime_16() { return &___m_decreaseTime_16; }
+	inline void set_m_decreaseTime_16(float value)
 	{
-		___m_isTimeout_16 = value;
+		___m_decreaseTime_16 = value;
+	}
+
+	inline static int32_t get_offset_of_m_addStep_17() { return static_cast<int32_t>(offsetof(PlayUICtr_t579890203, ___m_addStep_17)); }
+	inline float get_m_addStep_17() const { return ___m_addStep_17; }
+	inline float* get_address_of_m_addStep_17() { return &___m_addStep_17; }
+	inline void set_m_addStep_17(float value)
+	{
+		___m_addStep_17 = value;
+	}
+
+	inline static int32_t get_offset_of_m_randDist_18() { return static_cast<int32_t>(offsetof(PlayUICtr_t579890203, ___m_randDist_18)); }
+	inline float get_m_randDist_18() const { return ___m_randDist_18; }
+	inline float* get_address_of_m_randDist_18() { return &___m_randDist_18; }
+	inline void set_m_randDist_18(float value)
+	{
+		___m_randDist_18 = value;
+	}
+
+	inline static int32_t get_offset_of_m_showScore_19() { return static_cast<int32_t>(offsetof(PlayUICtr_t579890203, ___m_showScore_19)); }
+	inline int32_t get_m_showScore_19() const { return ___m_showScore_19; }
+	inline int32_t* get_address_of_m_showScore_19() { return &___m_showScore_19; }
+	inline void set_m_showScore_19(int32_t value)
+	{
+		___m_showScore_19 = value;
+	}
+
+	inline static int32_t get_offset_of_m_warningPercent_20() { return static_cast<int32_t>(offsetof(PlayUICtr_t579890203, ___m_warningPercent_20)); }
+	inline float get_m_warningPercent_20() const { return ___m_warningPercent_20; }
+	inline float* get_address_of_m_warningPercent_20() { return &___m_warningPercent_20; }
+	inline void set_m_warningPercent_20(float value)
+	{
+		___m_warningPercent_20 = value;
+	}
+
+	inline static int32_t get_offset_of_m_isTimeout_21() { return static_cast<int32_t>(offsetof(PlayUICtr_t579890203, ___m_isTimeout_21)); }
+	inline bool get_m_isTimeout_21() const { return ___m_isTimeout_21; }
+	inline bool* get_address_of_m_isTimeout_21() { return &___m_isTimeout_21; }
+	inline void set_m_isTimeout_21(bool value)
+	{
+		___m_isTimeout_21 = value;
+	}
+
+	inline static int32_t get_offset_of_m_switchStatusTime_22() { return static_cast<int32_t>(offsetof(PlayUICtr_t579890203, ___m_switchStatusTime_22)); }
+	inline float get_m_switchStatusTime_22() const { return ___m_switchStatusTime_22; }
+	inline float* get_address_of_m_switchStatusTime_22() { return &___m_switchStatusTime_22; }
+	inline void set_m_switchStatusTime_22(float value)
+	{
+		___m_switchStatusTime_22 = value;
+	}
+
+	inline static int32_t get_offset_of_m_countDownTime_23() { return static_cast<int32_t>(offsetof(PlayUICtr_t579890203, ___m_countDownTime_23)); }
+	inline float get_m_countDownTime_23() const { return ___m_countDownTime_23; }
+	inline float* get_address_of_m_countDownTime_23() { return &___m_countDownTime_23; }
+	inline void set_m_countDownTime_23(float value)
+	{
+		___m_countDownTime_23 = value;
 	}
 };
 
