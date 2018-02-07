@@ -67,6 +67,7 @@
      <Compile Include="Assets\Scripts\manager\UIManager.cs" />
      <Compile Include="Assets\Scripts\role\BasicCollider.cs" />
      <Compile Include="Assets\Scripts\role\BasicController.cs" />
+     <Compile Include="Assets\Scripts\role\BasicShowRole.cs" />
      <Compile Include="Assets\Scripts\role\PartnerCollider.cs" />
      <Compile Include="Assets\Scripts\role\PartnerController.cs" />
      <Compile Include="Assets\Scripts\role\PartnerMoving.cs" />
