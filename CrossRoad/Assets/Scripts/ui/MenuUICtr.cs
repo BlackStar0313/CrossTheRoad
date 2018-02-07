@@ -12,6 +12,7 @@ public class MenuUICtr : MonoBehaviour {
 	public Text m_textBest;
 	public Text m_textCurrent;
 	public GameObject m_groupScore;
+	public MenuRole m_role;
 
 	private float m_fadeTime = 1;
 
@@ -22,6 +23,7 @@ public class MenuUICtr : MonoBehaviour {
 		m_btnSetting.onClick.AddListener(() => handleTouch(m_btnSetting));
 
 		fadeButton(1);
+		m_role.fadePlayer(true, m_fadeTime);
 
 		m_textBest.text = PlayerManager.getInstance().GetPlayerInfo().roundHighScore.ToString();
 		m_textCurrent.text = PlayerManager.getInstance().GetPlayerInfo().score.ToString();
@@ -43,6 +45,7 @@ public class MenuUICtr : MonoBehaviour {
 	private void handleTouch(Button btn) {
 		if (btn == m_btnStart) { 
 			fadeButton(0);
+			m_role.fadePlayer(false, m_fadeTime);
 			DOVirtual.DelayedCall(m_fadeTime, ()=> SceneManager.LoadScene("Main"));
 			SoundsManager.getInstance().playSounds(SoundsManager.clipNameClick);
 		}
@@ -76,4 +79,5 @@ public class MenuUICtr : MonoBehaviour {
 		group3.alpha = 1 - alpha ;
 		group3.DOFade(alpha , m_fadeTime);
 	}
+
 }

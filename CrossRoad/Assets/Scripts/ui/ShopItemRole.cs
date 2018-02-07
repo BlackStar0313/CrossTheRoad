@@ -19,7 +19,7 @@ public class ShopItemRole : BasicShowRole {
 			Debug.Log("~~~~~  ani.SetTrigger  idle ");
 		}
 		else {
-			int randIdx = Random.Range(1 , 4 );
+			int randIdx = Random.Range(1 , 5 );
 			string name = "activity" + randIdx.ToString();
 			ani.SetTrigger(name);
 		}

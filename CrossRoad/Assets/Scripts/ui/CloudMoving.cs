@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
-
+using UnityEngine.SceneManagement;
 
 enum enumFrogActionType {
 	none , 
@@ -25,6 +25,25 @@ public class CloudMoving : MonoBehaviour {
 
 	void Start()
 	{
+		//为了让主界面显示小人这里根据scene做个特殊处理
+		Canvas cav = gameObject.GetComponent<Canvas>();
+		Scene scene = SceneManager.GetActiveScene();
+		if (scene.name == "Main") {
+			cav.renderMode = RenderMode.ScreenSpaceOverlay;
+		}
+		else {
+			Camera[] allCamera = new Camera[Camera.allCamerasCount];
+			Camera.GetAllCameras(allCamera);
+			for (int i = 0 ; i < allCamera.Length ; ++i) {
+				if (allCamera[i].tag == "FrogCamera") {
+					cav.worldCamera = allCamera[i];
+					break;
+				}
+			}
+		}
+
+		
+
 		m_moveDist = Mathf.Max(Screen.width, Screen.height) ;
 
 		for (int i = 0 ; i < m_cloudList.Count ; ++i) {

@@ -77,6 +77,7 @@
      <Compile Include="Assets\Scripts\role\RoleSwtichModle.cs" />
      <Compile Include="Assets\Scripts\ui\CloudMoving.cs" />
      <Compile Include="Assets\Scripts\ui\GameOverLayerCtr.cs" />
+     <Compile Include="Assets\Scripts\ui\MenuRole.cs" />
      <Compile Include="Assets\Scripts\ui\MenuUICtr.cs" />
      <Compile Include="Assets\Scripts\ui\MoveArrow.cs" />
      <Compile Include="Assets\Scripts\ui\MoveUICtr.cs" />
