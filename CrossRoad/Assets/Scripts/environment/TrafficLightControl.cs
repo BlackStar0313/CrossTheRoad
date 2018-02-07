@@ -13,10 +13,10 @@ public class TrafficLightControl : MonoBehaviour {
 
 
 	public GameObject[] m_trafficLight ;
-	[HideInInspector] private float[] m_lightDelayTime = {4.0f , 1.0f , 5.0f} ;
+	[HideInInspector] private float[] m_lightDelayTime = {5.0f , 1.0f , 4.0f} ;
 
 	private TrafficLightSingle[] m_lightArr = new TrafficLightSingle[3];
-	private EnumTrafficLight m_currentLight = 0 ;
+	private EnumTrafficLight m_currentLight = EnumTrafficLight.green ;
 
 	void Start()
 	{
@@ -26,8 +26,9 @@ public class TrafficLightControl : MonoBehaviour {
 			m_lightArr[i].SetIsLight(false);
 		}
 
-		GameManager.getInstance().isTrafficRed = true;
-		m_currentLight = EnumTrafficLight.red ;
+		//默认上来是绿灯
+		GameManager.getInstance().isTrafficRed = false;
+		m_currentLight = EnumTrafficLight.green ;
 		m_lightArr[(int)m_currentLight].SetIsLight(true);
 		Invoke("trafficChange", m_lightDelayTime[(int)m_currentLight]);
 	}
