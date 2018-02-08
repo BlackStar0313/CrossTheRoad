@@ -21,7 +21,7 @@ public class SoundsManager : MonoBehaviour {
 	[HideInInspector] public static string clipNameGameOver = "game_over";
 	
 	[HideInInspector] public static SoundsManager mInstance = null; 
-	public AudioSource m_audio ;
+	// public AudioSource m_audio ;
 	public AudioSource m_music;
 
 	public AudioClip m_clipClick ; 
@@ -40,6 +40,8 @@ public class SoundsManager : MonoBehaviour {
 
 	public bool isSoundsOff {get; set;}
 	public bool isMusicOff { get; set; }
+
+	private GameObjectPool<AudioSource> m_objPool ;
 
 	public static SoundsManager getInstance() {
 		return SoundsManager.mInstance;
@@ -60,6 +62,8 @@ public class SoundsManager : MonoBehaviour {
 
 	void Awake(){
 		DontDestroyOnLoad(this);
+
+		m_objPool = new GameObjectPool<AudioSource>(this.gameObject);
 	}
 	
 	// Update is called once per frame
@@ -68,53 +72,66 @@ public class SoundsManager : MonoBehaviour {
 	}
 
 	public void playSounds(string clipName) {
-		m_audio.volume = 1 ;
+		StartCoroutine(poolToPlaySounds(clipName));
+	}
+
+	IEnumerator poolToPlaySounds(string clipName) {
+		AudioSource audio = m_objPool.get<AudioSource>();
+		audio.loop = false ;
+		singlePlaySounds(clipName, audio);
+		yield return new WaitForSeconds(audio.clip.length);
+		m_objPool.Recycle(audio);
+	}
+
+	private void singlePlaySounds(string clipName , AudioSource sourceAudio) {
+		sourceAudio.volume = 1 ;
 		if (clipName == clipNameClick) {
-			m_audio.clip = m_clipClick ;
-			m_audio.Play();
+			sourceAudio.clip = m_clipClick ;
+			sourceAudio.Play();
 		}
 		else if (clipName == clipNameScroll) {
-			m_audio.clip = m_clipScroll ;
-			m_audio.Play();
+			sourceAudio.clip = m_clipScroll ;
+			sourceAudio.Play();
 		}
 		else if (clipName == clipNameClickNegtive) {
-			m_audio.clip = m_clipNegtive ;
-			m_audio.Play();
+			sourceAudio.clip = m_clipNegtive ;
+			sourceAudio.Play();
 		}
 		else if (clipName == clipNameBuy) {
-			m_audio.clip = m_clipBuy ;
-			m_audio.Play();
+			sourceAudio.clip = m_clipBuy ;
+			sourceAudio.Play();
 		}
 		else if (clipName == clipNameGetHeart) {
-			m_audio.clip = m_clipGetHeart ;
-			m_audio.Play();
+			sourceAudio.clip = m_clipGetHeart ;
+			sourceAudio.Play();
 		}
 		else if (clipName == clipNameAddHeart) {
-			m_audio.clip = m_clipAddHeart ;
-			m_audio.Play();
+			sourceAudio.clip = m_clipAddHeart ;
+			sourceAudio.volume = 0.5f;
+			sourceAudio.Play();
 		}
 		else if (clipName == clipNameMoveWrong) {
-			m_audio.clip = m_moveWrong ;
-			m_audio.Play();
+			sourceAudio.clip = m_moveWrong ;
+			sourceAudio.Play();
 		}
 		else if (clipName == clipNameShopItemIdle) {
 			int randIdx = Random.Range(0, m_shopItemIdles.Length);
-			m_audio.clip = m_shopItemIdles[randIdx] ;
-			m_audio.volume = 0.6f;
-			m_audio.Play();
+			sourceAudio.clip = m_shopItemIdles[randIdx] ;
+			sourceAudio.volume = 0.6f;
+			sourceAudio.Play();
 		}
 		else if (clipName == clipNameReadyGo) {
-			m_audio.clip = m_clipReadyGo ;
-			m_audio.Play();
+			sourceAudio.clip = m_clipReadyGo ;
+			sourceAudio.Play();
 		}
 		else if (clipName == clipNameGameOver) {
 			int randIdx = Random.Range(0, m_clipGameOver.Length);
-			m_audio.clip = m_clipGameOver[randIdx] ;
-			m_audio.Play();
+			sourceAudio.clip = m_clipGameOver[randIdx] ;
+			sourceAudio.Play();
 		}
 
 		if (isSoundsOff) {
-			m_audio.volume = 0;
+			sourceAudio.volume = 0;
 		}
 	}
 
@@ -149,6 +166,10 @@ public class SoundsManager : MonoBehaviour {
 	public void soundsOff(bool isOff) {
 		PlayerPrefs.SetInt(c_localSoundsName,isOff ? 0 : 1);
 		isSoundsOff = isOff;
-		m_audio.volume = isSoundsOff ? 0 : 1;
+
+		List<AudioSource> usedList = m_objPool.GetAllUseObj();
+		for (int i = 0 ; i < usedList.Count; ++i) {
+			usedList[i].volume = isSoundsOff ? 0 : 1;
+		}
 	}
 }

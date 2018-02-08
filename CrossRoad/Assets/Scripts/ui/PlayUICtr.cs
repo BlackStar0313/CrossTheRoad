@@ -147,13 +147,17 @@ public class PlayUICtr : MonoBehaviour {
 				heart.SetActive(false);
 				DestroyObject(heart);
 
-				SoundsManager.getInstance().playSounds(SoundsManager.clipNameAddHeart);
 				// this.m_textCoin.text += 1;
 			 });
 		}
-
+		
 		float timeEnd = timeCreate + timeMove ;
-		DOVirtual.DelayedCall(timeEnd, () => { this.m_textCoin.text = GameManager.getInstance().currentScore.ToString(); });
+		DOVirtual.DelayedCall(timeEnd, () => { 
+			this.m_textCoin.text = GameManager.getInstance().currentScore.ToString(); 
+
+			//TODO：这里先播一个声音
+			SoundsManager.getInstance().playSounds(SoundsManager.clipNameAddHeart);
+		});
 	}
 
 	private void shineWarning(float curPercent) {

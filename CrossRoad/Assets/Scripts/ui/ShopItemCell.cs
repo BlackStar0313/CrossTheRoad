@@ -97,7 +97,9 @@ public class ShopItemCell : MonoBehaviour {
 		
 		refreshShow();
 
-		SoundsManager.getInstance().playSounds(SoundsManager.clipNameShopItemIdle);
+		if (m_isSelected) {
+			SoundsManager.getInstance().playSounds(SoundsManager.clipNameShopItemIdle);
+		}
 	}
 
 	private void HandleBtnStatus () {
