@@ -225,6 +225,7 @@ public class PlayUICtr : MonoBehaviour {
 		obj.transform.localRotation = Quaternion.identity;
 		obj.transform.localPosition = new Vector3(0 , 0 , 0);
 
+		img.GetComponent<RectTransform>().sizeDelta = new Vector2(m_spReady.rect.width , m_spReady.rect.height) ; 
 		img.transform.localScale = new Vector3(2f,2f,2f);
 		img.transform.DOScale(new Vector3(0.2f,0.2f,0.2f) , actTime).OnComplete(()=> {
 			obj.SetActive(false);
@@ -241,6 +242,7 @@ public class PlayUICtr : MonoBehaviour {
 			obj2.transform.localRotation = Quaternion.identity;
 			obj2.transform.localPosition = new Vector3(0 , 0 , 0);
 
+			img2.GetComponent<RectTransform>().sizeDelta = new Vector2(m_spGo.rect.width , m_spGo.rect.height) ;
 			img2.transform.localScale = new Vector3(2f,2f,2f);
 			img2.transform.DOScale(new Vector3(0.2f,0.2f,0.2f) , actTime).OnComplete(()=> {
 				obj2.SetActive(false);
