@@ -47,7 +47,7 @@ public class PlayUICtr : MonoBehaviour {
 
 	void Start()
 	{
-		m_textCoin.text = "x" + GameManager.getInstance().currentScore.ToString();
+		m_textCoin.text = GameManager.getInstance().currentScore.ToString();
 		m_Slider.value = 1 ;
 
 		handleFrog();
@@ -153,7 +153,7 @@ public class PlayUICtr : MonoBehaviour {
 		
 		float timeEnd = timeCreate + timeMove ;
 		DOVirtual.DelayedCall(timeEnd, () => { 
-			this.m_textCoin.text = "x" + GameManager.getInstance().currentScore.ToString(); 
+			this.m_textCoin.text = GameManager.getInstance().currentScore.ToString(); 
 
 			//TODO：这里先播一个声音
 			SoundsManager.getInstance().playSounds(SoundsManager.clipNameAddHeart);

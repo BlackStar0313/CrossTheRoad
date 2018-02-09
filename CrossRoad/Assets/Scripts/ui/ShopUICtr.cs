@@ -31,6 +31,6 @@ public class ShopUICtr : MonoBehaviour {
 	}
 
 	public void refreshUIShow() {
-		m_textScore.text = "x" + PlayerManager.getInstance().GetPlayerInfo().score.ToString();
+		m_textScore.text = PlayerManager.getInstance().GetPlayerInfo().score.ToString();
 	}
 }

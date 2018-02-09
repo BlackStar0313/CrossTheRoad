@@ -28,8 +28,8 @@ public class MenuUICtr : MonoBehaviour {
 		fadeButton(1);
 		m_role.fadePlayer(true, m_fadeTime);
 
-		m_textBest.text = "x" + PlayerManager.getInstance().GetPlayerInfo().roundHighScore.ToString();
-		m_textCurrent.text = "x" + PlayerManager.getInstance().GetPlayerInfo().score.ToString();
+		m_textBest.text = PlayerManager.getInstance().GetPlayerInfo().roundHighScore.ToString();
+		m_textCurrent.text =  PlayerManager.getInstance().GetPlayerInfo().score.ToString();
 
 		GameObject obj = Instantiate(Resources.Load("Prefebs/Cloud")) as GameObject;
 		CloudMoving move = obj.GetComponent<CloudMoving>();
