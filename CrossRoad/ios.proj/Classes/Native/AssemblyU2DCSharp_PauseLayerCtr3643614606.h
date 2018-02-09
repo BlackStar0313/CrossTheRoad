@@ -32,6 +32,8 @@ public:
 	Button_t2872111280 * ___m_btnContinue_2;
 	// UnityEngine.UI.Button PauseLayerCtr::m_btnHome
 	Button_t2872111280 * ___m_btnHome_3;
+	// System.Boolean PauseLayerCtr::m_isActDone
+	bool ___m_isActDone_4;
 
 public:
 	inline static int32_t get_offset_of_m_btnContinue_2() { return static_cast<int32_t>(offsetof(PauseLayerCtr_t3643614606, ___m_btnContinue_2)); }
@@ -50,6 +52,14 @@ public:
 	{
 		___m_btnHome_3 = value;
 		Il2CppCodeGenWriteBarrier(&___m_btnHome_3, value);
+	}
+
+	inline static int32_t get_offset_of_m_isActDone_4() { return static_cast<int32_t>(offsetof(PauseLayerCtr_t3643614606, ___m_isActDone_4)); }
+	inline bool get_m_isActDone_4() const { return ___m_isActDone_4; }
+	inline bool* get_address_of_m_isActDone_4() { return &___m_isActDone_4; }
+	inline void set_m_isActDone_4(bool value)
+	{
+		___m_isActDone_4 = value;
 	}
 };
 

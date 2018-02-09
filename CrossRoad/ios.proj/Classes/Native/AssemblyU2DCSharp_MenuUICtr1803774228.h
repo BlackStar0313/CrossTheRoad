@@ -50,8 +50,14 @@ public:
 	GameObject_t1756533147 * ___m_groupScore_7;
 	// MenuRole MenuUICtr::m_role
 	MenuRole_t4079412605 * ___m_role_8;
+	// UnityEngine.GameObject MenuUICtr::m_groupLogo
+	GameObject_t1756533147 * ___m_groupLogo_9;
+	// UnityEngine.GameObject MenuUICtr::m_bg_left
+	GameObject_t1756533147 * ___m_bg_left_10;
+	// UnityEngine.GameObject MenuUICtr::m_bg_right
+	GameObject_t1756533147 * ___m_bg_right_11;
 	// System.Single MenuUICtr::m_fadeTime
-	float ___m_fadeTime_9;
+	float ___m_fadeTime_12;
 
 public:
 	inline static int32_t get_offset_of_m_btnStart_2() { return static_cast<int32_t>(offsetof(MenuUICtr_t1803774228, ___m_btnStart_2)); }
@@ -117,12 +123,39 @@ public:
 		Il2CppCodeGenWriteBarrier(&___m_role_8, value);
 	}
 
-	inline static int32_t get_offset_of_m_fadeTime_9() { return static_cast<int32_t>(offsetof(MenuUICtr_t1803774228, ___m_fadeTime_9)); }
-	inline float get_m_fadeTime_9() const { return ___m_fadeTime_9; }
-	inline float* get_address_of_m_fadeTime_9() { return &___m_fadeTime_9; }
-	inline void set_m_fadeTime_9(float value)
+	inline static int32_t get_offset_of_m_groupLogo_9() { return static_cast<int32_t>(offsetof(MenuUICtr_t1803774228, ___m_groupLogo_9)); }
+	inline GameObject_t1756533147 * get_m_groupLogo_9() const { return ___m_groupLogo_9; }
+	inline GameObject_t1756533147 ** get_address_of_m_groupLogo_9() { return &___m_groupLogo_9; }
+	inline void set_m_groupLogo_9(GameObject_t1756533147 * value)
 	{
-		___m_fadeTime_9 = value;
+		___m_groupLogo_9 = value;
+		Il2CppCodeGenWriteBarrier(&___m_groupLogo_9, value);
+	}
+
+	inline static int32_t get_offset_of_m_bg_left_10() { return static_cast<int32_t>(offsetof(MenuUICtr_t1803774228, ___m_bg_left_10)); }
+	inline GameObject_t1756533147 * get_m_bg_left_10() const { return ___m_bg_left_10; }
+	inline GameObject_t1756533147 ** get_address_of_m_bg_left_10() { return &___m_bg_left_10; }
+	inline void set_m_bg_left_10(GameObject_t1756533147 * value)
+	{
+		___m_bg_left_10 = value;
+		Il2CppCodeGenWriteBarrier(&___m_bg_left_10, value);
+	}
+
+	inline static int32_t get_offset_of_m_bg_right_11() { return static_cast<int32_t>(offsetof(MenuUICtr_t1803774228, ___m_bg_right_11)); }
+	inline GameObject_t1756533147 * get_m_bg_right_11() const { return ___m_bg_right_11; }
+	inline GameObject_t1756533147 ** get_address_of_m_bg_right_11() { return &___m_bg_right_11; }
+	inline void set_m_bg_right_11(GameObject_t1756533147 * value)
+	{
+		___m_bg_right_11 = value;
+		Il2CppCodeGenWriteBarrier(&___m_bg_right_11, value);
+	}
+
+	inline static int32_t get_offset_of_m_fadeTime_12() { return static_cast<int32_t>(offsetof(MenuUICtr_t1803774228, ___m_fadeTime_12)); }
+	inline float get_m_fadeTime_12() const { return ___m_fadeTime_12; }
+	inline float* get_address_of_m_fadeTime_12() { return &___m_fadeTime_12; }
+	inline void set_m_fadeTime_12(float value)
+	{
+		___m_fadeTime_12 = value;
 	}
 };
 
@@ -130,16 +163,16 @@ struct MenuUICtr_t1803774228_StaticFields
 {
 public:
 	// DG.Tweening.TweenCallback MenuUICtr::<>f__am$cache0
-	TweenCallback_t3697142134 * ___U3CU3Ef__amU24cache0_10;
+	TweenCallback_t3697142134 * ___U3CU3Ef__amU24cache0_13;
 
 public:
-	inline static int32_t get_offset_of_U3CU3Ef__amU24cache0_10() { return static_cast<int32_t>(offsetof(MenuUICtr_t1803774228_StaticFields, ___U3CU3Ef__amU24cache0_10)); }
-	inline TweenCallback_t3697142134 * get_U3CU3Ef__amU24cache0_10() const { return ___U3CU3Ef__amU24cache0_10; }
-	inline TweenCallback_t3697142134 ** get_address_of_U3CU3Ef__amU24cache0_10() { return &___U3CU3Ef__amU24cache0_10; }
-	inline void set_U3CU3Ef__amU24cache0_10(TweenCallback_t3697142134 * value)
+	inline static int32_t get_offset_of_U3CU3Ef__amU24cache0_13() { return static_cast<int32_t>(offsetof(MenuUICtr_t1803774228_StaticFields, ___U3CU3Ef__amU24cache0_13)); }
+	inline TweenCallback_t3697142134 * get_U3CU3Ef__amU24cache0_13() const { return ___U3CU3Ef__amU24cache0_13; }
+	inline TweenCallback_t3697142134 ** get_address_of_U3CU3Ef__amU24cache0_13() { return &___U3CU3Ef__amU24cache0_13; }
+	inline void set_U3CU3Ef__amU24cache0_13(TweenCallback_t3697142134 * value)
 	{
-		___U3CU3Ef__amU24cache0_10 = value;
-		Il2CppCodeGenWriteBarrier(&___U3CU3Ef__amU24cache0_10, value);
+		___U3CU3Ef__amU24cache0_13 = value;
+		Il2CppCodeGenWriteBarrier(&___U3CU3Ef__amU24cache0_13, value);
 	}
 };
 

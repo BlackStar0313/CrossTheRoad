@@ -22,6 +22,8 @@ struct AudioSource_t1135106623;
 struct AudioClip_t1932558630;
 // UnityEngine.AudioClip[]
 struct AudioClipU5BU5D_t2203355011;
+// GameObjectPool`1<UnityEngine.AudioSource>
+struct GameObjectPool_1_t348868260;
 
 
 
@@ -40,40 +42,40 @@ public:
 	String_t* ___c_localMusicName_2;
 	// System.String SoundsManager::c_localSoundsName
 	String_t* ___c_localSoundsName_3;
-	// UnityEngine.AudioSource SoundsManager::m_audio
-	AudioSource_t1135106623 * ___m_audio_18;
 	// UnityEngine.AudioSource SoundsManager::m_music
-	AudioSource_t1135106623 * ___m_music_19;
+	AudioSource_t1135106623 * ___m_music_18;
 	// UnityEngine.AudioClip SoundsManager::m_clipClick
-	AudioClip_t1932558630 * ___m_clipClick_20;
+	AudioClip_t1932558630 * ___m_clipClick_19;
 	// UnityEngine.AudioClip SoundsManager::m_clipNegtive
-	AudioClip_t1932558630 * ___m_clipNegtive_21;
+	AudioClip_t1932558630 * ___m_clipNegtive_20;
 	// UnityEngine.AudioClip SoundsManager::m_clipScroll
-	AudioClip_t1932558630 * ___m_clipScroll_22;
+	AudioClip_t1932558630 * ___m_clipScroll_21;
 	// UnityEngine.AudioClip SoundsManager::m_clipBuy
-	AudioClip_t1932558630 * ___m_clipBuy_23;
+	AudioClip_t1932558630 * ___m_clipBuy_22;
 	// UnityEngine.AudioClip SoundsManager::m_clipGetHeart
-	AudioClip_t1932558630 * ___m_clipGetHeart_24;
+	AudioClip_t1932558630 * ___m_clipGetHeart_23;
 	// UnityEngine.AudioClip SoundsManager::m_clipAddHeart
-	AudioClip_t1932558630 * ___m_clipAddHeart_25;
+	AudioClip_t1932558630 * ___m_clipAddHeart_24;
 	// UnityEngine.AudioClip SoundsManager::m_moveWrong
-	AudioClip_t1932558630 * ___m_moveWrong_26;
+	AudioClip_t1932558630 * ___m_moveWrong_25;
 	// UnityEngine.AudioClip[] SoundsManager::m_shopItemIdles
-	AudioClipU5BU5D_t2203355011* ___m_shopItemIdles_27;
+	AudioClipU5BU5D_t2203355011* ___m_shopItemIdles_26;
 	// UnityEngine.AudioClip SoundsManager::m_clipMenu
-	AudioClip_t1932558630 * ___m_clipMenu_28;
+	AudioClip_t1932558630 * ___m_clipMenu_27;
 	// UnityEngine.AudioClip[] SoundsManager::m_clipGameBgs
-	AudioClipU5BU5D_t2203355011* ___m_clipGameBgs_29;
+	AudioClipU5BU5D_t2203355011* ___m_clipGameBgs_28;
 	// UnityEngine.AudioClip SoundsManager::m_clipShop
-	AudioClip_t1932558630 * ___m_clipShop_30;
+	AudioClip_t1932558630 * ___m_clipShop_29;
 	// UnityEngine.AudioClip SoundsManager::m_clipReadyGo
-	AudioClip_t1932558630 * ___m_clipReadyGo_31;
+	AudioClip_t1932558630 * ___m_clipReadyGo_30;
 	// UnityEngine.AudioClip[] SoundsManager::m_clipGameOver
-	AudioClipU5BU5D_t2203355011* ___m_clipGameOver_32;
+	AudioClipU5BU5D_t2203355011* ___m_clipGameOver_31;
 	// System.Boolean SoundsManager::<isSoundsOff>k__BackingField
-	bool ___U3CisSoundsOffU3Ek__BackingField_33;
+	bool ___U3CisSoundsOffU3Ek__BackingField_32;
 	// System.Boolean SoundsManager::<isMusicOff>k__BackingField
-	bool ___U3CisMusicOffU3Ek__BackingField_34;
+	bool ___U3CisMusicOffU3Ek__BackingField_33;
+	// GameObjectPool`1<UnityEngine.AudioSource> SoundsManager::m_objPool
+	GameObjectPool_1_t348868260 * ___m_objPool_34;
 
 public:
 	inline static int32_t get_offset_of_c_localMusicName_2() { return static_cast<int32_t>(offsetof(SoundsManager_t4165177525, ___c_localMusicName_2)); }
@@ -94,155 +96,155 @@ public:
 		Il2CppCodeGenWriteBarrier(&___c_localSoundsName_3, value);
 	}
 
-	inline static int32_t get_offset_of_m_audio_18() { return static_cast<int32_t>(offsetof(SoundsManager_t4165177525, ___m_audio_18)); }
-	inline AudioSource_t1135106623 * get_m_audio_18() const { return ___m_audio_18; }
-	inline AudioSource_t1135106623 ** get_address_of_m_audio_18() { return &___m_audio_18; }
-	inline void set_m_audio_18(AudioSource_t1135106623 * value)
+	inline static int32_t get_offset_of_m_music_18() { return static_cast<int32_t>(offsetof(SoundsManager_t4165177525, ___m_music_18)); }
+	inline AudioSource_t1135106623 * get_m_music_18() const { return ___m_music_18; }
+	inline AudioSource_t1135106623 ** get_address_of_m_music_18() { return &___m_music_18; }
+	inline void set_m_music_18(AudioSource_t1135106623 * value)
 	{
-		___m_audio_18 = value;
-		Il2CppCodeGenWriteBarrier(&___m_audio_18, value);
+		___m_music_18 = value;
+		Il2CppCodeGenWriteBarrier(&___m_music_18, value);
 	}
 
-	inline static int32_t get_offset_of_m_music_19() { return static_cast<int32_t>(offsetof(SoundsManager_t4165177525, ___m_music_19)); }
-	inline AudioSource_t1135106623 * get_m_music_19() const { return ___m_music_19; }
-	inline AudioSource_t1135106623 ** get_address_of_m_music_19() { return &___m_music_19; }
-	inline void set_m_music_19(AudioSource_t1135106623 * value)
+	inline static int32_t get_offset_of_m_clipClick_19() { return static_cast<int32_t>(offsetof(SoundsManager_t4165177525, ___m_clipClick_19)); }
+	inline AudioClip_t1932558630 * get_m_clipClick_19() const { return ___m_clipClick_19; }
+	inline AudioClip_t1932558630 ** get_address_of_m_clipClick_19() { return &___m_clipClick_19; }
+	inline void set_m_clipClick_19(AudioClip_t1932558630 * value)
 	{
-		___m_music_19 = value;
-		Il2CppCodeGenWriteBarrier(&___m_music_19, value);
+		___m_clipClick_19 = value;
+		Il2CppCodeGenWriteBarrier(&___m_clipClick_19, value);
 	}
 
-	inline static int32_t get_offset_of_m_clipClick_20() { return static_cast<int32_t>(offsetof(SoundsManager_t4165177525, ___m_clipClick_20)); }
-	inline AudioClip_t1932558630 * get_m_clipClick_20() const { return ___m_clipClick_20; }
-	inline AudioClip_t1932558630 ** get_address_of_m_clipClick_20() { return &___m_clipClick_20; }
-	inline void set_m_clipClick_20(AudioClip_t1932558630 * value)
+	inline static int32_t get_offset_of_m_clipNegtive_20() { return static_cast<int32_t>(offsetof(SoundsManager_t4165177525, ___m_clipNegtive_20)); }
+	inline AudioClip_t1932558630 * get_m_clipNegtive_20() const { return ___m_clipNegtive_20; }
+	inline AudioClip_t1932558630 ** get_address_of_m_clipNegtive_20() { return &___m_clipNegtive_20; }
+	inline void set_m_clipNegtive_20(AudioClip_t1932558630 * value)
 	{
-		___m_clipClick_20 = value;
-		Il2CppCodeGenWriteBarrier(&___m_clipClick_20, value);
+		___m_clipNegtive_20 = value;
+		Il2CppCodeGenWriteBarrier(&___m_clipNegtive_20, value);
 	}
 
-	inline static int32_t get_offset_of_m_clipNegtive_21() { return static_cast<int32_t>(offsetof(SoundsManager_t4165177525, ___m_clipNegtive_21)); }
-	inline AudioClip_t1932558630 * get_m_clipNegtive_21() const { return ___m_clipNegtive_21; }
-	inline AudioClip_t1932558630 ** get_address_of_m_clipNegtive_21() { return &___m_clipNegtive_21; }
-	inline void set_m_clipNegtive_21(AudioClip_t1932558630 * value)
+	inline static int32_t get_offset_of_m_clipScroll_21() { return static_cast<int32_t>(offsetof(SoundsManager_t4165177525, ___m_clipScroll_21)); }
+	inline AudioClip_t1932558630 * get_m_clipScroll_21() const { return ___m_clipScroll_21; }
+	inline AudioClip_t1932558630 ** get_address_of_m_clipScroll_21() { return &___m_clipScroll_21; }
+	inline void set_m_clipScroll_21(AudioClip_t1932558630 * value)
 	{
-		___m_clipNegtive_21 = value;
-		Il2CppCodeGenWriteBarrier(&___m_clipNegtive_21, value);
+		___m_clipScroll_21 = value;
+		Il2CppCodeGenWriteBarrier(&___m_clipScroll_21, value);
 	}
 
-	inline static int32_t get_offset_of_m_clipScroll_22() { return static_cast<int32_t>(offsetof(SoundsManager_t4165177525, ___m_clipScroll_22)); }
-	inline AudioClip_t1932558630 * get_m_clipScroll_22() const { return ___m_clipScroll_22; }
-	inline AudioClip_t1932558630 ** get_address_of_m_clipScroll_22() { return &___m_clipScroll_22; }
-	inline void set_m_clipScroll_22(AudioClip_t1932558630 * value)
+	inline static int32_t get_offset_of_m_clipBuy_22() { return static_cast<int32_t>(offsetof(SoundsManager_t4165177525, ___m_clipBuy_22)); }
+	inline AudioClip_t1932558630 * get_m_clipBuy_22() const { return ___m_clipBuy_22; }
+	inline AudioClip_t1932558630 ** get_address_of_m_clipBuy_22() { return &___m_clipBuy_22; }
+	inline void set_m_clipBuy_22(AudioClip_t1932558630 * value)
 	{
-		___m_clipScroll_22 = value;
-		Il2CppCodeGenWriteBarrier(&___m_clipScroll_22, value);
+		___m_clipBuy_22 = value;
+		Il2CppCodeGenWriteBarrier(&___m_clipBuy_22, value);
 	}
 
-	inline static int32_t get_offset_of_m_clipBuy_23() { return static_cast<int32_t>(offsetof(SoundsManager_t4165177525, ___m_clipBuy_23)); }
-	inline AudioClip_t1932558630 * get_m_clipBuy_23() const { return ___m_clipBuy_23; }
-	inline AudioClip_t1932558630 ** get_address_of_m_clipBuy_23() { return &___m_clipBuy_23; }
-	inline void set_m_clipBuy_23(AudioClip_t1932558630 * value)
+	inline static int32_t get_offset_of_m_clipGetHeart_23() { return static_cast<int32_t>(offsetof(SoundsManager_t4165177525, ___m_clipGetHeart_23)); }
+	inline AudioClip_t1932558630 * get_m_clipGetHeart_23() const { return ___m_clipGetHeart_23; }
+	inline AudioClip_t1932558630 ** get_address_of_m_clipGetHeart_23() { return &___m_clipGetHeart_23; }
+	inline void set_m_clipGetHeart_23(AudioClip_t1932558630 * value)
 	{
-		___m_clipBuy_23 = value;
-		Il2CppCodeGenWriteBarrier(&___m_clipBuy_23, value);
+		___m_clipGetHeart_23 = value;
+		Il2CppCodeGenWriteBarrier(&___m_clipGetHeart_23, value);
 	}
 
-	inline static int32_t get_offset_of_m_clipGetHeart_24() { return static_cast<int32_t>(offsetof(SoundsManager_t4165177525, ___m_clipGetHeart_24)); }
-	inline AudioClip_t1932558630 * get_m_clipGetHeart_24() const { return ___m_clipGetHeart_24; }
-	inline AudioClip_t1932558630 ** get_address_of_m_clipGetHeart_24() { return &___m_clipGetHeart_24; }
-	inline void set_m_clipGetHeart_24(AudioClip_t1932558630 * value)
+	inline static int32_t get_offset_of_m_clipAddHeart_24() { return static_cast<int32_t>(offsetof(SoundsManager_t4165177525, ___m_clipAddHeart_24)); }
+	inline AudioClip_t1932558630 * get_m_clipAddHeart_24() const { return ___m_clipAddHeart_24; }
+	inline AudioClip_t1932558630 ** get_address_of_m_clipAddHeart_24() { return &___m_clipAddHeart_24; }
+	inline void set_m_clipAddHeart_24(AudioClip_t1932558630 * value)
 	{
-		___m_clipGetHeart_24 = value;
-		Il2CppCodeGenWriteBarrier(&___m_clipGetHeart_24, value);
+		___m_clipAddHeart_24 = value;
+		Il2CppCodeGenWriteBarrier(&___m_clipAddHeart_24, value);
 	}
 
-	inline static int32_t get_offset_of_m_clipAddHeart_25() { return static_cast<int32_t>(offsetof(SoundsManager_t4165177525, ___m_clipAddHeart_25)); }
-	inline AudioClip_t1932558630 * get_m_clipAddHeart_25() const { return ___m_clipAddHeart_25; }
-	inline AudioClip_t1932558630 ** get_address_of_m_clipAddHeart_25() { return &___m_clipAddHeart_25; }
-	inline void set_m_clipAddHeart_25(AudioClip_t1932558630 * value)
+	inline static int32_t get_offset_of_m_moveWrong_25() { return static_cast<int32_t>(offsetof(SoundsManager_t4165177525, ___m_moveWrong_25)); }
+	inline AudioClip_t1932558630 * get_m_moveWrong_25() const { return ___m_moveWrong_25; }
+	inline AudioClip_t1932558630 ** get_address_of_m_moveWrong_25() { return &___m_moveWrong_25; }
+	inline void set_m_moveWrong_25(AudioClip_t1932558630 * value)
 	{
-		___m_clipAddHeart_25 = value;
-		Il2CppCodeGenWriteBarrier(&___m_clipAddHeart_25, value);
+		___m_moveWrong_25 = value;
+		Il2CppCodeGenWriteBarrier(&___m_moveWrong_25, value);
 	}
 
-	inline static int32_t get_offset_of_m_moveWrong_26() { return static_cast<int32_t>(offsetof(SoundsManager_t4165177525, ___m_moveWrong_26)); }
-	inline AudioClip_t1932558630 * get_m_moveWrong_26() const { return ___m_moveWrong_26; }
-	inline AudioClip_t1932558630 ** get_address_of_m_moveWrong_26() { return &___m_moveWrong_26; }
-	inline void set_m_moveWrong_26(AudioClip_t1932558630 * value)
+	inline static int32_t get_offset_of_m_shopItemIdles_26() { return static_cast<int32_t>(offsetof(SoundsManager_t4165177525, ___m_shopItemIdles_26)); }
+	inline AudioClipU5BU5D_t2203355011* get_m_shopItemIdles_26() const { return ___m_shopItemIdles_26; }
+	inline AudioClipU5BU5D_t2203355011** get_address_of_m_shopItemIdles_26() { return &___m_shopItemIdles_26; }
+	inline void set_m_shopItemIdles_26(AudioClipU5BU5D_t2203355011* value)
 	{
-		___m_moveWrong_26 = value;
-		Il2CppCodeGenWriteBarrier(&___m_moveWrong_26, value);
+		___m_shopItemIdles_26 = value;
+		Il2CppCodeGenWriteBarrier(&___m_shopItemIdles_26, value);
 	}
 
-	inline static int32_t get_offset_of_m_shopItemIdles_27() { return static_cast<int32_t>(offsetof(SoundsManager_t4165177525, ___m_shopItemIdles_27)); }
-	inline AudioClipU5BU5D_t2203355011* get_m_shopItemIdles_27() const { return ___m_shopItemIdles_27; }
-	inline AudioClipU5BU5D_t2203355011** get_address_of_m_shopItemIdles_27() { return &___m_shopItemIdles_27; }
-	inline void set_m_shopItemIdles_27(AudioClipU5BU5D_t2203355011* value)
+	inline static int32_t get_offset_of_m_clipMenu_27() { return static_cast<int32_t>(offsetof(SoundsManager_t4165177525, ___m_clipMenu_27)); }
+	inline AudioClip_t1932558630 * get_m_clipMenu_27() const { return ___m_clipMenu_27; }
+	inline AudioClip_t1932558630 ** get_address_of_m_clipMenu_27() { return &___m_clipMenu_27; }
+	inline void set_m_clipMenu_27(AudioClip_t1932558630 * value)
 	{
-		___m_shopItemIdles_27 = value;
-		Il2CppCodeGenWriteBarrier(&___m_shopItemIdles_27, value);
+		___m_clipMenu_27 = value;
+		Il2CppCodeGenWriteBarrier(&___m_clipMenu_27, value);
 	}
 
-	inline static int32_t get_offset_of_m_clipMenu_28() { return static_cast<int32_t>(offsetof(SoundsManager_t4165177525, ___m_clipMenu_28)); }
-	inline AudioClip_t1932558630 * get_m_clipMenu_28() const { return ___m_clipMenu_28; }
-	inline AudioClip_t1932558630 ** get_address_of_m_clipMenu_28() { return &___m_clipMenu_28; }
-	inline void set_m_clipMenu_28(AudioClip_t1932558630 * value)
+	inline static int32_t get_offset_of_m_clipGameBgs_28() { return static_cast<int32_t>(offsetof(SoundsManager_t4165177525, ___m_clipGameBgs_28)); }
+	inline AudioClipU5BU5D_t2203355011* get_m_clipGameBgs_28() const { return ___m_clipGameBgs_28; }
+	inline AudioClipU5BU5D_t2203355011** get_address_of_m_clipGameBgs_28() { return &___m_clipGameBgs_28; }
+	inline void set_m_clipGameBgs_28(AudioClipU5BU5D_t2203355011* value)
 	{
-		___m_clipMenu_28 = value;
-		Il2CppCodeGenWriteBarrier(&___m_clipMenu_28, value);
+		___m_clipGameBgs_28 = value;
+		Il2CppCodeGenWriteBarrier(&___m_clipGameBgs_28, value);
 	}
 
-	inline static int32_t get_offset_of_m_clipGameBgs_29() { return static_cast<int32_t>(offsetof(SoundsManager_t4165177525, ___m_clipGameBgs_29)); }
-	inline AudioClipU5BU5D_t2203355011* get_m_clipGameBgs_29() const { return ___m_clipGameBgs_29; }
-	inline AudioClipU5BU5D_t2203355011** get_address_of_m_clipGameBgs_29() { return &___m_clipGameBgs_29; }
-	inline void set_m_clipGameBgs_29(AudioClipU5BU5D_t2203355011* value)
+	inline static int32_t get_offset_of_m_clipShop_29() { return static_cast<int32_t>(offsetof(SoundsManager_t4165177525, ___m_clipShop_29)); }
+	inline AudioClip_t1932558630 * get_m_clipShop_29() const { return ___m_clipShop_29; }
+	inline AudioClip_t1932558630 ** get_address_of_m_clipShop_29() { return &___m_clipShop_29; }
+	inline void set_m_clipShop_29(AudioClip_t1932558630 * value)
 	{
-		___m_clipGameBgs_29 = value;
-		Il2CppCodeGenWriteBarrier(&___m_clipGameBgs_29, value);
+		___m_clipShop_29 = value;
+		Il2CppCodeGenWriteBarrier(&___m_clipShop_29, value);
 	}
 
-	inline static int32_t get_offset_of_m_clipShop_30() { return static_cast<int32_t>(offsetof(SoundsManager_t4165177525, ___m_clipShop_30)); }
-	inline AudioClip_t1932558630 * get_m_clipShop_30() const { return ___m_clipShop_30; }
-	inline AudioClip_t1932558630 ** get_address_of_m_clipShop_30() { return &___m_clipShop_30; }
-	inline void set_m_clipShop_30(AudioClip_t1932558630 * value)
+	inline static int32_t get_offset_of_m_clipReadyGo_30() { return static_cast<int32_t>(offsetof(SoundsManager_t4165177525, ___m_clipReadyGo_30)); }
+	inline AudioClip_t1932558630 * get_m_clipReadyGo_30() const { return ___m_clipReadyGo_30; }
+	inline AudioClip_t1932558630 ** get_address_of_m_clipReadyGo_30() { return &___m_clipReadyGo_30; }
+	inline void set_m_clipReadyGo_30(AudioClip_t1932558630 * value)
 	{
-		___m_clipShop_30 = value;
-		Il2CppCodeGenWriteBarrier(&___m_clipShop_30, value);
+		___m_clipReadyGo_30 = value;
+		Il2CppCodeGenWriteBarrier(&___m_clipReadyGo_30, value);
 	}
 
-	inline static int32_t get_offset_of_m_clipReadyGo_31() { return static_cast<int32_t>(offsetof(SoundsManager_t4165177525, ___m_clipReadyGo_31)); }
-	inline AudioClip_t1932558630 * get_m_clipReadyGo_31() const { return ___m_clipReadyGo_31; }
-	inline AudioClip_t1932558630 ** get_address_of_m_clipReadyGo_31() { return &___m_clipReadyGo_31; }
-	inline void set_m_clipReadyGo_31(AudioClip_t1932558630 * value)
+	inline static int32_t get_offset_of_m_clipGameOver_31() { return static_cast<int32_t>(offsetof(SoundsManager_t4165177525, ___m_clipGameOver_31)); }
+	inline AudioClipU5BU5D_t2203355011* get_m_clipGameOver_31() const { return ___m_clipGameOver_31; }
+	inline AudioClipU5BU5D_t2203355011** get_address_of_m_clipGameOver_31() { return &___m_clipGameOver_31; }
+	inline void set_m_clipGameOver_31(AudioClipU5BU5D_t2203355011* value)
 	{
-		___m_clipReadyGo_31 = value;
-		Il2CppCodeGenWriteBarrier(&___m_clipReadyGo_31, value);
+		___m_clipGameOver_31 = value;
+		Il2CppCodeGenWriteBarrier(&___m_clipGameOver_31, value);
 	}
 
-	inline static int32_t get_offset_of_m_clipGameOver_32() { return static_cast<int32_t>(offsetof(SoundsManager_t4165177525, ___m_clipGameOver_32)); }
-	inline AudioClipU5BU5D_t2203355011* get_m_clipGameOver_32() const { return ___m_clipGameOver_32; }
-	inline AudioClipU5BU5D_t2203355011** get_address_of_m_clipGameOver_32() { return &___m_clipGameOver_32; }
-	inline void set_m_clipGameOver_32(AudioClipU5BU5D_t2203355011* value)
+	inline static int32_t get_offset_of_U3CisSoundsOffU3Ek__BackingField_32() { return static_cast<int32_t>(offsetof(SoundsManager_t4165177525, ___U3CisSoundsOffU3Ek__BackingField_32)); }
+	inline bool get_U3CisSoundsOffU3Ek__BackingField_32() const { return ___U3CisSoundsOffU3Ek__BackingField_32; }
+	inline bool* get_address_of_U3CisSoundsOffU3Ek__BackingField_32() { return &___U3CisSoundsOffU3Ek__BackingField_32; }
+	inline void set_U3CisSoundsOffU3Ek__BackingField_32(bool value)
 	{
-		___m_clipGameOver_32 = value;
-		Il2CppCodeGenWriteBarrier(&___m_clipGameOver_32, value);
+		___U3CisSoundsOffU3Ek__BackingField_32 = value;
 	}
 
-	inline static int32_t get_offset_of_U3CisSoundsOffU3Ek__BackingField_33() { return static_cast<int32_t>(offsetof(SoundsManager_t4165177525, ___U3CisSoundsOffU3Ek__BackingField_33)); }
-	inline bool get_U3CisSoundsOffU3Ek__BackingField_33() const { return ___U3CisSoundsOffU3Ek__BackingField_33; }
-	inline bool* get_address_of_U3CisSoundsOffU3Ek__BackingField_33() { return &___U3CisSoundsOffU3Ek__BackingField_33; }
-	inline void set_U3CisSoundsOffU3Ek__BackingField_33(bool value)
+	inline static int32_t get_offset_of_U3CisMusicOffU3Ek__BackingField_33() { return static_cast<int32_t>(offsetof(SoundsManager_t4165177525, ___U3CisMusicOffU3Ek__BackingField_33)); }
+	inline bool get_U3CisMusicOffU3Ek__BackingField_33() const { return ___U3CisMusicOffU3Ek__BackingField_33; }
+	inline bool* get_address_of_U3CisMusicOffU3Ek__BackingField_33() { return &___U3CisMusicOffU3Ek__BackingField_33; }
+	inline void set_U3CisMusicOffU3Ek__BackingField_33(bool value)
 	{
-		___U3CisSoundsOffU3Ek__BackingField_33 = value;
+		___U3CisMusicOffU3Ek__BackingField_33 = value;
 	}
 
-	inline static int32_t get_offset_of_U3CisMusicOffU3Ek__BackingField_34() { return static_cast<int32_t>(offsetof(SoundsManager_t4165177525, ___U3CisMusicOffU3Ek__BackingField_34)); }
-	inline bool get_U3CisMusicOffU3Ek__BackingField_34() const { return ___U3CisMusicOffU3Ek__BackingField_34; }
-	inline bool* get_address_of_U3CisMusicOffU3Ek__BackingField_34() { return &___U3CisMusicOffU3Ek__BackingField_34; }
-	inline void set_U3CisMusicOffU3Ek__BackingField_34(bool value)
+	inline static int32_t get_offset_of_m_objPool_34() { return static_cast<int32_t>(offsetof(SoundsManager_t4165177525, ___m_objPool_34)); }
+	inline GameObjectPool_1_t348868260 * get_m_objPool_34() const { return ___m_objPool_34; }
+	inline GameObjectPool_1_t348868260 ** get_address_of_m_objPool_34() { return &___m_objPool_34; }
+	inline void set_m_objPool_34(GameObjectPool_1_t348868260 * value)
 	{
-		___U3CisMusicOffU3Ek__BackingField_34 = value;
+		___m_objPool_34 = value;
+		Il2CppCodeGenWriteBarrier(&___m_objPool_34, value);
 	}
 };
 
