@@ -47,7 +47,7 @@ public class PlayUICtr : MonoBehaviour {
 
 	void Start()
 	{
-		m_textCoin.text = GameManager.getInstance().currentScore.ToString();
+		m_textCoin.text = "x" + GameManager.getInstance().currentScore.ToString();
 		m_Slider.value = 1 ;
 
 		handleFrog();
@@ -153,7 +153,7 @@ public class PlayUICtr : MonoBehaviour {
 		
 		float timeEnd = timeCreate + timeMove ;
 		DOVirtual.DelayedCall(timeEnd, () => { 
-			this.m_textCoin.text = GameManager.getInstance().currentScore.ToString(); 
+			this.m_textCoin.text = "x" + GameManager.getInstance().currentScore.ToString(); 
 
 			//TODO：这里先播一个声音
 			SoundsManager.getInstance().playSounds(SoundsManager.clipNameAddHeart);
@@ -225,8 +225,8 @@ public class PlayUICtr : MonoBehaviour {
 		obj.transform.localRotation = Quaternion.identity;
 		obj.transform.localPosition = new Vector3(0 , 0 , 0);
 
-		img.transform.localScale = new Vector3(1.5f,1.5f,1.5f);
-		img.transform.DOScale(new Vector3(1,1,1) , actTime).OnComplete(()=> {
+		img.transform.localScale = new Vector3(2f,2f,2f);
+		img.transform.DOScale(new Vector3(0.2f,0.2f,0.2f) , actTime).OnComplete(()=> {
 			obj.SetActive(false);
 			Destroy(obj);
 		}) ;
@@ -241,8 +241,8 @@ public class PlayUICtr : MonoBehaviour {
 			obj2.transform.localRotation = Quaternion.identity;
 			obj2.transform.localPosition = new Vector3(0 , 0 , 0);
 
-			img2.transform.localScale = new Vector3(1.5f,1.5f,1.5f);
-			img2.transform.DOScale(new Vector3(1,1,1) , actTime).OnComplete(()=> {
+			img2.transform.localScale = new Vector3(2f,2f,2f);
+			img2.transform.DOScale(new Vector3(0.2f,0.2f,0.2f) , actTime).OnComplete(()=> {
 				obj2.SetActive(false);
 				Destroy(obj2);
 			}) ;

@@ -1,0 +1,53 @@
+#
+# Sprite sheet data for Unity.
+#
+# To import these sprites into your Unity project, download "TexturePackerImporter":
+# http://www.codeandweb.com/texturepacker/unity
+#
+# Sprite sheet: ui01.png (1024 x 1024)
+# $TexturePacker:SmartUpdate:11751b13876faba77d140172ccedd6f4:52fc74270fe82d1f747081b71133f72a:1b3dfc14cc3a58374a47cd915d649e8d$
+#
+
+btn_ads;372;690;124;125;0.5;0.5
+btn_ads_p;885;897;124;125;0.5;0.5
+btn_back;2;457;204;205;0.5;0.5
+btn_back2;885;770;124;125;0.5;0.5
+btn_back2_p;704;690;124;125;0.5;0.5
+btn_back_p;2;250;204;205;0.5;0.5
+btn_buy;485;336;204;65;0.5;0.5
+btn_buy_p;414;269;204;65;0.5;0.5
+btn_home;830;643;124;125;0.5;0.5
+btn_home_p;704;563;124;125;0.5;0.5
+btn_music_off;2;43;204;205;0.5;0.5
+btn_music_off_p;208;457;204;205;0.5;0.5
+btn_music_on;267;817;204;205;0.5;0.5
+btn_music_on_p;473;817;204;205;0.5;0.5
+btn_rep;830;516;124;125;0.5;0.5
+btn_rep_p;692;436;124;125;0.5;0.5
+btn_select;645;2;204;65;0.5;0.5
+btn_select_p;767;242;204;65;0.5;0.5
+btn_setting;692;309;124;125;0.5;0.5
+btn_setting2;956;703;64;65;0.5;0.5
+btn_setting2_p;956;636;64;65;0.5;0.5
+btn_setting_p;414;142;124;125;0.5;0.5
+btn_shop;414;15;124;125;0.5;0.5
+btn_shop_p;540;142;124;125;0.5;0.5
+btn_sounds_off;679;817;204;205;0.5;0.5
+btn_sounds_off_p;498;610;204;205;0.5;0.5
+btn_sounds_on;486;403;204;205;0.5;0.5
+btn_sounds_on_p;208;250;204;205;0.5;0.5
+btn_start;208;43;204;205;0.5;0.5
+btn_start_p;818;309;204;205;0.5;0.5
+i_ads;956;586;62;48;0.5;0.5
+i_best;414;642;78;46;0.5;0.5
+i_double_prize;645;69;120;71;0.5;0.5
+i_granny_angry1;414;512;69;68;0.5;0.5
+i_granny_angry2;414;442;69;68;0.5;0.5
+i_granny_happy;414;372;69;68;0.5;0.5
+i_heart;414;582;70;58;0.5;0.5
+i_heart1;267;689;103;126;0.5;0.5
+i_heart2;540;54;103;86;0.5;0.7325581395348837
+i_progress_1;194;27;90;14;0.5;0.0714285714285714
+i_progress_2;102;17;90;24;0.5;0.5
+i_progress_3;2;9;98;32;0.5;0.5
+shop_rect;2;664;263;358;0.5;0.5
