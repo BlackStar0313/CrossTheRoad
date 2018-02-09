@@ -13,6 +13,9 @@ public class MenuUICtr : MonoBehaviour {
 	public Text m_textCurrent;
 	public GameObject m_groupScore;
 	public MenuRole m_role;
+	public GameObject m_groupLogo;
+	public GameObject m_bg_left;
+	public GameObject m_bg_right;
 
 	private float m_fadeTime = 1;
 
@@ -25,8 +28,8 @@ public class MenuUICtr : MonoBehaviour {
 		fadeButton(1);
 		m_role.fadePlayer(true, m_fadeTime);
 
-		m_textBest.text = PlayerManager.getInstance().GetPlayerInfo().roundHighScore.ToString();
-		m_textCurrent.text = PlayerManager.getInstance().GetPlayerInfo().score.ToString();
+		m_textBest.text = "x" + PlayerManager.getInstance().GetPlayerInfo().roundHighScore.ToString();
+		m_textCurrent.text = "x" + PlayerManager.getInstance().GetPlayerInfo().score.ToString();
 
 		GameObject obj = Instantiate(Resources.Load("Prefebs/Cloud")) as GameObject;
 		CloudMoving move = obj.GetComponent<CloudMoving>();
@@ -78,6 +81,18 @@ public class MenuUICtr : MonoBehaviour {
 		CanvasGroup group3 = m_groupScore.GetComponent<CanvasGroup>();
 		group3.alpha = 1 - alpha ;
 		group3.DOFade(alpha , m_fadeTime);
+
+		CanvasGroup group4 = m_groupLogo.GetComponent<CanvasGroup>();
+		group4.alpha = 1 - alpha ;
+		group4.DOFade(alpha , m_fadeTime);
+
+		CanvasGroup group5 = m_bg_left.GetComponent<CanvasGroup>();
+		group5.alpha = 1 - alpha ;
+		group5.DOFade(alpha , m_fadeTime);
+
+		CanvasGroup group6 = m_bg_right.GetComponent<CanvasGroup>();
+		group6.alpha = 1 - alpha ;
+		group6.DOFade(alpha , m_fadeTime);
 	}
 
 }
