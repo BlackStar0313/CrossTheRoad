@@ -80,22 +80,22 @@ public class SettingLayerCtr : MonoBehaviour {
 
 	private void doAct() {
 		float moveTime = 0.6f; 
-		float endY = m_btnSounds.transform.position.y ; 
-		m_btnSounds.transform.position = new Vector3(m_btnSounds.transform.position.x, Screen.height/2, 0 );
+		float endX = m_btnSounds.transform.position.x ; 
+		m_btnSounds.transform.position = new Vector3(Screen.width/2, m_btnSounds.transform.position.y, 0 );
 		m_btnSounds.transform.Rotate(new Vector3(0,0,90) );
 
 		Sequence seq = DOTween.Sequence();
 		seq.Append(m_btnSounds.transform.DORotate(new Vector3(0,0,0) , moveTime));
-		seq.Join(m_btnSounds.transform.DOMoveY(endY , moveTime).SetEase(Ease.OutBack));
+		seq.Join(m_btnSounds.transform.DOMoveX(endX , moveTime).SetEase(Ease.OutBack));
 		
 
-		float endY2 = m_btnMusic.transform.position.y ; 
-		m_btnMusic.transform.position = new Vector3(m_btnMusic.transform.position.x, Screen.height/2, 0 );
-		m_btnMusic.transform.Rotate(new Vector3(0,0,90) );
+		float endX2 = m_btnMusic.transform.position.x ; 
+		m_btnMusic.transform.position = new Vector3(Screen.width/2, m_btnMusic.transform.position.y, 0 );
+		m_btnMusic.transform.Rotate(new Vector3(0,0,-90) );
 
 		Sequence seq1 = DOTween.Sequence();
 		seq1.Append(m_btnMusic.transform.DORotate(new Vector3(0,0,0) , moveTime));
-		seq1.Join(m_btnMusic.transform.DOMoveY(endY2 , moveTime).SetEase(Ease.OutBack));
+		seq1.Join(m_btnMusic.transform.DOMoveX(endX2 , moveTime).SetEase(Ease.OutBack));
 
 		DOVirtual.DelayedCall(moveTime , ()=> { m_isActDone = true ; });
 	}
