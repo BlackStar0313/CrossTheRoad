@@ -13,10 +13,19 @@ public class GameOverLayerCtr : MonoBehaviour {
 	public Button m_btnContinue;
 	public Button m_btnHome ; 
 	public Button m_btnAds;
-	public Text m_textTitle;
-	public Transform m_groupAds;
 	public Image m_imgHeart;
 	public Image m_imgBest;
+	public Image m_imgBest_bg;
+	public Image m_imgTitle;
+	public GameObject m_groupScore;
+	public Image m_imgBgBtn;
+	public Image m_imgBgAds;
+	public Image m_imgAdsDesc;
+	public GameObject m_groupAds;
+
+	public Sprite m_spGameOver;
+	public Sprite m_spTimeOut;
+	public Sprite m_spBgBest;
 
 
 	private float m_titleTime = 0.8f;
@@ -26,7 +35,7 @@ public class GameOverLayerCtr : MonoBehaviour {
 	private float m_btnDelayTime = 0.7f;
 	private float m_btnTime = 0.5f;
 
-	private float m_distTime = 0.2f;
+	private float m_distTime = 0.4f;
 	void Awake()
 	{
 		m_btnContinue.onClick.AddListener(delegate() { this.handleTouch(m_btnContinue); });
@@ -47,7 +56,7 @@ public class GameOverLayerCtr : MonoBehaviour {
 		PlayerManager.getInstance().GetPlayerInfo().saveToLocal();
 
 		m_textScore.text = "+" + GameManager.getInstance().currentScore.ToString() ; 
-		m_textTitle.text = GameManager.getInstance().deadType == enumDeadType.timeout ? "TIME OUT" : "GAME OVER";
+		m_imgTitle.sprite = GameManager.getInstance().deadType == enumDeadType.timeout ? m_spTimeOut : m_spGameOver;
 
 
 		if (GameManager.getInstance().currentScore > 0) {
@@ -64,8 +73,7 @@ public class GameOverLayerCtr : MonoBehaviour {
 		// m_imgBest.gameObject.SetActive(true);
 
 		doAppearActTitle();
-		doAppearHeart();
-		doAppearScore();
+		doAppearScoreGroup();
 		doAppearHighScore(isHighScore);
 		doAppeartAds(isShowAds);
 		doAppearBtn();
@@ -148,21 +156,15 @@ public class GameOverLayerCtr : MonoBehaviour {
 	}
 
 	private void doAppearActTitle() {
-		float endY = m_textTitle.transform.position.y ; 
-		m_textTitle.transform.position += new Vector3(0 , (50 + endY) , 0) ;
-		m_textTitle.transform.DOMoveY(endY , m_titleTime).SetEase(Ease.OutBounce);
+		float endY = m_imgTitle.transform.position.y ; 
+		m_imgTitle.transform.position += new Vector3(0 , (m_imgTitle.GetComponent<RectTransform>().sizeDelta.y/2 + endY) , 0) ;
+		m_imgTitle.transform.DOMoveY(endY , m_titleTime).SetEase(Ease.OutBounce);
 	}
 
-	private void doAppearHeart() {
-		float endX = m_imgHeart.transform.position.x ; 
-		m_imgHeart.transform.position -= new Vector3(Screen.width/16*11, 0 , 0 );
-		DOVirtual.DelayedCall(m_titleTime-m_distTime , ()=>{ m_imgHeart.transform.DOMoveX(endX , m_heartTime).SetEase(Ease.OutBack); });
-	}
-
-	private void doAppearScore() {
-		float endX = m_textScore.transform.position.x ; 
-		m_textScore.transform.position -= new Vector3(Screen.width/16*11, 0 , 0 );
-		DOVirtual.DelayedCall(m_titleTime-m_distTime , ()=>{ m_textScore.transform.DOMoveX(endX , m_heartTime).SetEase(Ease.OutBack); });
+	private void doAppearScoreGroup() {
+		float endX = m_groupScore.transform.position.x ; 
+		m_groupScore.transform.position -= new Vector3(Screen.width/16*11, 0 , 0 );
+		DOVirtual.DelayedCall(m_titleTime-m_distTime , ()=>{ m_groupScore.transform.DOMoveX(endX , m_heartTime).SetEase(Ease.OutBack); });
 	}
 
 	private void doAppearHighScore(bool isShow) {
@@ -172,6 +174,7 @@ public class GameOverLayerCtr : MonoBehaviour {
 
 		m_imgBest.gameObject.SetActive(false);
 		DOVirtual.DelayedCall(m_titleTime + m_heartTime - m_distTime , () => {
+			m_imgBest_bg.sprite = m_spBgBest;
 			m_imgBest.gameObject.SetActive(true);
 			Vector3 rotateValue = new Vector3(10,0,10);
 			Sequence seqScale = DOTween.Sequence();
@@ -186,20 +189,52 @@ public class GameOverLayerCtr : MonoBehaviour {
 		if (!isShow) {
 			return ;
 		}
+		float dist = m_imgBgAds.GetComponent<RectTransform>().sizeDelta.x;
+		float endX = m_imgBgAds.transform.position.x ; 
+		m_imgBgAds.transform.position += new Vector3(dist, 0 , 0 );
+		DOVirtual.DelayedCall(m_titleTime + m_heartTime - m_distTime, ()=>{ 
+			m_imgBgAds.transform.DOMoveX(endX , m_adsTime/2);
+		});
 
-		float endX = m_groupAds.transform.position.x ; 
-		m_groupAds.transform.position += new Vector3(Screen.width/2, 0 , 0 );
-		DOVirtual.DelayedCall(m_titleTime + m_heartTime - m_distTime, ()=>{ m_groupAds.transform.DOMoveX(endX , m_adsTime).SetEase(Ease.OutBack); });
+
+		float endX1 = m_btnAds.transform.position.x ; 
+		float endXDesc = m_imgAdsDesc.transform.position.x ;
+		m_btnAds.transform.position += new Vector3(dist, 0 , 0 );
+		m_imgAdsDesc.transform.position += new Vector3(dist, 0 , 0 );
+		DOVirtual.DelayedCall(m_titleTime + m_heartTime , ()=>{ 
+			m_btnAds.transform.Rotate(new Vector3(0,0,-180) );
+			Sequence seq1 = DOTween.Sequence();
+			seq1.Append(m_btnAds.transform.DORotate(new Vector3(0,0,0) , m_adsTime));
+			seq1.Join(m_btnAds.transform.DOMoveX(endX1 , m_adsTime).SetEase(Ease.OutBack));
+
+			m_imgAdsDesc.transform.DOMoveX(endXDesc , m_adsTime);
+		});
 	}
 
 	private void doAppearBtn() {
-		CanvasGroup group = m_btnContinue.GetComponent<CanvasGroup>();
-		group.alpha = 0 ;
-		DOVirtual.DelayedCall(m_titleTime + m_heartTime + m_btnDelayTime , ()=>{group.DOFade(1 , m_btnTime);} );
-		
+		float dist = m_imgBgBtn.GetComponent<RectTransform>().sizeDelta.x;
+		float endX = m_imgBgBtn.transform.position.x ; 
+		m_imgBgBtn.transform.position -= new Vector3(dist, 0 , 0 );
+		DOVirtual.DelayedCall(m_titleTime + m_heartTime - m_distTime, ()=>{ 
+			m_imgBgBtn.transform.DOMoveX(endX , m_adsTime/2);
+		});
 
-		CanvasGroup group1 = m_btnHome.GetComponent<CanvasGroup>();
-		group1.alpha = 0 ;
-		DOVirtual.DelayedCall(m_titleTime + m_heartTime + m_btnDelayTime , ()=>{group1.DOFade(1 , m_btnTime);} );
+
+		float endXHome = m_btnHome.transform.position.x ; 
+		float endXBack = m_btnContinue.transform.position.x ;
+		m_btnHome.transform.position -= new Vector3(dist, 0 , 0 );
+		m_btnContinue.transform.position -= new Vector3(dist, 0 , 0 );
+		DOVirtual.DelayedCall(m_titleTime + m_heartTime , ()=>{ 
+			m_btnHome.transform.Rotate(new Vector3(0,0,-180) );
+			Sequence seq1 = DOTween.Sequence();
+			seq1.Append(m_btnHome.transform.DORotate(new Vector3(0,0,0) , m_adsTime));
+			seq1.Join(m_btnHome.transform.DOMoveX(endXHome , m_adsTime).SetEase(Ease.OutBack));
+
+
+			m_btnContinue.transform.Rotate(new Vector3(0,0,-180) );
+			Sequence seq2 = DOTween.Sequence();
+			seq2.Append(m_btnContinue.transform.DORotate(new Vector3(0,0,0) , m_adsTime));
+			seq2.Join(m_btnContinue.transform.DOMoveX(endXBack , m_adsTime).SetEase(Ease.OutBack));
+		});
 	}
 }
