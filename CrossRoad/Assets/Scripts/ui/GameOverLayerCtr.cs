@@ -189,7 +189,7 @@ public class GameOverLayerCtr : MonoBehaviour {
 		if (!isShow) {
 			return ;
 		}
-		float dist = m_imgBgAds.GetComponent<RectTransform>().sizeDelta.x;
+		float dist = m_imgBgAds.GetComponent<RectTransform>().sizeDelta.x /3*4;
 		float endX = m_imgBgAds.transform.position.x ; 
 		m_imgBgAds.transform.position += new Vector3(dist, 0 , 0 );
 		DOVirtual.DelayedCall(m_titleTime + m_heartTime - m_distTime, ()=>{ 
@@ -212,7 +212,7 @@ public class GameOverLayerCtr : MonoBehaviour {
 	}
 
 	private void doAppearBtn() {
-		float dist = m_imgBgBtn.GetComponent<RectTransform>().sizeDelta.x;
+		float dist = m_imgBgBtn.GetComponent<RectTransform>().sizeDelta.x/3*4;
 		float endX = m_imgBgBtn.transform.position.x ; 
 		m_imgBgBtn.transform.position -= new Vector3(dist, 0 , 0 );
 		DOVirtual.DelayedCall(m_titleTime + m_heartTime - m_distTime, ()=>{ 

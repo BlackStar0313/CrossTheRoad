@@ -52,28 +52,34 @@ public:
 	float ___m_moveSpeedRangeMin_8;
 	// System.Single CarControl::m_moveSpeedAvg
 	float ___m_moveSpeedAvg_9;
+	// System.Single CarControl::m_moveBeginSpeedAvg
+	float ___m_moveBeginSpeedAvg_10;
 	// System.Single CarControl::m_moveSpeedCurrent
-	float ___m_moveSpeedCurrent_10;
+	float ___m_moveSpeedCurrent_11;
 	// System.Single CarControl::m_acceleratedSpeedRangeMax
-	float ___m_acceleratedSpeedRangeMax_11;
+	float ___m_acceleratedSpeedRangeMax_12;
 	// System.Single CarControl::m_acceleratedSpeedRangeMin
-	float ___m_acceleratedSpeedRangeMin_12;
+	float ___m_acceleratedSpeedRangeMin_13;
 	// System.Single CarControl::m_acceleratedSpeedCurrent
-	float ___m_acceleratedSpeedCurrent_13;
+	float ___m_acceleratedSpeedCurrent_14;
 	// UnityEngine.Rigidbody CarControl::m_rigidBody
-	Rigidbody_t4233889191 * ___m_rigidBody_14;
+	Rigidbody_t4233889191 * ___m_rigidBody_15;
 	// UnityEngine.CapsuleCollider CarControl::m_capsuleCollider
-	CapsuleCollider_t720607407 * ___m_capsuleCollider_15;
+	CapsuleCollider_t720607407 * ___m_capsuleCollider_16;
 	// System.Boolean CarControl::m_isMoving
-	bool ___m_isMoving_16;
-	// System.Single CarControl::m_RaycasthitDist
-	float ___m_RaycasthitDist_17;
+	bool ___m_isMoving_17;
 	// System.Single CarControl::m_puaseDist
 	float ___m_puaseDist_18;
 	// System.Boolean CarControl::m_isInit
 	bool ___m_isInit_19;
+	// System.Single CarControl::c_RaycastHitDistMin
+	float ___c_RaycastHitDistMin_20;
+	// System.Single CarControl::c_RaycastHitDistMax
+	float ___c_RaycastHitDistMax_21;
+	// System.Single CarControl::m_RaycasthitDist
+	float ___m_RaycasthitDist_22;
 	// UnityEngine.Vector3 CarControl::m_direction
-	Vector3_t2243707580  ___m_direction_20;
+	Vector3_t2243707580  ___m_direction_23;
 
 public:
 	inline static int32_t get_offset_of_m_blockingLayer_2() { return static_cast<int32_t>(offsetof(CarControl_t3855212605, ___m_blockingLayer_2)); }
@@ -144,70 +150,70 @@ public:
 		___m_moveSpeedAvg_9 = value;
 	}
 
-	inline static int32_t get_offset_of_m_moveSpeedCurrent_10() { return static_cast<int32_t>(offsetof(CarControl_t3855212605, ___m_moveSpeedCurrent_10)); }
-	inline float get_m_moveSpeedCurrent_10() const { return ___m_moveSpeedCurrent_10; }
-	inline float* get_address_of_m_moveSpeedCurrent_10() { return &___m_moveSpeedCurrent_10; }
-	inline void set_m_moveSpeedCurrent_10(float value)
+	inline static int32_t get_offset_of_m_moveBeginSpeedAvg_10() { return static_cast<int32_t>(offsetof(CarControl_t3855212605, ___m_moveBeginSpeedAvg_10)); }
+	inline float get_m_moveBeginSpeedAvg_10() const { return ___m_moveBeginSpeedAvg_10; }
+	inline float* get_address_of_m_moveBeginSpeedAvg_10() { return &___m_moveBeginSpeedAvg_10; }
+	inline void set_m_moveBeginSpeedAvg_10(float value)
 	{
-		___m_moveSpeedCurrent_10 = value;
+		___m_moveBeginSpeedAvg_10 = value;
 	}
 
-	inline static int32_t get_offset_of_m_acceleratedSpeedRangeMax_11() { return static_cast<int32_t>(offsetof(CarControl_t3855212605, ___m_acceleratedSpeedRangeMax_11)); }
-	inline float get_m_acceleratedSpeedRangeMax_11() const { return ___m_acceleratedSpeedRangeMax_11; }
-	inline float* get_address_of_m_acceleratedSpeedRangeMax_11() { return &___m_acceleratedSpeedRangeMax_11; }
-	inline void set_m_acceleratedSpeedRangeMax_11(float value)
+	inline static int32_t get_offset_of_m_moveSpeedCurrent_11() { return static_cast<int32_t>(offsetof(CarControl_t3855212605, ___m_moveSpeedCurrent_11)); }
+	inline float get_m_moveSpeedCurrent_11() const { return ___m_moveSpeedCurrent_11; }
+	inline float* get_address_of_m_moveSpeedCurrent_11() { return &___m_moveSpeedCurrent_11; }
+	inline void set_m_moveSpeedCurrent_11(float value)
 	{
-		___m_acceleratedSpeedRangeMax_11 = value;
+		___m_moveSpeedCurrent_11 = value;
 	}
 
-	inline static int32_t get_offset_of_m_acceleratedSpeedRangeMin_12() { return static_cast<int32_t>(offsetof(CarControl_t3855212605, ___m_acceleratedSpeedRangeMin_12)); }
-	inline float get_m_acceleratedSpeedRangeMin_12() const { return ___m_acceleratedSpeedRangeMin_12; }
-	inline float* get_address_of_m_acceleratedSpeedRangeMin_12() { return &___m_acceleratedSpeedRangeMin_12; }
-	inline void set_m_acceleratedSpeedRangeMin_12(float value)
+	inline static int32_t get_offset_of_m_acceleratedSpeedRangeMax_12() { return static_cast<int32_t>(offsetof(CarControl_t3855212605, ___m_acceleratedSpeedRangeMax_12)); }
+	inline float get_m_acceleratedSpeedRangeMax_12() const { return ___m_acceleratedSpeedRangeMax_12; }
+	inline float* get_address_of_m_acceleratedSpeedRangeMax_12() { return &___m_acceleratedSpeedRangeMax_12; }
+	inline void set_m_acceleratedSpeedRangeMax_12(float value)
 	{
-		___m_acceleratedSpeedRangeMin_12 = value;
+		___m_acceleratedSpeedRangeMax_12 = value;
 	}
 
-	inline static int32_t get_offset_of_m_acceleratedSpeedCurrent_13() { return static_cast<int32_t>(offsetof(CarControl_t3855212605, ___m_acceleratedSpeedCurrent_13)); }
-	inline float get_m_acceleratedSpeedCurrent_13() const { return ___m_acceleratedSpeedCurrent_13; }
-	inline float* get_address_of_m_acceleratedSpeedCurrent_13() { return &___m_acceleratedSpeedCurrent_13; }
-	inline void set_m_acceleratedSpeedCurrent_13(float value)
+	inline static int32_t get_offset_of_m_acceleratedSpeedRangeMin_13() { return static_cast<int32_t>(offsetof(CarControl_t3855212605, ___m_acceleratedSpeedRangeMin_13)); }
+	inline float get_m_acceleratedSpeedRangeMin_13() const { return ___m_acceleratedSpeedRangeMin_13; }
+	inline float* get_address_of_m_acceleratedSpeedRangeMin_13() { return &___m_acceleratedSpeedRangeMin_13; }
+	inline void set_m_acceleratedSpeedRangeMin_13(float value)
 	{
-		___m_acceleratedSpeedCurrent_13 = value;
+		___m_acceleratedSpeedRangeMin_13 = value;
 	}
 
-	inline static int32_t get_offset_of_m_rigidBody_14() { return static_cast<int32_t>(offsetof(CarControl_t3855212605, ___m_rigidBody_14)); }
-	inline Rigidbody_t4233889191 * get_m_rigidBody_14() const { return ___m_rigidBody_14; }
-	inline Rigidbody_t4233889191 ** get_address_of_m_rigidBody_14() { return &___m_rigidBody_14; }
-	inline void set_m_rigidBody_14(Rigidbody_t4233889191 * value)
+	inline static int32_t get_offset_of_m_acceleratedSpeedCurrent_14() { return static_cast<int32_t>(offsetof(CarControl_t3855212605, ___m_acceleratedSpeedCurrent_14)); }
+	inline float get_m_acceleratedSpeedCurrent_14() const { return ___m_acceleratedSpeedCurrent_14; }
+	inline float* get_address_of_m_acceleratedSpeedCurrent_14() { return &___m_acceleratedSpeedCurrent_14; }
+	inline void set_m_acceleratedSpeedCurrent_14(float value)
 	{
-		___m_rigidBody_14 = value;
-		Il2CppCodeGenWriteBarrier(&___m_rigidBody_14, value);
+		___m_acceleratedSpeedCurrent_14 = value;
 	}
 
-	inline static int32_t get_offset_of_m_capsuleCollider_15() { return static_cast<int32_t>(offsetof(CarControl_t3855212605, ___m_capsuleCollider_15)); }
-	inline CapsuleCollider_t720607407 * get_m_capsuleCollider_15() const { return ___m_capsuleCollider_15; }
-	inline CapsuleCollider_t720607407 ** get_address_of_m_capsuleCollider_15() { return &___m_capsuleCollider_15; }
-	inline void set_m_capsuleCollider_15(CapsuleCollider_t720607407 * value)
+	inline static int32_t get_offset_of_m_rigidBody_15() { return static_cast<int32_t>(offsetof(CarControl_t3855212605, ___m_rigidBody_15)); }
+	inline Rigidbody_t4233889191 * get_m_rigidBody_15() const { return ___m_rigidBody_15; }
+	inline Rigidbody_t4233889191 ** get_address_of_m_rigidBody_15() { return &___m_rigidBody_15; }
+	inline void set_m_rigidBody_15(Rigidbody_t4233889191 * value)
 	{
-		___m_capsuleCollider_15 = value;
-		Il2CppCodeGenWriteBarrier(&___m_capsuleCollider_15, value);
+		___m_rigidBody_15 = value;
+		Il2CppCodeGenWriteBarrier(&___m_rigidBody_15, value);
 	}
 
-	inline static int32_t get_offset_of_m_isMoving_16() { return static_cast<int32_t>(offsetof(CarControl_t3855212605, ___m_isMoving_16)); }
-	inline bool get_m_isMoving_16() const { return ___m_isMoving_16; }
-	inline bool* get_address_of_m_isMoving_16() { return &___m_isMoving_16; }
-	inline void set_m_isMoving_16(bool value)
+	inline static int32_t get_offset_of_m_capsuleCollider_16() { return static_cast<int32_t>(offsetof(CarControl_t3855212605, ___m_capsuleCollider_16)); }
+	inline CapsuleCollider_t720607407 * get_m_capsuleCollider_16() const { return ___m_capsuleCollider_16; }
+	inline CapsuleCollider_t720607407 ** get_address_of_m_capsuleCollider_16() { return &___m_capsuleCollider_16; }
+	inline void set_m_capsuleCollider_16(CapsuleCollider_t720607407 * value)
 	{
-		___m_isMoving_16 = value;
+		___m_capsuleCollider_16 = value;
+		Il2CppCodeGenWriteBarrier(&___m_capsuleCollider_16, value);
 	}
 
-	inline static int32_t get_offset_of_m_RaycasthitDist_17() { return static_cast<int32_t>(offsetof(CarControl_t3855212605, ___m_RaycasthitDist_17)); }
-	inline float get_m_RaycasthitDist_17() const { return ___m_RaycasthitDist_17; }
-	inline float* get_address_of_m_RaycasthitDist_17() { return &___m_RaycasthitDist_17; }
-	inline void set_m_RaycasthitDist_17(float value)
+	inline static int32_t get_offset_of_m_isMoving_17() { return static_cast<int32_t>(offsetof(CarControl_t3855212605, ___m_isMoving_17)); }
+	inline bool get_m_isMoving_17() const { return ___m_isMoving_17; }
+	inline bool* get_address_of_m_isMoving_17() { return &___m_isMoving_17; }
+	inline void set_m_isMoving_17(bool value)
 	{
-		___m_RaycasthitDist_17 = value;
+		___m_isMoving_17 = value;
 	}
 
 	inline static int32_t get_offset_of_m_puaseDist_18() { return static_cast<int32_t>(offsetof(CarControl_t3855212605, ___m_puaseDist_18)); }
@@ -226,12 +232,36 @@ public:
 		___m_isInit_19 = value;
 	}
 
-	inline static int32_t get_offset_of_m_direction_20() { return static_cast<int32_t>(offsetof(CarControl_t3855212605, ___m_direction_20)); }
-	inline Vector3_t2243707580  get_m_direction_20() const { return ___m_direction_20; }
-	inline Vector3_t2243707580 * get_address_of_m_direction_20() { return &___m_direction_20; }
-	inline void set_m_direction_20(Vector3_t2243707580  value)
+	inline static int32_t get_offset_of_c_RaycastHitDistMin_20() { return static_cast<int32_t>(offsetof(CarControl_t3855212605, ___c_RaycastHitDistMin_20)); }
+	inline float get_c_RaycastHitDistMin_20() const { return ___c_RaycastHitDistMin_20; }
+	inline float* get_address_of_c_RaycastHitDistMin_20() { return &___c_RaycastHitDistMin_20; }
+	inline void set_c_RaycastHitDistMin_20(float value)
 	{
-		___m_direction_20 = value;
+		___c_RaycastHitDistMin_20 = value;
+	}
+
+	inline static int32_t get_offset_of_c_RaycastHitDistMax_21() { return static_cast<int32_t>(offsetof(CarControl_t3855212605, ___c_RaycastHitDistMax_21)); }
+	inline float get_c_RaycastHitDistMax_21() const { return ___c_RaycastHitDistMax_21; }
+	inline float* get_address_of_c_RaycastHitDistMax_21() { return &___c_RaycastHitDistMax_21; }
+	inline void set_c_RaycastHitDistMax_21(float value)
+	{
+		___c_RaycastHitDistMax_21 = value;
+	}
+
+	inline static int32_t get_offset_of_m_RaycasthitDist_22() { return static_cast<int32_t>(offsetof(CarControl_t3855212605, ___m_RaycasthitDist_22)); }
+	inline float get_m_RaycasthitDist_22() const { return ___m_RaycasthitDist_22; }
+	inline float* get_address_of_m_RaycasthitDist_22() { return &___m_RaycasthitDist_22; }
+	inline void set_m_RaycasthitDist_22(float value)
+	{
+		___m_RaycasthitDist_22 = value;
+	}
+
+	inline static int32_t get_offset_of_m_direction_23() { return static_cast<int32_t>(offsetof(CarControl_t3855212605, ___m_direction_23)); }
+	inline Vector3_t2243707580  get_m_direction_23() const { return ___m_direction_23; }
+	inline Vector3_t2243707580 * get_address_of_m_direction_23() { return &___m_direction_23; }
+	inline void set_m_direction_23(Vector3_t2243707580  value)
+	{
+		___m_direction_23 = value;
 	}
 };
 

@@ -76,6 +76,8 @@ public:
 	bool ___U3CisOffsetU3Ek__BackingField_19;
 	// System.Int32 GameManager::<currentScore>k__BackingField
 	int32_t ___U3CcurrentScoreU3Ek__BackingField_20;
+	// System.Boolean GameManager::m_isCameraFinish
+	bool ___m_isCameraFinish_21;
 
 public:
 	inline static int32_t get_offset_of_m_cars_2() { return static_cast<int32_t>(offsetof(GameManager_t2252321495, ___m_cars_2)); }
@@ -227,6 +229,14 @@ public:
 	inline void set_U3CcurrentScoreU3Ek__BackingField_20(int32_t value)
 	{
 		___U3CcurrentScoreU3Ek__BackingField_20 = value;
+	}
+
+	inline static int32_t get_offset_of_m_isCameraFinish_21() { return static_cast<int32_t>(offsetof(GameManager_t2252321495, ___m_isCameraFinish_21)); }
+	inline bool get_m_isCameraFinish_21() const { return ___m_isCameraFinish_21; }
+	inline bool* get_address_of_m_isCameraFinish_21() { return &___m_isCameraFinish_21; }
+	inline void set_m_isCameraFinish_21(bool value)
+	{
+		___m_isCameraFinish_21 = value;
 	}
 };
 

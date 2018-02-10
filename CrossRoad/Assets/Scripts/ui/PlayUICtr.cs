@@ -20,9 +20,9 @@ public class PlayUICtr : MonoBehaviour {
 	public Sprite m_spReady;
 	public Sprite m_spGo;
 
-	private float m_decreaseTime = 9;
+	private float m_decreaseTime = 8;
 	private float m_addStep = 0.25f;
-	private float m_subStep = 0.05f;
+	private float m_subStep = 0.1f;
 	private float m_randDist = 1.2f;
 
 	private int m_showScore = 0;

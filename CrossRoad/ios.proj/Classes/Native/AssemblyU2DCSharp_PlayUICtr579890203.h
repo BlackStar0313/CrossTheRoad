@@ -76,18 +76,20 @@ public:
 	float ___m_decreaseTime_16;
 	// System.Single PlayUICtr::m_addStep
 	float ___m_addStep_17;
+	// System.Single PlayUICtr::m_subStep
+	float ___m_subStep_18;
 	// System.Single PlayUICtr::m_randDist
-	float ___m_randDist_18;
+	float ___m_randDist_19;
 	// System.Int32 PlayUICtr::m_showScore
-	int32_t ___m_showScore_19;
+	int32_t ___m_showScore_20;
 	// System.Single PlayUICtr::m_warningPercent
-	float ___m_warningPercent_20;
+	float ___m_warningPercent_21;
 	// System.Boolean PlayUICtr::m_isTimeout
-	bool ___m_isTimeout_21;
+	bool ___m_isTimeout_22;
 	// System.Single PlayUICtr::m_switchStatusTime
-	float ___m_switchStatusTime_22;
+	float ___m_switchStatusTime_23;
 	// System.Single PlayUICtr::m_countDownTime
-	float ___m_countDownTime_23;
+	float ___m_countDownTime_24;
 
 public:
 	inline static int32_t get_offset_of_m_textCoin_2() { return static_cast<int32_t>(offsetof(PlayUICtr_t579890203, ___m_textCoin_2)); }
@@ -232,52 +234,60 @@ public:
 		___m_addStep_17 = value;
 	}
 
-	inline static int32_t get_offset_of_m_randDist_18() { return static_cast<int32_t>(offsetof(PlayUICtr_t579890203, ___m_randDist_18)); }
-	inline float get_m_randDist_18() const { return ___m_randDist_18; }
-	inline float* get_address_of_m_randDist_18() { return &___m_randDist_18; }
-	inline void set_m_randDist_18(float value)
+	inline static int32_t get_offset_of_m_subStep_18() { return static_cast<int32_t>(offsetof(PlayUICtr_t579890203, ___m_subStep_18)); }
+	inline float get_m_subStep_18() const { return ___m_subStep_18; }
+	inline float* get_address_of_m_subStep_18() { return &___m_subStep_18; }
+	inline void set_m_subStep_18(float value)
 	{
-		___m_randDist_18 = value;
+		___m_subStep_18 = value;
 	}
 
-	inline static int32_t get_offset_of_m_showScore_19() { return static_cast<int32_t>(offsetof(PlayUICtr_t579890203, ___m_showScore_19)); }
-	inline int32_t get_m_showScore_19() const { return ___m_showScore_19; }
-	inline int32_t* get_address_of_m_showScore_19() { return &___m_showScore_19; }
-	inline void set_m_showScore_19(int32_t value)
+	inline static int32_t get_offset_of_m_randDist_19() { return static_cast<int32_t>(offsetof(PlayUICtr_t579890203, ___m_randDist_19)); }
+	inline float get_m_randDist_19() const { return ___m_randDist_19; }
+	inline float* get_address_of_m_randDist_19() { return &___m_randDist_19; }
+	inline void set_m_randDist_19(float value)
 	{
-		___m_showScore_19 = value;
+		___m_randDist_19 = value;
 	}
 
-	inline static int32_t get_offset_of_m_warningPercent_20() { return static_cast<int32_t>(offsetof(PlayUICtr_t579890203, ___m_warningPercent_20)); }
-	inline float get_m_warningPercent_20() const { return ___m_warningPercent_20; }
-	inline float* get_address_of_m_warningPercent_20() { return &___m_warningPercent_20; }
-	inline void set_m_warningPercent_20(float value)
+	inline static int32_t get_offset_of_m_showScore_20() { return static_cast<int32_t>(offsetof(PlayUICtr_t579890203, ___m_showScore_20)); }
+	inline int32_t get_m_showScore_20() const { return ___m_showScore_20; }
+	inline int32_t* get_address_of_m_showScore_20() { return &___m_showScore_20; }
+	inline void set_m_showScore_20(int32_t value)
 	{
-		___m_warningPercent_20 = value;
+		___m_showScore_20 = value;
 	}
 
-	inline static int32_t get_offset_of_m_isTimeout_21() { return static_cast<int32_t>(offsetof(PlayUICtr_t579890203, ___m_isTimeout_21)); }
-	inline bool get_m_isTimeout_21() const { return ___m_isTimeout_21; }
-	inline bool* get_address_of_m_isTimeout_21() { return &___m_isTimeout_21; }
-	inline void set_m_isTimeout_21(bool value)
+	inline static int32_t get_offset_of_m_warningPercent_21() { return static_cast<int32_t>(offsetof(PlayUICtr_t579890203, ___m_warningPercent_21)); }
+	inline float get_m_warningPercent_21() const { return ___m_warningPercent_21; }
+	inline float* get_address_of_m_warningPercent_21() { return &___m_warningPercent_21; }
+	inline void set_m_warningPercent_21(float value)
 	{
-		___m_isTimeout_21 = value;
+		___m_warningPercent_21 = value;
 	}
 
-	inline static int32_t get_offset_of_m_switchStatusTime_22() { return static_cast<int32_t>(offsetof(PlayUICtr_t579890203, ___m_switchStatusTime_22)); }
-	inline float get_m_switchStatusTime_22() const { return ___m_switchStatusTime_22; }
-	inline float* get_address_of_m_switchStatusTime_22() { return &___m_switchStatusTime_22; }
-	inline void set_m_switchStatusTime_22(float value)
+	inline static int32_t get_offset_of_m_isTimeout_22() { return static_cast<int32_t>(offsetof(PlayUICtr_t579890203, ___m_isTimeout_22)); }
+	inline bool get_m_isTimeout_22() const { return ___m_isTimeout_22; }
+	inline bool* get_address_of_m_isTimeout_22() { return &___m_isTimeout_22; }
+	inline void set_m_isTimeout_22(bool value)
 	{
-		___m_switchStatusTime_22 = value;
+		___m_isTimeout_22 = value;
 	}
 
-	inline static int32_t get_offset_of_m_countDownTime_23() { return static_cast<int32_t>(offsetof(PlayUICtr_t579890203, ___m_countDownTime_23)); }
-	inline float get_m_countDownTime_23() const { return ___m_countDownTime_23; }
-	inline float* get_address_of_m_countDownTime_23() { return &___m_countDownTime_23; }
-	inline void set_m_countDownTime_23(float value)
+	inline static int32_t get_offset_of_m_switchStatusTime_23() { return static_cast<int32_t>(offsetof(PlayUICtr_t579890203, ___m_switchStatusTime_23)); }
+	inline float get_m_switchStatusTime_23() const { return ___m_switchStatusTime_23; }
+	inline float* get_address_of_m_switchStatusTime_23() { return &___m_switchStatusTime_23; }
+	inline void set_m_switchStatusTime_23(float value)
 	{
-		___m_countDownTime_23 = value;
+		___m_switchStatusTime_23 = value;
+	}
+
+	inline static int32_t get_offset_of_m_countDownTime_24() { return static_cast<int32_t>(offsetof(PlayUICtr_t579890203, ___m_countDownTime_24)); }
+	inline float get_m_countDownTime_24() const { return ___m_countDownTime_24; }
+	inline float* get_address_of_m_countDownTime_24() { return &___m_countDownTime_24; }
+	inline void set_m_countDownTime_24(float value)
+	{
+		___m_countDownTime_24 = value;
 	}
 };
 
