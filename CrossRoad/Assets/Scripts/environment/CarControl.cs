@@ -10,9 +10,10 @@ public class CarControl : MonoBehaviour {
 	private Transform m_carEndPos {get; set;}
 	private Transform m_carPausePos {get; set;}
 
-	private float m_moveSpeedRangeMax = 6f ; 
+	private float m_moveSpeedRangeMax = 7f ; 
 	private float m_moveSpeedRangeMin = 3f ; 
 	private float m_moveSpeedAvg = 0f;
+	private float m_moveBeginSpeedAvg = 0f;		//存储小车本身最大速度;
 	private float m_moveSpeedCurrent = -1f ;
 	private float m_acceleratedSpeedRangeMax = 8.0f ;
 	private float m_acceleratedSpeedRangeMin = 4.0f ;
@@ -21,16 +22,20 @@ public class CarControl : MonoBehaviour {
 	private Rigidbody m_rigidBody = null ; 
 	private CapsuleCollider m_capsuleCollider = null ; 
 	private bool m_isMoving = false ; 
-	private float m_RaycasthitDist = 10f;
 	private float m_puaseDist = 4f;
 	private bool m_isInit = false ;
+
+	private float c_RaycastHitDistMin = 10f ; 
+	private float c_RaycastHitDistMax = 20f ;
+
+	private float m_RaycasthitDist = 10f;
 
 	private Vector3 m_direction ;
 
 	// Use this for initialization
 	void Awake()
 	{
-
+		m_RaycasthitDist = Random.Range(c_RaycastHitDistMin , c_RaycastHitDistMax);
 	}
 
 	public void HandleInit(Transform StartPos , Transform pausePos , Transform endPos) {
@@ -45,6 +50,7 @@ public class CarControl : MonoBehaviour {
 
 		this.m_moveSpeedAvg = Random.Range(m_moveSpeedRangeMin , m_moveSpeedRangeMax);
 		this.m_moveSpeedCurrent = this.m_moveSpeedAvg;
+		this.m_moveBeginSpeedAvg = this.m_moveSpeedAvg;
 		this.m_acceleratedSpeedCurrent = Random.Range(m_acceleratedSpeedRangeMin , m_acceleratedSpeedRangeMax);
 
 		if (StartPos.position.z < 0) {
@@ -108,6 +114,7 @@ public class CarControl : MonoBehaviour {
 		//是否到达红绿灯的位置了
 		if (this.isWaitForTraffic()) {
 			this.m_moveSpeedCurrent = 0 ; 
+			this.m_moveSpeedAvg = this.m_moveBeginSpeedAvg;
 			return false; 
 		}
 
@@ -174,13 +181,21 @@ public class CarControl : MonoBehaviour {
 
 
 	private bool isCanCreateCar() {
-		Vector3 startPos = this.m_rigidBody.position ; 
+		Vector3 startPos = new Vector3(this.m_rigidBody.position.x,1f,this.m_rigidBody.position.z);
 
+		//检查下方，前方，和斜前方应该就可以了
 		RaycastHit hit ;
 		this.m_capsuleCollider.enabled = false ;
-		bool isNear = Physics.Raycast(startPos , Vector3.forward * this.m_direction.z , out hit ,this.m_RaycasthitDist , this.m_blockingLayer);
+		bool isNear = Physics.Raycast(startPos , Vector3.forward * this.m_direction.z , out hit ,this.c_RaycastHitDistMax , this.m_blockingLayer);
+		Debug.DrawLine(startPos , Vector3.forward * this.m_direction.z , Color.red);
 		if (!isNear) {
-			isNear = Physics.Raycast(startPos , -Vector3.up , out hit ,this.m_RaycasthitDist , this.m_blockingLayer);
+			isNear = Physics.Raycast(startPos , -Vector3.up , out hit ,this.c_RaycastHitDistMax , this.m_blockingLayer);
+			Debug.DrawLine(startPos ,  -Vector3.up , Color.green);
+		}
+		if (!isNear) {
+			Vector3 dir = Vector3.forward * this.m_direction.z + Vector3.up * -1 ; 
+			isNear = Physics.Raycast(startPos , dir , out hit ,this.c_RaycastHitDistMax , this.m_blockingLayer);
+			Debug.DrawLine(startPos , dir , Color.blue);
 		}
 		this.m_capsuleCollider.enabled = true ; 
 

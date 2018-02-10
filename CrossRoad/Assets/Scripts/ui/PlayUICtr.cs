@@ -66,7 +66,7 @@ public class PlayUICtr : MonoBehaviour {
 	void Update()
 	{
 		//test code 
-		// return ;
+		return ;
 		
 		if (m_isTimeout || !GameManager.getInstance().IsPlaying()) {
 			return ;
