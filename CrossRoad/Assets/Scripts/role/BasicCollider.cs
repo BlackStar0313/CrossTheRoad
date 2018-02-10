@@ -15,7 +15,7 @@ public class BasicCollider : MonoBehaviour {
 	private float c_rangHitXDistLow = 0.7f;
 	private float c_rangHitZDistHigh = 2f;
 	private float c_rangHitZDistLow = 0.4f;
-	private float c_rangDeadHeight = 1.3f;
+	private float c_rangDeadHeight = 1.1f;
 
 	void OnCollisionEnter(Collision collisionInfo)
 	{
@@ -51,7 +51,7 @@ public class BasicCollider : MonoBehaviour {
 	public void handleCarCollision(Vector3 carPos ,bool isDispatcher) {
 		m_direction = this.m_parent.GetComponent<CharacterController>().transform.position - carPos;
 		m_direction = new Vector3(Random.Range(c_rangHitXDistLow, c_rangHitXDistHigh) * m_direction.x, m_direction.y , Random.Range(c_rangHitZDistLow, c_rangHitZDistHigh) * m_direction.z ) ;
-		m_direction.y = m_deadHeight * Random.Range(1,c_rangDeadHeight);
+		m_direction.y = m_deadHeight * Random.Range(0.8f,c_rangDeadHeight);
 		this.m_isCollide = true ; 
 
 		//调整下平躺下死亡时候的动画碰撞范围

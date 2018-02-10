@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using DG.Tweening;
+using UnityEngine.Events;
 
 public enum enumGameCurrentStatus {
 	outside , 
@@ -42,6 +43,9 @@ public class GameManager : MonoBehaviour {
 	[HideInInspector] public bool isOffset { get; set; }
 
 	[HideInInspector] public int currentScore { get; set; }
+
+
+	private bool m_isCameraFinish = false;
 
 	public static GameManager getInstance() {
 		return GameManager.mInstance ; 
@@ -102,8 +106,12 @@ public class GameManager : MonoBehaviour {
 		this.CreateNewPartner(-1, true);
 
 		DispatchManager.getInstance().onPartnerCatched.Invoke( playerDirect );
-		DispatchManager.getInstance().onPlayReadyGo.Invoke();
-		yield return new WaitForSeconds(2);
+
+		while(!m_isCameraFinish) {
+			yield return null ; 
+		}
+
+		yield return new WaitForSeconds(2) ; 
 	}
 
 	IEnumerator RoundPlaying() {
@@ -248,8 +256,13 @@ public class GameManager : MonoBehaviour {
 	private void doCameraAct() {
 		CameraCtr camera = Camera.main.GetComponent<CameraCtr>();
 		if (camera) {
-			camera.DoBeginAct();
+			camera.DoBeginAct(onCameraFinishCall);
 		}
+	}
+
+	private void onCameraFinishCall() {
+		DispatchManager.getInstance().onPlayReadyGo.Invoke();
+		m_isCameraFinish = true ;
 	}
 
 	public void Clear() {

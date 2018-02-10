@@ -253,6 +253,5 @@ public class PlayUICtr : MonoBehaviour {
 
 
 		SoundsManager.getInstance().playSounds(SoundsManager.clipNameReadyGo);
-
 	}
 }
