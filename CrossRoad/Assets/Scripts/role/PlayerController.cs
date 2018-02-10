@@ -53,6 +53,7 @@ public class PlayerController : BasicController {
         WarningUICtr ctr = warningUIObj.GetComponent<WarningUICtr>();
         ctr.init(isLeft);
 
+        DispatchManager.getInstance().onMoveWrong.Invoke(isLeft);
         SoundsManager.getInstance().playSounds(SoundsManager.clipNameMoveWrong);
     }
 

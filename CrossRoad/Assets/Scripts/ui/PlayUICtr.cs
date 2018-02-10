@@ -20,8 +20,9 @@ public class PlayUICtr : MonoBehaviour {
 	public Sprite m_spReady;
 	public Sprite m_spGo;
 
-	private float m_decreaseTime = 6;
+	private float m_decreaseTime = 9;
 	private float m_addStep = 0.25f;
+	private float m_subStep = 0.05f;
 	private float m_randDist = 1.2f;
 
 	private int m_showScore = 0;
@@ -37,6 +38,7 @@ public class PlayUICtr : MonoBehaviour {
 		Debug.Log("");
 
 		DispatchManager.getInstance().onMoveRight.AddListener(OnAddSlider);
+		DispatchManager.getInstance().onMoveWrong.AddListener(OnSubSlider);
 		DispatchManager.getInstance().onAddCoin.AddListener(OnAddCoin);
 		DispatchManager.getInstance().onAddHeart.AddListener(CreateHeart);
 		DispatchManager.getInstance().onGameOver.AddListener(onGameOver);
@@ -57,6 +59,7 @@ public class PlayUICtr : MonoBehaviour {
 	void OnDestroy()
 	{
 		DispatchManager.getInstance().onMoveRight.RemoveListener(OnAddSlider);
+		DispatchManager.getInstance().onMoveWrong.RemoveListener(OnSubSlider);
 		DispatchManager.getInstance().onAddCoin.RemoveListener(OnAddCoin);
 		DispatchManager.getInstance().onAddHeart.RemoveListener(CreateHeart);
 		DispatchManager.getInstance().onGameOver.RemoveListener(onGameOver);
@@ -66,7 +69,7 @@ public class PlayUICtr : MonoBehaviour {
 	void Update()
 	{
 		//test code 
-		return ;
+		// return ;
 		
 		if (m_isTimeout || !GameManager.getInstance().IsPlaying()) {
 			return ;
@@ -90,6 +93,10 @@ public class PlayUICtr : MonoBehaviour {
 
 	void OnAddSlider() {
 		m_Slider.value += m_addStep;
+	}
+
+	void OnSubSlider(bool isLeft) {
+		m_Slider.value -= m_subStep;
 	}
 
 	void OnAddCoin() {
