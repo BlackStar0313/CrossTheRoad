@@ -7,10 +7,21 @@ using UnityEngine.Advertisements;
 #endif
 
 public class GameInstantManager : MonoBehaviour {
+	public static GameInstantManager mInstance = null;
 	public SoundsManager m_soundsManager ; 
+	public bool m_isCreate = false ; 
+
+
+	public static GameInstantManager getInstance() {
+		return GameInstantManager.mInstance;
+	}
 
 	// Use this for initialization
 	void Awake(){
+		if (m_isCreate) {
+			return ;
+		}
+
 		this.initGameConfig();
 
 		PlayerManager.getInstance().init();
@@ -23,6 +34,8 @@ public class GameInstantManager : MonoBehaviour {
 		}
 
 		DontDestroyOnLoad(this);
+
+		m_isCreate = true ;
 	}
 	
 	private void initGameConfig() {

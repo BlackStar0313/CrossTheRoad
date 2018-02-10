@@ -66,6 +66,7 @@ public class PlayerManager {
 	}
 
 	public void init() {
+		//test code 
 		// PlayerPrefs.DeleteAll();
 
 		m_playerInfo = new PlayerInfo();
@@ -75,7 +76,7 @@ public class PlayerManager {
 
 
 		//test code 
-		// PlayerManager.getInstance().GetPlayerInfo().UpdateScore(500);
+		// PlayerManager.getInstance().GetPlayerInfo().score = 500;
 		// PlayerManager.getInstance().GetPlayerInfo().saveToLocal();
 	}
 
