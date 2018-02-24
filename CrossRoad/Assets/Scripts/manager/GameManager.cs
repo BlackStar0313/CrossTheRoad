@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour {
 	[HideInInspector] public static GameManager mInstance = null ; 
 
 	private bool[] m_isStartCreateCar = {true , true , true , true };
-	private float m_maxIntervelCreatCarTime = 3f ; 
+	private float m_maxIntervelCreatCarTime = 2.5f ; 
 	private float m_minIntervelCreateCarTime = 1f;
 	private float m_trafficIntervelCreateCarTime = 0.5f;
 	private enumGameCurrentStatus currentStatus { get; set; }

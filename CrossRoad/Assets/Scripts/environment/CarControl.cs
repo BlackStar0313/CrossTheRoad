@@ -15,7 +15,7 @@ public class CarControl : MonoBehaviour {
 	private float m_moveSpeedAvg = 0f;
 	private float m_moveBeginSpeedAvg = 0f;		//存储小车本身最大速度;
 	private float m_moveSpeedCurrent = -1f ;
-	private float m_acceleratedSpeedRangeMax = 8.0f ;
+	private float m_acceleratedSpeedRangeMax = 10.0f ;
 	private float m_acceleratedSpeedRangeMin = 4.0f ;
 	private float m_acceleratedSpeedCurrent = 2.0f ;
 
