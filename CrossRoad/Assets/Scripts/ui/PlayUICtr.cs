@@ -43,6 +43,7 @@ public class PlayUICtr : MonoBehaviour {
 		DispatchManager.getInstance().onAddHeart.AddListener(CreateHeart);
 		DispatchManager.getInstance().onGameOver.AddListener(onGameOver);
 		DispatchManager.getInstance().onPlayReadyGo.AddListener(onReadyGo);
+		DispatchManager.getInstance().onPartnerReached.AddListener(OnPartnerReached);	
 
 		m_pause.onClick.AddListener(delegate() { this.handleTouch(m_pause); });
 	}
@@ -64,6 +65,7 @@ public class PlayUICtr : MonoBehaviour {
 		DispatchManager.getInstance().onAddHeart.RemoveListener(CreateHeart);
 		DispatchManager.getInstance().onGameOver.RemoveListener(onGameOver);
 		DispatchManager.getInstance().onPlayReadyGo.RemoveListener(onReadyGo);
+		DispatchManager.getInstance().onPartnerReached.RemoveListener(OnPartnerReached);	
 	}
 
 	void Update()
@@ -97,6 +99,10 @@ public class PlayUICtr : MonoBehaviour {
 
 	void OnSubSlider(bool isLeft) {
 		m_Slider.value -= m_subStep;
+	}
+
+	void OnPartnerReached(float direct) {
+		m_Slider.value = 1;
 	}
 
 	void OnAddCoin() {
