@@ -19,6 +19,9 @@ public class MenuUICtr : MonoBehaviour {
 
 	private float m_fadeTime = 1;
 
+	private shader_transform_scene m_transScript = null ; 
+	private bool m_isInTransform = false ; 
+
 	void Start()
 	{
 		m_btnStart.onClick.AddListener(() => handleTouch(m_btnStart));
@@ -36,6 +39,13 @@ public class MenuUICtr : MonoBehaviour {
 		move.HideBegin(false);
 
 		SoundsManager.getInstance().playMusic(SoundsManager.clipNameMenu);
+
+
+		m_transScript = Camera.main.GetComponent<shader_transform_scene>();
+		if (m_transScript ) {
+			m_transScript.DoChange(null , true , GameInstantManager.getInstance().isTransFromGameScene);
+			GameInstantManager.getInstance().isTransFromGameScene = false;
+		}
 	}
 
 	void OnDestroy()
@@ -46,6 +56,10 @@ public class MenuUICtr : MonoBehaviour {
 	}
 
 	private void handleTouch(Button btn) {
+		if (m_isInTransform) {
+			return ; 
+		}
+
 		if (btn == m_btnStart) { 
 			fadeButton(0);
 			m_role.fadePlayer(false, m_fadeTime);
@@ -55,8 +69,13 @@ public class MenuUICtr : MonoBehaviour {
 		else if (btn == m_btnShop) {
 			// fadeButton(0);
 			// DOVirtual.DelayedCall(m_fadeTime, ()=> SceneManager.LoadScene("Shop"));
-			ShopManager.getInstance().init();
-			SceneManager.LoadScene("Shop");
+
+			if (m_transScript) {
+				m_isInTransform = true ;
+				m_transScript.DoChange(transToShop , false, false);
+			}
+
+
 			SoundsManager.getInstance().playSounds(SoundsManager.clipNameClick);
 		}
 		else if (btn == m_btnSetting) {
@@ -93,6 +112,13 @@ public class MenuUICtr : MonoBehaviour {
 		CanvasGroup group6 = m_bg_right.GetComponent<CanvasGroup>();
 		group6.alpha = 1 - alpha ;
 		group6.DOFade(alpha , m_fadeTime);
+	}
+
+
+	public void transToShop() {
+		ShopManager.getInstance().init();
+		SceneManager.LoadScene("Shop");
+		m_isInTransform = true ; 
 	}
 
 }

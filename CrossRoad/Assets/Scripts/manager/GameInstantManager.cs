@@ -10,6 +10,7 @@ public class GameInstantManager : MonoBehaviour {
 	public static GameInstantManager mInstance = null;
 	public SoundsManager m_soundsManager ; 
 	public bool m_isCreate = false ; 
+	public bool isTransFromGameScene = false ; 
 
 
 	public static GameInstantManager getInstance() {

@@ -77,6 +77,7 @@
      <Compile Include="Assets\Scripts\role\PlayerController.cs" />
      <Compile Include="Assets\Scripts\role\PlayerMoving.cs" />
      <Compile Include="Assets\Scripts\role\RoleSwtichModle.cs" />
+     <Compile Include="Assets\Scripts\shader\shader_transform_scene.cs" />
      <Compile Include="Assets\Scripts\ui\CloudMoving.cs" />
      <Compile Include="Assets\Scripts\ui\GameOverLayerCtr.cs" />
      <Compile Include="Assets\Scripts\ui\MenuRole.cs" />
@@ -101,6 +102,7 @@
      <None Include="Assets\Shaders\Toon\ToonBasicOutline.shader" />
      <None Include="Assets\Shaders\Toon\ToonLitOutline.shader" />
      <None Include="Assets\Shaders\Toon\ToonLit.shader" />
+     <None Include="Assets\Shaders\Myself\Trans_scene_shader.shader" />
  <Reference Include="UnityEngine.Advertisements">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Advertisements/UnityEngine.Advertisements.dll</HintPath>
  </Reference>

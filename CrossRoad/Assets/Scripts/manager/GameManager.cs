@@ -238,6 +238,7 @@ public class GameManager : MonoBehaviour {
 
 		DOVirtual.DelayedCall(2.5f, ()=>{
 			this.Clear();
+			GameInstantManager.getInstance().isTransFromGameScene = true ; 
 			SceneManager.LoadScene("Menu");
 		});
 	}
