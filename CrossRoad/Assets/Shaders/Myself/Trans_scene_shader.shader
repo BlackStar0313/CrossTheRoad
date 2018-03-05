@@ -29,7 +29,7 @@
 			};
 
 			sampler2D _MainTex;
-			float1 _ColorRange;
+			float _ColorRange;
 			fixed4 _Color ; 
 			
 			v2f vert (appdata v)

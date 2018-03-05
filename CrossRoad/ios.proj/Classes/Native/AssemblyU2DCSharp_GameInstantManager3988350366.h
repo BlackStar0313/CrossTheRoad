@@ -34,6 +34,8 @@ public:
 	SoundsManager_t4165177525 * ___m_soundsManager_3;
 	// System.Boolean GameInstantManager::m_isCreate
 	bool ___m_isCreate_4;
+	// System.Boolean GameInstantManager::isTransFromGameScene
+	bool ___isTransFromGameScene_5;
 
 public:
 	inline static int32_t get_offset_of_m_soundsManager_3() { return static_cast<int32_t>(offsetof(GameInstantManager_t3988350366, ___m_soundsManager_3)); }
@@ -51,6 +53,14 @@ public:
 	inline void set_m_isCreate_4(bool value)
 	{
 		___m_isCreate_4 = value;
+	}
+
+	inline static int32_t get_offset_of_isTransFromGameScene_5() { return static_cast<int32_t>(offsetof(GameInstantManager_t3988350366, ___isTransFromGameScene_5)); }
+	inline bool get_isTransFromGameScene_5() const { return ___isTransFromGameScene_5; }
+	inline bool* get_address_of_isTransFromGameScene_5() { return &___isTransFromGameScene_5; }
+	inline void set_isTransFromGameScene_5(bool value)
+	{
+		___isTransFromGameScene_5 = value;
 	}
 };
 

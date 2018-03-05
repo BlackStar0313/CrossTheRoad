@@ -20,6 +20,8 @@ struct Text_t356221433;
 struct GameObject_t1756533147;
 // MenuRole
 struct MenuRole_t4079412605;
+// shader_transform_scene
+struct shader_transform_scene_t2632619613;
 // DG.Tweening.TweenCallback
 struct TweenCallback_t3697142134;
 
@@ -58,6 +60,10 @@ public:
 	GameObject_t1756533147 * ___m_bg_right_11;
 	// System.Single MenuUICtr::m_fadeTime
 	float ___m_fadeTime_12;
+	// shader_transform_scene MenuUICtr::m_transScript
+	shader_transform_scene_t2632619613 * ___m_transScript_13;
+	// System.Boolean MenuUICtr::m_isInTransform
+	bool ___m_isInTransform_14;
 
 public:
 	inline static int32_t get_offset_of_m_btnStart_2() { return static_cast<int32_t>(offsetof(MenuUICtr_t1803774228, ___m_btnStart_2)); }
@@ -157,22 +163,39 @@ public:
 	{
 		___m_fadeTime_12 = value;
 	}
+
+	inline static int32_t get_offset_of_m_transScript_13() { return static_cast<int32_t>(offsetof(MenuUICtr_t1803774228, ___m_transScript_13)); }
+	inline shader_transform_scene_t2632619613 * get_m_transScript_13() const { return ___m_transScript_13; }
+	inline shader_transform_scene_t2632619613 ** get_address_of_m_transScript_13() { return &___m_transScript_13; }
+	inline void set_m_transScript_13(shader_transform_scene_t2632619613 * value)
+	{
+		___m_transScript_13 = value;
+		Il2CppCodeGenWriteBarrier(&___m_transScript_13, value);
+	}
+
+	inline static int32_t get_offset_of_m_isInTransform_14() { return static_cast<int32_t>(offsetof(MenuUICtr_t1803774228, ___m_isInTransform_14)); }
+	inline bool get_m_isInTransform_14() const { return ___m_isInTransform_14; }
+	inline bool* get_address_of_m_isInTransform_14() { return &___m_isInTransform_14; }
+	inline void set_m_isInTransform_14(bool value)
+	{
+		___m_isInTransform_14 = value;
+	}
 };
 
 struct MenuUICtr_t1803774228_StaticFields
 {
 public:
 	// DG.Tweening.TweenCallback MenuUICtr::<>f__am$cache0
-	TweenCallback_t3697142134 * ___U3CU3Ef__amU24cache0_13;
+	TweenCallback_t3697142134 * ___U3CU3Ef__amU24cache0_15;
 
 public:
-	inline static int32_t get_offset_of_U3CU3Ef__amU24cache0_13() { return static_cast<int32_t>(offsetof(MenuUICtr_t1803774228_StaticFields, ___U3CU3Ef__amU24cache0_13)); }
-	inline TweenCallback_t3697142134 * get_U3CU3Ef__amU24cache0_13() const { return ___U3CU3Ef__amU24cache0_13; }
-	inline TweenCallback_t3697142134 ** get_address_of_U3CU3Ef__amU24cache0_13() { return &___U3CU3Ef__amU24cache0_13; }
-	inline void set_U3CU3Ef__amU24cache0_13(TweenCallback_t3697142134 * value)
+	inline static int32_t get_offset_of_U3CU3Ef__amU24cache0_15() { return static_cast<int32_t>(offsetof(MenuUICtr_t1803774228_StaticFields, ___U3CU3Ef__amU24cache0_15)); }
+	inline TweenCallback_t3697142134 * get_U3CU3Ef__amU24cache0_15() const { return ___U3CU3Ef__amU24cache0_15; }
+	inline TweenCallback_t3697142134 ** get_address_of_U3CU3Ef__amU24cache0_15() { return &___U3CU3Ef__amU24cache0_15; }
+	inline void set_U3CU3Ef__amU24cache0_15(TweenCallback_t3697142134 * value)
 	{
-		___U3CU3Ef__amU24cache0_13 = value;
-		Il2CppCodeGenWriteBarrier(&___U3CU3Ef__amU24cache0_13, value);
+		___U3CU3Ef__amU24cache0_15 = value;
+		Il2CppCodeGenWriteBarrier(&___U3CU3Ef__amU24cache0_15, value);
 	}
 };
 

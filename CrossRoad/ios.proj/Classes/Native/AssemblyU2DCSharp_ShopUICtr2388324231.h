@@ -16,6 +16,8 @@
 struct Button_t2872111280;
 // UnityEngine.UI.Text
 struct Text_t356221433;
+// shader_transform_scene
+struct shader_transform_scene_t2632619613;
 
 
 
@@ -34,6 +36,10 @@ public:
 	Button_t2872111280 * ___m_btnHome_2;
 	// UnityEngine.UI.Text ShopUICtr::m_textScore
 	Text_t356221433 * ___m_textScore_3;
+	// shader_transform_scene ShopUICtr::m_transScript
+	shader_transform_scene_t2632619613 * ___m_transScript_4;
+	// System.Boolean ShopUICtr::m_isInTransform
+	bool ___m_isInTransform_5;
 
 public:
 	inline static int32_t get_offset_of_m_btnHome_2() { return static_cast<int32_t>(offsetof(ShopUICtr_t2388324231, ___m_btnHome_2)); }
@@ -52,6 +58,23 @@ public:
 	{
 		___m_textScore_3 = value;
 		Il2CppCodeGenWriteBarrier(&___m_textScore_3, value);
+	}
+
+	inline static int32_t get_offset_of_m_transScript_4() { return static_cast<int32_t>(offsetof(ShopUICtr_t2388324231, ___m_transScript_4)); }
+	inline shader_transform_scene_t2632619613 * get_m_transScript_4() const { return ___m_transScript_4; }
+	inline shader_transform_scene_t2632619613 ** get_address_of_m_transScript_4() { return &___m_transScript_4; }
+	inline void set_m_transScript_4(shader_transform_scene_t2632619613 * value)
+	{
+		___m_transScript_4 = value;
+		Il2CppCodeGenWriteBarrier(&___m_transScript_4, value);
+	}
+
+	inline static int32_t get_offset_of_m_isInTransform_5() { return static_cast<int32_t>(offsetof(ShopUICtr_t2388324231, ___m_isInTransform_5)); }
+	inline bool get_m_isInTransform_5() const { return ___m_isInTransform_5; }
+	inline bool* get_address_of_m_isInTransform_5() { return &___m_isInTransform_5; }
+	inline void set_m_isInTransform_5(bool value)
+	{
+		___m_isInTransform_5 = value;
 	}
 };
 

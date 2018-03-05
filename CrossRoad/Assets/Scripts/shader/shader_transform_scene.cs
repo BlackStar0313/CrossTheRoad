@@ -6,21 +6,18 @@ using UnityEngine.Events;
 public class shader_transform_scene : MonoBehaviour {
 
 	private Material m_transMat;
-	public float transTime = 0.3f ;   //淡入淡出时间
+	private float transTime = 2f ;   //淡入淡出时间
 	private UnityAction m_transCallBack = null ; 		//淡入淡出后的回调
 	private bool m_isStartChange = false ; 
 	private bool m_isDisppear = true; 		//判断是淡入还是淡出
 
-	void Start()
+	void Awake()
 	{
-
+		m_transMat = new Material(Shader.Find("Unlit/Trans_scene_shader"));
 	}
 
 	public void DoChange(UnityAction callback , bool isDisppear , bool isImmidiate) {
-		if (m_transMat == null) {
-			m_transMat = new Material(Shader.Find("Unlit/Trans_scene_shader"));
-			m_transMat.SetFloat("_ColorRange", 0);
-		}
+		m_transMat.SetFloat("_ColorRange", 0);
 
 		m_transCallBack = callback ; 
 		m_isDisppear = isDisppear ; 
@@ -53,6 +50,10 @@ public class shader_transform_scene : MonoBehaviour {
 
 		if (m_transMat.GetFloat("_ColorRange") <= 0 && m_isDisppear == false ||
 			m_transMat.GetFloat("_ColorRange") >=1 && m_isDisppear == true) {
+
+			float end = count >= 1 ? 1 : 0 ;
+			m_transMat.SetFloat("_ColorRange", end);
+
 			if (m_transCallBack!= null) {
 				m_transCallBack.Invoke();
 			}
